@@ -23,7 +23,7 @@ object TestApp as Application:
 						mul: 2, 2
 						5
 			Suite:
-				"sub",
+				"plus",
 				Case:
 					"2+2 should be equal 4",
 					AssertionEqual:
@@ -66,3 +66,4 @@ You can add your own assertions.
 1. Describe all tests in one place - is bad. But if you describe the tests elsewhere, the problem of lost sets is possible.
 1. Test shuffling is hard...
 1. Need to thinking about different format of report.
+1. Test naming and filtering... May be test should have 3 parameters? name, description and assertion?
