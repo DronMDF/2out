@@ -6,32 +6,62 @@
 namespace oout {
 
 class Assertion {
+public:
+	virtual bool valid() const = 0;
 };
 
 class Case {
 public:
 	Case(const std::string &description, std::unique_ptr<const Assertion> assert)
+		: assert(move(assert))
 	{
 	}
+
+	bool run() const
+	{
+		return assert->valid();
+	}
+
+private:
+	std::unique_ptr<const Assertion> assert;
 };
 
 class Suite {
 public:
 	Suite(const std::string &description, const std::list<std::shared_ptr<const Case>> &cases)
+		: cases(cases)
 	{
 	}
 
-	int run() const
+	bool run() const
 	{
-		return 0;
+		for (const auto &c: cases) {
+			if (!c->run()) {
+				return false;
+			}
+		}
+		return true;
 	}
+
+private:
+	const std::list<std::shared_ptr<const Case>> cases;
 };
 
 class AssertionEqual final : public Assertion {
 public:
 	AssertionEqual(int a, int b)
+		: a(a), b(b)
 	{
 	}
+
+	bool valid() const override
+	{
+		return a==b;
+	}
+
+private:
+	int a;
+	int b;
 };
 
 }

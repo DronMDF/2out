@@ -10,11 +10,11 @@ int main(int, char **)
 		"Example suite",
 		{
 			make_shared<const Case>(
-				"2 * 2 should be equal 4",
-				make_unique<const AssertionEqual>(2 * 2, 4)
+				"2 * 2 should be equal 5",
+				make_unique<const AssertionEqual>(2 * 2, 5)
 			),
 		}
 	).run();
 
-	return 0;
+	return result ? 0 : -1;
 }
