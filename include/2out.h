@@ -10,19 +10,25 @@
 
 namespace oout {
 
+// @todo #5:15min Place classes to files
 class Assertion {
 public:
 	virtual bool valid() const = 0;
 };
 
-class Case {
+class Test {
 public:
-	Case(const std::string &description, std::unique_ptr<const Assertion> assert)
+	virtual bool result() const = 0;
+};
+
+class TstSimple final : public Test {
+public:
+	TstSimple(const std::string &description, std::unique_ptr<const Assertion> assert)
 		: assert(move(assert))
 	{
 	}
 
-	bool run() const
+	bool result() const override
 	{
 		return assert->valid();
 	}
@@ -31,17 +37,19 @@ private:
 	std::unique_ptr<const Assertion> assert;
 };
 
-class Suite {
+class TstSuite final : public Test {
 public:
-	Suite(const std::string &description, const std::list<std::shared_ptr<const Case>> &cases)
-		: cases(cases)
+	TstSuite(
+		const std::string &description,
+		const std::list<std::shared_ptr<const Test>> &cases
+	) : cases(cases)
 	{
 	}
 
-	bool run() const
+	bool result() const override
 	{
 		for (const auto &c : cases) {
-			if (!c->run()) {
+			if (!c->result()) {
 				return false;
 			}
 		}
@@ -49,7 +57,7 @@ public:
 	}
 
 private:
-	const std::list<std::shared_ptr<const Case>> cases;
+	const std::list<std::shared_ptr<const Test>> cases;
 };
 
 class AssertionEqual final : public Assertion {

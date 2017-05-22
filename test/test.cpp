@@ -11,15 +11,24 @@ using namespace oout;
 
 int main(int, char **)
 {
-	const auto result = Suite(
+	const auto result = TstSuite(
 		"Example suite",
-		{
-			make_shared<const Case>(
+		list<shared_ptr<const Test>>{
+			make_shared<const TstSimple>(
 				"2 * 2 should be equal 4",
 				make_unique<const AssertionEqual>(2 * 2, 4)
 			),
+			make_shared<const TstSuite>(
+				"Sub Suite",
+				list<shared_ptr<const Test>>{
+					make_shared<const TstSimple>(
+						"2 + 2 should be equal 4",
+						make_unique<const AssertionEqual>(2 + 2, 4)
+					)
+				}
+			)
 		}
-	).run();
+	).result();
 
 	return result ? 0 : -1;
 }
