@@ -7,29 +7,21 @@
 #include <list>
 #include <memory>
 #include <string>
-#include "Assertion.h"
 #include "Test.h"
-#include "TstSimple.h"
-#include "TstSuite.h"
 
 namespace oout {
 
-// @todo #8:15min Move AssertionEqual to AsEqual.cpp
-class AssertionEqual final : public Assertion {
+class TstSuite final : public Test {
 public:
-	AssertionEqual(int a, int b)
-		: a(a), b(b)
-	{
-	}
+	TstSuite(
+		const std::string &description,
+		const std::list<std::shared_ptr<const Test>> &cases
+	);
 
-	bool valid() const override
-	{
-		return a == b;
-	}
+	bool result() const override;
 
 private:
-	int a;
-	int b;
+	const std::list<std::shared_ptr<const Test>> cases;
 };
 
 }
