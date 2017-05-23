@@ -7,20 +7,12 @@
 #include <list>
 #include <memory>
 #include <string>
+#include "Assertion.h"
+#include "Test.h"
 
 namespace oout {
 
-// @todo #5:15min Place classes to files
-class Assertion {
-public:
-	virtual bool valid() const = 0;
-};
-
-class Test {
-public:
-	virtual bool result() const = 0;
-};
-
+// @todo #8:15min Move TstSimple to TstSimple.cpp
 class TstSimple final : public Test {
 public:
 	TstSimple(const std::string &description, std::unique_ptr<const Assertion> assert)
@@ -37,6 +29,7 @@ private:
 	std::unique_ptr<const Assertion> assert;
 };
 
+// @todo #8:15min Move TstSuite to TstSuite.cpp
 class TstSuite final : public Test {
 public:
 	TstSuite(
@@ -60,6 +53,7 @@ private:
 	const std::list<std::shared_ptr<const Test>> cases;
 };
 
+// @todo #8:15min Move AssertionEqual to AsEqual.cpp
 class AssertionEqual final : public Assertion {
 public:
 	AssertionEqual(int a, int b)
