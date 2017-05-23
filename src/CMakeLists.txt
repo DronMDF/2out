@@ -4,4 +4,5 @@ PROJECT(2out)
 
 ADD_LIBRARY(2out
 	TstSimple.cpp
+	TstSuite.cpp
 )
