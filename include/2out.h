@@ -9,25 +9,9 @@
 #include <string>
 #include "Assertion.h"
 #include "Test.h"
+#include "TstSimple.h"
 
 namespace oout {
-
-// @todo #8:15min Move TstSimple to TstSimple.cpp
-class TstSimple final : public Test {
-public:
-	TstSimple(const std::string &description, std::unique_ptr<const Assertion> assert)
-		: assert(move(assert))
-	{
-	}
-
-	bool result() const override
-	{
-		return assert->valid();
-	}
-
-private:
-	std::unique_ptr<const Assertion> assert;
-};
 
 // @todo #8:15min Move TstSuite to TstSuite.cpp
 class TstSuite final : public Test {
