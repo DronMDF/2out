@@ -1,4 +1,5 @@
 # 2out
+
 Object oriented unit testing framework
 
 # Concept
@@ -8,58 +9,53 @@ This is a pseudocode (i think this is a eolang :))
 ```
 object TestApp as Application:
 	void run():
-		Suite:
+		TstSuite:
 			"main",
-			Case:
+			TstSimple:
 				"2*2 should be equal 4",
-				AssertionEqual:
+				IsEqual:
 					mul: 2, 2
 					4
-			SkippedCase:
+			TstSkipped:
 				"Temporary off, failed",
-				Case:
+				TstSimple:
 					"2*2 should be equal 5",
-					AssertionEqual:
+					IsEqual:
 						mul: 2, 2
 						5
-			Suite:
+			TstSuite:
 				"plus",
-				Case:
+				TstSimple:
 					"2+2 should be equal 4",
-					AssertionEqual:
+					IsEqual:
 						plus: 2, 2
 						4
-				Case:
+				TstSimple:
 					"3+3 should be equal 6",
-					AssertionEqual:
+					IsEqual:
 						plus: 3, 3
 						6
 		.run()
 ```
 
-Suite and Case composition is not strangely. Key moment - Assertion this is a object.
+Key moment - Assertion (IsEqual) this is an object.
 Each test should have only one assertion. We throw out code and describe all tests over Object composition.
-This helped to avoid the problem of lost tests. Test invocation is a case itself.
+This helped to avoid the problem of lost tests. Test invocation is a Test text itself.
 
 # Dictionary
 
-## Suite
-
-Test set.
-
-## Case
+## Test
 
 This is a test.
-Gets two arguments: description and Assertion.
-Class Under Tests should be construct for each tests separately.
-In some cases you may want to create helper classes only for testing.
-This is the only time when we write something for testing.
+TstSimple, TstSuite, TstSkipped - is an object of Test type.
 
 ## Assertion
 
-Test assertion.
-Test framework has a standard set of asserions (Equal, In, Except, etc...)
+Test framework has a standard set of asserions (IsEqual, In, Except, etc...)
 You can add your own assertions.
+This is the only time when we write something for testing.
+Assertion shoud be lazy Objects.
+All args of assertion should be lazy too.
 
 # Questions
 
