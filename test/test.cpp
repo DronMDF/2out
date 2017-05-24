@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <memory>
+#include <list>
 #include <2out.h>
 
 using namespace std;
@@ -16,14 +17,14 @@ int main(int, char **)
 		list<shared_ptr<const Test>>{
 			make_shared<const TstSimple>(
 				"2 * 2 should be equal 4",
-				make_unique<const AssertionEqual>(2 * 2, 4)
+				make_unique<const IsEqual>(2 * 2, 4)
 			),
 			make_shared<const TstSuite>(
 				"Sub Suite",
 				list<shared_ptr<const Test>>{
 					make_shared<const TstSimple>(
 						"2 + 2 should be equal 4",
-						make_unique<const AssertionEqual>(2 + 2, 4)
+						make_unique<const IsEqual>(2 + 2, 4)
 					)
 				}
 			)
