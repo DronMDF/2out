@@ -6,13 +6,13 @@
 #include <memory>
 #include <Test.h>
 
-class TstSuiteTest final : public oout::Test
+class TextReportTest final : public oout::Test
 {
 public:
-	TstSuiteTest();
+	TextReportTest();
 	bool result() const override;
 
 private:
-	// @todo #4:15min TstSuiteTest can incapsulate TstSuite by value
+	// @todo #4:15min TextReportTest can incapsulate TstSuite by value
 	const std::unique_ptr<const oout::Test> tests;
 };

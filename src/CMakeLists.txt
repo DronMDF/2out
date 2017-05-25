@@ -5,6 +5,7 @@ PROJECT(2out)
 ADD_LIBRARY(
 	2out
 	IsEqual.cpp
+	TextReport.cpp
 	TstSimple.cpp
 	TstSuite.cpp
 )
