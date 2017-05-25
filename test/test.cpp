@@ -43,5 +43,5 @@ int main(int, char **)
 
 	// @todo #4:15min Report should produce text and status.
 	//  Detect status by test this is a wrong way.
-	return report_string.find("SUCCESS") != string::npos;
+	return report_string.find("SUCCESS") != string::npos ? 0 : -1;
 }
