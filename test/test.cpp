@@ -6,6 +6,7 @@
 #include <memory>
 #include <list>
 #include <2out.h>
+#include "TstSuiteTest.h"
 
 using namespace std;
 using namespace oout;
@@ -27,7 +28,8 @@ int main(int, char **)
 						make_unique<const IsEqual>(2 + 2, 4)
 					)
 				}
-			)
+			),
+			make_shared<const TstSuiteTest>()
 		}
 	).result();
 
