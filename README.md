@@ -2,7 +2,7 @@
 
 Object oriented unit testing framework
 
-![Shippable](https://api.shippable.com/projects/5922a40c2a28350700f84ee0/badge?branch=master)
+[![Shippable](https://api.shippable.com/projects/5922a40c2a28350700f84ee0/badge?branch=master)](https://app.shippable.com/github/DronMDF/2out/status/dashboard)
 [![PDD status](http://www.0pdd.com/svg?name=DronMDF/2out)](http://www.0pdd.com/p?name=DronMDF/2out)
 
 # Concept
