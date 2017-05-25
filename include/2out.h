@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include "IsEqual.h"
+#include "TextReport.h"
 #include "TstSimple.h"
 #include "TstSuite.h"
-#include "IsEqual.h"
