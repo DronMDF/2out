@@ -5,6 +5,7 @@ PROJECT(test)
 ADD_EXECUTABLE(
 	test_runner
 	test.cpp
+	TstSuiteTest.cpp
 )
 TARGET_LINK_LIBRARIES(
 	test_runner
