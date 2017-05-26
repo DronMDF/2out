@@ -6,6 +6,7 @@
 #include "TextReportTest.h"
 #include <list>
 #include <Assertion.h>
+#include <ResSimple.h>
 #include <TextReport.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
@@ -31,8 +32,8 @@ private:
 
 class TstSuccess final : public Test {
 public:
-	bool result() const override {
-		return true;
+	shared_ptr<const Result> result() const override {
+		return make_shared<const ResSimple>(true);
 	}
 };
 
@@ -56,7 +57,7 @@ TextReportTest::TextReportTest()
 {
 }
 
-bool TextReportTest::result() const
+shared_ptr<const Result> TextReportTest::result() const
 {
 	return tests->result();
 }

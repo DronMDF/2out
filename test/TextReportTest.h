@@ -10,7 +10,7 @@ class TextReportTest final : public oout::Test
 {
 public:
 	TextReportTest();
-	bool result() const override;
+	std::shared_ptr<const oout::Result> result() const override;
 
 private:
 	const std::unique_ptr<const oout::Test> tests;

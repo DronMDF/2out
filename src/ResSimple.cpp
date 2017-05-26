@@ -3,19 +3,17 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <TstSimple.h>
-#include <Assertion.h>
 #include <ResSimple.h>
 
 using namespace std;
 using namespace oout;
 
-TstSimple::TstSimple(const string &description, unique_ptr<const Assertion> assert)
-	: assert(move(assert))
+ResSimple::ResSimple(bool status)
+	: test_status(status)
 {
 }
 
-shared_ptr<const Result> TstSimple::result() const
+bool ResSimple::status() const
 {
-	return make_shared<const ResSimple>(assert->valid());
+	return test_status;
 }

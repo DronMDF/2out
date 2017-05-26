@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <TextReport.h>
+#include <Result.h>
 #include <Test.h>
 
 using namespace std;
@@ -16,5 +17,5 @@ TextReport::TextReport(unique_ptr<const Test> test)
 
 string TextReport::asString() const
 {
-	return test->result() ? "SUCCESS" : "FAILURE";
+	return test->result()->status() ? "SUCCESS" : "FAILURE";
 }

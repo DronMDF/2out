@@ -16,7 +16,7 @@ class TstSimple final : public Test {
 public:
 	TstSimple(const std::string &description, std::unique_ptr<const Assertion> assert);
 
-	bool result() const override;
+	std::shared_ptr<const Result> result() const override;
 
 private:
 	std::unique_ptr<const Assertion> assert;
