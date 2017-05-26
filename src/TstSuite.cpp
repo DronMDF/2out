@@ -16,6 +16,7 @@ TstSuite::TstSuite(const string &description, const list<shared_ptr<const Test>>
 
 shared_ptr<const Result> TstSuite::result() const
 {
+	// @todo #28:15min Need ResSuite for keep all sub tests results
 	for (const auto &c : cases) {
 		if (!c->result()) {
 			return make_shared<ResSimple>(false);
