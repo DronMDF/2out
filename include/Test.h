@@ -9,6 +9,9 @@ namespace oout {
 
 class Test {
 public:
+	// @todo #30:15min Test Result should contain more information
+	//  Test name, checked assertion details, status, time, and more
+	//  In Suite case Result should contain information about subtests
 	virtual bool result() const = 0;
 };
 

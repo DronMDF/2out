@@ -13,6 +13,5 @@ public:
 	bool result() const override;
 
 private:
-	// @todo #4:15min TextReportTest can incapsulate TstSuite by value
 	const std::unique_ptr<const oout::Test> tests;
 };
