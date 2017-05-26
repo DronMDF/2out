@@ -30,13 +30,6 @@ private:
 	const unique_ptr<const TextReport> report;
 };
 
-class TstSuccess final : public Test {
-public:
-	shared_ptr<const Result> result() const override {
-		return make_shared<const ResSimple>(true);
-	}
-};
-
 TextReportTest::TextReportTest()
 : tests(
 	make_unique<const TstSuite>(
@@ -47,7 +40,16 @@ TextReportTest::TextReportTest()
 				make_unique<const IsTextInReport>(
 					"SUCCESS",
 					make_unique<const TextReport>(
-						make_unique<const TstSuccess>()
+						make_shared<const ResSimple>(true)
+					)
+				)
+			),
+			make_shared<const TstSimple>(
+				"FAILURE in report if tests failure",
+				make_unique<const IsTextInReport>(
+					"FAILURE",
+					make_unique<const TextReport>(
+						make_shared<const ResSimple>(false)
 					)
 				)
 			)

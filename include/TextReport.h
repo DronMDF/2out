@@ -9,14 +9,14 @@
 
 namespace oout {
 
-class Test;
+class Result;
 
 class TextReport final {
 public:
-	explicit TextReport(std::unique_ptr<const Test> test);
+	explicit TextReport(const std::shared_ptr<const Result> &result);
 	std::string asString() const;
 private:
-	const std::unique_ptr<const Test> test;
+	const std::shared_ptr<const Result> result;
 };
 
 }

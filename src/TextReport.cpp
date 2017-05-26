@@ -10,12 +10,12 @@
 using namespace std;
 using namespace oout;
 
-TextReport::TextReport(unique_ptr<const Test> test)
-	: test(move(test))
+TextReport::TextReport(const shared_ptr<const Result> &result)
+	: result(result)
 {
 }
 
 string TextReport::asString() const
 {
-	return test->result()->status() ? "SUCCESS" : "FAILURE";
+	return result->status() ? "SUCCESS" : "FAILURE";
 }
