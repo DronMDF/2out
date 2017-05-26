@@ -18,7 +18,7 @@ public:
 		const std::list<std::shared_ptr<const Test>> &cases
 	);
 
-	bool result() const override;
+	std::shared_ptr<const Result> result() const override;
 
 private:
 	const std::list<std::shared_ptr<const Test>> cases;

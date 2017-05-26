@@ -7,6 +7,7 @@
 #include <Assertion.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
+#include <Result.h>
 
 using namespace std;
 using namespace oout;
@@ -20,7 +21,7 @@ public:
 	}
 
 	bool valid() const override {
-		return test->result();
+		return test->result()->status();
 	}
 private:
 	const unique_ptr<const Test> test;
@@ -44,7 +45,7 @@ TstSuiteTest::TstSuiteTest()
 {
 }
 
-bool TstSuiteTest::result() const
+shared_ptr<const Result> TstSuiteTest::result() const
 {
 	return tests->result();
 }

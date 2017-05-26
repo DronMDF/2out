@@ -7,11 +7,9 @@
 
 namespace oout {
 
-class Result;
-
-class Test {
+class Result {
 public:
-	virtual std::shared_ptr<const Result> result() const = 0;
+	virtual bool status() const = 0;
 };
 
 }
