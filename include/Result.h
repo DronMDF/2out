@@ -9,6 +9,7 @@ namespace oout {
 
 class Result {
 public:
+	virtual ~Result() = default;
 	virtual bool status() const = 0;
 };
 

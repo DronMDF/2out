@@ -10,7 +10,7 @@ using namespace std;
 using namespace oout;
 
 TstSuite::TstSuite(const string &description, const list<shared_ptr<const Test>> &cases)
-	: cases(cases)
+	: description(description), cases(cases)
 {
 }
 

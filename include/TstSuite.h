@@ -21,6 +21,7 @@ public:
 	std::shared_ptr<const Result> result() const override;
 
 private:
+	const std::string description;
 	const std::list<std::shared_ptr<const Test>> cases;
 };
 

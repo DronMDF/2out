@@ -11,6 +11,7 @@ class Result;
 
 class Test {
 public:
+	virtual ~Test() = default;
 	virtual std::shared_ptr<const Result> result() const = 0;
 };
 

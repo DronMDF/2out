@@ -9,6 +9,7 @@ namespace oout {
 
 class Assertion {
 public:
+	virtual ~Assertion() = default;
 	virtual bool valid() const = 0;
 };
 
