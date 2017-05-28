@@ -6,6 +6,7 @@ ADD_LIBRARY(
 	2out
 	IsEqual.cpp
 	ResSimple.cpp
+	ResSuite.cpp
 	TextReport.cpp
 	TstSimple.cpp
 	TstSuite.cpp

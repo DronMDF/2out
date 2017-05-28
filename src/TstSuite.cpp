@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <TstSuite.h>
-#include <ResSimple.h>
+#include <ResSuite.h>
 
 using namespace std;
 using namespace oout;
@@ -16,11 +16,9 @@ TstSuite::TstSuite(const string &description, const list<shared_ptr<const Test>>
 
 shared_ptr<const Result> TstSuite::result() const
 {
-	// @todo #28:15min Need ResSuite for keep all sub tests results
+	list<shared_ptr<const Result>> results;
 	for (const auto &c : cases) {
-		if (!c->result()) {
-			return make_shared<ResSimple>(false);
-		}
+		results.push_back(c->result());
 	}
-	return make_shared<ResSimple>(true);
+	return make_shared<ResSuite>(results);
 }
