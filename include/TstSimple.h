@@ -19,7 +19,8 @@ public:
 	std::shared_ptr<const Result> result() const override;
 
 private:
-	std::unique_ptr<const Assertion> assert;
+	const std::string description;
+	const std::unique_ptr<const Assertion> assert;
 };
 
 }

@@ -11,7 +11,7 @@ using namespace std;
 using namespace oout;
 
 TstSimple::TstSimple(const string &description, unique_ptr<const Assertion> assert)
-	: assert(move(assert))
+	: description(description), assert(move(assert))
 {
 }
 
