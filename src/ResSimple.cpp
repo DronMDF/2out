@@ -5,7 +5,6 @@
 
 #include <ResSimple.h>
 
-using namespace std;
 using namespace oout;
 
 ResSimple::ResSimple(bool status)
