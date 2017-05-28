@@ -5,7 +5,6 @@
 
 #include <IsEqual.h>
 
-using namespace std;
 using namespace oout;
 
 IsEqual::IsEqual(int a, int b)
