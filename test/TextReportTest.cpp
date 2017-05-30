@@ -42,6 +42,8 @@ TextReportTest::TextReportTest()
 		list<shared_ptr<const Test>>{
 			make_shared<const TstSimple>(
 				"SUCCESS in report if tests success",
+				// @todo #46:15min This test is little fake.
+				//  SUCCESS is a output test name, not a status
 				make_unique<const IsTextInReport>(
 					"SUCCESS",
 					make_unique<TextReport>(),
@@ -56,6 +58,8 @@ TextReportTest::TextReportTest()
 			),
 			make_shared<const TstSimple>(
 				"FAILURE in report if tests failure",
+				// @todo #46:15min This test is little fake.
+				//  FAILURE is a output test name, not a status
 				make_unique<const IsTextInReport>(
 					"FAILURE",
 					make_unique<TextReport>(),
