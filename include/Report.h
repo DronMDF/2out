@@ -4,29 +4,20 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <memory>
-#include <sstream>
+#include <map>
 #include <string>
-#include "Report.h"
 
 namespace oout {
 
-class Result;
-
-// @todo #46:15min Adopt output to gtest
-class TextReport final : public Report {
+// @todo #46:15min Add RepJUnit for xml output
+class Report {
 public:
-	TextReport();
-
-	void begin(
+	virtual ~Report() = default;
+	virtual void begin(
 		const std::string &tag,
 		const std::map<std::string, std::string> &attributes
-	) override;
-	void end(const std::string &tag) override;
-
-	std::string asString() const;
-private:
-	std::ostringstream text;
+	) = 0;
+	virtual void end(const std::string &tag) = 0;
 };
 
 }

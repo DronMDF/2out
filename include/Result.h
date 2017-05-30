@@ -12,6 +12,8 @@
 
 namespace oout {
 
+class Report;
+
 class Result final {
 public:
 	Result(
@@ -20,10 +22,13 @@ public:
 		const std::list<std::shared_ptr<const Result>> &nodes
 	);
 
+	void print(Report *report) const;
+
+	// @todo #46:15min failures is outscope of result, extract to another class
 	virtual size_t failures() const;
 
 	// @todo #43:15min Need to return tests (count of tests)
-	// @todo #43:15min Need to print values to media
+	//  This is out of scope for Result, need to introduce another class
 private:
 	const std::string tag;
 	const std::map<std::string, std::string> attributes;

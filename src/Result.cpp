@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <Result.h>
+#include <Report.h>
 
 using namespace std;
 using namespace oout;
@@ -15,6 +16,15 @@ Result::Result(
 )
 	: tag(tag), attributes(attributes), nodes(nodes)
 {
+}
+
+void Result::print(Report *report) const
+{
+	report->begin(tag, attributes);
+	for (const auto &r : nodes) {
+		r->print(report);
+	}
+	report->end(tag);
 }
 
 size_t Result::failures() const
