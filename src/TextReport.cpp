@@ -11,6 +11,11 @@
 using namespace std;
 using namespace oout;
 
+TextReport::TextReport()
+	: text()
+{
+}
+
 void TextReport::begin(const string &tag, const map<string, string> &attributes)
 {
 	text << tag << ": ";

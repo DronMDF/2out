@@ -16,6 +16,8 @@ class Result;
 // @todo #46:15min Adopt output to gtest
 class TextReport final : public Report {
 public:
+	TextReport();
+
 	void begin(
 		const std::string &tag,
 		const std::map<std::string, std::string> &attributes
