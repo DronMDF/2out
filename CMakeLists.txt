@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 ENABLE_TESTING()
 
-ADD_DEFINITIONS("-ggdb3 -O0 -std=c++14 -Wall -Wextra -Weffc++ -Werror")
+ADD_DEFINITIONS("-std=c++14 -Wall -Wextra -Weffc++ -Werror")
 INCLUDE_DIRECTORIES(include)
 
 ADD_SUBDIRECTORY(src)
