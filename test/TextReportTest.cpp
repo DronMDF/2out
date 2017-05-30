@@ -16,18 +16,23 @@ using namespace oout;
 
 class IsTextInReport final : public Assertion {
 public:
-	explicit IsTextInReport(const string &text, unique_ptr<const TextReport> report)
-		: text(text), report(move(report))
+	IsTextInReport(
+		const string &text,
+		unique_ptr<TextReport> report,
+		unique_ptr<const Result> result
+	) : text(text), report(move(report)), result(move(result))
 	{
 	}
 
 	bool valid() const override {
+		result->print(report.get());
 		return report->asString().find(text) != string::npos;
 	}
 
 private:
 	const string text;
-	const unique_ptr<const TextReport> report;
+	const unique_ptr<TextReport> report;
+	const unique_ptr<const Result> result;
 };
 
 TextReportTest::TextReportTest()
@@ -39,14 +44,13 @@ TextReportTest::TextReportTest()
 				"SUCCESS in report if tests success",
 				make_unique<const IsTextInReport>(
 					"SUCCESS",
-					make_unique<const TextReport>(
-						make_shared<const Result>(
-							"success",
-							map<string, string>{
-								make_pair("failures", "0")
-							},
-							list<shared_ptr<const Result>>{}
-						)
+					make_unique<TextReport>(),
+					make_unique<const Result>(
+						"SUCCESS",
+						map<string, string>{
+							make_pair("failures", "0")
+						},
+						list<shared_ptr<const Result>>{}
 					)
 				)
 			),
@@ -54,14 +58,13 @@ TextReportTest::TextReportTest()
 				"FAILURE in report if tests failure",
 				make_unique<const IsTextInReport>(
 					"FAILURE",
-					make_unique<const TextReport>(
-						make_shared<const Result>(
-							"failure",
-							map<string, string>{
-								make_pair("failures", "1")
-							},
-							list<shared_ptr<const Result>>{}
-						)
+					make_unique<TextReport>(),
+					make_unique<const Result>(
+						"FAILURE",
+						map<string, string>{
+							make_pair("failures", "1")
+						},
+						list<shared_ptr<const Result>>{}
 					)
 				)
 			)
