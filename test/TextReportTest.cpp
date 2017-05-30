@@ -6,7 +6,7 @@
 #include "TextReportTest.h"
 #include <list>
 #include <Assertion.h>
-#include <ResSimple.h>
+#include <Result.h>
 #include <TextReport.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
@@ -40,7 +40,13 @@ TextReportTest::TextReportTest()
 				make_unique<const IsTextInReport>(
 					"SUCCESS",
 					make_unique<const TextReport>(
-						make_shared<const ResSimple>(true)
+						make_shared<const Result>(
+							"success",
+							map<string, string>{
+								make_pair("failures", "0")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			),
@@ -49,7 +55,13 @@ TextReportTest::TextReportTest()
 				make_unique<const IsTextInReport>(
 					"FAILURE",
 					make_unique<const TextReport>(
-						make_shared<const ResSimple>(false)
+						make_shared<const Result>(
+							"failure",
+							map<string, string>{
+								make_pair("failures", "1")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			)

@@ -5,16 +5,29 @@
 
 #pragma once
 #include <cstddef>
+#include <list>
+#include <map>
+#include <memory>
+#include <string>
 
 namespace oout {
 
-// @todo #41:15min Result should be like a xml node.
-//  Should have immutable possibility for add attributes or subnodes.
-//  And printed out.
-class Result {
+class Result final {
 public:
-	virtual ~Result() = default;
-	virtual size_t failures() const = 0;
+	Result(
+		const std::string &tag,
+		const std::map<std::string, std::string> &attributes,
+		const std::list<std::shared_ptr<const Result>> &nodes
+	);
+
+	virtual size_t failures() const;
+
+	// @todo #43:15min Need to return tests (count of tests)
+	// @todo #43:15min Need to print values to media
+private:
+	const std::string tag;
+	const std::map<std::string, std::string> attributes;
+	const std::list<std::shared_ptr<const Result>> nodes;
 };
 
 }
