@@ -39,5 +39,5 @@ int main(int, char **)
 
 	cout << TextReport(result).asString() << endl;
 
-	return result->status() ? 0 : -1;
+	return result->failures();
 }

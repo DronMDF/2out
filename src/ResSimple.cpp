@@ -8,11 +8,11 @@
 using namespace oout;
 
 ResSimple::ResSimple(bool status)
-	: test_status(status)
+	: status(status)
 {
 }
 
-bool ResSimple::status() const
+size_t ResSimple::failures() const
 {
-	return test_status;
+	return status ? 0 : 1;
 }

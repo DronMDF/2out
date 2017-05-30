@@ -21,7 +21,7 @@ public:
 	}
 
 	bool valid() const override {
-		return test->result()->status();
+		return test->result()->failures() == 0;
 	}
 private:
 	const unique_ptr<const Test> test;
