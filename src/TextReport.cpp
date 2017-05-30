@@ -17,5 +17,5 @@ TextReport::TextReport(const shared_ptr<const Result> &result)
 
 string TextReport::asString() const
 {
-	return result->status() ? "SUCCESS" : "FAILURE";
+	return result->failures() == 0 ? "SUCCESS" : "FAILURE";
 }

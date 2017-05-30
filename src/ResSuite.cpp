@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <ResSuite.h>
+#include <numeric>
 
 using namespace std;
 using namespace oout;
@@ -13,13 +14,13 @@ ResSuite::ResSuite(const list<shared_ptr<const Result>> &results)
 {
 }
 
-bool ResSuite::status() const
+size_t ResSuite::failures() const
 {
-	for (const auto &r : results) {
-		if (!r->status()) {
-			return false;
-		}
-	}
-	return true;
+	return accumulate(
+		results.begin(),
+		results.end(),
+		0,
+		[](size_t v, const auto &t){ return v + t->failures(); }
+	);
 }
 

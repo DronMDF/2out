@@ -13,9 +13,9 @@ class ResSimple final : public Result {
 public:
 	// @todo #32:15min ResSimple should keep more parameters
 	explicit ResSimple(bool status);
-	bool status() const override;
+	size_t failures() const override;
 private:
-	bool test_status;
+	bool status;
 };
 
 }

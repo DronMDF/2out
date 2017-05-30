@@ -13,7 +13,7 @@ namespace oout {
 class ResSuite final : public Result {
 public:
 	explicit ResSuite(const std::list<std::shared_ptr<const Result>> &results);
-	bool status() const override;
+	size_t failures() const override;
 private:
 	const std::list<std::shared_ptr<const Result>> results;
 };
