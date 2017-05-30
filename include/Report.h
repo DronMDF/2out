@@ -9,6 +9,7 @@
 
 namespace oout {
 
+// @todo #46:15min Add RepJUnit for xml output
 class Report {
 public:
 	virtual ~Report() = default;
