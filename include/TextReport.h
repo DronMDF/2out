@@ -13,7 +13,6 @@ namespace oout {
 
 class Result;
 
-// @todo #46:15min Adopt output to gtest
 class TextReport final : public Report {
 public:
 	TextReport();
