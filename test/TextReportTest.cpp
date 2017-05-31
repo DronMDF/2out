@@ -71,7 +71,53 @@ TextReportTest::TextReportTest()
 						list<shared_ptr<const Result>>{}
 					)
 				)
-			)
+			),
+			make_shared<const TstSimple>(
+				"Report contain RUN of testcase",
+				make_unique<const IsTextInReport>(
+					"[ RUN      ] run test",
+					make_unique<TextReport>(),
+					// @todo #53:15min Add FakeResult for testing
+					make_unique<const Result>(
+						"testcase",
+						map<string, string>{
+							make_pair("name", "run test"),
+							make_pair("failures", "0")
+						},
+						list<shared_ptr<const Result>>{}
+					)
+				)
+			),
+			make_shared<const TstSimple>(
+				"Report contain OK of success testcase",
+				make_unique<const IsTextInReport>(
+					"[       OK ] ok test",
+					make_unique<TextReport>(),
+					make_unique<const Result>(
+						"testcase",
+						map<string, string>{
+							make_pair("name", "ok test"),
+							make_pair("failures", "0")
+						},
+						list<shared_ptr<const Result>>{}
+					)
+				)
+			),
+			make_shared<const TstSimple>(
+				"Report contain FAIL of failed testcase",
+				make_unique<const IsTextInReport>(
+					"[     FAIL ] fail test",
+					make_unique<TextReport>(),
+					make_unique<const Result>(
+						"testcase",
+						map<string, string>{
+							make_pair("name", "fail test"),
+							make_pair("failures", "1")
+						},
+						list<shared_ptr<const Result>>{}
+					)
+				)
+			),
 		}
 	)
 )

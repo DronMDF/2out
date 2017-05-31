@@ -11,6 +11,7 @@
 using namespace std;
 using namespace oout;
 
+// @todo #53:15min Add preamble and postscript for report
 TextReport::TextReport()
 	: text()
 {
@@ -18,11 +19,22 @@ TextReport::TextReport()
 
 void TextReport::begin(const string &tag, const map<string, string> &attributes)
 {
-	text << tag << ": ";
-	for (const auto &ap : attributes) {
-		text << ap.first << "='" << ap.second << "' ";
+	if (tag == "testcase") {
+		text << "[ RUN      ] " << attributes.at("name") << endl;
+		if (attributes.at("failures") == "0") {
+			text << "[       OK ] ";
+		} else {
+			text << "[     FAIL ] ";
+		}
+		text << attributes.at("name") << endl;
+	} else {
+		// @todo #53:15min gtest text format for "cases"
+		text << tag << ": ";
+		for (const auto &ap : attributes) {
+			text << ap.first << "='" << ap.second << "' ";
+		}
+		text << endl;
 	}
-	text << endl;
 }
 
 void TextReport::end(const std::string &)
