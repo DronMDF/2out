@@ -5,27 +5,19 @@
 
 #pragma once
 #include <memory>
-#include <sstream>
 #include <string>
-#include "Report.h"
 
 namespace oout {
 
 class Result;
 
-class TextReport final : public Report {
+class TextReport final {
 public:
-	TextReport();
-
-	void begin(
-		const std::string &tag,
-		const std::map<std::string, std::string> &attributes
-	) override;
-	void end(const std::string &tag) override;
+	explicit TextReport(const std::shared_ptr<const Result> &result);
 
 	std::string asString() const;
 private:
-	std::ostringstream text;
+	const std::shared_ptr<const Result> result;
 };
 
 }
