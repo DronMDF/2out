@@ -13,8 +13,14 @@
 using namespace std;
 using namespace oout;
 
+// @todo #57:15min TextReportStream is a bad name
 class TextReportStream final : public Report {
 public:
+	TextReportStream()
+		: text()
+	{
+	}
+
 	void preamble()
 	{
 		// @todo #57:15min Test counts show in preample
