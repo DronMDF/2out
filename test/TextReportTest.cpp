@@ -104,9 +104,9 @@ TextReportTest::TextReportTest()
 				)
 			),
 			make_shared<const TstSimple>(
-				"Report contain FAIL of failed testcase",
+				"Report contain FAILED of failed test",
 				make_unique<const IsTextInReport>(
-					"[     FAIL ] fail test",
+					"[  FAILED  ] fail test",
 					make_unique<TextReport>(),
 					make_unique<const Result>(
 						"testcase",

@@ -24,7 +24,7 @@ void TextReport::begin(const string &tag, const map<string, string> &attributes)
 		if (attributes.at("failures") == "0") {
 			text << "[       OK ] ";
 		} else {
-			text << "[     FAIL ] ";
+			text << "[  FAILED  ] ";
 		}
 		text << attributes.at("name") << endl;
 	} else {
