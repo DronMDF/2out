@@ -16,23 +16,18 @@ using namespace oout;
 
 class IsTextInReport final : public Assertion {
 public:
-	IsTextInReport(
-		const string &text,
-		unique_ptr<TextReport> report,
-		unique_ptr<const Result> result
-	) : text(text), report(move(report)), result(move(result))
+	IsTextInReport(const string &text, unique_ptr<TextReport> report)
+		: text(text), report(move(report))
 	{
 	}
 
 	bool valid() const override {
-		result->print(report.get());
 		return report->asString().find(text) != string::npos;
 	}
 
 private:
 	const string text;
 	const unique_ptr<TextReport> report;
-	const unique_ptr<const Result> result;
 };
 
 TextReportTest::TextReportTest()
@@ -46,13 +41,14 @@ TextReportTest::TextReportTest()
 				//  SUCCESS is a output test name, not a status
 				make_unique<const IsTextInReport>(
 					"SUCCESS",
-					make_unique<TextReport>(),
-					make_unique<const Result>(
-						"SUCCESS",
-						map<string, string>{
-							make_pair("failures", "0")
-						},
-						list<shared_ptr<const Result>>{}
+					make_unique<TextReport>(
+						make_unique<const Result>(
+							"SUCCESS",
+							map<string, string>{
+								make_pair("failures", "0")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			),
@@ -62,13 +58,14 @@ TextReportTest::TextReportTest()
 				//  FAILURE is a output test name, not a status
 				make_unique<const IsTextInReport>(
 					"FAILURE",
-					make_unique<TextReport>(),
-					make_unique<const Result>(
-						"FAILURE",
-						map<string, string>{
-							make_pair("failures", "1")
-						},
-						list<shared_ptr<const Result>>{}
+					make_unique<TextReport>(
+						make_unique<const Result>(
+							"FAILURE",
+							map<string, string>{
+								make_pair("failures", "1")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			),
@@ -76,15 +73,16 @@ TextReportTest::TextReportTest()
 				"Report contain RUN of testcase",
 				make_unique<const IsTextInReport>(
 					"[ RUN      ] run test",
-					make_unique<TextReport>(),
-					// @todo #53:15min Add FakeResult for testing
-					make_unique<const Result>(
-						"testcase",
-						map<string, string>{
-							make_pair("name", "run test"),
-							make_pair("failures", "0")
-						},
-						list<shared_ptr<const Result>>{}
+					make_unique<TextReport>(
+						// @todo #53:15min Add FakeResult for testing
+						make_unique<const Result>(
+							"testcase",
+							map<string, string>{
+								make_pair("name", "run test"),
+								make_pair("failures", "0")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			),
@@ -92,14 +90,15 @@ TextReportTest::TextReportTest()
 				"Report contain OK of success testcase",
 				make_unique<const IsTextInReport>(
 					"[       OK ] ok test",
-					make_unique<TextReport>(),
-					make_unique<const Result>(
-						"testcase",
-						map<string, string>{
-							make_pair("name", "ok test"),
-							make_pair("failures", "0")
-						},
-						list<shared_ptr<const Result>>{}
+					make_unique<TextReport>(
+						make_unique<const Result>(
+							"testcase",
+							map<string, string>{
+								make_pair("name", "ok test"),
+								make_pair("failures", "0")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			),
@@ -107,14 +106,31 @@ TextReportTest::TextReportTest()
 				"Report contain FAILED of failed test",
 				make_unique<const IsTextInReport>(
 					"[  FAILED  ] fail test",
-					make_unique<TextReport>(),
-					make_unique<const Result>(
-						"testcase",
-						map<string, string>{
-							make_pair("name", "fail test"),
-							make_pair("failures", "1")
-						},
-						list<shared_ptr<const Result>>{}
+					make_unique<TextReport>(
+						make_unique<const Result>(
+							"testcase",
+							map<string, string>{
+								make_pair("name", "fail test"),
+								make_pair("failures", "1")
+							},
+							list<shared_ptr<const Result>>{}
+						)
+					)
+				)
+			),
+			make_shared<const TstSimple>(
+				"Test should contain preamble",
+				make_unique<const IsTextInReport>(
+					"[==========] Running",
+					make_unique<TextReport>(
+						make_unique<const Result>(
+							"testcase",
+							map<string, string>{
+								make_pair("name", "fail test"),
+								make_pair("failures", "0")
+							},
+							list<shared_ptr<const Result>>{}
+						)
 					)
 				)
 			),

@@ -37,9 +37,7 @@ int main(int, char **)
 		}
 	).result();
 
-	TextReport report;
-	result->print(&report);
-	cout << report.asString() << endl;
+	cout << TextReport(result).asString() << endl;
 
 	return result->failures();
 }
