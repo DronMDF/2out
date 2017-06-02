@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <Result.h>
+#include <Format.h>
 #include <Report.h>
 
 using namespace std;
@@ -18,13 +19,26 @@ Result::Result(
 {
 }
 
-void Result::print(Report *report) const
+string Result::print(const Format &format) const
 {
-	report->begin(tag, attributes);
-	for (const auto &r : nodes) {
-		r->print(report);
+	// @todo #68:15min Use polymorphism instead if
+	if (tag == "testcase") {
+		return format.test(
+			attributes.at("name"),
+			attributes.at("failures") != "0",
+			0
+		);
 	}
-	report->end(tag);
+
+	if (tag == "testsuite") {
+		return format.suite(
+			attributes.at("name"),
+			0,
+			nodes
+		);
+	}
+
+	throw runtime_error("Wrong node type");
 }
 
 size_t Result::failures() const
