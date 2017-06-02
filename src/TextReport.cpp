@@ -21,7 +21,7 @@ public:
 	{
 	}
 
-	void preamble()
+	void prolog()
 	{
 		// @todo #57:15min Test counts show in preample
 		text << "[==========] Running" << endl;
@@ -50,7 +50,13 @@ public:
 	{
 	}
 
-	// @todo #57:15min format portscrips and status
+	void epilog()
+	{
+		// @todo #65:15min Count of tests
+		text << "[==========] tests run" << endl;
+		// @todo #65:15min status of test run
+	}
+
 	string asString() const
 	{
 		return text.str();
@@ -60,16 +66,20 @@ private:
 	ostringstream text;
 };
 
-
 TextReport::TextReport(const std::shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
+// @todo #65:15min Need to Introduce TextReportFormat as Visitor
+//  who help to transform report to string.
+//  (TextReportFormat has other method for different report type)
+//  Some technique used for test counting and failure counting.
 string TextReport::asString() const
 {
 	TextReportStream rep;
-	rep.preamble();
+	rep.prolog();
 	result->print(&rep);
+	rep.epilog();
 	return rep.asString();
 }
