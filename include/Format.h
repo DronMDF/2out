@@ -11,6 +11,8 @@ namespace oout {
 
 class Format {
 public:
+	virtual ~Format() = default;
+
 	virtual std::string test(
 		const std::string &name,
 		bool failure,
