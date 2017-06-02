@@ -29,7 +29,7 @@ public:
 	void print(Report *report) const;
 
 	// @todo #46:15min failures is outscope of result, extract to another class
-	virtual size_t failures() const;
+	size_t failures() const;
 
 	// @todo #43:15min Need to return tests (count of tests)
 	//  This is out of scope for Result, need to introduce another class
