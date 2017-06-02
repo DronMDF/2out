@@ -12,7 +12,7 @@
 
 namespace oout {
 
-class Report;
+class Format;
 
 // @todo #59:15min Result should be abstract interface
 //  case, suite should be separate class
@@ -24,9 +24,7 @@ public:
 		const std::list<std::shared_ptr<const Result>> &nodes
 	);
 
-	// @todo #59:15min Result::print should return string,
-	//  String formatted with Format strategy passed over args
-	void print(Report *report) const;
+	std::string print(const Format &format) const;
 
 	// @todo #46:15min failures is outscope of result, extract to another class
 	size_t failures() const;
