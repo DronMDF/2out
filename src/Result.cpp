@@ -21,7 +21,7 @@ Result::Result(
 
 string Result::print(const Format &format) const
 {
-	// @todo #??:15min Use polymorphism instead if
+	// @todo #68:15min Use polymorphism instead if
 	if (tag == "testcase") {
 		return format.test(
 			attributes.at("name"),
