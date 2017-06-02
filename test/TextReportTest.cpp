@@ -119,9 +119,25 @@ TextReportTest::TextReportTest()
 				)
 			),
 			make_shared<const TstSimple>(
-				"Test should contain preamble",
+				"Test should contain prolog",
 				make_unique<const IsTextInReport>(
 					"[==========] Running",
+					make_unique<TextReport>(
+						make_unique<const Result>(
+							"testcase",
+							map<string, string>{
+								make_pair("name", "fail test"),
+								make_pair("failures", "0")
+							},
+							list<shared_ptr<const Result>>{}
+						)
+					)
+				)
+			),
+			make_shared<const TstSimple>(
+				"Test should contain epilog",
+				make_unique<const IsTextInReport>(
+					"[==========] tests run",
 					make_unique<TextReport>(
 						make_unique<const Result>(
 							"testcase",
