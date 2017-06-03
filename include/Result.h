@@ -14,17 +14,23 @@ namespace oout {
 
 class Format;
 
-// @todo #59:15min Result should be abstract interface
-//  case, suite should be separate class
 class Result {
 public:
+	// @todo #70:15min Implement ResCase separately
+	// @todo #70:15min Implement ResSuite separately and live this class is abstract
+	Result()
+		: Result("none", {}, {})
+	{
+	}
+
 	Result(
 		const std::string &tag,
 		const std::map<std::string, std::string> &attributes,
 		const std::list<std::shared_ptr<const Result>> &nodes
 	);
+	virtual ~Result() = default;
 
-	std::string print(const Format &format) const;
+	virtual std::string print(const Format &format) const;
 
 	// @todo #46:15min failures is outscope of result, extract to another class
 	size_t failures() const;

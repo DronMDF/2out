@@ -6,6 +6,7 @@
 #include "TextReportTest.h"
 #include <list>
 #include <Assertion.h>
+#include <Format.h>
 #include <Result.h>
 #include <TextReport.h>
 #include <TstSimple.h>
@@ -34,32 +35,32 @@ class ResFailureCase final : public Result
 {
 public:
 	explicit ResFailureCase(const string &name)
-		: Result(
-			"testcase",
-			map<string, string>{
-				make_pair("name", name),
-				make_pair("failures", "1")
-			},
-			list<shared_ptr<const Result>>{}
-		)
+		: name(name)
 	{
 	}
+
+	string print(const Format &format) const override
+	{
+		return format.test(name, true, 0);
+	}
+private:
+	const string name;
 };
 
 class ResOkCase final : public Result
 {
 public:
 	explicit ResOkCase(const string &name)
-		: Result(
-			"testcase",
-			map<string, string>{
-				make_pair("name", name),
-				make_pair("failures", "0")
-			},
-			list<shared_ptr<const Result>>{}
-		)
+		: name(name)
 	{
 	}
+
+	string print(const Format &format) const override
+	{
+		return format.test(name, false, 0);
+	}
+private:
+	const string name;
 };
 
 TextReportTest::TextReportTest()
