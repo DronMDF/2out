@@ -16,7 +16,6 @@ class Format;
 
 class Result {
 public:
-	// @todo #70:15min Implement ResCase separately
 	// @todo #70:15min Implement ResSuite separately and live this class is abstract
 	Result()
 		: Result("none", {}, {})
@@ -33,7 +32,7 @@ public:
 	virtual std::string print(const Format &format) const;
 
 	// @todo #46:15min failures is outscope of result, extract to another class
-	size_t failures() const;
+	virtual size_t failures() const;
 
 	// @todo #43:15min Need to return tests (count of tests)
 	//  This is out of scope for Result, need to introduce another class

@@ -5,7 +5,7 @@
 
 #include <TstSimple.h>
 #include <Assertion.h>
-#include <Result.h>
+#include <ResSimple.h>
 
 using namespace std;
 using namespace oout;
@@ -17,12 +17,9 @@ TstSimple::TstSimple(const string &description, unique_ptr<const Assertion> asse
 
 shared_ptr<const Result> TstSimple::result() const
 {
-	return make_shared<const Result>(
-		"testcase",
-		map<string, string>{
-			make_pair("name", description),
-			make_pair("failures", assert->valid() ? "0" : "1")
-		},
-		list<shared_ptr<const Result>>{}
+	return make_shared<const ResSimple>(
+		description,
+		!assert->valid(),
+		0
 	);
 }
