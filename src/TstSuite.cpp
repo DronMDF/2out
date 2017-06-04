@@ -4,8 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <TstSuite.h>
-#include <numeric>
-#include <Result.h>
+#include <ResSuite.h>
 
 using namespace std;
 using namespace oout;
@@ -21,24 +20,5 @@ shared_ptr<const Result> TstSuite::result() const
 	for (const auto &c : cases) {
 		results.push_back(c->result());
 	}
-	return make_shared<Result>(
-		"testsuite",
-		map<string, string>{
-			make_pair("name", description),
-			make_pair(
-				"failures",
-				to_string(
-					accumulate(
-						results.begin(),
-						results.end(),
-						0,
-						[](size_t v, const auto &r){
-							return v + r->failures();
-						}
-					)
-				)
-			)
-		},
-		results
-	);
+	return make_shared<ResSuite>(description, 0, results);
 }
