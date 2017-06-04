@@ -11,27 +11,31 @@
 using namespace std;
 using namespace oout;
 
+// @todo #29:15min Count test with special representations
+//  number of tests used in some places of TextReport and FmtText
 class FmtText final : public Format {
 public:
-	string test(const string &name, bool failure, float /*time*/) const override
+	string test(const string &name, bool failure, float time) const override
 	{
 		ostringstream out;
 		out << "[ RUN      ] " << name << endl;
-		out << (failure ? "[  FAILED  ] " : "[       OK ] ") << name << endl;
+		out << (failure ? "[  FAILED  ] " : "[       OK ] ") << name;
+		out << " (" << int(time * 1000) << " ms)" << endl;
 		return out.str();
 	}
 
 	string suite(
-		const string &/*name*/,
-		float /*time*/,
+		const string &name,
+		float time,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
-		// @todo #53:15min gtest text format for "cases"
 		ostringstream out;
+		out << "[----------] 2 test from " << name << endl;
 		for (const auto &r : results) {
 			out << r->print(*this);
 		}
+		out << "[----------] 2 test from " << name << " (" << int(time * 1000) << " ms total)" << endl;
 		return out.str();
 	}
 };
