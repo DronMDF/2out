@@ -16,7 +16,6 @@ class Format;
 
 class Result {
 public:
-	// @todo #70:15min Implement ResSuite separately and live this class is abstract
 	Result()
 		: Result("none", {}, {})
 	{
@@ -37,6 +36,8 @@ public:
 	// @todo #43:15min Need to return tests (count of tests)
 	//  This is out of scope for Result, need to introduce another class
 private:
+	// @todo #73:15min Drop members and implementation.
+	//  Result should be pure abstract class
 	const std::string tag;
 	const std::map<std::string, std::string> attributes;
 	const std::list<std::shared_ptr<const Result>> nodes;
