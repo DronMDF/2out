@@ -5,6 +5,8 @@
 
 #pragma once
 #include "Result.h"
+#include <list>
+#include <memory>
 
 namespace oout {
 
