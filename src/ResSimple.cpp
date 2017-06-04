@@ -18,8 +18,3 @@ string ResSimple::print(const Format &format) const
 {
 	return format.test(name, failure, time);
 }
-
-size_t ResSimple::failures() const
-{
-	return failure ? 1 : 0;
-}

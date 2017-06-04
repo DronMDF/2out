@@ -19,17 +19,3 @@ string ResSuite::print(const Format &format) const
 {
 	return format.suite(name, time, results);
 }
-
-size_t ResSuite::failures() const
-{
-	// @todo #73:15min Count of failures be should calculated over Rep
-	return accumulate(
-		results.begin(),
-		results.end(),
-		0,
-		[](size_t v, const auto &r){
-			return v + r->failures();
-		}
-	);
-}
-

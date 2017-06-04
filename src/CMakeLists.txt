@@ -4,6 +4,7 @@ PROJECT(2out)
 
 ADD_LIBRARY(
 	2out
+	FailureCount.cpp
 	IsEqual.cpp
 	ResSimple.cpp
 	ResSuite.cpp

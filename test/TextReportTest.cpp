@@ -11,6 +11,7 @@
 #include <TextReport.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
+#include "ResFakes.h"
 
 using namespace std;
 using namespace oout;
@@ -29,48 +30,6 @@ public:
 private:
 	const string text;
 	const unique_ptr<const TextReport> report;
-};
-
-class ResFailureCase final : public Result
-{
-public:
-	explicit ResFailureCase(const string &name)
-		: name(name)
-	{
-	}
-
-	string print(const Format &format) const override
-	{
-		return format.test(name, true, 0);
-	}
-
-	size_t failures() const override
-	{
-		return 1;
-	}
-private:
-	const string name;
-};
-
-class ResOkCase final : public Result
-{
-public:
-	explicit ResOkCase(const string &name)
-		: name(name)
-	{
-	}
-
-	string print(const Format &format) const override
-	{
-		return format.test(name, false, 0);
-	}
-
-	size_t failures() const override
-	{
-		return 0;
-	}
-private:
-	const string name;
 };
 
 TextReportTest::TextReportTest()

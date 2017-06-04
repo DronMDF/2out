@@ -4,19 +4,20 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Result.h"
+#include <memory>
 
 namespace oout {
 
-class ResSimple final : public Result {
-public:
-	ResSimple(const std::string &name, bool failure, float time);
+class Result;
 
-	std::string print(const Format &format) const override;
+class FailureCount final {
+public:
+	explicit FailureCount(const std::shared_ptr<const Result> &result);
+
+	size_t count() const;
 private:
-	const std::string name;
-	bool failure;
-	float time;
+	const std::shared_ptr<const Result> result;
 };
 
 }
+
