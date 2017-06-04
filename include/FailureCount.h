@@ -4,20 +4,21 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <memory>
 #include <string>
 
 namespace oout {
 
-class Format;
+class Result;
 
-class Result {
+class FailureCount final {
 public:
-	virtual ~Result() = default;
+	explicit FailureCount(const std::shared_ptr<const Result> &result);
 
-	virtual std::string print(const Format &format) const = 0;
-
-	// @todo #43:15min Need to return tests (count of tests)
-	//  This is out of scope for Result, need to introduce another class
+	size_t count() const;
+private:
+	const std::shared_ptr<const Result> result;
 };
 
 }
+

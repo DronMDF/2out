@@ -4,6 +4,8 @@ PROJECT(test)
 
 ADD_EXECUTABLE(
 	test_runner
+	FailureCountTest.cpp
+	ResFakes.cpp
 	test.cpp
 	TextReportTest.cpp
 	TstSuiteTest.cpp

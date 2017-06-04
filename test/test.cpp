@@ -7,7 +7,9 @@
 #include <list>
 #include <memory>
 #include <2out.h>
+#include <FailureCount.h>
 #include <Result.h>
+#include "FailureCountTest.h"
 #include "TextReportTest.h"
 #include "TstSuiteTest.h"
 
@@ -32,6 +34,7 @@ int main(int, char **)
 					)
 				}
 			),
+			make_shared<const FailureCountTest>(),
 			make_shared<const TextReportTest>(),
 			make_shared<const TstSuiteTest>()
 		}
@@ -39,5 +42,5 @@ int main(int, char **)
 
 	cout << TextReport(result).asString() << endl;
 
-	return result->failures();
+	return FailureCount(result).count() == 0 ? 0 : -1;
 }

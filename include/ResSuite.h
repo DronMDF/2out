@@ -19,7 +19,6 @@ public:
 	);
 
 	std::string print(const Format &format) const override;
-	size_t failures() const override;
 private:
 	const std::string name;
 	float time;

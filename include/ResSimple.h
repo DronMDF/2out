@@ -13,7 +13,6 @@ public:
 	ResSimple(const std::string &name, bool failure, float time);
 
 	std::string print(const Format &format) const override;
-	size_t failures() const override;
 private:
 	const std::string name;
 	bool failure;
