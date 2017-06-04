@@ -5,7 +5,6 @@ PROJECT(2out)
 ADD_LIBRARY(
 	2out
 	IsEqual.cpp
-	Result.cpp
 	ResSimple.cpp
 	ResSuite.cpp
 	TextReport.cpp

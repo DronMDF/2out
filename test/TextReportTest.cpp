@@ -43,6 +43,11 @@ public:
 	{
 		return format.test(name, true, 0);
 	}
+
+	size_t failures() const override
+	{
+		return 1;
+	}
 private:
 	const string name;
 };
@@ -58,6 +63,11 @@ public:
 	string print(const Format &format) const override
 	{
 		return format.test(name, false, 0);
+	}
+
+	size_t failures() const override
+	{
+		return 0;
 	}
 private:
 	const string name;
