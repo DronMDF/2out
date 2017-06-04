@@ -7,7 +7,7 @@
 #include <list>
 #include <Assertion.h>
 #include <Format.h>
-#include <Result.h>
+#include <ResSuite.h>
 #include <TextReport.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
@@ -79,6 +79,22 @@ TextReportTest::TextReportTest()
 					"[==========] tests run",
 					make_unique<const TextReport>(
 						make_unique<const ResOkCase>("any")
+					)
+				)
+			),
+			make_shared<const TstSimple>(
+				"Test suite line show count of tests",
+				make_unique<const IsTextInReport>(
+					"[----------] 2 test from SUITE",
+					make_unique<const TextReport>(
+						make_unique<const ResSuite>(
+							"SUITE",
+							0,
+							list<shared_ptr<const Result>>{
+								make_shared<const ResOkCase>(),
+								make_shared<const ResOkCase>()
+							}
+						)
 					)
 				)
 			)
