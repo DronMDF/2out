@@ -8,6 +8,7 @@
 #include <memory>
 #include <2out.h>
 #include <FailureCount.h>
+#include <JUnitXmlReport.h>
 #include <Result.h>
 #include "FailureCountTest.h"
 #include "TestCountTest.h"
@@ -42,7 +43,7 @@ int main(int, char **)
 		}
 	).result();
 
-	cout << TextReport(result).asString() << endl;
+	cout << JUnitXmlReport(result).asString() << endl;
 
 	return FailureCount(result).count() == 0 ? 0 : -1;
 }
