@@ -5,14 +5,14 @@
 
 #include <TextReport.h>
 #include <sstream>
+#include <FailureCount.h>
 #include <Format.h>
 #include <Result.h>
+#include <TestCount.h>
 
 using namespace std;
 using namespace oout;
 
-// @todo #29:15min Count test with special representations
-//  number of tests used in some places of TextReport and FmtText
 class FmtText final : public Format {
 public:
 	string test(const string &name, bool failure, float time) const override
@@ -30,12 +30,14 @@ public:
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
+		const auto test_count = TestCount(results).count();
 		ostringstream out;
-		out << "[----------] 2 test from " << name << endl;
+		out << "[----------] " << test_count << " test from " << name << endl;
 		for (const auto &r : results) {
 			out << r->print(*this);
 		}
-		out << "[----------] 2 test from " << name << " (" << int(time * 1000) << " ms total)" << endl;
+		out << "[----------] " << test_count << " test from " << name
+			<< " (" << int(time * 1000) << " ms total)" << endl;
 		return out.str();
 	}
 };
@@ -47,10 +49,23 @@ TextReport::TextReport(const std::shared_ptr<const Result> &result)
 
 string TextReport::asString() const
 {
-	FmtText format;
+	const auto test_count = TestCount(result).count();
 	ostringstream out;
-	out << "[==========] Running" << endl;
+	// @todo #82:15min gtest count of test cases. Is it need for me?
+	out << "[==========] Running " << test_count << " tests" << endl;
+	FmtText format;
 	out << result->print(format);
-	out << "[==========] tests run" << endl;
+	// @todo #82:15min gtest show total seconds.
+	//  I have root suite, and this value show on inner level
+	out << "[==========] " << test_count << " tests ran." << endl;
+
+	const auto failure_count = FailureCount(result).count();
+	out << "[  PASSED  ] " << test_count - failure_count << " test." << endl;
+	if (failure_count > 0) {
+		out << "[  FAILED  ] " << failure_count << " test." << endl;
+		// @todo #82:15min gtest show list of failure tests.
+		//  I can do this with special formatter
+		out << failure_count << " FAILED TEST" << endl;
+	}
 	return out.str();
 }

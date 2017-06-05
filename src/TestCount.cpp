@@ -6,6 +6,7 @@
 #include <TestCount.h>
 #include <numeric>
 #include <Format.h>
+#include <ResSuite.h>
 #include <Result.h>
 
 using namespace std;
@@ -35,7 +36,12 @@ public:
 	}
 };
 
-TestCount::TestCount(const std::shared_ptr<const Result> &result)
+TestCount::TestCount(const list<shared_ptr<const Result>> &results)
+	: TestCount(make_shared<const ResSuite>("", 0, results))
+{
+}
+
+TestCount::TestCount(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }
@@ -45,4 +51,3 @@ size_t TestCount::count() const
 	FmtTests format;
 	return result->print(format).size();
 }
-

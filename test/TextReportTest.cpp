@@ -76,7 +76,7 @@ TextReportTest::TextReportTest()
 			make_shared<const TstSimple>(
 				"Test should contain epilog",
 				make_unique<const IsTextInReport>(
-					"[==========] tests run",
+					"[==========] 1 tests ran",
 					make_unique<const TextReport>(
 						make_unique<const ResOkCase>("any")
 					)
