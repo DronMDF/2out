@@ -6,6 +6,7 @@ ADD_LIBRARY(
 	2out
 	FailureCount.cpp
 	IsEqual.cpp
+	JUnitXmlReport.cpp
 	ResSimple.cpp
 	ResSuite.cpp
 	TestCount.cpp

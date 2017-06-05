@@ -6,6 +6,7 @@
 #include <FailureCount.h>
 #include <numeric>
 #include <Format.h>
+#include <ResSuite.h>
 #include <Result.h>
 
 using namespace std;
@@ -35,7 +36,12 @@ public:
 	}
 };
 
-FailureCount::FailureCount(const std::shared_ptr<const Result> &result)
+FailureCount::FailureCount(const list<shared_ptr<const Result>> &results)
+	: FailureCount(make_shared<ResSuite>("", 0, results))
+{
+}
+
+FailureCount::FailureCount(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }

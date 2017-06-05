@@ -4,22 +4,19 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <list>
 #include <memory>
+#include <string>
 
 namespace oout {
 
 class Result;
 
-class FailureCount final {
+class JUnitXmlReport final {
 public:
-	explicit FailureCount(const std::list<std::shared_ptr<const Result>> &results);
-	explicit FailureCount(const std::shared_ptr<const Result> &result);
-
-	size_t count() const;
+	explicit JUnitXmlReport(const std::shared_ptr<const Result> &result);
+	std::string asString() const;
 private:
 	const std::shared_ptr<const Result> result;
 };
 
 }
-
