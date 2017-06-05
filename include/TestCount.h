@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <list>
 #include <memory>
 
 namespace oout {
@@ -12,6 +13,7 @@ class Result;
 
 class TestCount final {
 public:
+	explicit TestCount(const std::list<std::shared_ptr<const Result>> &results);
 	explicit TestCount(const std::shared_ptr<const Result> &result);
 
 	size_t count() const;
