@@ -3,13 +3,20 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
+#pragma once
 #include <memory>
-#include <Test.h>
 
-class FailureCountTest final : public oout::Test {
+namespace oout {
+
+class Result;
+
+class TestCount final {
 public:
-	FailureCountTest();
-	std::shared_ptr<const oout::Result> result() const override;
+	explicit TestCount(const std::shared_ptr<const Result> &result);
+
+	size_t count() const;
 private:
-	const std::unique_ptr<const oout::Test> tests;
+	const std::shared_ptr<const Result> result;
 };
+
+}

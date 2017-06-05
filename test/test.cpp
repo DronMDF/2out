@@ -10,6 +10,7 @@
 #include <FailureCount.h>
 #include <Result.h>
 #include "FailureCountTest.h"
+#include "TestCountTest.h"
 #include "TextReportTest.h"
 #include "TstSuiteTest.h"
 
@@ -35,6 +36,7 @@ int main(int, char **)
 				}
 			),
 			make_shared<const FailureCountTest>(),
+			make_shared<const TestCountTest>(),
 			make_shared<const TextReportTest>(),
 			make_shared<const TstSuiteTest>()
 		}

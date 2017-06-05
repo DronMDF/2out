@@ -7,6 +7,7 @@ ADD_EXECUTABLE(
 	FailureCountTest.cpp
 	ResFakes.cpp
 	test.cpp
+	TestCountTest.cpp
 	TextReportTest.cpp
 	TstSuiteTest.cpp
 )
