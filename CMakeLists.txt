@@ -1,4 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+
 ENABLE_TESTING()
 
 ADD_DEFINITIONS("-std=c++14 -Wall -Wextra -Weffc++ -Werror")
