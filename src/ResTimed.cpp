@@ -9,8 +9,8 @@
 using namespace std;
 using namespace oout;
 
-ResTimed::ResTimed(const shared_ptr<const Result> &result, float time)
-	: result(result), time(time)
+ResTimed::ResTimed(const shared_ptr<const Result> &result, float)
+	: result(result)
 {
 }
 
