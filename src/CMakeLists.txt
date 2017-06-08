@@ -9,8 +9,10 @@ ADD_LIBRARY(
 	JUnitXmlReport.cpp
 	ResSimple.cpp
 	ResSuite.cpp
+	ResTimed.cpp
 	TestCount.cpp
 	TextReport.cpp
 	TstSimple.cpp
 	TstSuite.cpp
+	TstTimed.cpp
 )
