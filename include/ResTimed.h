@@ -16,6 +16,7 @@ public:
 	std::string print(const Format &format) const override;
 private:
 	const std::shared_ptr<const Result> result;
+	const float time;
 };
 
 }
