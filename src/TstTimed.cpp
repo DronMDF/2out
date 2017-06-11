@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <TstTimed.h>
+#include <chrono>
 #include <ResTimed.h>
 
 using namespace std;
@@ -16,9 +17,12 @@ TstTimed::TstTimed(const shared_ptr<const Test> &test)
 
 shared_ptr<const Result> TstTimed::result() const
 {
-	// @todo #94:15min Meansure execution time and pass into ResTimed
+	const auto begin = chrono::high_resolution_clock::now();
+	const auto result = test->result();
+	const auto end = chrono::high_resolution_clock::now();
+
 	return make_shared<const ResTimed>(
-		test->result(),
-		0
+		result,
+		chrono::duration_cast<chrono::duration<float>>(end - begin).count()
 	);
 }
