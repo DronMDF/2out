@@ -10,15 +10,12 @@ namespace oout {
 
 class ResSimple final : public Result {
 public:
-	// @todo #94:15min Arg time is not need in ResSimple
-	//  ResSimple can always pass 0 to Format
-	ResSimple(const std::string &name, bool failure, float time);
+	ResSimple(const std::string &name, bool failure);
 
 	std::string print(const Format &format) const override;
 private:
 	const std::string name;
 	bool failure;
-	float time;
 };
 
 }

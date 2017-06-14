@@ -14,14 +14,12 @@ class ResSuite final : public Result {
 public:
 	ResSuite(
 		const std::string &name,
-		float time,
 		const std::list<std::shared_ptr<const Result>> &results
 	);
 
 	std::string print(const Format &format) const override;
 private:
 	const std::string name;
-	float time;
 	const std::list<std::shared_ptr<const Result>> results;
 };
 

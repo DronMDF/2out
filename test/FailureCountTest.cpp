@@ -41,7 +41,6 @@ FailureCountTest::FailureCountTest()
 					1,
 					make_unique<const ResSuite>(
 						"One of Three is failed",
-						0,
 						list<shared_ptr<const Result>>{
 							make_unique<const ResOkCase>(),
 							make_unique<const ResFailureCase>(),

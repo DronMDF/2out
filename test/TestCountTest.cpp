@@ -43,7 +43,6 @@ TestCountTest::TestCountTest()
 					3,
 					make_unique<const ResSuite>(
 						"Three tests",
-						0,
 						list<shared_ptr<const Result>>{
 							make_unique<const ResOkCase>(),
 							make_unique<const ResOkCase>(),

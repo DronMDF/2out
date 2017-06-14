@@ -9,12 +9,12 @@
 using namespace std;
 using namespace oout;
 
-ResSimple::ResSimple(const string &name, bool failure, float time)
-	: name(name), failure(failure), time(time)
+ResSimple::ResSimple(const string &name, bool failure)
+	: name(name), failure(failure)
 {
 }
 
 string ResSimple::print(const Format &format) const
 {
-	return format.test(name, failure, time);
+	return format.test(name, failure, 0);
 }
