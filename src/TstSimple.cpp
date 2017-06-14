@@ -19,7 +19,6 @@ shared_ptr<const Result> TstSimple::result() const
 {
 	return make_shared<const ResSimple>(
 		description,
-		!assert->valid(),
-		0
+		!assert->valid()
 	);
 }

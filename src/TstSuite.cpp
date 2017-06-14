@@ -21,5 +21,5 @@ shared_ptr<const Result> TstSuite::result() const
 	for (const auto &c : cases) {
 		results.push_back(TstTimed(c).result());
 	}
-	return make_shared<ResSuite>(description, 0, results);
+	return make_shared<ResSuite>(description, results);
 }

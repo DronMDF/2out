@@ -37,7 +37,7 @@ public:
 };
 
 TestCount::TestCount(const list<shared_ptr<const Result>> &results)
-	: TestCount(make_shared<const ResSuite>("", 0, results))
+	: TestCount(make_shared<const ResSuite>("", results))
 {
 }
 
