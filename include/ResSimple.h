@@ -10,6 +10,7 @@ namespace oout {
 
 class ResSimple final : public Result {
 public:
+	// @todo #103:15min Instead of failure ResSimple should gave Result of test evaluation.
 	ResSimple(const std::string &name, bool failure);
 
 	std::string print(const Format &format) const override;

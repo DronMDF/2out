@@ -13,6 +13,8 @@ class Format {
 public:
 	virtual ~Format() = default;
 
+	// @todo #103:15min Format should have special method for assertion
+
 	virtual std::string test(
 		const std::string &name,
 		bool failure,
