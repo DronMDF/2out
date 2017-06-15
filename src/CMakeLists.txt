@@ -4,6 +4,7 @@ PROJECT(2out)
 
 ADD_LIBRARY(
 	2out
+	AssertionResult.cpp
 	FailureCount.cpp
 	IsEqual.cpp
 	JUnitXmlReport.cpp

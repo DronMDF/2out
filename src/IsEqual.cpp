@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <IsEqual.h>
+#include <AssertionResult.h>
 
 using namespace oout;
 
@@ -12,7 +13,7 @@ IsEqual::IsEqual(int a, int b)
 {
 }
 
-bool IsEqual::valid() const
+AssertionResult IsEqual::check() const
 {
-	return a == b;
+	return AssertionResult(a == b);
 }

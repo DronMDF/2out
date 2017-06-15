@@ -7,12 +7,14 @@
 
 namespace oout {
 
-class AssertionResult;
-
-class Assertion {
+// @todo #103:15min AssertionResult should be printed
+//  It visualize as failures or success details
+class AssertionResult final {
 public:
-	virtual ~Assertion() = default;
-	virtual AssertionResult check() const = 0;
+	explicit AssertionResult(bool success);
+	operator bool() const;
+private:
+	bool success;
 };
 
 }

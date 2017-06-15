@@ -3,16 +3,16 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#pragma once
+#include <AssertionResult.h>
 
-namespace oout {
+using namespace oout;
 
-class AssertionResult;
+AssertionResult::AssertionResult(bool success)
+	: success(success)
+{
+}
 
-class Assertion {
-public:
-	virtual ~Assertion() = default;
-	virtual AssertionResult check() const = 0;
-};
-
+AssertionResult::operator bool() const
+{
+	return success;
 }

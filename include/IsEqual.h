@@ -13,8 +13,7 @@ namespace oout {
 class IsEqual final : public Assertion {
 public:
 	IsEqual(int a, int b);
-	bool valid() const override;
-
+	AssertionResult check() const override;
 private:
 	int a;
 	int b;

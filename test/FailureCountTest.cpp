@@ -5,6 +5,7 @@
 
 #include "FailureCountTest.h"
 #include <Assertion.h>
+#include <AssertionResult.h>
 #include <FailureCount.h>
 #include <ResSuite.h>
 #include <TstSimple.h>
@@ -21,8 +22,8 @@ public:
 	{
 	}
 
-	bool valid() const override {
-		return FailureCount(result).count() == count;
+	AssertionResult check() const override {
+		return AssertionResult(FailureCount(result).count() == count);
 	}
 
 private:
