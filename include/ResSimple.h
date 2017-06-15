@@ -5,18 +5,18 @@
 
 #pragma once
 #include "Result.h"
+#include "AssertionResult.h"
 
 namespace oout {
 
 class ResSimple final : public Result {
 public:
-	// @todo #103:15min Instead of failure ResSimple should gave Result of test evaluation.
-	ResSimple(const std::string &name, bool failure);
+	ResSimple(const std::string &name, const AssertionResult &result);
 
 	std::string print(const Format &format) const override;
 private:
 	const std::string name;
-	bool failure;
+	const AssertionResult result;
 };
 
 }

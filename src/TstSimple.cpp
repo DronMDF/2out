@@ -22,6 +22,6 @@ shared_ptr<const Result> TstSimple::result() const
 	//  error is assertion fail, failure - is illegal exit
 	return make_shared<const ResSimple>(
 		description,
-		!assert->check()
+		assert->check()
 	);
 }
