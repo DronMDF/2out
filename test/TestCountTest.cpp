@@ -5,6 +5,7 @@
 
 #include "TestCountTest.h"
 #include <Assertion.h>
+#include <AssertionResult.h>
 #include <TestCount.h>
 #include <ResSuite.h>
 #include <TstSimple.h>
@@ -23,8 +24,8 @@ public:
 	{
 	}
 
-	bool valid() const override {
-		return TestCount(result).count() == count;
+	AssertionResult check() const override {
+		return AssertionResult(TestCount(result).count() == count);
 	}
 
 private:

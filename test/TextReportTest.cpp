@@ -6,6 +6,7 @@
 #include "TextReportTest.h"
 #include <list>
 #include <Assertion.h>
+#include <AssertionResult.h>
 #include <Format.h>
 #include <ResSuite.h>
 #include <TextReport.h>
@@ -23,8 +24,8 @@ public:
 	{
 	}
 
-	bool valid() const override {
-		return report->asString().find(text) != string::npos;
+	AssertionResult check() const override {
+		return AssertionResult(report->asString().find(text) != string::npos);
 	}
 
 private:

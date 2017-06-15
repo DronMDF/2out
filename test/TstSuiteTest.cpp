@@ -5,6 +5,7 @@
 
 #include "TstSuiteTest.h"
 #include <Assertion.h>
+#include <AssertionResult.h>
 #include <FailureCount.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
@@ -21,8 +22,8 @@ public:
 	{
 	}
 
-	bool valid() const override {
-		return FailureCount(test->result()).count() == 0;
+	AssertionResult check() const override {
+		return AssertionResult(FailureCount(test->result()).count() == 0);
 	}
 private:
 	const unique_ptr<const Test> test;
