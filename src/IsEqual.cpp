@@ -4,8 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <IsEqual.h>
+#include <memory>
 #include <AssertionResult.h>
 
+using namespace std;
 using namespace oout;
 
 IsEqual::IsEqual(int a, int b)
@@ -13,7 +15,7 @@ IsEqual::IsEqual(int a, int b)
 {
 }
 
-AssertionResult IsEqual::check() const
+shared_ptr<const AssertionResult> IsEqual::check() const
 {
-	return AssertionResult(a == b);
+	return make_shared<AssertionResult>(a == b);
 }

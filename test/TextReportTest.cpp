@@ -24,8 +24,8 @@ public:
 	{
 	}
 
-	AssertionResult check() const override {
-		return AssertionResult(report->asString().find(text) != string::npos);
+	shared_ptr<const AssertionResult> check() const override {
+		return make_shared<AssertionResult>(report->asString().find(text) != string::npos);
 	}
 
 private:

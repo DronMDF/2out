@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <memory>
 #include "Result.h"
 #include "AssertionResult.h"
 
@@ -11,12 +12,12 @@ namespace oout {
 
 class ResSimple final : public Result {
 public:
-	ResSimple(const std::string &name, const AssertionResult &result);
+	ResSimple(const std::string &name, const std::shared_ptr<const AssertionResult> &result);
 
 	std::string print(const Format &format) const override;
 private:
 	const std::string name;
-	const AssertionResult result;
+	const std::shared_ptr<const AssertionResult> result;
 };
 
 }
