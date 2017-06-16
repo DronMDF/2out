@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <memory>
 
 namespace oout {
 
@@ -12,7 +13,7 @@ class AssertionResult;
 class Assertion {
 public:
 	virtual ~Assertion() = default;
-	virtual AssertionResult check() const = 0;
+	virtual std::shared_ptr<const AssertionResult> check() const = 0;
 };
 
 }

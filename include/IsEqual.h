@@ -13,7 +13,7 @@ namespace oout {
 class IsEqual final : public Assertion {
 public:
 	IsEqual(int a, int b);
-	AssertionResult check() const override;
+	std::shared_ptr<const AssertionResult> check() const override;
 private:
 	int a;
 	int b;

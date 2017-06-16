@@ -22,8 +22,8 @@ public:
 	{
 	}
 
-	AssertionResult check() const override {
-		return AssertionResult(FailureCount(result).count() == count);
+	shared_ptr<const AssertionResult> check() const override {
+		return make_shared<AssertionResult>(FailureCount(result).count() == count);
 	}
 
 private:
