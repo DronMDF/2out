@@ -4,14 +4,14 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <Success.h>
+#include <Format.h>
 
 using namespace std;
 using namespace oout;
 
-string Success::print(const Format &) const
+string Success::print(const Format &format) const
 {
-	// @todo #109:15min Invoke Format From Success::print
-	return {};
+	return format.success({});
 }
 
 Success::operator bool() const

@@ -14,6 +14,11 @@ using namespace oout;
 
 class FmtFailures final : public Format {
 public:
+	string success(const string &) const override
+	{
+		return {};
+	}
+
 	string test(const string &, bool failure, float) const override
 	{
 		return failure ? "F" : "";
