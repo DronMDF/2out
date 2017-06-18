@@ -6,6 +6,7 @@
 #include <TstSimple.h>
 #include <Assertion.h>
 #include <AssertionResult.h>
+#include <Error.h>
 #include <ResSimple.h>
 
 using namespace std;
@@ -18,10 +19,14 @@ TstSimple::TstSimple(const string &description, unique_ptr<const Assertion> asse
 
 shared_ptr<const Result> TstSimple::result() const
 {
-	// @todo #103:15min Need to separate errro/failure result
-	//  error is assertion fail, failure - is illegal exit
+	shared_ptr<const AssertionResult> assertion_result;
+	try {
+		assertion_result = assert->check();
+	} catch (const exception &e) {
+		assertion_result = make_shared<Error>(e.what());
+	}
 	return make_shared<const ResSimple>(
 		description,
-		assert->check()
+		assertion_result
 	);
 }
