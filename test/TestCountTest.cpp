@@ -5,9 +5,10 @@
 
 #include "TestCountTest.h"
 #include <Assertion.h>
-#include <AssertionResult.h>
-#include <TestCount.h>
+#include <Failure.h>
 #include <ResSuite.h>
+#include <Success.h>
+#include <TestCount.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
 #include "ResFakes.h"
@@ -25,7 +26,15 @@ public:
 	}
 
 	shared_ptr<const AssertionResult> check() const override {
-		return make_shared<AssertionResult>(TestCount(result).count() == count);
+		// @todo: #111:15min name conflict class va method result
+		//  may be class result is not concrete?
+		shared_ptr<const AssertionResult> res;
+		if (TestCount(result).count() == count) {
+			res = make_shared<Success>();
+		} else {
+			res = make_shared<Failure>();
+		}
+		return res;
 	}
 
 private:
