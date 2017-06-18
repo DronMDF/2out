@@ -5,7 +5,8 @@
 
 #include <IsEqual.h>
 #include <memory>
-#include <AssertionResult.h>
+#include <Failure.h>
+#include <Success.h>
 
 using namespace std;
 using namespace oout;
@@ -17,5 +18,11 @@ IsEqual::IsEqual(int a, int b)
 
 shared_ptr<const AssertionResult> IsEqual::check() const
 {
-	return make_shared<AssertionResult>(a == b);
+	shared_ptr<const AssertionResult> result;
+	if (a == b) {
+		result = make_shared<Success>();
+	} else {
+		result = make_shared<Failure>();
+	}
+	return result;
 }

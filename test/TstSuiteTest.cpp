@@ -5,11 +5,12 @@
 
 #include "TstSuiteTest.h"
 #include <Assertion.h>
-#include <AssertionResult.h>
 #include <FailureCount.h>
+#include <Failure.h>
+#include <Result.h>
+#include <Success.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
-#include <Result.h>
 
 using namespace std;
 using namespace oout;
@@ -23,7 +24,13 @@ public:
 	}
 
 	shared_ptr<const AssertionResult> check() const override {
-		return make_shared<AssertionResult>(FailureCount(test->result()).count() == 0);
+		shared_ptr<const AssertionResult> result;
+		if (FailureCount(test->result()).count() == 0) {
+			result = make_shared<Success>();
+		} else {
+			result = make_shared<Failure>();
+		}
+		return result;
 	}
 private:
 	const unique_ptr<const Test> test;

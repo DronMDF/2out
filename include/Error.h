@@ -4,15 +4,17 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include "AssertionResult.h"
 
 namespace oout {
 
-// @todo #103:15min AssertionResult should be printed
-//  It visualize as failures or success details
-class AssertionResult {
+// @todo #111:15min Error should incapsulate error text
+class Error final : public AssertionResult {
 public:
-	virtual ~AssertionResult() = default;
-	virtual operator bool() const = 0;
+	operator bool() const override {
+		return false;
+	}
 };
 
 }
+

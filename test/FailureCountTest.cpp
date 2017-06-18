@@ -5,11 +5,12 @@
 
 #include "FailureCountTest.h"
 #include <Assertion.h>
-#include <AssertionResult.h>
 #include <FailureCount.h>
 #include <ResSuite.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
+#include <Failure.h>
+#include <Success.h>
 #include "ResFakes.h"
 
 using namespace std;
@@ -23,7 +24,15 @@ public:
 	}
 
 	shared_ptr<const AssertionResult> check() const override {
-		return make_shared<AssertionResult>(FailureCount(result).count() == count);
+		// @todo #111:15min Name conflice class vs methos result.
+		//  class result should be more concrete.
+		shared_ptr<const AssertionResult> res;
+		if (FailureCount(result).count() == count) {
+			res = make_shared<Success>();
+		} else {
+			res = make_shared<Failure>();
+		}
+		return res;
 	}
 
 private:

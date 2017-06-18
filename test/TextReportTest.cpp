@@ -6,9 +6,10 @@
 #include "TextReportTest.h"
 #include <list>
 #include <Assertion.h>
-#include <AssertionResult.h>
+#include <Failure.h>
 #include <Format.h>
 #include <ResSuite.h>
+#include <Success.h>
 #include <TextReport.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
@@ -25,7 +26,13 @@ public:
 	}
 
 	shared_ptr<const AssertionResult> check() const override {
-		return make_shared<AssertionResult>(report->asString().find(text) != string::npos);
+		shared_ptr<const AssertionResult> result;
+		if (report->asString().find(text) != string::npos) {
+			result = make_shared<Success>();
+		} else {
+			result = make_shared<Failure>();
+		}
+		return result;
 	}
 
 private:
