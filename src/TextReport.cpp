@@ -15,6 +15,12 @@ using namespace oout;
 
 class FmtText final : public Format {
 public:
+	string success(const string &) const override
+	{
+		// @todo #121:15min OK string should be visualized here.
+		return {};
+	}
+
 	string test(const string &name, bool failure, float time) const override
 	{
 		ostringstream out;
