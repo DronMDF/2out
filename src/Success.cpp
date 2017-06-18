@@ -3,22 +3,18 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <Error.h>
+#include <Success.h>
 
 using namespace std;
 using namespace oout;
 
-Error::Error(const string &)
+string Success::print(const Format &) const
 {
-}
-
-string Error::print(const Format &) const
-{
-	// @todo #109:15min Invoke Format From Error::print
+	// @todo #109:15min Invoke Format From Success::print
 	return {};
 }
 
-Error::operator bool() const
+Success::operator bool() const
 {
-	return false;
+	return true;
 }
