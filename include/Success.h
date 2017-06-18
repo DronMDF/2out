@@ -11,9 +11,8 @@ namespace oout {
 // @todo #111:15min Success should incapsulate text
 class Success final : public AssertionResult {
 public:
-	operator bool() const override {
-		return true;
-	}
+	std::string print(const Format &format) const override;
+	operator bool() const override;
 };
 
 }
