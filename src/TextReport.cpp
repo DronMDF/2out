@@ -16,16 +16,18 @@ using namespace oout;
 
 class FmtText final : public Format {
 public:
-	string success(const string &) const override
+	string success(const string &text) const override
 	{
-		// @todo #121:15min OK string should be visualized here.
-		return {};
+		ostringstream out;
+		out << text << endl << "[       OK ] ";
+		return out.str();
 	}
 
-	string failure(const string &) const override
+	string failure(const string &text) const override
 	{
-		// @todo #122:15min FAILED string should be visualized here.
-		return {};
+		ostringstream out;
+		out << text << endl << "[  FAILED  ] ";
+		return out.str();
 	}
 
 	string error(const string &) const override
@@ -42,9 +44,9 @@ public:
 	) const override
 	{
 		ostringstream out;
-		out << "[ RUN      ] " << name << endl;
-		out << (!*assertion_result ? "[  FAILED  ] " : "[       OK ] ") << name;
-		out << " (" << int(time * 1000) << " ms)" << endl;
+		out << "[ RUN      ] " << name << endl
+			<< assertion_result->print(*this) << name
+			<< " (" << int(time * 1000) << " ms)" << endl;
 		return out.str();
 	}
 
