@@ -26,6 +26,12 @@ public:
 		return {};
 	}
 
+	string error(const string &) const override
+	{
+		// @todo #123:15min <error> tag shoul be visualized here
+		return {};
+	}
+
 	string test(const string &name, bool failure, float time) const override
 	{
 		ostringstream out;
