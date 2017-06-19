@@ -21,10 +21,11 @@ public:
 		return {};
 	}
 
-	string failure(const string &) const override
+	string failure(const string &text) const override
 	{
-		// @todo #122:15min <failure> tag shoul be visualized here
-		return {};
+		ostringstream out;
+		out << "<failure>" << text << "</failure>" << endl;
+		return out.str();
 	}
 
 	string error(const string &) const override
@@ -42,9 +43,9 @@ public:
 		ostringstream out;
 		out << "<testcase "
 			<< "name='" << name << "' "
-			<< "status='" << (!*assertion_result ? "fail" : "ok") << "' "
-			<< "time='" << time << "'/>"
-			<< endl;
+			<< "time='" << time << "'>" << endl
+			<< assertion_result->print(*this)
+			<< "</testcase>" << endl;
 		return out.str();
 	}
 
