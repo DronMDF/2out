@@ -22,6 +22,11 @@ public:
 		return format->success(text);
 	}
 
+	string failure(const string &text) const override
+	{
+		return format->failure(text);
+	}
+
 	string test(const string &name, bool failure, float) const override
 	{
 		return format->test(name, failure, time);

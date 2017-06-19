@@ -19,6 +19,11 @@ public:
 		return {};
 	}
 
+	string failure(const string &) const override
+	{
+		return {};
+	}
+
 	string test(const string &, bool, float) const override
 	{
 		return "T";

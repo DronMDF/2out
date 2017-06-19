@@ -19,6 +19,12 @@ public:
 		return {};
 	}
 
+	string failure(const string &) const override
+	{
+		// @todo #122:15min Failures should be gather here
+		return {};
+	}
+
 	string test(const string &, bool failure, float) const override
 	{
 		return failure ? "F" : "";

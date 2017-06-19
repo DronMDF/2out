@@ -21,6 +21,12 @@ public:
 		return {};
 	}
 
+	string failure(const string &) const override
+	{
+		// @todo #122:15min FAILED string should be visualized here.
+		return {};
+	}
+
 	string test(const string &name, bool failure, float time) const override
 	{
 		ostringstream out;
