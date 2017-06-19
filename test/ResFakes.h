@@ -6,6 +6,14 @@
 #pragma once
 #include <Result.h>
 
+class ResOkCase final : public oout::Result {
+public:
+	explicit ResOkCase(const std::string &name = "");
+	std::string print(const oout::Format &format) const override;
+private:
+	const std::string name;
+};
+
 class ResFailureCase final : public oout::Result {
 public:
 	explicit ResFailureCase(const std::string &name = "");
@@ -14,10 +22,11 @@ private:
 	const std::string name;
 };
 
-class ResOkCase final : public oout::Result {
+class ResErrorCase final : public oout::Result {
 public:
-	explicit ResOkCase(const std::string &name = "");
+	explicit ResErrorCase(const std::string &name = "");
 	std::string print(const oout::Format &format) const override;
 private:
 	const std::string name;
 };
+

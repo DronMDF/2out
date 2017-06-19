@@ -14,6 +14,7 @@
 #include "TestCountTest.h"
 #include "TextReportTest.h"
 #include "TstSuiteTest.h"
+#include "JUnitXmlReportTest.h"
 
 using namespace std;
 using namespace oout;
@@ -37,6 +38,7 @@ int main(int, char **)
 				}
 			),
 			make_shared<const FailureCountTest>(),
+			make_shared<const JUnitXmlReportTest>(),
 			make_shared<const TestCountTest>(),
 			make_shared<const TextReportTest>(),
 			make_shared<const TstSuiteTest>()

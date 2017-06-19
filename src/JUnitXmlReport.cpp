@@ -28,10 +28,11 @@ public:
 		return out.str();
 	}
 
-	string error(const string &) const override
+	string error(const string &text) const override
 	{
-		// @todo #123:15min <error> tag shoul be visualized here
-		return {};
+		ostringstream out;
+		out << "<error>" << text << "</error>" << endl;
+		return out.str();
 	}
 
 	string test(
