@@ -29,7 +29,7 @@ public:
 		return {};
 	}
 
-	string test(const string &, bool, float) const override
+	string test(const string &, const shared_ptr<const AssertionResult> &, float) const override
 	{
 		return "T";
 	}

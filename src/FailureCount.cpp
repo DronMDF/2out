@@ -5,6 +5,7 @@
 
 #include <FailureCount.h>
 #include <numeric>
+#include <AssertionResult.h>
 #include <Format.h>
 #include <ResSuite.h>
 #include <Result.h>
@@ -31,9 +32,13 @@ public:
 		return {};
 	}
 
-	string test(const string &, bool failure, float) const override
+	string test(
+		const string &,
+		const shared_ptr<const AssertionResult> &assertion_result,
+		float
+	) const override
 	{
-		return failure ? "F" : "";
+		return !*assertion_result ? "F" : "";
 	}
 
 	string suite(
