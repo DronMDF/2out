@@ -5,9 +5,10 @@ PROJECT(test)
 ADD_EXECUTABLE(
 	test_runner
 	FailureCountTest.cpp
+	JUnitXmlReportTest.cpp
 	ResFakes.cpp
-	test.cpp
 	TestCountTest.cpp
+	test.cpp
 	TextReportTest.cpp
 	TstSuiteTest.cpp
 )
