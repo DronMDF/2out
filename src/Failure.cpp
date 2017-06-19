@@ -4,14 +4,14 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <Failure.h>
+#include <Format.h>
 
 using namespace std;
 using namespace oout;
 
-string Failure::print(const Format &) const
+string Failure::print(const Format &format) const
 {
-	// @todo #109:15min Invoke Format From Failure::print
-	return {};
+	return format.failure({});
 }
 
 Failure::operator bool() const

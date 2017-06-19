@@ -17,7 +17,12 @@ class FmtJunitXml final : public Format {
 public:
 	string success(const string &) const override
 	{
-		// @todo #121:15min status attribute value should be visualized here
+		return {};
+	}
+
+	string failure(const string &) const override
+	{
+		// @todo #122:15min <failure> tag shoul be visualized here
 		return {};
 	}
 

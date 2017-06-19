@@ -17,6 +17,7 @@ public:
 
 	// @todo #103:15min Format should have special method for assertion
 	virtual std::string success(const std::string &text) const = 0;
+	virtual std::string failure(const std::string &text) const = 0;
 
 	// @todo #121:15min Instead failure should be AssertionResult ptr
 	//  and test result visualized over assertion result
