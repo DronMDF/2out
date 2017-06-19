@@ -22,8 +22,7 @@ public:
 
 	string failure(const string &) const override
 	{
-		// @todo #122:15min Failures should be gather here
-		return {};
+		return "F";
 	}
 
 	string error(const string &) const override
@@ -38,7 +37,7 @@ public:
 		float
 	) const override
 	{
-		return !*assertion_result ? "F" : "";
+		return assertion_result->print(*this);
 	}
 
 	string suite(
