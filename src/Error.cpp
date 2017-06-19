@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <Error.h>
+#include <Format.h>
 
 using namespace std;
 using namespace oout;
@@ -12,10 +13,9 @@ Error::Error(const string &)
 {
 }
 
-string Error::print(const Format &) const
+string Error::print(const Format &format) const
 {
-	// @todo #109:15min Invoke Format From Error::print
-	return {};
+	return format.error({});
 }
 
 Error::operator bool() const

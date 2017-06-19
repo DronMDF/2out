@@ -25,6 +25,12 @@ public:
 		return {};
 	}
 
+	string error(const string &) const override
+	{
+		// @todo #123:15min ErrorCount should gather information over this point
+		return {};
+	}
+
 	string test(const string &, bool failure, float) const override
 	{
 		return failure ? "F" : "";
