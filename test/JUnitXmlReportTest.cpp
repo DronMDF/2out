@@ -14,6 +14,7 @@
 #include <Success.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
+#include <TstTemplate.h>
 
 using namespace std;
 using namespace oout;
@@ -42,6 +43,30 @@ private:
 	const unique_ptr<const JUnitXmlReport> report;
 };
 
+class IsTextContain final {
+public:
+	explicit IsTextContain(const string &text)
+		: text(text)
+	{
+	}
+
+	template<typename O>
+	shared_ptr<const AssertionResult> check(const shared_ptr<const O> &object) const {
+		shared_ptr<const AssertionResult> result;
+		// @todo #101:15min asString is not abstract,
+		//  need to find more abrtrace methos to stringize object (ostream?)
+		if (object->asString().find(text) != string::npos) {
+			result = make_shared<Success>();
+		} else {
+			result = make_shared<Failure>();
+		}
+		return result;
+	}
+
+private:
+	const string text;
+};
+
 JUnitXmlReportTest::JUnitXmlReportTest()
 : tests(
 	make_unique<const TstSuite>(
@@ -55,6 +80,13 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 						make_unique<ResErrorCase>()
 					)
 				)
+			),
+			make_shared<TstTemplate<JUnitXmlReport, IsTextContain>>(
+				"Report contain error end tag",
+				make_unique<JUnitXmlReport>(
+					make_unique<ResErrorCase>()
+				),
+				make_unique<IsTextContain>("</error>")
 			)
 		}
 	)
