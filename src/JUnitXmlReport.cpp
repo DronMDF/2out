@@ -5,6 +5,7 @@
 
 #include <JUnitXmlReport.h>
 #include <sstream>
+#include <AssertionResult.h>
 #include <FailureCount.h>
 #include <Format.h>
 #include <Result.h>
@@ -32,12 +33,16 @@ public:
 		return {};
 	}
 
-	string test(const string &name, bool failure, float time) const override
+	string test(
+		const string &name,
+		const shared_ptr<const AssertionResult> &assertion_result,
+		float time
+	) const override
 	{
 		ostringstream out;
 		out << "<testcase "
 			<< "name='" << name << "' "
-			<< "status='" << (failure ? "fail" : "ok") << "' "
+			<< "status='" << (!*assertion_result ? "fail" : "ok") << "' "
 			<< "time='" << time << "'/>"
 			<< endl;
 		return out.str();

@@ -16,5 +16,5 @@ ResSimple::ResSimple(const string &name, const shared_ptr<const AssertionResult>
 
 string ResSimple::print(const Format &format) const
 {
-	return format.test(name, !*result, 0);
+	return format.test(name, result, 0);
 }

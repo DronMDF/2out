@@ -4,7 +4,9 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "ResFakes.h"
+#include <Failure.h>
 #include <Format.h>
+#include <Success.h>
 
 using namespace std;
 using namespace oout;
@@ -16,7 +18,7 @@ ResFailureCase::ResFailureCase(const string &name)
 
 string ResFailureCase::print(const Format &format) const
 {
-	return format.test(name, true, 0);
+	return format.test(name, make_shared<Failure>(), 0);
 }
 
 ResOkCase::ResOkCase(const string &name)
@@ -26,5 +28,5 @@ ResOkCase::ResOkCase(const string &name)
 
 string ResOkCase::print(const Format &format) const
 {
-	return format.test(name, false, 0);
+	return format.test(name, make_shared<Success>(), 0);
 }

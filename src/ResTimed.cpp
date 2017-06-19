@@ -32,9 +32,12 @@ public:
 		return format->error(text);
 	}
 
-	string test(const string &name, bool failure, float) const override
+	string test(const string &name,
+		const shared_ptr<const AssertionResult> &assertion_result,
+		float
+	) const override
 	{
-		return format->test(name, failure, time);
+		return format->test(name, assertion_result, time);
 	}
 
 	string suite(

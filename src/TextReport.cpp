@@ -5,6 +5,7 @@
 
 #include <TextReport.h>
 #include <sstream>
+#include <AssertionResult.h>
 #include <FailureCount.h>
 #include <Format.h>
 #include <Result.h>
@@ -34,11 +35,15 @@ public:
 		return {};
 	}
 
-	string test(const string &name, bool failure, float time) const override
+	string test(
+		const string &name,
+		const shared_ptr<const AssertionResult> &assertion_result,
+		float time
+	) const override
 	{
 		ostringstream out;
 		out << "[ RUN      ] " << name << endl;
-		out << (failure ? "[  FAILED  ] " : "[       OK ] ") << name;
+		out << (!*assertion_result ? "[  FAILED  ] " : "[       OK ] ") << name;
 		out << " (" << int(time * 1000) << " ms)" << endl;
 		return out.str();
 	}

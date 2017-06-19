@@ -10,6 +10,7 @@
 namespace oout {
 
 class Result;
+class AssertionResult;
 
 class Format {
 public:
@@ -19,11 +20,9 @@ public:
 	virtual std::string failure(const std::string &text) const = 0;
 	virtual std::string error(const std::string &text) const = 0;
 
-	// @todo #121:15min Instead failure should be AssertionResult ptr
-	//  and test result visualized over assertion result
 	virtual std::string test(
 		const std::string &name,
-		bool failure,
+		const std::shared_ptr<const AssertionResult> &assertion_result,
 		float time
 	) const = 0;
 
