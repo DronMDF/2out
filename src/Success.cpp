@@ -9,9 +9,14 @@
 using namespace std;
 using namespace oout;
 
+Success::Success(const string &text)
+	: text(text)
+{
+}
+
 string Success::print(const Format &format) const
 {
-	return format.success({});
+	return format.success(text);
 }
 
 Success::operator bool() const
