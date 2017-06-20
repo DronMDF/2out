@@ -14,9 +14,6 @@ class AssertionResult {
 public:
 	virtual ~AssertionResult() = default;
 	virtual std::string print(const Format &format) const = 0;
-	// @todo #116:15min Remove operator bool from AssertionResult
-	//  It is not need.
-	virtual operator bool() const = 0;
 };
 
 }

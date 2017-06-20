@@ -18,8 +18,3 @@ string Error::print(const Format &format) const
 {
 	return format.error(text);
 }
-
-Error::operator bool() const
-{
-	return false;
-}

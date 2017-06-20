@@ -12,7 +12,6 @@ class Success final : public AssertionResult {
 public:
 	explicit Success(const std::string &text = {});
 	std::string print(const Format &format) const override;
-	operator bool() const override;
 private:
 	const std::string text;
 };
