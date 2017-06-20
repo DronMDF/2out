@@ -9,12 +9,13 @@
 
 namespace oout {
 
-// @todo #111:15min Error should incapsulate error text
 class Error final : public AssertionResult {
 public:
-	explicit Error(const std::string &text);
+	explicit Error(const std::string &text = {});
 	std::string print(const Format &format) const override;
 	operator bool() const override;
+private:
+	const std::string text;
 };
 
 }

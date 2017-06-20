@@ -9,13 +9,14 @@
 using namespace std;
 using namespace oout;
 
-Error::Error(const string &)
+Error::Error(const string &text)
+	: text(text)
 {
 }
 
 string Error::print(const Format &format) const
 {
-	return format.error({});
+	return format.error(text);
 }
 
 Error::operator bool() const
