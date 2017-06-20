@@ -18,8 +18,3 @@ string Success::print(const Format &format) const
 {
 	return format.success(text);
 }
-
-Success::operator bool() const
-{
-	return true;
-}
