@@ -9,9 +9,14 @@
 using namespace std;
 using namespace oout;
 
+Failure::Failure(const string &text)
+	: text(text)
+{
+}
+
 string Failure::print(const Format &format) const
 {
-	return format.failure({});
+	return format.failure(text);
 }
 
 Failure::operator bool() const
