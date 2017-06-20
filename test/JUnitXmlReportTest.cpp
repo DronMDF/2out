@@ -53,8 +53,6 @@ public:
 	template<typename O>
 	shared_ptr<const AssertionResult> check(const shared_ptr<const O> &object) const {
 		shared_ptr<const AssertionResult> result;
-		// @todo #101:15min asString is not abstract,
-		//  need to find more abrtrace methos to stringize object (ostream?)
 		if (object->asString().find(text) != string::npos) {
 			result = make_shared<Success>();
 		} else {
