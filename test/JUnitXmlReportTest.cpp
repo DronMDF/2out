@@ -9,12 +9,13 @@
 #include <Failure.h>
 #include <Format.h>
 #include <JUnitXmlReport.h>
-#include "ResFakes.h"
 #include <ResSuite.h>
+#include <StringRepr.h>
 #include <Success.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
 #include <TstTemplate.h>
+#include "ResFakes.h"
 
 using namespace std;
 using namespace oout;
@@ -63,16 +64,6 @@ public:
 
 private:
 	const string text;
-};
-
-// @todo #143:15min StringRepr is very common interface, can be used in other tests.
-//  For code sharing Test classes in primary ctor get StringRepr pointer.
-//  Secondary stor can translate to repr string (special StringRepr).
-//  Other object can be wrapped by StringRepr over ostream...
-class StringRepr {
-public:
-	virtual ~StringRepr() = default;
-	virtual string asString() const = 0;
 };
 
 class ReportAsString final : public StringRepr {
