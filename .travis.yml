@@ -4,4 +4,16 @@ compiler:
     - clang
     - gcc
 
-script: cmake
+addons:
+    apt:
+        packages:
+            - cppcheck
+
+before_script:
+    - gem install pdd
+    - ./style.sh
+
+script:
+    - cmake .
+    - make VERBOSE=1
+    - make test
