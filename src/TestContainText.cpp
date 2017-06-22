@@ -4,6 +4,8 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <TestContainText.h>
+#include <algorithm>
+#include <sstream>
 #include <AssertionResult.h>
 #include <Failure.h>
 #include <ResSimple.h>
@@ -27,6 +29,21 @@ shared_ptr<const Result> TestContainText::result() const
 	} else {
 		assertion_result = make_shared<Failure>();
 	}
-	// @todo #152:15min Need to generate auto name for test.
-	return make_shared<const ResSimple>("", assertion_result);
+
+	// @todo #159:15min Convert object text to name part - this is common operation.
+	//  Need to extract this entity. Special object should produce short and nice pard of text.
+	ostringstream name_stream;
+	name_stream << text << " in " << repr->asString().substr(0, 16);
+
+	// @todo #159:15min Filtering of name actual only for special representations
+	//  like an xml or json...
+	const auto raw_name = name_stream.str();
+	string name;
+	remove_copy_if(raw_name.begin(), raw_name.end(), back_inserter(name),
+		[](const string::value_type &c){
+			return string("<>'").find(c) != string::npos;
+		}
+	);
+
+	return make_shared<const ResSimple>(name, assertion_result);
 };
