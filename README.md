@@ -6,6 +6,12 @@ Object oriented unit testing framework
 [![PDD status](http://www.0pdd.com/svg?name=DronMDF/2out)](http://www.0pdd.com/p?name=DronMDF/2out)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/DronMDF/2out/blob/master/LICENSE)
 
+# Intro
+
+The test framework does not should be easy to use.
+The test framework should help to do everything right.
+And after that it should be easy to use. :)
+
 # Concept
 
 This is a pseudocode (i think this is a eolang :))
@@ -13,57 +19,30 @@ This is a pseudocode (i think this is a eolang :))
 ```
 object TestApp as Application:
 	void run():
-		TstSuite:
-			"main",
-			TstSimple:
-				"2*2 should be equal 4",
-				IsEqual:
+		TestSuite:
+			TestEqual:
+				mul: 2, 2
+				4
+			TestSkipped:
+				TestEqual:
 					mul: 2, 2
+					5
+			TestNamed:
+				"3 * 3 should be equal 9"
+				TestEqual:
+					mul: 3, 3
+					9
+			TestSuite:
+				TestEqual:
+					plus: 2, 2
 					4
-			TstSkipped:
-				"Temporary off, failed",
-				TstSimple:
-					"2*2 should be equal 5",
-					IsEqual:
-						mul: 2, 2
-						5
-			TstSuite:
-				"plus",
-				TstSimple:
-					"2+2 should be equal 4",
-					IsEqual:
-						plus: 2, 2
-						4
-				TstSimple:
-					"3+3 should be equal 6",
-					IsEqual:
-						plus: 3, 3
-						6
+				TestSafe:
+					TestEqual:
+						div: 1, 0
+						100500
 		.run()
 ```
 
-Key moment - Assertion (IsEqual) this is an object.
-Each test should have only one assertion. We throw out code and describe all tests over Object composition.
-This helped to avoid the problem of lost tests. Test invocation is a Test text itself.
-
-# Dictionary
-
-## Test
-
-This is a test.
-TstSimple, TstSuite, TstSkipped - is an object of Test type.
-
-## Assertion
-
-Test framework has a standard set of asserions (IsEqual, In, Except, etc...)
-You can add your own assertions.
-This is the only time when we write something for testing.
-Assertion shoud be lazy Objects.
-All args of assertion should be lazy too.
-
-# Questions
-
-1. Describe all tests in one place - is bad. But if you describe the tests elsewhere, the problem of lost sets is possible.
-1. Test shuffling is hard...
-1. Need to thinking about different format of report.
-1. Test naming and filtering... May be test should have 3 parameters? name, description and assertion?
+Key moment: This is not a code. This is Object composition.
+At the time the composition is created, the tests do not start.
+Tests start in `run()` method.
