@@ -4,14 +4,7 @@ compiler:
     - clang
     - gcc
 
-addons:
-    apt:
-        packages:
-            - cppcheck
-
-before_script:
-    - gem install pdd
-    - ./style.sh
+# @todo #167:15min Add style check in travis.ci
 
 script:
     - cmake .
