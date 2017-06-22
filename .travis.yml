@@ -1,0 +1,33 @@
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env:
+        - MATRIX_EVAL="CXX=g++-5"
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.6
+          packages:
+            - clang-3.6
+      env:
+        - MATRIX_EVAL="CXX=clang++-3.6"
+
+before_install:
+  - eval "${MATRIX_EVAL}"
+
+# @todo #167:15min Add style check in travis.ci
+
+script:
+  - cmake .
+  - make VERBOSE=1
+  - make test
