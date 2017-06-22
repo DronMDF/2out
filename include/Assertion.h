@@ -10,6 +10,7 @@ namespace oout {
 
 class AssertionResult;
 
+// @todo #152:15min Term Assertion is obsolete.
 class Assertion {
 public:
 	virtual ~Assertion() = default;

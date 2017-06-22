@@ -13,6 +13,7 @@ ADD_LIBRARY(
 	ResSuite.cpp
 	ResTimed.cpp
 	Success.cpp
+	TestContainText.cpp
 	TestCount.cpp
 	TextReport.cpp
 	TstSimple.cpp

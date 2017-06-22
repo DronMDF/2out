@@ -12,6 +12,7 @@
 #include <ResSuite.h>
 #include <StringRepr.h>
 #include <Success.h>
+#include <TestContainText.h>
 #include <TstSimple.h>
 #include <TstSuite.h>
 #include <TstTemplate.h>
@@ -81,34 +82,6 @@ private:
 	const shared_ptr<const JUnitXmlReport> report;
 };
 
-// @todo #143:15min Everythings is test. Assertion is not need.
-//  This test can give any input parameters by wrapping it in StringRepr...
-class IsContainText final : public Test {
-public:
-	IsContainText(const shared_ptr<const StringRepr> &object, const string &text)
-		: object(object), text(text)
-	{
-	}
-
-	shared_ptr<const Result> result() const override {
-		shared_ptr<const AssertionResult> assertion_result;
-		try {
-			if (object->asString().find(text) != string::npos) {
-				assertion_result = make_shared<Success>();
-			} else {
-				assertion_result = make_shared<Failure>();
-			}
-		} catch (const exception &e) {
-			assertion_result = make_shared<Error>(e.what());
-		}
-		return make_shared<const ResSimple>("", assertion_result);
-	}
-
-private:
-	const shared_ptr<const StringRepr> object;
-	const string text;
-};
-
 JUnitXmlReportTest::JUnitXmlReportTest()
 : tests(
 	make_unique<const TstSuite>(
@@ -130,7 +103,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				),
 				make_unique<IsTextContain>("</error>")
 			),
-			make_shared<IsContainText>(
+			make_shared<TestContainText>(
 				make_shared<ReportAsString>(
 					make_unique<JUnitXmlReport>(
 						make_unique<ResFailureCase>()

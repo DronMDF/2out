@@ -11,6 +11,8 @@ namespace oout {
 
 class Result;
 
+// @todo #152:15min TestCount is name, conflicted with Test* implementations.
+//  This representation should be name like CountOfTests..
 class TestCount final {
 public:
 	explicit TestCount(const std::list<std::shared_ptr<const Result>> &results);

@@ -10,6 +10,7 @@ namespace oout {
 
 class Format;
 
+// @todo #152:15min Term AssertionResult is obsolete.
 class AssertionResult {
 public:
 	virtual ~AssertionResult() = default;
