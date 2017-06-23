@@ -15,7 +15,7 @@ class Result;
 class JUnitXmlReport final : public StringRepr {
 public:
 	explicit JUnitXmlReport(const std::shared_ptr<const Result> &result);
-	std::string asString() const;
+	std::string asString() const override;
 private:
 	const std::shared_ptr<const Result> result;
 };

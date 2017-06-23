@@ -11,6 +11,8 @@
 
 namespace oout {
 
+// @todo #173:15min Remove description from TstSuite
+// @todo #173:15min Rename TstSuite to TestSuite
 class TstSuite final : public Test {
 public:
 	TstSuite(
