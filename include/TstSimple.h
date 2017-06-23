@@ -12,6 +12,7 @@ namespace oout {
 
 class Assertion;
 
+// @todo #173:15min TstSimple is obsolete
 class TstSimple final : public Test {
 public:
 	TstSimple(const std::string &description, std::unique_ptr<const Assertion> assert);

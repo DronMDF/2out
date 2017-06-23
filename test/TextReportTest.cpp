@@ -5,106 +5,61 @@
 
 #include "TextReportTest.h"
 #include <list>
-#include <Assertion.h>
-#include <Failure.h>
-#include <Format.h>
 #include <ResSuite.h>
-#include <Success.h>
+#include <TestContainText.h>
 #include <TextReport.h>
-#include <TstSimple.h>
 #include <TstSuite.h>
 #include "ResFakes.h"
 
 using namespace std;
 using namespace oout;
 
-// @todo #141:15min Use TestContainText instead IsTextReport
-class IsTextInReport final : public Assertion {
-public:
-	IsTextInReport(const string &text, unique_ptr<const TextReport> report)
-		: text(text), report(move(report))
-	{
-	}
-
-	shared_ptr<const AssertionResult> check() const override {
-		shared_ptr<const AssertionResult> result;
-		if (report->asString().find(text) != string::npos) {
-			result = make_shared<Success>();
-		} else {
-			result = make_shared<Failure>();
-		}
-		return result;
-	}
-
-private:
-	const string text;
-	const unique_ptr<const TextReport> report;
-};
-
 TextReportTest::TextReportTest()
 : tests(
 	make_unique<const TstSuite>(
 		"TextReportTest",
 		list<shared_ptr<const Test>>{
-			make_shared<const TstSimple>(
-				"Report contain RUN of testcase",
-				make_unique<const IsTextInReport>(
-					"[ RUN      ] run test",
-					make_unique<const TextReport>(
-						make_unique<const ResFailureCase>("run test")
-					)
-				)
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResFailureCase>("run test")
+				),
+				"[ RUN      ] run test"
 			),
-			make_shared<const TstSimple>(
-				"Report contain OK of success testcase",
-				make_unique<const IsTextInReport>(
-					"[       OK ] ok test",
-					make_unique<const TextReport>(
-						make_unique<const ResOkCase>("ok test")
-					)
-				)
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResOkCase>("ok test")
+				),
+				"[       OK ] ok test"
 			),
-			make_shared<const TstSimple>(
-				"Report contain FAILED of failed test",
-				make_unique<const IsTextInReport>(
-					"[  FAILED  ] fail test",
-					make_unique<const TextReport>(
-						make_unique<const ResFailureCase>("fail test")
-					)
-				)
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResFailureCase>("fail test")
+				),
+				"[  FAILED  ] fail test"
 			),
-			make_shared<const TstSimple>(
-				"Test should contain prolog",
-				make_unique<const IsTextInReport>(
-					"[==========] Running",
-					make_unique<const TextReport>(
-						make_unique<const ResOkCase>("any")
-					)
-				)
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResOkCase>()
+				),
+				"[==========] Running"
 			),
-			make_shared<const TstSimple>(
-				"Test should contain epilog",
-				make_unique<const IsTextInReport>(
-					"[==========] 1 tests ran",
-					make_unique<const TextReport>(
-						make_unique<const ResOkCase>("any")
-					)
-				)
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResOkCase>()
+				),
+				"[==========] 1 tests ran"
 			),
-			make_shared<const TstSimple>(
-				"Test suite line show count of tests",
-				make_unique<const IsTextInReport>(
-					"[----------] 2 test from SUITE",
-					make_unique<const TextReport>(
-						make_unique<const ResSuite>(
-							"SUITE",
-							list<shared_ptr<const Result>>{
-								make_shared<const ResOkCase>(),
-								make_shared<const ResOkCase>()
-							}
-						)
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResSuite>(
+						"SUITE",
+						list<shared_ptr<const Result>>{
+							make_shared<ResOkCase>(),
+							make_shared<ResOkCase>()
+						}
 					)
-				)
+				),
+				"[----------] 2 test from SUITE"
 			)
 		}
 	)

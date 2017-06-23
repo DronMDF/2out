@@ -6,16 +6,16 @@
 #pragma once
 #include <memory>
 #include <string>
+#include "StringRepr.h"
 
 namespace oout {
 
 class Result;
 
-class TextReport final {
+class TextReport final : public StringRepr {
 public:
 	explicit TextReport(const std::shared_ptr<const Result> &result);
-
-	std::string asString() const;
+	std::string asString() const override;
 private:
 	const std::shared_ptr<const Result> result;
 };
