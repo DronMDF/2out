@@ -18,6 +18,7 @@
 using namespace std;
 using namespace oout;
 
+// @todo #141:15min Use TestContainText instead IsTextReport
 class IsTextInReport final : public Assertion {
 public:
 	IsTextInReport(const string &text, unique_ptr<const TextReport> report)
