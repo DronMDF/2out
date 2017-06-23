@@ -37,6 +37,12 @@ public:
 	{
 	}
 
+	template<typename B>
+	TestEqual(const std::shared_ptr<const StringRepr> &a, const B &b)
+		: a(a), b(std::make_shared<AnyRepr<B>>(b))
+	{
+	}
+
 	TestEqual(
 		const std::shared_ptr<const StringRepr> &a,
 		const std::shared_ptr<const StringRepr> &b

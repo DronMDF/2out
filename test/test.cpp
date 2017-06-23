@@ -6,11 +6,11 @@
 #include <iostream>
 #include <list>
 #include <memory>
-#include <2out.h>
 #include <FailureCount.h>
 #include <JUnitXmlReport.h>
 #include <Result.h>
 #include <TestEqual.h>
+#include <TstSuite.h>
 #include "FailureCountTest.h"
 #include "TestCountTest.h"
 #include "TextReportTest.h"
