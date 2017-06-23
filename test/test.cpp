@@ -10,6 +10,7 @@
 #include <FailureCount.h>
 #include <JUnitXmlReport.h>
 #include <Result.h>
+#include <TestEqual.h>
 #include "FailureCountTest.h"
 #include "TestCountTest.h"
 #include "TextReportTest.h"
@@ -24,17 +25,11 @@ int main(int, char **)
 	const auto result = TstSuite(
 		"Example suite",
 		list<shared_ptr<const Test>>{
-			make_shared<const TstSimple>(
-				"2 * 2 should be equal 4",
-				make_unique<const IsEqual>(2 * 2, 4)
-			),
+			make_shared<TestEqual>(2 * 2, 4),
 			make_shared<const TstSuite>(
 				"Sub Suite",
 				list<shared_ptr<const Test>>{
-					make_shared<const TstSimple>(
-						"2 + 2 should be equal 4",
-						make_unique<const IsEqual>(2 + 2, 4)
-					)
+					make_shared<TestEqual>(2 + 2, 4)
 				}
 			),
 			make_shared<const FailureCountTest>(),
