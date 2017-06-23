@@ -46,4 +46,4 @@ shared_ptr<const Result> TestContainText::result() const
 	);
 
 	return make_shared<const ResSimple>(name, assertion_result);
-};
+}

@@ -7,7 +7,6 @@ ADD_LIBRARY(
 	Error.cpp
 	FailureCount.cpp
 	Failure.cpp
-	IsEqual.cpp
 	JUnitXmlReport.cpp
 	ResSimple.cpp
 	ResSuite.cpp
@@ -15,6 +14,7 @@ ADD_LIBRARY(
 	Success.cpp
 	TestContainText.cpp
 	TestCount.cpp
+	TestEqual.cpp
 	TextReport.cpp
 	TstSimple.cpp
 	TstSuite.cpp
