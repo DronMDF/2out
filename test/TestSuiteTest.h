@@ -6,10 +6,10 @@
 #include <memory>
 #include <Test.h>
 
-class TstSuiteTest final : public oout::Test
+class TestSuiteTest final : public oout::Test
 {
 public:
-	TstSuiteTest();
+	TestSuiteTest();
 	std::shared_ptr<const oout::Result> result() const override;
 
 private:

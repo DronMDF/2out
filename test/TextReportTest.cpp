@@ -8,7 +8,7 @@
 #include <ResSuite.h>
 #include <TestContainText.h>
 #include <TextReport.h>
-#include <TstSuite.h>
+#include <TestSuite.h>
 #include "ResFakes.h"
 
 using namespace std;
@@ -16,7 +16,7 @@ using namespace oout;
 
 TextReportTest::TextReportTest()
 : tests(
-	make_unique<const TstSuite>(
+	make_unique<const TestSuite>(
 		"TextReportTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestContainText>(
