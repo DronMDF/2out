@@ -38,7 +38,7 @@ TstSuiteTest::TstSuiteTest()
 						list<shared_ptr<const Test>>{}
 					)
 				),
-				string("success")
+				"success"
 			)
 		}
 	))

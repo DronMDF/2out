@@ -50,7 +50,7 @@ TestCountTest::TestCountTest()
 						}
 					)
 				),
-				3
+				"3"
 			)
 		}
 	)

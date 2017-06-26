@@ -50,7 +50,7 @@ FailureCountTest::FailureCountTest()
 						}
 					)
 				),
-				1
+				"1"
 			)
 		}
 	)
