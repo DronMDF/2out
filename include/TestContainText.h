@@ -4,18 +4,18 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "StringRepr.h"
+#include "Representation.h"
 #include "Test.h"
 
 namespace oout {
 
 class TestContainText final : public Test {
 public:
-	TestContainText(const std::shared_ptr<const StringRepr> &repr, const std::string &text);
+	TestContainText(const std::shared_ptr<const Representation> &repr, const std::string &text);
 
 	std::shared_ptr<const Result> result() const override;
 private:
-	const std::shared_ptr<const StringRepr> repr;
+	const std::shared_ptr<const Representation> repr;
 	const std::string text;
 };
 

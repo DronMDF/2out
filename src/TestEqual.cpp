@@ -14,29 +14,28 @@
 using namespace std;
 using namespace oout;
 
-// @todo #175:15min Base type for representation should be named Representation
-//  Then this type should be StringRepr, and should be shared.
-class StdStringRepr final : public StringRepr {
+// @todo #181:15min ReprString should be shared
+class ReprString final : public Representation {
 public:
-	explicit StdStringRepr(const string &value)
+	explicit ReprString(const string &value)
 		: value(value)
 	{
 	}
 
-	string asString() const override {
+	string asString() const override
+	{
 		return value;
 	}
-
 public:
 	string value;
 };
 
-TestEqual::TestEqual(const shared_ptr<const StringRepr> &a, const string &b)
-	: TestEqual(a, make_shared<StdStringRepr>(b))
+TestEqual::TestEqual(const shared_ptr<const Representation> &a, const string &b)
+	: TestEqual(a, make_shared<ReprString>(b))
 {
 }
 
-TestEqual::TestEqual(const shared_ptr<const StringRepr> &a, const shared_ptr<const StringRepr> &b)
+TestEqual::TestEqual(const shared_ptr<const Representation> &a, const shared_ptr<const Representation> &b)
 	: a(a), b(b)
 {
 }

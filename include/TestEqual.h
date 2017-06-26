@@ -5,7 +5,7 @@
 
 #pragma once
 #include <sstream>
-#include "StringRepr.h"
+#include "Representation.h"
 #include "Test.h"
 
 namespace oout {
@@ -13,17 +13,17 @@ namespace oout {
 // @todo #175:15min TestEqual should have ctors with strings
 class TestEqual final : public Test {
 public:
-	TestEqual(const std::shared_ptr<const StringRepr> &a, const std::string &b);
+	TestEqual(const std::shared_ptr<const Representation> &a, const std::string &b);
 
 	TestEqual(
-		const std::shared_ptr<const StringRepr> &a,
-		const std::shared_ptr<const StringRepr> &b
+		const std::shared_ptr<const Representation> &a,
+		const std::shared_ptr<const Representation> &b
 	);
 
 	std::shared_ptr<const Result> result() const override;
 private:
-	const std::shared_ptr<const StringRepr> a;
-	const std::shared_ptr<const StringRepr> b;
+	const std::shared_ptr<const Representation> a;
+	const std::shared_ptr<const Representation> b;
 };
 
 }

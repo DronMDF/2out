@@ -6,7 +6,7 @@
 #include "FailureCountTest.h"
 #include <FailureCount.h>
 #include <ResSuite.h>
-#include <StringRepr.h>
+#include <Representation.h>
 #include <TestEqual.h>
 #include <TstSuite.h>
 #include "ResFakes.h"
@@ -14,7 +14,7 @@
 using namespace std;
 using namespace oout;
 
-class FailureCountRepr final : public StringRepr {
+class FailureCountRepr final : public Representation {
 public:
 	explicit FailureCountRepr(const shared_ptr<const FailureCount> &count)
 		: count(count)
