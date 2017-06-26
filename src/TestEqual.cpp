@@ -15,6 +15,16 @@
 using namespace std;
 using namespace oout;
 
+TestEqual::TestEqual(const string &a, const string &b)
+	: TestEqual(make_shared<ReprString>(a), make_shared<ReprString>(b))
+{
+}
+
+TestEqual::TestEqual(const string &a, const shared_ptr<const Representation> &b)
+	: TestEqual(make_shared<ReprString>(a), b)
+{
+}
+
 TestEqual::TestEqual(const shared_ptr<const Representation> &a, const string &b)
 	: TestEqual(a, make_shared<ReprString>(b))
 {

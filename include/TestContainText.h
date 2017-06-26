@@ -11,12 +11,24 @@ namespace oout {
 
 class TestContainText final : public Test {
 public:
-	TestContainText(const std::shared_ptr<const Representation> &repr, const std::string &text);
+	TestContainText(const std::string &text, const std::string &substr);
+	TestContainText(
+		const std::string &text,
+		const std::shared_ptr<const Representation> &substr
+	);
+	TestContainText(
+		const std::shared_ptr<const Representation> &text,
+		const std::string &substr
+	);
+	TestContainText(
+		const std::shared_ptr<const Representation> &text,
+		const std::shared_ptr<const Representation> &substr
+	);
 
 	std::shared_ptr<const Result> result() const override;
 private:
-	const std::shared_ptr<const Representation> repr;
-	const std::string text;
+	const std::shared_ptr<const Representation> text;
+	const std::shared_ptr<const Representation> substr;
 };
 
 }

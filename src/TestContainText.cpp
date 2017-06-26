@@ -8,14 +8,32 @@
 #include <sstream>
 #include <AssertionResult.h>
 #include <Failure.h>
+#include <ReprString.h>
 #include <ResSimple.h>
 #include <Success.h>
 
 using namespace std;
 using namespace oout;
 
-TestContainText::TestContainText(const shared_ptr<const Representation> &repr, const string &text)
-	: repr(repr), text(text)
+TestContainText::TestContainText(const string &text, const string &substr)
+	: TestContainText(make_shared<ReprString>(text), make_shared<ReprString>(substr))
+{
+}
+
+TestContainText::TestContainText(const string &text, const shared_ptr<const Representation> &substr)
+	: TestContainText(make_shared<ReprString>(text), substr)
+{
+}
+
+TestContainText::TestContainText(const shared_ptr<const Representation> &text, const string &substr)
+	: TestContainText(text, make_shared<ReprString>(substr))
+{
+}
+
+TestContainText::TestContainText(
+	const shared_ptr<const Representation> &text,
+	const shared_ptr<const Representation> &substr
+) : text(text), substr(substr)
 {
 }
 
@@ -24,7 +42,7 @@ TestContainText::TestContainText(const shared_ptr<const Representation> &repr, c
 shared_ptr<const Result> TestContainText::result() const
 {
 	shared_ptr<const AssertionResult> assertion_result;
-	if (repr->asString().find(text) != string::npos) {
+	if (text->asString().find(substr->asString()) != string::npos) {
 		assertion_result = make_shared<Success>();
 	} else {
 		assertion_result = make_shared<Failure>();
@@ -33,7 +51,7 @@ shared_ptr<const Result> TestContainText::result() const
 	// @todo #159:15min Convert object text to name part - this is common operation.
 	//  Need to extract this entity. Special object should produce short and nice pard of text.
 	ostringstream name_stream;
-	name_stream << text << " in " << repr->asString().substr(0, 16);
+	name_stream << substr->asString() << " in " << text->asString().substr(0, 16);
 
 	// @todo #159:15min Filtering of name actual only for special representations
 	//  like an xml or json...
