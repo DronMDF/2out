@@ -10,10 +10,6 @@ namespace oout {
 
 // @todo #151:15min Need to introduce generic Representation for any type.
 //  This repr can use ostringstream for stringize object
-
-// @todo #151:15min Need to introduce Representation for string type.
-//  I mean Representation is good name. string_view is a standart class.
-
 class Representation {
 public:
 	virtual ~Representation() = default;
