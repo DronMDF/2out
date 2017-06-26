@@ -16,11 +16,6 @@ using namespace oout;
 
 class FailureCountRepr final : public StringRepr {
 public:
-	explicit FailureCountRepr(unique_ptr<const Result> result)
-		: FailureCountRepr(make_shared<FailureCount>(move(result)))
-	{
-	}
-
 	explicit FailureCountRepr(const shared_ptr<const FailureCount> &count)
 		: count(count)
 	{
@@ -41,8 +36,7 @@ FailureCountTest::FailureCountTest()
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
 				make_shared<FailureCountRepr>(
-					make_unique<ResSuite>(
-						"One of Three is failed",
+					make_unique<FailureCount>(
 						list<shared_ptr<const Result>>{
 							make_unique<ResOkCase>(),
 							make_unique<ResFailureCase>(),

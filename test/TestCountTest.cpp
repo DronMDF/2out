@@ -16,11 +16,6 @@ using namespace oout;
 
 class TestCountRepr final : public StringRepr {
 public:
-	explicit TestCountRepr(unique_ptr<const Result> result)
-		: TestCountRepr(make_shared<TestCount>(move(result)))
-	{
-	}
-
 	explicit TestCountRepr(const shared_ptr<const TestCount> &count)
 		: count(count)
 	{
@@ -41,8 +36,7 @@ TestCountTest::TestCountTest()
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
 				make_shared<TestCountRepr>(
-					make_unique<ResSuite>(
-						"Three tests",
+					make_unique<TestCount>(
 						list<shared_ptr<const Result>>{
 							make_unique<ResOkCase>(),
 							make_unique<ResOkCase>(),
