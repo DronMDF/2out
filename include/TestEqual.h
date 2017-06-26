@@ -10,9 +10,10 @@
 
 namespace oout {
 
-// @todo #175:15min TestEqual should have ctors with strings
 class TestEqual final : public Test {
 public:
+	TestEqual(const std::string &a, const std::string &b);
+	TestEqual(const std::string &a, const std::shared_ptr<const Representation> &b);
 	TestEqual(const std::shared_ptr<const Representation> &a, const std::string &b);
 
 	TestEqual(
