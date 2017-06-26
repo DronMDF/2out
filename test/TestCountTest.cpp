@@ -4,42 +4,29 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestCountTest.h"
-#include <Assertion.h>
-#include <Failure.h>
 #include <ResSuite.h>
-#include <Success.h>
+#include <StringRepr.h>
+#include <TestEqual.h>
 #include <TestCount.h>
-#include <TstSimple.h>
 #include <TstSuite.h>
 #include "ResFakes.h"
 
 using namespace std;
 using namespace oout;
 
-// @todo #82:15min class is similar to IsFailures.
-//  Need to thinking about universal assertion
-class IsTests final : public Assertion {
+class TestCountRepr final : public StringRepr {
 public:
-	IsTests(size_t count, const shared_ptr<const Result> &result)
-		: count(count), result(result)
+	explicit TestCountRepr(const shared_ptr<const TestCount> &count)
+		: count(count)
 	{
 	}
 
-	shared_ptr<const AssertionResult> check() const override {
-		// @todo: #111:15min name conflict class va method result
-		//  may be class result is not concrete?
-		shared_ptr<const AssertionResult> res;
-		if (TestCount(result).count() == count) {
-			res = make_shared<Success>();
-		} else {
-			res = make_shared<Failure>();
-		}
-		return res;
+	string asString() const override
+	{
+		return to_string(count->count());
 	}
-
 private:
-	const size_t count;
-	const shared_ptr<const Result> result;
+	const shared_ptr<const TestCount> count;
 };
 
 TestCountTest::TestCountTest()
@@ -47,19 +34,17 @@ TestCountTest::TestCountTest()
 	make_unique<const TstSuite>(
 		"TestCountTest",
 		list<shared_ptr<const Test>>{
-			make_shared<const TstSimple>(
-				"TestCount count only simple tests",
-				make_unique<const IsTests>(
-					3,
-					make_unique<const ResSuite>(
-						"Three tests",
+			make_shared<TestEqual>(
+				make_shared<TestCountRepr>(
+					make_unique<TestCount>(
 						list<shared_ptr<const Result>>{
-							make_unique<const ResOkCase>(),
-							make_unique<const ResOkCase>(),
-							make_unique<const ResOkCase>()
+							make_unique<ResOkCase>(),
+							make_unique<ResOkCase>(),
+							make_unique<ResOkCase>()
 						}
 					)
-				)
+				),
+				"3"
 			)
 		}
 	)

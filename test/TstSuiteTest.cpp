@@ -4,50 +4,41 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TstSuiteTest.h"
-#include <Assertion.h>
 #include <FailureCount.h>
-#include <Failure.h>
-#include <Result.h>
-#include <Success.h>
-#include <TstSimple.h>
+#include <StringRepr.h>
+#include <TestEqual.h>
 #include <TstSuite.h>
 
 using namespace std;
 using namespace oout;
 
-class IsTestSuccess final : public Assertion
-{
+class TestStatusRepr final : public StringRepr {
 public:
-	explicit IsTestSuccess(unique_ptr<const Test> test)
-		: test(move(test))
+	explicit TestStatusRepr(const shared_ptr<const Test> &test)
+		: test(test)
 	{
 	}
 
-	shared_ptr<const AssertionResult> check() const override {
-		shared_ptr<const AssertionResult> result;
-		if (FailureCount(test->result()).count() == 0) {
-			result = make_shared<Success>();
-		} else {
-			result = make_shared<Failure>();
-		}
-		return result;
+	string asString() const override
+	{
+		return FailureCount(test->result()).count() == 0 ? "success" : "failure";
 	}
 private:
-	const unique_ptr<const Test> test;
+	const shared_ptr<const Test> test;
 };
 
 TstSuiteTest::TstSuiteTest()
 	: tests(make_unique<const TstSuite>(
 		"TstSuiteTest",
 		list<shared_ptr<const Test>>{
-			make_shared<const TstSimple>(
-				"Empty Suite always return success",
-				make_unique<const IsTestSuccess>(
-					make_unique<const TstSuite>(
+			make_shared<TestEqual>(
+				make_shared<TestStatusRepr>(
+					make_unique<TstSuite>(
 						"Always success suite",
 						list<shared_ptr<const Test>>{}
 					)
-				)
+				),
+				"success"
 			)
 		}
 	))
