@@ -11,11 +11,10 @@
 
 namespace oout {
 
-// @todo #173:15min Remove description from TstSuite
-// @todo #173:15min Rename TstSuite to TestSuite
-class TstSuite final : public Test {
+// @todo #173:15min Remove description from TestSuite
+class TestSuite final : public Test {
 public:
-	TstSuite(
+	TestSuite(
 		const std::string &description,
 		const std::list<std::shared_ptr<const Test>> &cases
 	);

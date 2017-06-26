@@ -11,11 +11,11 @@
 #include <ReprSigned.h>
 #include <Result.h>
 #include <TestEqual.h>
-#include <TstSuite.h>
+#include <TestSuite.h>
 #include "FailureCountTest.h"
 #include "TestCountTest.h"
 #include "TextReportTest.h"
-#include "TstSuiteTest.h"
+#include "TestSuiteTest.h"
 #include "JUnitXmlReportTest.h"
 
 using namespace std;
@@ -23,14 +23,14 @@ using namespace oout;
 
 int main(int, char **)
 {
-	const auto result = TstSuite(
+	const auto result = TestSuite(
 		"Example suite",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
 				make_shared<ReprSigned>(2 * 2),
 				make_shared<ReprSigned>(4)
 			),
-			make_shared<const TstSuite>(
+			make_shared<const TestSuite>(
 				"Sub Suite",
 				list<shared_ptr<const Test>>{
 					make_shared<TestEqual>(
@@ -43,7 +43,7 @@ int main(int, char **)
 			make_shared<const JUnitXmlReportTest>(),
 			make_shared<const TestCountTest>(),
 			make_shared<const TextReportTest>(),
-			make_shared<const TstSuiteTest>()
+			make_shared<const TestSuiteTest>()
 		}
 	).result();
 

@@ -9,7 +9,7 @@
 #include <ReprSigned.h>
 #include <ResSuite.h>
 #include <TestEqual.h>
-#include <TstSuite.h>
+#include <TestSuite.h>
 #include "ResFakes.h"
 
 using namespace std;
@@ -32,7 +32,7 @@ private:
 
 FailureCountTest::FailureCountTest()
 : tests(
-	make_unique<const TstSuite>(
+	make_unique<const TestSuite>(
 		"FailureCountTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(

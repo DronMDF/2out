@@ -4,13 +4,13 @@ PROJECT(test)
 
 ADD_EXECUTABLE(
 	test_runner
+	test.cpp
 	FailureCountTest.cpp
 	JUnitXmlReportTest.cpp
 	ResFakes.cpp
 	TestCountTest.cpp
-	test.cpp
+	TestSuiteTest.cpp
 	TextReportTest.cpp
-	TstSuiteTest.cpp
 )
 TARGET_LINK_LIBRARIES(
 	test_runner

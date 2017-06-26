@@ -7,7 +7,7 @@
 #include <list>
 #include <JUnitXmlReport.h>
 #include <TestContainText.h>
-#include <TstSuite.h>
+#include <TestSuite.h>
 #include "ResFakes.h"
 
 using namespace std;
@@ -15,7 +15,7 @@ using namespace oout;
 
 JUnitXmlReportTest::JUnitXmlReportTest()
 : tests(
-	make_unique<const TstSuite>(
+	make_unique<const TestSuite>(
 		"JUnitXmlReportTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestContainText>(

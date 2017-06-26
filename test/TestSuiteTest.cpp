@@ -3,11 +3,11 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TstSuiteTest.h"
+#include "TestSuiteTest.h"
 #include <FailureCount.h>
 #include <Representation.h>
 #include <TestEqual.h>
-#include <TstSuite.h>
+#include <TestSuite.h>
 
 using namespace std;
 using namespace oout;
@@ -27,13 +27,13 @@ private:
 	const shared_ptr<const Test> test;
 };
 
-TstSuiteTest::TstSuiteTest()
-	: tests(make_unique<const TstSuite>(
-		"TstSuiteTest",
+TestSuiteTest::TestSuiteTest()
+	: tests(make_unique<const TestSuite>(
+		"TestSuiteTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
 				make_shared<TestStatusRepr>(
-					make_unique<TstSuite>(
+					make_unique<TestSuite>(
 						"Always success suite",
 						list<shared_ptr<const Test>>{}
 					)
@@ -45,7 +45,7 @@ TstSuiteTest::TstSuiteTest()
 {
 }
 
-shared_ptr<const Result> TstSuiteTest::result() const
+shared_ptr<const Result> TestSuiteTest::result() const
 {
 	return tests->result();
 }
