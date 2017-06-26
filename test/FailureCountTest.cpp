@@ -5,8 +5,9 @@
 
 #include "FailureCountTest.h"
 #include <FailureCount.h>
-#include <ResSuite.h>
 #include <Representation.h>
+#include <ReprSigned.h>
+#include <ResSuite.h>
 #include <TestEqual.h>
 #include <TstSuite.h>
 #include "ResFakes.h"
@@ -44,7 +45,7 @@ FailureCountTest::FailureCountTest()
 						}
 					)
 				),
-				"1"
+				make_shared<ReprSigned>(1)
 			)
 		}
 	)

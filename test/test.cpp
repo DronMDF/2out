@@ -8,6 +8,7 @@
 #include <memory>
 #include <FailureCount.h>
 #include <JUnitXmlReport.h>
+#include <ReprSigned.h>
 #include <Result.h>
 #include <TestEqual.h>
 #include <TstSuite.h>
@@ -20,37 +21,21 @@
 using namespace std;
 using namespace oout;
 
-// @todo #175:15min IntRepr should be shared
-class IntRepr final : public Representation {
-public:
-	explicit IntRepr(int value)
-		: value(value)
-	{
-	}
-
-	string asString() const override
-	{
-		return to_string(value);
-	}
-private:
-	int value;
-};
-
 int main(int, char **)
 {
 	const auto result = TstSuite(
 		"Example suite",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
-				make_shared<IntRepr>(2 * 2),
-				make_shared<IntRepr>(4)
+				make_shared<ReprSigned>(2 * 2),
+				make_shared<ReprSigned>(4)
 			),
 			make_shared<const TstSuite>(
 				"Sub Suite",
 				list<shared_ptr<const Test>>{
 					make_shared<TestEqual>(
-						make_shared<IntRepr>(2 + 2),
-						make_shared<IntRepr>(4)
+						make_shared<ReprSigned>(2 + 2),
+						make_shared<ReprSigned>(4)
 					)
 				}
 			),

@@ -4,10 +4,11 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestCountTest.h"
-#include <ResSuite.h>
 #include <Representation.h>
-#include <TestEqual.h>
+#include <ReprSigned.h>
+#include <ResSuite.h>
 #include <TestCount.h>
+#include <TestEqual.h>
 #include <TstSuite.h>
 #include "ResFakes.h"
 
@@ -44,7 +45,7 @@ TestCountTest::TestCountTest()
 						}
 					)
 				),
-				"3"
+				make_shared<ReprSigned>(3)
 			)
 		}
 	)
