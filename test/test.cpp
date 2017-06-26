@@ -21,7 +21,7 @@ using namespace std;
 using namespace oout;
 
 // @todo #175:15min IntRepr should be shared
-class IntRepr final : public StringRepr {
+class IntRepr final : public Representation {
 public:
 	explicit IntRepr(int value)
 		: value(value)

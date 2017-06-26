@@ -14,7 +14,7 @@
 using namespace std;
 using namespace oout;
 
-TestContainText::TestContainText(const shared_ptr<const StringRepr> &repr, const string &text)
+TestContainText::TestContainText(const shared_ptr<const Representation> &repr, const string &text)
 	: repr(repr), text(text)
 {
 }

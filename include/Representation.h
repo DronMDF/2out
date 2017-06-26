@@ -8,15 +8,15 @@
 
 namespace oout {
 
-// @todo #151:15min Need to introduce generic StringRepr for any type.
+// @todo #151:15min Need to introduce generic Representation for any type.
 //  This repr can use ostringstream for stringize object
 
-// @todo #151:15min Need to introduce StringRepr for string type.
-//  I mean StringRepr is good name. string_view is a standart class.
+// @todo #151:15min Need to introduce Representation for string type.
+//  I mean Representation is good name. string_view is a standart class.
 
-class StringRepr {
+class Representation {
 public:
-	virtual ~StringRepr() = default;
+	virtual ~Representation() = default;
 	virtual std::string asString() const = 0;
 };
 

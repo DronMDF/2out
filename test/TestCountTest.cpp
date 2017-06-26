@@ -5,7 +5,7 @@
 
 #include "TestCountTest.h"
 #include <ResSuite.h>
-#include <StringRepr.h>
+#include <Representation.h>
 #include <TestEqual.h>
 #include <TestCount.h>
 #include <TstSuite.h>
@@ -14,7 +14,7 @@
 using namespace std;
 using namespace oout;
 
-class TestCountRepr final : public StringRepr {
+class TestCountRepr final : public Representation {
 public:
 	explicit TestCountRepr(const shared_ptr<const TestCount> &count)
 		: count(count)

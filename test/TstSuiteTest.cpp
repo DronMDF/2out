@@ -5,14 +5,14 @@
 
 #include "TstSuiteTest.h"
 #include <FailureCount.h>
-#include <StringRepr.h>
+#include <Representation.h>
 #include <TestEqual.h>
 #include <TstSuite.h>
 
 using namespace std;
 using namespace oout;
 
-class TestStatusRepr final : public StringRepr {
+class TestStatusRepr final : public Representation {
 public:
 	explicit TestStatusRepr(const shared_ptr<const Test> &test)
 		: test(test)

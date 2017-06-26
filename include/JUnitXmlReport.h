@@ -6,13 +6,13 @@
 #pragma once
 #include <memory>
 #include <string>
-#include "StringRepr.h"
+#include "Representation.h"
 
 namespace oout {
 
 class Result;
 
-class JUnitXmlReport final : public StringRepr {
+class JUnitXmlReport final : public Representation {
 public:
 	explicit JUnitXmlReport(const std::shared_ptr<const Result> &result);
 	std::string asString() const override;
