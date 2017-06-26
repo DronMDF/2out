@@ -7,28 +7,13 @@
 #include <sstream>
 #include <algorithm>
 #include <AssertionResult.h>
-#include <Success.h>
 #include <Failure.h>
+#include <ReprString.h>
 #include <ResSimple.h>
+#include <Success.h>
 
 using namespace std;
 using namespace oout;
-
-// @todo #181:15min ReprString should be shared
-class ReprString final : public Representation {
-public:
-	explicit ReprString(const string &value)
-		: value(value)
-	{
-	}
-
-	string asString() const override
-	{
-		return value;
-	}
-public:
-	string value;
-};
 
 TestEqual::TestEqual(const shared_ptr<const Representation> &a, const string &b)
 	: TestEqual(a, make_shared<ReprString>(b))

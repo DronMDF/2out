@@ -8,6 +8,7 @@ ADD_LIBRARY(
 	FailureCount.cpp
 	Failure.cpp
 	JUnitXmlReport.cpp
+	ReprString.cpp
 	ResSimple.cpp
 	ResSuite.cpp
 	ResTimed.cpp
