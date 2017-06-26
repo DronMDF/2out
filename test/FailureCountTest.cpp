@@ -16,8 +16,8 @@ using namespace oout;
 
 class FailureCountRepr final : public StringRepr {
 public:
-	explicit FailureCountRepr(const shared_ptr<const Result> &result)
-		: FailureCountRepr(make_shared<FailureCount>(result))
+	explicit FailureCountRepr(unique_ptr<const Result> result)
+		: FailureCountRepr(make_shared<FailureCount>(move(result)))
 	{
 	}
 

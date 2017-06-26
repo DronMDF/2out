@@ -16,8 +16,8 @@ using namespace oout;
 
 class TestCountRepr final : public StringRepr {
 public:
-	explicit TestCountRepr(const shared_ptr<const Result> &result)
-		: TestCountRepr(make_shared<TestCount>(result))
+	explicit TestCountRepr(unique_ptr<const Result> result)
+		: TestCountRepr(make_shared<TestCount>(move(result)))
 	{
 	}
 
