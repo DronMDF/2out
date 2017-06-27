@@ -24,14 +24,12 @@ using namespace oout;
 int main(int, char **)
 {
 	const auto result = TestSuite(
-		"Example suite",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
 				make_shared<ReprSigned>(2 * 2),
 				make_shared<ReprSigned>(4)
 			),
 			make_shared<const TestSuite>(
-				"Sub Suite",
 				list<shared_ptr<const Test>>{
 					make_shared<TestEqual>(
 						make_shared<ReprSigned>(2 + 2),

@@ -9,6 +9,7 @@
 #include <ResSuite.h>
 #include <TestCount.h>
 #include <TestEqual.h>
+#include <TestNamed.h>
 #include <TestSuite.h>
 #include "ResFakes.h"
 
@@ -32,22 +33,24 @@ private:
 
 TestCountTest::TestCountTest()
 : tests(
-	make_unique<const TestSuite>(
+	make_unique<TestNamed>(
 		"TestCountTest",
-		list<shared_ptr<const Test>>{
-			make_shared<TestEqual>(
-				make_shared<TestCountRepr>(
-					make_unique<TestCount>(
-						list<shared_ptr<const Result>>{
-							make_unique<ResOkCase>(),
-							make_unique<ResOkCase>(),
-							make_unique<ResOkCase>()
-						}
-					)
-				),
-				make_shared<ReprSigned>(3)
-			)
-		}
+		make_unique<TestSuite>(
+			list<shared_ptr<const Test>>{
+				make_shared<TestEqual>(
+					make_shared<TestCountRepr>(
+						make_unique<TestCount>(
+							list<shared_ptr<const Result>>{
+								make_unique<ResOkCase>(),
+								make_unique<ResOkCase>(),
+								make_unique<ResOkCase>()
+							}
+						)
+					),
+					make_shared<ReprSigned>(3)
+				)
+			}
+		)
 	)
 )
 {

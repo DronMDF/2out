@@ -10,8 +10,8 @@
 using namespace std;
 using namespace oout;
 
-TestSuite::TestSuite(const string &description, const list<shared_ptr<const Test>> &cases)
-	: description(description), cases(cases)
+TestSuite::TestSuite(const list<shared_ptr<const Test>> &cases)
+	: cases(cases)
 {
 }
 
@@ -21,5 +21,5 @@ shared_ptr<const Result> TestSuite::result() const
 	for (const auto &c : cases) {
 		results.push_back(TestTimed(c).result());
 	}
-	return make_shared<ResSuite>(description, results);
+	return make_shared<ResSuite>("", results);
 }
