@@ -18,28 +18,26 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 : tests(
 	make_unique<TestNamed>(
 		"JUnitXmlReportTest",
-		make_unique<const TestSuite>(
-			list<shared_ptr<const Test>>{
-				make_shared<TestContainText>(
-					make_unique<JUnitXmlReport>(
-						make_unique<ResErrorCase>()
-					),
-					"<error"
+		list<shared_ptr<const Test>>{
+			make_shared<TestContainText>(
+				make_unique<JUnitXmlReport>(
+					make_unique<ResErrorCase>()
 				),
-				make_shared<TestContainText>(
-					make_unique<JUnitXmlReport>(
-						make_unique<ResErrorCase>()
-					),
-					"</error>"
+				"<error"
+			),
+			make_shared<TestContainText>(
+				make_unique<JUnitXmlReport>(
+					make_unique<ResErrorCase>()
 				),
-				make_shared<TestContainText>(
-					make_unique<JUnitXmlReport>(
-						make_unique<ResFailureCase>()
-					),
-					"<failure"
-				)
-			}
-		)
+				"</error>"
+			),
+			make_shared<TestContainText>(
+				make_unique<JUnitXmlReport>(
+					make_unique<ResFailureCase>()
+				),
+				"<failure"
+			)
+		}
 	)
 )
 {

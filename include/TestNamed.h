@@ -4,13 +4,16 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <list>
 #include "Test.h"
 
 namespace oout {
 
+/// TestName is a Test decorator.
+/// Adds a name to the test or test suite
 class TestNamed final : public Test {
 public:
-	// @todo #191:15min Add ctor for list of tests. TestSuite make inside.
+	TestNamed(const std::string &name, const std::list<std::shared_ptr<const Test>> &tests);
 	TestNamed(const std::string &name, const std::shared_ptr<const Test> &test);
 	std::shared_ptr<const Result> result() const override;
 private:
