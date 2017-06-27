@@ -9,7 +9,7 @@
 
 namespace oout {
 
-/// TestName is a Test decorator.
+/// TestNamed is a Test decorator.
 /// Adds a name to the test or test suite
 class TestNamed final : public Test {
 public:
