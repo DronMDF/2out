@@ -5,7 +5,7 @@
 
 #include <TestSuite.h>
 #include <ResSuite.h>
-#include <TstTimed.h>
+#include <TestTimed.h>
 
 using namespace std;
 using namespace oout;
@@ -19,7 +19,7 @@ shared_ptr<const Result> TestSuite::result() const
 {
 	list<shared_ptr<const Result>> results;
 	for (const auto &c : cases) {
-		results.push_back(TstTimed(c).result());
+		results.push_back(TestTimed(c).result());
 	}
 	return make_shared<ResSuite>(description, results);
 }

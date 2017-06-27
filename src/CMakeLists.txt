@@ -19,5 +19,5 @@ ADD_LIBRARY(
 	TestEqual.cpp
 	TestSuite.cpp
 	TextReport.cpp
-	TstTimed.cpp
+	TestTimed.cpp
 )
