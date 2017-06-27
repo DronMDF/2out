@@ -32,18 +32,16 @@ TestSuiteTest::TestSuiteTest()
 : tests(
 	make_unique<TestNamed>(
 		"TestSuiteTest",
-		make_unique<TestSuite>(
-			list<shared_ptr<const Test>>{
-				make_shared<TestEqual>(
-					make_shared<TestStatusRepr>(
-						make_unique<TestSuite>(
-							list<shared_ptr<const Test>>{}
-						)
-					),
-					"success"
-				)
-			}
-		)
+		list<shared_ptr<const Test>>{
+			make_shared<TestEqual>(
+				make_shared<TestStatusRepr>(
+					make_unique<TestSuite>(
+						list<shared_ptr<const Test>>{}
+					)
+				),
+				"success"
+			)
+		}
 	)
 )
 {
