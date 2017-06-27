@@ -7,6 +7,7 @@
 #include <FailureCount.h>
 #include <Representation.h>
 #include <TestEqual.h>
+#include <TestNamed.h>
 #include <TestSuite.h>
 
 using namespace std;
@@ -28,20 +29,23 @@ private:
 };
 
 TestSuiteTest::TestSuiteTest()
-	: tests(make_unique<const TestSuite>(
+: tests(
+	make_unique<TestNamed>(
 		"TestSuiteTest",
-		list<shared_ptr<const Test>>{
-			make_shared<TestEqual>(
-				make_shared<TestStatusRepr>(
-					make_unique<TestSuite>(
-						"Always success suite",
-						list<shared_ptr<const Test>>{}
-					)
-				),
-				"success"
-			)
-		}
-	))
+		make_unique<TestSuite>(
+			list<shared_ptr<const Test>>{
+				make_shared<TestEqual>(
+					make_shared<TestStatusRepr>(
+						make_unique<TestSuite>(
+							list<shared_ptr<const Test>>{}
+						)
+					),
+					"success"
+				)
+			}
+		)
+	)
+)
 {
 }
 

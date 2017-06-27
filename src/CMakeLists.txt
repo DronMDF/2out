@@ -17,6 +17,7 @@ ADD_LIBRARY(
 	TestContainText.cpp
 	TestCount.cpp
 	TestEqual.cpp
+	TestNamed.cpp
 	TestSafe.cpp
 	TestSuite.cpp
 	TestTimed.cpp

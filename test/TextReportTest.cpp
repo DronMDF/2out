@@ -7,8 +7,9 @@
 #include <list>
 #include <ResSuite.h>
 #include <TestContainText.h>
-#include <TextReport.h>
+#include <TestNamed.h>
 #include <TestSuite.h>
+#include <TextReport.h>
 #include "ResFakes.h"
 
 using namespace std;
@@ -16,52 +17,54 @@ using namespace oout;
 
 TextReportTest::TextReportTest()
 : tests(
-	make_unique<const TestSuite>(
+	make_unique<TestNamed>(
 		"TextReportTest",
-		list<shared_ptr<const Test>>{
-			make_shared<TestContainText>(
-				make_unique<TextReport>(
-					make_unique<ResFailureCase>("run test")
+		make_unique<const TestSuite>(
+			list<shared_ptr<const Test>>{
+				make_shared<TestContainText>(
+					make_unique<TextReport>(
+						make_unique<ResFailureCase>("run test")
+					),
+					"[ RUN      ] run test"
 				),
-				"[ RUN      ] run test"
-			),
-			make_shared<TestContainText>(
-				make_unique<TextReport>(
-					make_unique<ResOkCase>("ok test")
+				make_shared<TestContainText>(
+					make_unique<TextReport>(
+						make_unique<ResOkCase>("ok test")
+					),
+					"[       OK ] ok test"
 				),
-				"[       OK ] ok test"
-			),
-			make_shared<TestContainText>(
-				make_unique<TextReport>(
-					make_unique<ResFailureCase>("fail test")
+				make_shared<TestContainText>(
+					make_unique<TextReport>(
+						make_unique<ResFailureCase>("fail test")
+					),
+					"[  FAILED  ] fail test"
 				),
-				"[  FAILED  ] fail test"
-			),
-			make_shared<TestContainText>(
-				make_unique<TextReport>(
-					make_unique<ResOkCase>()
+				make_shared<TestContainText>(
+					make_unique<TextReport>(
+						make_unique<ResOkCase>()
+					),
+					"[==========] Running"
 				),
-				"[==========] Running"
-			),
-			make_shared<TestContainText>(
-				make_unique<TextReport>(
-					make_unique<ResOkCase>()
+				make_shared<TestContainText>(
+					make_unique<TextReport>(
+						make_unique<ResOkCase>()
+					),
+					"[==========] 1 tests ran"
 				),
-				"[==========] 1 tests ran"
-			),
-			make_shared<TestContainText>(
-				make_unique<TextReport>(
-					make_unique<ResSuite>(
-						"SUITE",
-						list<shared_ptr<const Result>>{
-							make_shared<ResOkCase>(),
-							make_shared<ResOkCase>()
-						}
-					)
-				),
-				"[----------] 2 test from SUITE"
-			)
-		}
+				make_shared<TestContainText>(
+					make_unique<TextReport>(
+						make_unique<ResSuite>(
+							"SUITE",
+							list<shared_ptr<const Result>>{
+								make_shared<ResOkCase>(),
+								make_shared<ResOkCase>()
+							}
+						)
+					),
+					"[----------] 2 test from SUITE"
+				)
+			}
+		)
 	)
 )
 {

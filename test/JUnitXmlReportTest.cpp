@@ -7,6 +7,7 @@
 #include <list>
 #include <JUnitXmlReport.h>
 #include <TestContainText.h>
+#include <TestNamed.h>
 #include <TestSuite.h>
 #include "ResFakes.h"
 
@@ -15,28 +16,30 @@ using namespace oout;
 
 JUnitXmlReportTest::JUnitXmlReportTest()
 : tests(
-	make_unique<const TestSuite>(
+	make_unique<TestNamed>(
 		"JUnitXmlReportTest",
-		list<shared_ptr<const Test>>{
-			make_shared<TestContainText>(
-				make_unique<JUnitXmlReport>(
-					make_unique<ResErrorCase>()
+		make_unique<const TestSuite>(
+			list<shared_ptr<const Test>>{
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResErrorCase>()
+					),
+					"<error"
 				),
-				"<error"
-			),
-			make_shared<TestContainText>(
-				make_unique<JUnitXmlReport>(
-					make_unique<ResErrorCase>()
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResErrorCase>()
+					),
+					"</error>"
 				),
-				"</error>"
-			),
-			make_shared<TestContainText>(
-				make_unique<JUnitXmlReport>(
-					make_unique<ResFailureCase>()
-				),
-				"<failure"
-			)
-		}
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResFailureCase>()
+					),
+					"<failure"
+				)
+			}
+		)
 	)
 )
 {
