@@ -37,8 +37,6 @@ TestContainText::TestContainText(
 {
 }
 
-// @todo #152:15min Need to introduce TestSafe decorator.
-//  This decorator catch all exceptions and form Error Result.
 shared_ptr<const Result> TestContainText::result() const
 {
 	shared_ptr<const AssertionResult> assertion_result;
