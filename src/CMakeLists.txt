@@ -10,6 +10,7 @@ ADD_LIBRARY(
 	JUnitXmlReport.cpp
 	ReprSigned.cpp
 	ReprString.cpp
+	ResNamed.cpp
 	ResSimple.cpp
 	ResSuite.cpp
 	ResTimed.cpp

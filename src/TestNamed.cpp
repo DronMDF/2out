@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <TestNamed.h>
+#include <ResNamed.h>
 #include <TestSuite.h>
 
 using namespace std;
@@ -21,6 +22,5 @@ TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
 
 shared_ptr<const Result> TestNamed::result() const
 {
-	// @todo #191:15min Need introduce ResNamed, Result whoes add name to test, or suite.
-	return test->result();
+	return make_shared<ResNamed>(test->result(), name);
 }

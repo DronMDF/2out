@@ -9,14 +9,16 @@
 
 namespace oout {
 
-// @todo #198:15min In ResTimed should keep chrono::time_point, not float
-class ResTimed final : public Result {
+/// ResNamed is a Result decorator
+/// Add test name to result
+class ResNamed final : public Result {
 public:
-	ResTimed(const std::shared_ptr<const Result> &result, float time);
+	ResNamed(const std::shared_ptr<const Result> &result, const std::string &name);
 	std::string print(const Format &format) const override;
 private:
 	const std::shared_ptr<const Result> result;
-	const float time;
+	const std::string name;
 };
 
 }
+
