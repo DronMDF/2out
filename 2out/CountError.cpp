@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <FailureCount.h>
+#include <CountError.h>
 #include <numeric>
 #include <AssertionResult.h>
 #include <Format.h>
@@ -13,7 +13,7 @@
 using namespace std;
 using namespace oout;
 
-class FmtFailure final : public Format {
+class FmtError final : public Format {
 public:
 	string success(const string &) const override
 	{
@@ -22,12 +22,12 @@ public:
 
 	string failure(const string &) const override
 	{
-		return "F";
+		return {};
 	}
 
 	string error(const string &) const override
 	{
-		return {};
+		return "E";
 	}
 
 	string test(
@@ -56,17 +56,17 @@ public:
 	}
 };
 
-FailureCount::FailureCount(const list<shared_ptr<const Result>> &results)
-	: FailureCount(make_shared<ResSuite>("", results))
+CountError::CountError(const list<shared_ptr<const Result>> &results)
+	: CountError(make_shared<ResSuite>("", results))
 {
 }
 
-FailureCount::FailureCount(const shared_ptr<const Result> &result)
+CountError::CountError(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
-size_t FailureCount::count() const
+size_t CountError::count() const
 {
-	return result->print(FmtFailure()).size();
+	return result->print(FmtError()).size();
 }

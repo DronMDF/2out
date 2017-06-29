@@ -12,6 +12,7 @@ namespace oout {
 
 class ResSuite final : public Result {
 public:
+	// @todo #134:15min Remove name from ResSuite
 	ResSuite(
 		const std::string &name,
 		const std::list<std::shared_ptr<const Result>> &results

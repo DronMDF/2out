@@ -11,10 +11,10 @@ namespace oout {
 
 class Result;
 
-class FailureCount final {
+class CountError final {
 public:
-	explicit FailureCount(const std::list<std::shared_ptr<const Result>> &results);
-	explicit FailureCount(const std::shared_ptr<const Result> &result);
+	explicit CountError(const std::list<std::shared_ptr<const Result>> &results);
+	explicit CountError(const std::shared_ptr<const Result> &result);
 	size_t count() const;
 private:
 	const std::shared_ptr<const Result> result;
