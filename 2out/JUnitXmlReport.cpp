@@ -30,9 +30,8 @@ public:
 
 	string error(const string &text) const override
 	{
-		// @todo #208:15min Add escaping in error tag (CDATA)
 		ostringstream out;
-		out << "<error>" << text << "</error>" << endl;
+		out << "<error><![CDATA[" << text << "]]></error>" << endl;
 		return out.str();
 	}
 
@@ -59,6 +58,7 @@ public:
 	{
 		const auto test_count = TestCount(results).count();
 		const auto failure_count = FailureCount(results).count();
+		// @todo #210:15min Calculate error count for xml report
 
 		ostringstream out;
 		out << "<testsuite "

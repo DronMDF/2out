@@ -5,6 +5,7 @@
 
 #include "JUnitXmlReportTest.h"
 #include <list>
+#include <Error.h>
 #include <Failure.h>
 #include <JUnitXmlReport.h>
 #include <ResSimple.h>
@@ -48,6 +49,17 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 						)
 					),
 					"failure><![CDATA[<tag>]]"
+				)
+			),
+			make_shared<TestNamed>(
+				"Escaping in error",
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResSimple>(
+							make_unique<Error>("&amp;")
+						)
+					),
+					"error><![CDATA[&amp;]]"
 				)
 			)
 		}
