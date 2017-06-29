@@ -39,27 +39,14 @@ TestContainText::TestContainText(
 
 shared_ptr<const Result> TestContainText::result() const
 {
+	ostringstream test_text;
+	test_text << "'" << substr->asString() << "' in '" << text->asString() << "'";
+
 	shared_ptr<const AssertionResult> assertion_result;
 	if (text->asString().find(substr->asString()) != string::npos) {
-		assertion_result = make_shared<Success>();
+		assertion_result = make_shared<Success>(test_text.str());
 	} else {
-		assertion_result = make_shared<Failure>();
+		assertion_result = make_shared<Failure>(test_text.str());
 	}
-
-	// @todo #159:15min Convert object text to name part - this is common operation.
-	//  Need to extract this entity. Special object should produce short and nice pard of text.
-	ostringstream name_stream;
-	name_stream << substr->asString() << " in " << text->asString().substr(0, 16);
-
-	// @todo #159:15min Filtering of name actual only for special representations
-	//  like an xml or json...
-	const auto raw_name = name_stream.str();
-	string name;
-	remove_copy_if(raw_name.begin(), raw_name.end(), back_inserter(name),
-		[](const string::value_type &c){
-			return string("<>'").find(c) != string::npos;
-		}
-	);
-
-	return make_shared<const ResSimple>(name, assertion_result);
+	return make_shared<const ResSimple>("", assertion_result);
 }
