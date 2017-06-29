@@ -48,5 +48,5 @@ shared_ptr<const Result> TestContainText::result() const
 	} else {
 		assertion_result = make_shared<Failure>(test_text.str());
 	}
-	return make_shared<const ResSimple>("", assertion_result);
+	return make_shared<const ResSimple>(assertion_result);
 }

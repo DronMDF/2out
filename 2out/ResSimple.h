@@ -12,11 +12,9 @@ namespace oout {
 
 class ResSimple final : public Result {
 public:
-	ResSimple(const std::string &name, const std::shared_ptr<const AssertionResult> &result);
-
+	explicit ResSimple(const std::shared_ptr<const AssertionResult> &result);
 	std::string print(const Format &format) const override;
 private:
-	const std::string name;
 	const std::shared_ptr<const AssertionResult> result;
 };
 
