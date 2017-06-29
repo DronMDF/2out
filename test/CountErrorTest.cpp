@@ -38,8 +38,8 @@ CountErrorTest::CountErrorTest()
 		list<shared_ptr<const Test>>{
 			make_unique<TestNamed>(
 				"One error in set",
-				make_shared<TestEqual>(
-					make_shared<CountErrorRepr>(
+				make_unique<TestEqual>(
+					make_unique<CountErrorRepr>(
 						make_unique<CountError>(
 							list<shared_ptr<const Result>>{
 								make_unique<ResOkCase>(),
@@ -48,7 +48,7 @@ CountErrorTest::CountErrorTest()
 							}
 						)
 					),
-					make_shared<ReprSigned>(1)
+					make_unique<ReprSigned>(1)
 				)
 			)
 		}
