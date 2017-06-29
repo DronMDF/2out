@@ -24,12 +24,13 @@ public:
 	string failure(const string &text) const override
 	{
 		ostringstream out;
-		out << "<failure>" << text << "</failure>" << endl;
+		out << "<failure><![CDATA[" << text << "]]></failure>" << endl;
 		return out.str();
 	}
 
 	string error(const string &text) const override
 	{
+		// @todo #208:15min Add escaping in error tag (CDATA)
 		ostringstream out;
 		out << "<error>" << text << "</error>" << endl;
 		return out.str();
