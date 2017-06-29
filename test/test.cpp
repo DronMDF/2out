@@ -12,6 +12,7 @@
 #include <Result.h>
 #include <TestEqual.h>
 #include <TestSuite.h>
+#include "CountErrorTest.h"
 #include "FailureCountTest.h"
 #include "TestCountTest.h"
 #include "TextReportTest.h"
@@ -37,6 +38,7 @@ int main(int, char **)
 					)
 				}
 			),
+			make_shared<const CountErrorTest>(),
 			make_shared<const FailureCountTest>(),
 			make_shared<const JUnitXmlReportTest>(),
 			make_shared<const TestCountTest>(),

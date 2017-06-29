@@ -4,6 +4,7 @@ PROJECT(2out)
 
 ADD_LIBRARY(
 	2out
+	CountError.cpp
 	Error.cpp
 	FailureCount.cpp
 	Failure.cpp
