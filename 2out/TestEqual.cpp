@@ -37,23 +37,14 @@ TestEqual::TestEqual(const shared_ptr<const Representation> &a, const shared_ptr
 
 shared_ptr<const Result> TestEqual::result() const
 {
+	ostringstream text;
+	text << "'" << a->asString() << "' is equal '" << b->asString() << "'";
+
 	shared_ptr<const AssertionResult> assertion_result;
 	if (a->asString() == b->asString()) {
-		assertion_result = make_shared<Success>();
+		assertion_result = make_shared<Success>(text.str());
 	} else {
-		assertion_result = make_shared<Failure>();
+		assertion_result = make_shared<Failure>(text.str());
 	}
-
-	ostringstream name_stream;
-	name_stream << a->asString().substr(0, 16) << " == " << b->asString().substr(0, 16);
-
-	const auto raw_name = name_stream.str();
-	string name;
-	remove_copy_if(raw_name.begin(), raw_name.end(), back_inserter(name),
-		[](const string::value_type &c){
-			return string("<>'").find(c) != string::npos;
-		}
-	);
-
-	return make_shared<ResSimple>(name, assertion_result);
+	return make_shared<ResSimple>("", assertion_result);
 }
