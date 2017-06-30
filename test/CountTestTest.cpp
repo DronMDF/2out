@@ -3,11 +3,11 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestCountTest.h"
+#include "CountTestTest.h"
+#include <CountTest.h>
 #include <Representation.h>
 #include <ReprSigned.h>
 #include <ResSuite.h>
-#include <TestCount.h>
 #include <TestEqual.h>
 #include <TestNamed.h>
 #include <TestSuite.h>
@@ -16,9 +16,9 @@
 using namespace std;
 using namespace oout;
 
-class TestCountRepr final : public Representation {
+class CountTestRepr final : public Representation {
 public:
-	explicit TestCountRepr(const shared_ptr<const TestCount> &count)
+	explicit CountTestRepr(const shared_ptr<const CountTest> &count)
 		: count(count)
 	{
 	}
@@ -28,17 +28,17 @@ public:
 		return to_string(count->count());
 	}
 private:
-	const shared_ptr<const TestCount> count;
+	const shared_ptr<const CountTest> count;
 };
 
-TestCountTest::TestCountTest()
+CountTestTest::CountTestTest()
 : tests(
 	make_unique<TestNamed>(
-		"TestCountTest",
+		"CountTestTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
-				make_shared<TestCountRepr>(
-					make_unique<TestCount>(
+				make_shared<CountTestRepr>(
+					make_unique<CountTest>(
 						list<shared_ptr<const Result>>{
 							make_unique<ResOkCase>(),
 							make_unique<ResOkCase>(),
@@ -54,7 +54,7 @@ TestCountTest::TestCountTest()
 {
 }
 
-shared_ptr<const Result> TestCountTest::result() const
+shared_ptr<const Result> CountTestTest::result() const
 {
 	return tests->result();
 }

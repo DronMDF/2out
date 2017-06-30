@@ -3,11 +3,11 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <TestCount.h>
+#include "CountTest.h"
 #include <numeric>
-#include <Format.h>
-#include <ResSuite.h>
-#include <Result.h>
+#include "Format.h"
+#include "ResSuite.h"
+#include "Result.h"
 
 using namespace std;
 using namespace oout;
@@ -51,17 +51,17 @@ public:
 	}
 };
 
-TestCount::TestCount(const list<shared_ptr<const Result>> &results)
-	: TestCount(make_unique<ResSuite>(results))
+CountTest::CountTest(const list<shared_ptr<const Result>> &results)
+	: CountTest(make_unique<ResSuite>(results))
 {
 }
 
-TestCount::TestCount(const shared_ptr<const Result> &result)
+CountTest::CountTest(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
-size_t TestCount::count() const
+size_t CountTest::count() const
 {
 	return result->print(FmtTests()).size();
 }

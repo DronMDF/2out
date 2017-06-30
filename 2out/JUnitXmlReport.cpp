@@ -7,10 +7,10 @@
 #include <sstream>
 #include "AssertionResult.h"
 #include "CountError.h"
+#include "CountTest.h"
 #include "FailureCount.h"
 #include "Format.h"
 #include "Result.h"
-#include "TestCount.h"
 
 using namespace std;
 using namespace oout;
@@ -57,7 +57,7 @@ public:
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
-		const auto count_test = TestCount(results).count();
+		const auto count_test = CountTest(results).count();
 		const auto count_failure = FailureCount(results).count();
 		const auto count_error = CountError(results).count();
 

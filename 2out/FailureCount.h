@@ -11,6 +11,7 @@ namespace oout {
 
 class Result;
 
+// @todo #161:15min Rename FailureCount to CountFailure
 class FailureCount final {
 public:
 	explicit FailureCount(const std::list<std::shared_ptr<const Result>> &results);

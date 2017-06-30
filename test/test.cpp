@@ -13,11 +13,11 @@
 #include <TestEqual.h>
 #include <TestSuite.h>
 #include "CountErrorTest.h"
+#include "CountTestTest.h"
 #include "FailureCountTest.h"
-#include "TestCountTest.h"
-#include "TextReportTest.h"
-#include "TestSuiteTest.h"
 #include "JUnitXmlReportTest.h"
+#include "TestSuiteTest.h"
+#include "TextReportTest.h"
 
 using namespace std;
 using namespace oout;
@@ -39,11 +39,11 @@ int main(int, char **)
 				}
 			),
 			make_shared<const CountErrorTest>(),
+			make_shared<const CountTestTest>(),
 			make_shared<const FailureCountTest>(),
 			make_shared<const JUnitXmlReportTest>(),
-			make_shared<const TestCountTest>(),
-			make_shared<const TextReportTest>(),
-			make_shared<const TestSuiteTest>()
+			make_shared<const TestSuiteTest>(),
+			make_shared<const TextReportTest>()
 		}
 	).result();
 
