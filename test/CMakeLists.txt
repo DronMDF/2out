@@ -6,10 +6,10 @@ ADD_EXECUTABLE(
 	test_runner
 	test.cpp
 	CountErrorTest.cpp
+	CountTestTest.cpp
 	FailureCountTest.cpp
 	JUnitXmlReportTest.cpp
 	ResFakes.cpp
-	TestCountTest.cpp
 	TestSuiteTest.cpp
 	TextReportTest.cpp
 )

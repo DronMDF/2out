@@ -5,6 +5,7 @@ PROJECT(2out)
 ADD_LIBRARY(
 	2out
 	CountError.cpp
+	CountTest.cpp
 	Error.cpp
 	FailureCount.cpp
 	Failure.cpp
@@ -17,7 +18,6 @@ ADD_LIBRARY(
 	ResTimed.cpp
 	Success.cpp
 	TestContainText.cpp
-	TestCount.cpp
 	TestEqual.cpp
 	TestNamed.cpp
 	TestSafe.cpp
