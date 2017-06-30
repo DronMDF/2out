@@ -1,5 +1,12 @@
 language: cpp
 
+rvm: 2.0
+
+addons:
+  apt:
+    packages:
+      - cppcheck
+
 matrix:
   include:
     - os: linux
