@@ -1,12 +1,5 @@
 language: cpp
 
-rvm: 2.0
-
-addons:
-  apt:
-    packages:
-      - cppcheck
-
 matrix:
   include:
     - os: linux
@@ -51,9 +44,10 @@ matrix:
 
 before_install:
   - eval "${MATRIX_EVAL}"
+  - sudo apt-get install cppcheck ruby-dev
+  - gem install pdd
 
 script:
-  - gem install pdd
   - ./style.sh
   - cmake .
   - make VERBOSE=1
