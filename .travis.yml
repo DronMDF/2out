@@ -44,10 +44,11 @@ matrix:
 
 before_install:
   - eval "${MATRIX_EVAL}"
-
-# @todo #167:15min Add style check in travis.ci
+  - sudo apt-get install cppcheck ruby-dev
+  - gem install pdd
 
 script:
+  - ./style.sh
   - cmake .
   - make VERBOSE=1
   - make test
