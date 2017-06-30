@@ -3,13 +3,14 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <JUnitXmlReport.h>
+#include "JUnitXmlReport.h"
 #include <sstream>
-#include <AssertionResult.h>
-#include <FailureCount.h>
-#include <Format.h>
-#include <Result.h>
-#include <TestCount.h>
+#include "AssertionResult.h"
+#include "CountError.h"
+#include "FailureCount.h"
+#include "Format.h"
+#include "Result.h"
+#include "TestCount.h"
 
 using namespace std;
 using namespace oout;
@@ -56,16 +57,16 @@ public:
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
-		const auto test_count = TestCount(results).count();
-		const auto failure_count = FailureCount(results).count();
-		// @todo #210:15min Calculate error count for xml report
+		const auto count_test = TestCount(results).count();
+		const auto count_failure = FailureCount(results).count();
+		const auto count_error = CountError(results).count();
 
 		ostringstream out;
 		out << "<testsuite "
 			<< "name='" << name << "' "
-			<< "tests='" << test_count << "' "
-			<< "errors='" << failure_count << "' "
-			<< "failures='" << failure_count << "' "
+			<< "tests='" << count_test << "' "
+			<< "failures='" << count_failure << "' "
+			<< "errors='" << count_error << "' "
 			<< "time='" << time << "'>"
 			<< endl;
 
