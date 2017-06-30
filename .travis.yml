@@ -45,9 +45,9 @@ matrix:
 before_install:
   - eval "${MATRIX_EVAL}"
 
-# @todo #167:15min Add style check in travis.ci
-
 script:
+  - gem install pdd
+  - ./style.sh
   - cmake .
   - make VERBOSE=1
   - make test

@@ -6,7 +6,6 @@ compiler:
 
 build:
   ci:
-    - apt-get update
     - apt-get install cmake cppcheck ruby-dev
     - gem install pdd
     - ./style.sh
