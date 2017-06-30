@@ -21,5 +21,5 @@ shared_ptr<const Result> TestSuite::result() const
 	for (const auto &c : cases) {
 		results.push_back(TestTimed(c).result());
 	}
-	return make_shared<ResSuite>("", results);
+	return make_unique<ResSuite>(results);
 }

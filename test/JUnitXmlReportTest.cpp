@@ -68,7 +68,6 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				make_shared<TestContainText>(
 					make_unique<JUnitXmlReport>(
 						make_unique<ResSuite>(
-							"",
 							list<shared_ptr<const Result>>{
 								make_unique<ResErrorCase>()
 							}

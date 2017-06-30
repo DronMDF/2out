@@ -12,15 +12,9 @@ namespace oout {
 
 class ResSuite final : public Result {
 public:
-	// @todo #134:15min Remove name from ResSuite
-	ResSuite(
-		const std::string &name,
-		const std::list<std::shared_ptr<const Result>> &results
-	);
-
+	explicit ResSuite(const std::list<std::shared_ptr<const Result>> &results);
 	std::string print(const Format &format) const override;
 private:
-	const std::string name;
 	const std::list<std::shared_ptr<const Result>> results;
 };
 

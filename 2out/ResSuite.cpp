@@ -10,12 +10,12 @@
 using namespace std;
 using namespace oout;
 
-ResSuite::ResSuite(const string &name, const list<shared_ptr<const Result>> &results)
-	: name(name), results(results)
+ResSuite::ResSuite(const list<shared_ptr<const Result>> &results)
+	: results(results)
 {
 }
 
 string ResSuite::print(const Format &format) const
 {
-	return format.suite(name, 0, results);
+	return format.suite({}, 0, results);
 }

@@ -52,7 +52,7 @@ public:
 };
 
 TestCount::TestCount(const list<shared_ptr<const Result>> &results)
-	: TestCount(make_shared<const ResSuite>("", results))
+	: TestCount(make_unique<ResSuite>(results))
 {
 }
 
@@ -63,6 +63,5 @@ TestCount::TestCount(const shared_ptr<const Result> &result)
 
 size_t TestCount::count() const
 {
-	FmtTests format;
-	return result->print(format).size();
+	return result->print(FmtTests()).size();
 }
