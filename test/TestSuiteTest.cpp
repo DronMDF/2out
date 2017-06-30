@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestSuiteTest.h"
-#include <FailureCount.h>
+#include <CountFailure.h>
 #include <Representation.h>
 #include <TestEqual.h>
 #include <TestNamed.h>
@@ -22,7 +22,7 @@ public:
 
 	string asString() const override
 	{
-		return FailureCount(test->result()).count() == 0 ? "success" : "failure";
+		return CountFailure(test->result()).count() == 0 ? "success" : "failure";
 	}
 private:
 	const shared_ptr<const Test> test;

@@ -7,8 +7,8 @@
 #include <sstream>
 #include "AssertionResult.h"
 #include "CountError.h"
+#include "CountFailure.h"
 #include "CountTest.h"
-#include "FailureCount.h"
 #include "Format.h"
 #include "Result.h"
 
@@ -58,7 +58,7 @@ public:
 	) const override
 	{
 		const auto count_test = CountTest(results).count();
-		const auto count_failure = FailureCount(results).count();
+		const auto count_failure = CountFailure(results).count();
 		const auto count_error = CountError(results).count();
 
 		ostringstream out;
@@ -86,7 +86,7 @@ JUnitXmlReport::JUnitXmlReport(const std::shared_ptr<const Result> &result)
 
 string JUnitXmlReport::asString() const
 {
-	const auto failure_count = FailureCount(result).count();
+	const auto failure_count = CountFailure(result).count();
 
 	ostringstream out;
 	out << "<?xml version='1.0' encoding='UTF-8'?>" << endl;

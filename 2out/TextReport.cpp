@@ -6,8 +6,8 @@
 #include "TextReport.h"
 #include <sstream>
 #include "AssertionResult.h"
+#include "CountFailure.h"
 #include "CountTest.h"
-#include "FailureCount.h"
 #include "Format.h"
 #include "Result.h"
 
@@ -85,7 +85,7 @@ string TextReport::asString() const
 	//  I have root suite, and this value show on inner level
 	out << "[==========] " << test_count << " tests ran." << endl;
 
-	const auto failure_count = FailureCount(result).count();
+	const auto failure_count = CountFailure(result).count();
 	out << "[  PASSED  ] " << test_count - failure_count << " test." << endl;
 	if (failure_count > 0) {
 		out << "[  FAILED  ] " << failure_count << " test." << endl;

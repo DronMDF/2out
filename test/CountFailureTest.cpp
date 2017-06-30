@@ -3,8 +3,8 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "FailureCountTest.h"
-#include <FailureCount.h>
+#include "CountFailureTest.h"
+#include <CountFailure.h>
 #include <Representation.h>
 #include <ReprSigned.h>
 #include <ResSuite.h>
@@ -16,9 +16,9 @@
 using namespace std;
 using namespace oout;
 
-class FailureCountRepr final : public Representation {
+class CountFailureRepr final : public Representation {
 public:
-	explicit FailureCountRepr(const shared_ptr<const FailureCount> &count)
+	explicit CountFailureRepr(const shared_ptr<const CountFailure> &count)
 		: count(count)
 	{
 	}
@@ -28,17 +28,17 @@ public:
 		return to_string(count->count());
 	}
 private:
-	const shared_ptr<const FailureCount> count;
+	const shared_ptr<const CountFailure> count;
 };
 
-FailureCountTest::FailureCountTest()
+CountFailureTest::CountFailureTest()
 : tests(
 	make_unique<TestNamed>(
-		"FailureCountTest",
+		"CountFailureTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
-				make_shared<FailureCountRepr>(
-					make_unique<FailureCount>(
+				make_shared<CountFailureRepr>(
+					make_unique<CountFailure>(
 						list<shared_ptr<const Result>>{
 							make_unique<ResOkCase>(),
 							make_unique<ResFailureCase>(),
@@ -54,7 +54,7 @@ FailureCountTest::FailureCountTest()
 {
 }
 
-shared_ptr<const Result> FailureCountTest::result() const
+shared_ptr<const Result> CountFailureTest::result() const
 {
 	return tests->result();
 }

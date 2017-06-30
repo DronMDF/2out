@@ -6,9 +6,9 @@
 #include <memory>
 #include <Test.h>
 
-class FailureCountTest final : public oout::Test {
+class CountFailureTest final : public oout::Test {
 public:
-	FailureCountTest();
+	CountFailureTest();
 	std::shared_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;
