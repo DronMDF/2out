@@ -57,7 +57,7 @@ public:
 };
 
 FailureCount::FailureCount(const list<shared_ptr<const Result>> &results)
-	: FailureCount(make_shared<ResSuite>("", results))
+	: FailureCount(make_unique<ResSuite>(results))
 {
 }
 

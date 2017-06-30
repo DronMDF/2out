@@ -56,6 +56,7 @@ private:
 	const string name;
 };
 
+// @todo #214:15min Name should be first argument
 ResNamed::ResNamed(const shared_ptr<const Result> &result, const string &name)
 	: result(result), name(name)
 {

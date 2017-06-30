@@ -57,7 +57,7 @@ public:
 };
 
 CountError::CountError(const list<shared_ptr<const Result>> &results)
-	: CountError(make_shared<ResSuite>("", results))
+	: CountError(make_unique<ResSuite>(results))
 {
 }
 
