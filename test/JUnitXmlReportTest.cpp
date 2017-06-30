@@ -9,6 +9,7 @@
 #include <Failure.h>
 #include <JUnitXmlReport.h>
 #include <ResSimple.h>
+#include <ResSuite.h>
 #include <TestContainText.h>
 #include <TestNamed.h>
 #include <TestSuite.h>
@@ -60,6 +61,20 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 						)
 					),
 					"error><![CDATA[&amp;]]"
+				)
+			),
+			make_shared<TestNamed>(
+				"Count of errors in suite",
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResSuite>(
+							"",
+							list<shared_ptr<const Result>>{
+								make_unique<ResErrorCase>()
+							}
+						)
+					),
+					"errors='1'"
 				)
 			)
 		}
