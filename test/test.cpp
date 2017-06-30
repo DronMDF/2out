@@ -6,15 +6,16 @@
 #include <iostream>
 #include <list>
 #include <memory>
-#include <FailureCount.h>
+#include <CountError.h>
+#include <CountFailure.h>
 #include <JUnitXmlReport.h>
 #include <ReprSigned.h>
 #include <Result.h>
 #include <TestEqual.h>
 #include <TestSuite.h>
 #include "CountErrorTest.h"
+#include "CountFailureTest.h"
 #include "CountTestTest.h"
-#include "FailureCountTest.h"
 #include "JUnitXmlReportTest.h"
 #include "TestSuiteTest.h"
 #include "TextReportTest.h"
@@ -39,8 +40,8 @@ int main(int, char **)
 				}
 			),
 			make_shared<const CountErrorTest>(),
+			make_shared<const CountFailureTest>(),
 			make_shared<const CountTestTest>(),
-			make_shared<const FailureCountTest>(),
 			make_shared<const JUnitXmlReportTest>(),
 			make_shared<const TestSuiteTest>(),
 			make_shared<const TextReportTest>()
@@ -49,5 +50,8 @@ int main(int, char **)
 
 	cout << JUnitXmlReport(result).asString() << endl;
 
-	return FailureCount(result).count() == 0 ? 0 : -1;
+	return (
+		CountFailure(result).count() == 0 &&
+		CountError(result).count() == 0
+	) ? 0 : -1;
 }

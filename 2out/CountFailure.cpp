@@ -3,12 +3,12 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <FailureCount.h>
+#include "CountFailure.h"
 #include <numeric>
-#include <AssertionResult.h>
-#include <Format.h>
-#include <ResSuite.h>
-#include <Result.h>
+#include "AssertionResult.h"
+#include "Format.h"
+#include "ResSuite.h"
+#include "Result.h"
 
 using namespace std;
 using namespace oout;
@@ -56,17 +56,17 @@ public:
 	}
 };
 
-FailureCount::FailureCount(const list<shared_ptr<const Result>> &results)
-	: FailureCount(make_unique<ResSuite>(results))
+CountFailure::CountFailure(const list<shared_ptr<const Result>> &results)
+	: CountFailure(make_unique<ResSuite>(results))
 {
 }
 
-FailureCount::FailureCount(const shared_ptr<const Result> &result)
+CountFailure::CountFailure(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
-size_t FailureCount::count() const
+size_t CountFailure::count() const
 {
 	return result->print(FmtFailure()).size();
 }

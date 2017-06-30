@@ -6,8 +6,8 @@ ADD_EXECUTABLE(
 	test_runner
 	test.cpp
 	CountErrorTest.cpp
+	CountFailureTest.cpp
 	CountTestTest.cpp
-	FailureCountTest.cpp
 	JUnitXmlReportTest.cpp
 	ResFakes.cpp
 	TestSuiteTest.cpp

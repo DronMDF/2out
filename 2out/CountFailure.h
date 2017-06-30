@@ -11,11 +11,10 @@ namespace oout {
 
 class Result;
 
-// @todo #161:15min Rename FailureCount to CountFailure
-class FailureCount final {
+class CountFailure final {
 public:
-	explicit FailureCount(const std::list<std::shared_ptr<const Result>> &results);
-	explicit FailureCount(const std::shared_ptr<const Result> &result);
+	explicit CountFailure(const std::list<std::shared_ptr<const Result>> &results);
+	explicit CountFailure(const std::shared_ptr<const Result> &result);
 	size_t count() const;
 private:
 	const std::shared_ptr<const Result> result;
