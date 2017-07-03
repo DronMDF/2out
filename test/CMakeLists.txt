@@ -12,7 +12,9 @@ ADD_EXECUTABLE(
 	CountTestTest.cpp
 	JUnitXmlReportTest.cpp
 	ReprPrintableTest.cpp
+	ReprTest.cpp
 	ResFakes.cpp
+	TestStartsWithTest.cpp
 	TestSuiteTest.cpp
 	TextReportTest.cpp
 )

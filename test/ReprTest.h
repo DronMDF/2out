@@ -4,12 +4,13 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <memory>
+#include <2out/Representation.h>
 #include <2out/Test.h>
 
-class TestSuiteTest final : public oout::Test {
+class ReprTest final : public oout::Representation {
 public:
-	TestSuiteTest();
-	std::shared_ptr<const oout::Result> result() const override;
+	explicit ReprTest(const std::shared_ptr<const oout::Test> &test);
+	std::string asString() const override;
 private:
-	const std::unique_ptr<const oout::Test> tests;
+	const std::shared_ptr<const oout::Test> test;
 };

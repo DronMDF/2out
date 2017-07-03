@@ -18,6 +18,7 @@
 #include "CountTestTest.h"
 #include "JUnitXmlReportTest.h"
 #include "ReprPrintableTest.h"
+#include "TestStartsWithTest.h"
 #include "TestSuiteTest.h"
 #include "TextReportTest.h"
 
@@ -45,6 +46,7 @@ int main(int, char **)
 			make_unique<CountTestTest>(),
 			make_unique<JUnitXmlReportTest>(),
 			make_unique<ReprPrintableTest>(),
+			make_unique<TestStartsWithTest>(),
 			make_unique<TestSuiteTest>(),
 			make_unique<TextReportTest>()
 		}
