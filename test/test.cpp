@@ -17,6 +17,7 @@
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
 #include "JUnitXmlReportTest.h"
+#include "ReprPrintableTest.h"
 #include "TestSuiteTest.h"
 #include "TextReportTest.h"
 
@@ -39,12 +40,13 @@ int main(int, char **)
 					)
 				}
 			),
-			make_shared<const CountErrorTest>(),
-			make_shared<const CountFailureTest>(),
-			make_shared<const CountTestTest>(),
-			make_shared<const JUnitXmlReportTest>(),
-			make_shared<const TestSuiteTest>(),
-			make_shared<const TextReportTest>()
+			make_unique<CountErrorTest>(),
+			make_unique<CountFailureTest>(),
+			make_unique<CountTestTest>(),
+			make_unique<JUnitXmlReportTest>(),
+			make_unique<ReprPrintableTest>(),
+			make_unique<TestSuiteTest>(),
+			make_unique<TextReportTest>()
 		}
 	).result();
 
