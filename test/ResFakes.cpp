@@ -4,10 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "ResFakes.h"
-#include <Error.h>
-#include <Failure.h>
-#include <Format.h>
-#include <Success.h>
+#include <2out/Error.h>
+#include <2out/Failure.h>
+#include <2out/Format.h>
+#include <2out/Success.h>
 
 using namespace std;
 using namespace oout;

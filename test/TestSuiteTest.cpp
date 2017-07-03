@@ -4,11 +4,11 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestSuiteTest.h"
-#include <CountFailure.h>
-#include <Representation.h>
-#include <TestEqual.h>
-#include <TestNamed.h>
-#include <TestSuite.h>
+#include <2out/CountFailure.h>
+#include <2out/Representation.h>
+#include <2out/TestEqual.h>
+#include <2out/TestNamed.h>
+#include <2out/TestSuite.h>
 
 using namespace std;
 using namespace oout;
