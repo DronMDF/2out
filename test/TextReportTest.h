@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <memory>
-#include <Test.h>
+#include <2out/Test.h>
 
 class TextReportTest final : public oout::Test
 {

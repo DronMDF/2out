@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <Result.h>
+#include <2out/Result.h>
 
 class ResOkCase final : public oout::Result {
 public:

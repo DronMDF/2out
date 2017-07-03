@@ -3,8 +3,8 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <ResSimple.h>
-#include <Format.h>
+#include "ResSimple.h"
+#include "Format.h"
 
 using namespace std;
 using namespace oout;

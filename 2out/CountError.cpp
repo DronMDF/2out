@@ -3,12 +3,12 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include <CountError.h>
+#include "CountError.h"
 #include <numeric>
-#include <AssertionResult.h>
-#include <Format.h>
-#include <ResSuite.h>
-#include <Result.h>
+#include "AssertionResult.h"
+#include "Format.h"
+#include "ResSuite.h"
+#include "Result.h"
 
 using namespace std;
 using namespace oout;
