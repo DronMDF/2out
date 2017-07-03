@@ -4,29 +4,13 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestSuiteTest.h"
-#include <2out/CountFailure.h>
-#include <2out/Representation.h>
 #include <2out/TestEqual.h>
 #include <2out/TestNamed.h>
 #include <2out/TestSuite.h>
+#include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
-
-class TestStatusRepr final : public Representation {
-public:
-	explicit TestStatusRepr(const shared_ptr<const Test> &test)
-		: test(test)
-	{
-	}
-
-	string asString() const override
-	{
-		return CountFailure(test->result()).count() == 0 ? "success" : "failure";
-	}
-private:
-	const shared_ptr<const Test> test;
-};
 
 TestSuiteTest::TestSuiteTest()
 : tests(
@@ -34,7 +18,7 @@ TestSuiteTest::TestSuiteTest()
 		"TestSuiteTest",
 		list<shared_ptr<const Test>>{
 			make_shared<TestEqual>(
-				make_shared<TestStatusRepr>(
+				make_shared<ReprTest>(
 					make_unique<TestSuite>(
 						list<shared_ptr<const Test>>{}
 					)

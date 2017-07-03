@@ -6,9 +6,9 @@
 #include <memory>
 #include <2out/Test.h>
 
-class TestSuiteTest final : public oout::Test {
+class TestStartsWithTest final : public oout::Test {
 public:
-	TestSuiteTest();
+	TestStartsWithTest();
 	std::shared_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;

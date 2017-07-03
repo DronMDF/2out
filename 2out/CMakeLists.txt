@@ -21,6 +21,7 @@ ADD_LIBRARY(
 	TestEqual.cpp
 	TestNamed.cpp
 	TestSafe.cpp
+	TestStartsWith.cpp
 	TestSuite.cpp
 	TestTimed.cpp
 	TextReport.cpp
