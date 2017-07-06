@@ -40,7 +40,7 @@ shared_ptr<const Result> TestStartsWith::result() const
 	ostringstream text;
 	text << "'" << a->asString() << "' is starts with '" << b->asString() << "'";
 
-	shared_ptr<const AssertionResult> assertion_result;
+	shared_ptr<const Result> assertion_result;
 	if (a->asString().find(b->asString()) == 0) {
 		assertion_result = make_shared<Success>(text.str());
 	} else {

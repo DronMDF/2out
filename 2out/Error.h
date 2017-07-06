@@ -5,11 +5,11 @@
 
 #pragma once
 #include <string>
-#include "AssertionResult.h"
+#include "Result.h"
 
 namespace oout {
 
-class Error final : public AssertionResult {
+class Error final : public Result {
 public:
 	explicit Error(const std::string &text = {});
 	std::string print(const Format &format) const override;

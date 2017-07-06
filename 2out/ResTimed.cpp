@@ -32,7 +32,7 @@ public:
 	}
 
 	string test(const string &name,
-		const shared_ptr<const AssertionResult> &assertion_result,
+		const shared_ptr<const Result> &assertion_result,
 		float
 	) const override
 	{

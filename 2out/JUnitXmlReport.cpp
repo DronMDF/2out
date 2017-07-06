@@ -5,7 +5,6 @@
 
 #include "JUnitXmlReport.h"
 #include <sstream>
-#include "AssertionResult.h"
 #include "CountError.h"
 #include "CountFailure.h"
 #include "CountTest.h"
@@ -38,7 +37,7 @@ public:
 
 	string test(
 		const string &name,
-		const shared_ptr<const AssertionResult> &assertion_result,
+		const shared_ptr<const Result> &assertion_result,
 		float time
 	) const override
 	{

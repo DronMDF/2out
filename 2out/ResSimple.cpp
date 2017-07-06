@@ -9,7 +9,7 @@
 using namespace std;
 using namespace oout;
 
-ResSimple::ResSimple(const shared_ptr<const AssertionResult> &result)
+ResSimple::ResSimple(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }

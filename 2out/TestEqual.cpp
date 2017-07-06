@@ -6,7 +6,6 @@
 #include "TestEqual.h"
 #include <sstream>
 #include <algorithm>
-#include "AssertionResult.h"
 #include "Failure.h"
 #include "ReprString.h"
 #include "ResSimple.h"
@@ -40,7 +39,7 @@ shared_ptr<const Result> TestEqual::result() const
 	ostringstream text;
 	text << "'" << a->asString() << "' is equal '" << b->asString() << "'";
 
-	shared_ptr<const AssertionResult> assertion_result;
+	shared_ptr<const Result> assertion_result;
 	if (a->asString() == b->asString()) {
 		assertion_result = make_shared<Success>(text.str());
 	} else {
