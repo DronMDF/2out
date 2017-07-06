@@ -5,7 +5,7 @@
 
 #include "CountError.h"
 #include <numeric>
-#include "AssertionResult.h"
+#include "Result.h"
 #include "Format.h"
 #include "ResSuite.h"
 #include "Result.h"
@@ -32,7 +32,7 @@ public:
 
 	string test(
 		const string &,
-		const shared_ptr<const AssertionResult> &assertion_result,
+		const shared_ptr<const Result> &assertion_result,
 		float
 	) const override
 	{

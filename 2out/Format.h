@@ -10,7 +10,7 @@
 namespace oout {
 
 class Result;
-class AssertionResult;
+class Result;
 
 class Format {
 public:
@@ -22,7 +22,7 @@ public:
 
 	virtual std::string test(
 		const std::string &name,
-		const std::shared_ptr<const AssertionResult> &assertion_result,
+		const std::shared_ptr<const Result> &assertion_result,
 		float time
 	) const = 0;
 

@@ -6,7 +6,7 @@
 #include "TestContainText.h"
 #include <algorithm>
 #include <sstream>
-#include "AssertionResult.h"
+#include "Result.h"
 #include "Failure.h"
 #include "ReprString.h"
 #include "ResSimple.h"
@@ -42,7 +42,7 @@ shared_ptr<const Result> TestContainText::result() const
 	ostringstream test_text;
 	test_text << "'" << substr->asString() << "' in '" << text->asString() << "'";
 
-	shared_ptr<const AssertionResult> assertion_result;
+	shared_ptr<const Result> assertion_result;
 	if (text->asString().find(substr->asString()) != string::npos) {
 		assertion_result = make_shared<Success>(test_text.str());
 	} else {

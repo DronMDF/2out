@@ -6,16 +6,15 @@
 #pragma once
 #include <memory>
 #include "Result.h"
-#include "AssertionResult.h"
 
 namespace oout {
 
 class ResSimple final : public Result {
 public:
-	explicit ResSimple(const std::shared_ptr<const AssertionResult> &result);
+	explicit ResSimple(const std::shared_ptr<const Result> &result);
 	std::string print(const Format &format) const override;
 private:
-	const std::shared_ptr<const AssertionResult> result;
+	const std::shared_ptr<const Result> result;
 };
 
 }

@@ -4,11 +4,11 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "AssertionResult.h"
+#include "Result.h"
 
 namespace oout {
 
-class Success final : public AssertionResult {
+class Success final : public Result {
 public:
 	explicit Success(const std::string &text = {});
 	std::string print(const Format &format) const override;
