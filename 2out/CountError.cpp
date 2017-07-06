@@ -5,7 +5,6 @@
 
 #include "CountError.h"
 #include <numeric>
-#include "Result.h"
 #include "Format.h"
 #include "ResSuite.h"
 #include "Result.h"

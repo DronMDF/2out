@@ -6,7 +6,6 @@
 #include "TestContainText.h"
 #include <algorithm>
 #include <sstream>
-#include "Result.h"
 #include "Failure.h"
 #include "ReprString.h"
 #include "ResSimple.h"

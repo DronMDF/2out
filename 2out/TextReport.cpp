@@ -5,7 +5,6 @@
 
 #include "TextReport.h"
 #include <sstream>
-#include "Result.h"
 #include "CountFailure.h"
 #include "CountTest.h"
 #include "Format.h"

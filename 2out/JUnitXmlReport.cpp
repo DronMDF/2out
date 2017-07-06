@@ -5,7 +5,6 @@
 
 #include "JUnitXmlReport.h"
 #include <sstream>
-#include "Result.h"
 #include "CountError.h"
 #include "CountFailure.h"
 #include "CountTest.h"

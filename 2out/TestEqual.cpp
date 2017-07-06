@@ -6,7 +6,6 @@
 #include "TestEqual.h"
 #include <sstream>
 #include <algorithm>
-#include "Result.h"
 #include "Failure.h"
 #include "ReprString.h"
 #include "ResSimple.h"

@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #162:15min ResSimple should be named as ResTest
+//  Simple is not a term of 2out.
 class ResSimple final : public Result {
 public:
 	explicit ResSimple(const std::shared_ptr<const Result> &result);
