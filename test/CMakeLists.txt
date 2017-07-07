@@ -14,6 +14,7 @@ ADD_EXECUTABLE(
 	ReprPrintableTest.cpp
 	ReprTest.cpp
 	ResFakes.cpp
+	TestSkippedTest.cpp
 	TestStartsWithTest.cpp
 	TestSuiteTest.cpp
 	TextReportTest.cpp

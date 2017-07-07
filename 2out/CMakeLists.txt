@@ -20,6 +20,7 @@ ADD_LIBRARY(
 	TestContainText.cpp
 	TestEqual.cpp
 	TestNamed.cpp
+	TestSkipped.cpp
 	TestSafe.cpp
 	TestStartsWith.cpp
 	TestSuite.cpp
