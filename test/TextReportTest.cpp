@@ -54,13 +54,13 @@ TextReportTest::TextReportTest()
 			make_shared<TestContainText>(
 				make_unique<TextReport>(
 					make_unique<ResNamed>(
+						"SUITE",
 						make_unique<ResSuite>(
 							list<shared_ptr<const Result>>{
 								make_unique<ResOkCase>(),
 								make_unique<ResOkCase>()
 							}
-						),
-						"SUITE"
+						)
 					)
 				),
 				"[----------] 2 test from SUITE"
