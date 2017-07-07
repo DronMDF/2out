@@ -12,6 +12,8 @@
 using namespace std;
 using namespace oout;
 
+namespace oout {
+
 class FmtTests final : public Format {
 public:
 	string success(const string &) const override
@@ -50,6 +52,8 @@ public:
 		);
 	}
 };
+
+}  // namespace oout
 
 CountTest::CountTest(const list<shared_ptr<const Result>> &results)
 	: CountTest(make_unique<ResSuite>(results))

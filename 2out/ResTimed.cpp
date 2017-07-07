@@ -9,6 +9,8 @@
 using namespace std;
 using namespace oout;
 
+namespace oout {
+
 class FmtTimed final : public Format {
 public:
 	FmtTimed(const Format *format, float time)
@@ -55,6 +57,8 @@ private:
 	const Format *format;
 	const float time;
 };
+
+}  // namespace oout
 
 ResTimed::ResTimed(const shared_ptr<const Result> &result, float time)
 	: result(result), time(time)
