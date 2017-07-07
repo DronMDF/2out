@@ -22,5 +22,5 @@ TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
 
 shared_ptr<const Result> TestNamed::result() const
 {
-	return make_shared<ResNamed>(test->result(), name);
+	return make_shared<ResNamed>(name, test->result());
 }
