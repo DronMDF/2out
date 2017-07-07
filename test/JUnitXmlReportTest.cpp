@@ -8,8 +8,8 @@
 #include <2out/Error.h>
 #include <2out/Failure.h>
 #include <2out/JUnitXmlReport.h>
-#include <2out/ResSimple.h>
 #include <2out/ResSuite.h>
+#include <2out/ResTest.h>
 #include <2out/TestContainText.h>
 #include <2out/TestNamed.h>
 #include <2out/TestSuite.h>
@@ -45,7 +45,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				"Escaping in failure",
 				make_shared<TestContainText>(
 					make_unique<JUnitXmlReport>(
-						make_unique<ResSimple>(
+						make_unique<ResTest>(
 							make_unique<Failure>("<tag>")
 						)
 					),
@@ -56,7 +56,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				"Escaping in error",
 				make_shared<TestContainText>(
 					make_unique<JUnitXmlReport>(
-						make_unique<ResSimple>(
+						make_unique<ResTest>(
 							make_unique<Error>("&amp;")
 						)
 					),

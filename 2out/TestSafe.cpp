@@ -5,7 +5,7 @@
 
 #include "TestSafe.h"
 #include "Error.h"
-#include "ResSimple.h"
+#include "ResTest.h"
 
 using namespace std;
 using namespace oout;
@@ -21,7 +21,7 @@ shared_ptr<const Result> TestSafe::result() const
 	try {
 		r = test->result();
 	} catch (const exception &e) {
-		r = make_shared<const ResSimple>(make_shared<Error>(e.what()));
+		r = make_shared<const ResTest>(make_shared<Error>(e.what()));
 	}
 	return r;
 }

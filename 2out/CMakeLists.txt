@@ -13,8 +13,8 @@ ADD_LIBRARY(
 	ReprSigned.cpp
 	ReprString.cpp
 	ResNamed.cpp
-	ResSimple.cpp
 	ResSuite.cpp
+	ResTest.cpp
 	ResTimed.cpp
 	Success.cpp
 	TestContainText.cpp

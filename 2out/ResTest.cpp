@@ -3,18 +3,18 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ResSimple.h"
+#include "ResTest.h"
 #include "Format.h"
 
 using namespace std;
 using namespace oout;
 
-ResSimple::ResSimple(const shared_ptr<const Result> &result)
+ResTest::ResTest(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
-string ResSimple::print(const Format &format) const
+string ResTest::print(const Format &format) const
 {
 	return format.test("", result, 0);
 }
