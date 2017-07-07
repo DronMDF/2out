@@ -7,7 +7,7 @@
 #include <sstream>
 #include "Failure.h"
 #include "ReprString.h"
-#include "ResSimple.h"
+#include "ResTest.h"
 #include "Success.h"
 
 using namespace std;
@@ -46,5 +46,5 @@ shared_ptr<const Result> TestStartsWith::result() const
 	} else {
 		assertion_result = make_shared<Failure>(text.str());
 	}
-	return make_shared<ResSimple>(assertion_result);
+	return make_shared<ResTest>(assertion_result);
 }
