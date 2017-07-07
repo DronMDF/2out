@@ -12,6 +12,8 @@
 using namespace std;
 using namespace oout;
 
+namespace oout {
+
 class FmtFailure final : public Format {
 public:
 	string success(const string &) const override
@@ -54,6 +56,8 @@ public:
 		);
 	}
 };
+
+}  // namespace oout
 
 CountFailure::CountFailure(const list<shared_ptr<const Result>> &results)
 	: CountFailure(make_unique<ResSuite>(results))

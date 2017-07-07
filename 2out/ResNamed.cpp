@@ -9,6 +9,8 @@
 using namespace std;
 using namespace oout;
 
+namespace oout {
+
 class FmtNamed final : public Format {
 public:
 	FmtNamed(const Format *format, const string &name)
@@ -55,6 +57,8 @@ private:
 	const Format *format;
 	const string name;
 };
+
+}  // namespace oout
 
 ResNamed::ResNamed(const string &name, const shared_ptr<const Result> &result)
 	: name(name), result(result)

@@ -14,6 +14,8 @@
 using namespace std;
 using namespace oout;
 
+namespace oout {
+
 class FmtJunitXml final : public Format {
 public:
 	string success(const string &) const override
@@ -77,6 +79,8 @@ public:
 		return out.str();
 	}
 };
+
+}  // namespace oout
 
 JUnitXmlReport::JUnitXmlReport(const std::shared_ptr<const Result> &result)
 	: result(result)

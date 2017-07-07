@@ -13,6 +13,8 @@
 using namespace std;
 using namespace oout;
 
+namespace oout {
+
 class FmtText final : public Format {
 public:
 	string success(const string &text) const override
@@ -66,6 +68,8 @@ public:
 		return out.str();
 	}
 };
+
+}  // namespace oout
 
 TextReport::TextReport(const std::shared_ptr<const Result> &result)
 	: result(result)
