@@ -54,7 +54,7 @@ CountTestTest::CountTestTest()
 {
 }
 
-shared_ptr<const Result> CountTestTest::result() const
+unique_ptr<const Result> CountTestTest::result() const
 {
 	return tests->result();
 }

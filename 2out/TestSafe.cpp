@@ -15,13 +15,13 @@ TestSafe::TestSafe(const shared_ptr<const Test> &test)
 {
 }
 
-shared_ptr<const Result> TestSafe::result() const
+unique_ptr<const Result> TestSafe::result() const
 {
-	shared_ptr<const Result> r;
+	unique_ptr<const Result> r;
 	try {
 		r = test->result();
 	} catch (const exception &e) {
-		r = make_shared<const ResTest>(make_shared<Error>(e.what()));
+		r = make_unique<const ResTest>(make_shared<Error>(e.what()));
 	}
 	return r;
 }

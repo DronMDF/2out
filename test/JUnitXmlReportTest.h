@@ -10,8 +10,7 @@ class JUnitXmlReportTest final : public oout::Test
 {
 public:
 	JUnitXmlReportTest();
-	std::shared_ptr<const oout::Result> result() const override;
-
+	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;
 };

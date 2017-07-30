@@ -20,7 +20,7 @@ public:
 		const std::shared_ptr<const Representation> &b
 	);
 
-	std::shared_ptr<const Result> result() const override;
+	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Representation> a;
 	const std::shared_ptr<const Representation> b;

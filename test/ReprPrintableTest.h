@@ -10,7 +10,7 @@ class ReprPrintableTest final : public oout::Test
 {
 public:
 	ReprPrintableTest();
-	std::shared_ptr<const oout::Result> result() const override;
+	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;
 };

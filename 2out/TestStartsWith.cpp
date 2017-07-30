@@ -35,7 +35,7 @@ TestStartsWith::TestStartsWith(
 {
 }
 
-shared_ptr<const Result> TestStartsWith::result() const
+unique_ptr<const Result> TestStartsWith::result() const
 {
 	ostringstream text;
 	text << "'" << a->asString() << "' is starts with '" << b->asString() << "'";
@@ -46,5 +46,5 @@ shared_ptr<const Result> TestStartsWith::result() const
 	} else {
 		assertion_result = make_shared<Failure>(text.str());
 	}
-	return make_shared<ResTest>(assertion_result);
+	return make_unique<ResTest>(assertion_result);
 }

@@ -11,7 +11,7 @@ namespace oout {
 class TestSafe final : public Test {
 public:
 	explicit TestSafe(const std::shared_ptr<const Test> &test);
-	std::shared_ptr<const Result> result() const override;
+	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Test> test;
 };

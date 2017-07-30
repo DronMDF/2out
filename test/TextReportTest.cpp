@@ -71,7 +71,7 @@ TextReportTest::TextReportTest()
 {
 }
 
-shared_ptr<const Result> TextReportTest::result() const
+unique_ptr<const Result> TextReportTest::result() const
 {
 	return tests->result();
 }

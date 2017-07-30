@@ -15,7 +15,7 @@ TestSuite::TestSuite(const list<shared_ptr<const Test>> &cases)
 {
 }
 
-shared_ptr<const Result> TestSuite::result() const
+unique_ptr<const Result> TestSuite::result() const
 {
 	list<shared_ptr<const Result>> results;
 	for (const auto &c : cases) {

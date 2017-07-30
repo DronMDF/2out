@@ -15,7 +15,7 @@ class TestNamed final : public Test {
 public:
 	TestNamed(const std::string &name, const std::list<std::shared_ptr<const Test>> &tests);
 	TestNamed(const std::string &name, const std::shared_ptr<const Test> &test);
-	std::shared_ptr<const Result> result() const override;
+	std::unique_ptr<const Result> result() const override;
 private:
 	const std::string name;
 	const std::shared_ptr<const Test> test;

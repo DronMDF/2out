@@ -15,13 +15,13 @@ TestTimed::TestTimed(const shared_ptr<const Test> &test)
 {
 }
 
-shared_ptr<const Result> TestTimed::result() const
+unique_ptr<const Result> TestTimed::result() const
 {
 	const auto begin = chrono::high_resolution_clock::now();
-	const auto result = test->result();
+	const shared_ptr<const Result> result = test->result();
 	const auto end = chrono::high_resolution_clock::now();
 
-	return make_shared<const ResTimed>(
+	return make_unique<const ResTimed>(
 		result,
 		chrono::duration_cast<chrono::duration<float>>(end - begin).count()
 	);

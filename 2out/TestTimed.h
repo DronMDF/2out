@@ -12,7 +12,7 @@ namespace oout {
 class TestTimed final : public Test {
 public:
 	explicit TestTimed(const std::shared_ptr<const Test> &test);
-	std::shared_ptr<const Result> result() const override;
+	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Test> test;
 };

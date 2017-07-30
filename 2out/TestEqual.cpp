@@ -34,7 +34,7 @@ TestEqual::TestEqual(const shared_ptr<const Representation> &a, const shared_ptr
 {
 }
 
-shared_ptr<const Result> TestEqual::result() const
+unique_ptr<const Result> TestEqual::result() const
 {
 	ostringstream text;
 	text << "'" << a->asString() << "' is equal '" << b->asString() << "'";
@@ -45,5 +45,5 @@ shared_ptr<const Result> TestEqual::result() const
 	} else {
 		assertion_result = make_shared<Failure>(text.str());
 	}
-	return make_shared<ResTest>(assertion_result);
+	return make_unique<ResTest>(assertion_result);
 }
