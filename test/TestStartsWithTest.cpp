@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestStartsWithTest.h"
+#include <2out/Result.h>
 #include <2out/TestNamed.h>
 #include <2out/TestStartsWith.h>
 #include <2out/TestEqual.h>
@@ -35,7 +36,7 @@ TestStartsWithTest::TestStartsWithTest()
 {
 }
 
-shared_ptr<const Result> TestStartsWithTest::result() const
+unique_ptr<const Result> TestStartsWithTest::result() const
 {
 	return tests->result();
 }

@@ -5,6 +5,7 @@
 
 #include "ReprTest.h"
 #include <2out/CountFailure.h>
+#include <2out/Result.h>
 
 using namespace std;
 using namespace oout;

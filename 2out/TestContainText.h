@@ -25,7 +25,7 @@ public:
 		const std::shared_ptr<const Representation> &substr
 	);
 
-	std::shared_ptr<const Result> result() const override;
+	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Representation> text;
 	const std::shared_ptr<const Representation> substr;

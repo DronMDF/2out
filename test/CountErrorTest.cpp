@@ -57,7 +57,7 @@ CountErrorTest::CountErrorTest()
 {
 }
 
-shared_ptr<const Result> CountErrorTest::result() const
+unique_ptr<const Result> CountErrorTest::result() const
 {
 	return tests->result();
 }

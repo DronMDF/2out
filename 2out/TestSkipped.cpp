@@ -15,7 +15,7 @@ TestSkipped::TestSkipped(const shared_ptr<const Test> &test)
 {
 }
 
-shared_ptr<const Result> TestSkipped::result() const
+unique_ptr<const Result> TestSkipped::result() const
 {
 	return make_unique<ResTest>(make_unique<Success>());
 }

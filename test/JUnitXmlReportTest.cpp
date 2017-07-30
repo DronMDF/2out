@@ -82,7 +82,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 {
 }
 
-shared_ptr<const Result> JUnitXmlReportTest::result() const
+unique_ptr<const Result> JUnitXmlReportTest::result() const
 {
 	return tests->result();
 }

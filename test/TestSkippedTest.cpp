@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestSkippedTest.h"
+#include <2out/Result.h>
 #include <2out/TestNamed.h>
 #include <2out/TestEqual.h>
 #include <2out/TestSkipped.h>
@@ -37,7 +38,7 @@ TestSkippedTest::TestSkippedTest()
 {
 }
 
-shared_ptr<const Result> TestSkippedTest::result() const
+unique_ptr<const Result> TestSkippedTest::result() const
 {
 	return tests->result();
 }

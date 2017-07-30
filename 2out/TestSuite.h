@@ -14,7 +14,7 @@ namespace oout {
 class TestSuite final : public Test {
 public:
 	explicit TestSuite(const std::list<std::shared_ptr<const Test>> &cases);
-	std::shared_ptr<const Result> result() const override;
+	std::unique_ptr<const Result> result() const override;
 private:
 	const std::list<std::shared_ptr<const Test>> cases;
 };

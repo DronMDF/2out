@@ -36,7 +36,7 @@ TestContainText::TestContainText(
 {
 }
 
-shared_ptr<const Result> TestContainText::result() const
+unique_ptr<const Result> TestContainText::result() const
 {
 	ostringstream test_text;
 	test_text << "'" << substr->asString() << "' in '" << text->asString() << "'";
@@ -47,5 +47,5 @@ shared_ptr<const Result> TestContainText::result() const
 	} else {
 		assertion_result = make_shared<Failure>(test_text.str());
 	}
-	return make_shared<const ResTest>(assertion_result);
+	return make_unique<const ResTest>(assertion_result);
 }

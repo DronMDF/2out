@@ -20,7 +20,7 @@ TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
 {
 }
 
-shared_ptr<const Result> TestNamed::result() const
+unique_ptr<const Result> TestNamed::result() const
 {
-	return make_shared<ResNamed>(name, test->result());
+	return make_unique<ResNamed>(name, test->result());
 }

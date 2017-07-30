@@ -6,6 +6,7 @@
 #include "ReprPrintableTest.h"
 #include <list>
 #include <2out/ReprPrintable.h>
+#include <2out/Result.h>
 #include <2out/TestEqual.h>
 #include <2out/TestNamed.h>
 
@@ -32,7 +33,7 @@ ReprPrintableTest::ReprPrintableTest()
 {
 }
 
-shared_ptr<const Result> ReprPrintableTest::result() const
+unique_ptr<const Result> ReprPrintableTest::result() const
 {
 	return tests->result();
 }

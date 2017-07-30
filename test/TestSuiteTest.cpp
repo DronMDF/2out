@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestSuiteTest.h"
+#include <2out/Result.h>
 #include <2out/TestEqual.h>
 #include <2out/TestNamed.h>
 #include <2out/TestSuite.h>
@@ -31,7 +32,7 @@ TestSuiteTest::TestSuiteTest()
 {
 }
 
-shared_ptr<const Result> TestSuiteTest::result() const
+unique_ptr<const Result> TestSuiteTest::result() const
 {
 	return tests->result();
 }
