@@ -9,6 +9,7 @@
 
 namespace oout {
 
+/// Representation for any printable type
 template <typename T>
 class ReprPrintable final : public Representation {
 public:

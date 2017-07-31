@@ -8,8 +8,6 @@
 
 namespace oout {
 
-// @todo #151:15min Need to introduce generic Representation for any type.
-//  This repr can use ostringstream for stringize object
 class Representation {
 public:
 	virtual ~Representation() = default;
