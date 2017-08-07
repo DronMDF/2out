@@ -4,19 +4,22 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <chrono>
 #include <memory>
 #include "Result.h"
 
 namespace oout {
 
-// @todo #198:15min In ResTimed should keep chrono::time_point, not float
 class ResTimed final : public Result {
 public:
-	ResTimed(const std::shared_ptr<const Result> &result, float time);
+	ResTimed(
+		const std::shared_ptr<const Result> &result,
+		const std::chrono::high_resolution_clock::duration &duration
+	);
 	std::string print(const Format &format) const override;
 private:
 	const std::shared_ptr<const Result> result;
-	const float time;
+	const std::chrono::high_resolution_clock::duration duration;
 };
 
 }
