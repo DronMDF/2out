@@ -20,9 +20,5 @@ unique_ptr<const Result> TestTimed::result() const
 	const auto begin = chrono::high_resolution_clock::now();
 	const shared_ptr<const Result> result = test->result();
 	const auto end = chrono::high_resolution_clock::now();
-
-	return make_unique<const ResTimed>(
-		result,
-		chrono::duration_cast<chrono::duration<float>>(end - begin).count()
-	);
+	return make_unique<const ResTimed>(result, end - begin);
 }

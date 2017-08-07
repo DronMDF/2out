@@ -13,8 +13,8 @@ namespace oout {
 
 class FmtTimed final : public Format {
 public:
-	FmtTimed(const Format *format, float time)
-		: format(format), time(time)
+	FmtTimed(const Format *format, const chrono::high_resolution_clock::duration &duration)
+		: format(format), duration(duration)
 	{
 	}
 
@@ -38,6 +38,7 @@ public:
 		float
 	) const override
 	{
+		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
 		return format->test(name, assertion_result, time);
 	}
 
@@ -47,6 +48,7 @@ public:
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
+		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
 		return format->suite(name, time, results);
 	}
 
@@ -55,17 +57,20 @@ private:
 	FmtTimed &operator =(const FmtTimed&) = delete;
 
 	const Format *format;
-	const float time;
+	const chrono::high_resolution_clock::duration duration;
 };
 
 }  // namespace oout
 
-ResTimed::ResTimed(const shared_ptr<const Result> &result, float time)
-	: result(result), time(time)
+ResTimed::ResTimed(
+	const shared_ptr<const Result> &result,
+	const chrono::high_resolution_clock::duration &duration
+)
+	: result(result), duration(duration)
 {
 }
 
 string ResTimed::print(const Format &format) const
 {
-	return result->print(FmtTimed(&format, time));
+	return result->print(FmtTimed(&format, duration));
 }
