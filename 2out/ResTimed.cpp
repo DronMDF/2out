@@ -13,7 +13,7 @@ namespace oout {
 
 class FmtTimed final : public Format {
 public:
-	FmtTimed(const Format *format, const chrono::high_resolution_clock::duration &duration)
+	FmtTimed(const Format *format, const chrono::nanoseconds &duration)
 		: format(format), duration(duration)
 	{
 	}
@@ -33,23 +33,22 @@ public:
 		return format->error(text);
 	}
 
-	string test(const string &name,
+	string test(
+		const string &name,
 		const shared_ptr<const Result> &assertion_result,
-		float
+		const chrono::nanoseconds &
 	) const override
 	{
-		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
-		return format->test(name, assertion_result, time);
+		return format->test(name, assertion_result, duration);
 	}
 
 	string suite(
 		const string &name,
-		float,
+		const chrono::nanoseconds &,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
-		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
-		return format->suite(name, time, results);
+		return format->suite(name, duration, results);
 	}
 
 private:
@@ -57,15 +56,12 @@ private:
 	FmtTimed &operator =(const FmtTimed&) = delete;
 
 	const Format *format;
-	const chrono::high_resolution_clock::duration duration;
+	const chrono::nanoseconds duration;
 };
 
 }  // namespace oout
 
-ResTimed::ResTimed(
-	const shared_ptr<const Result> &result,
-	const chrono::high_resolution_clock::duration &duration
-)
+ResTimed::ResTimed(const shared_ptr<const Result> &result, const chrono::nanoseconds &duration)
 	: result(result), duration(duration)
 {
 }

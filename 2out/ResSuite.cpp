@@ -16,5 +16,5 @@ ResSuite::ResSuite(const list<shared_ptr<const Result>> &results)
 
 string ResSuite::print(const Format &format) const
 {
-	return format.suite({}, 0, results);
+	return format.suite({}, chrono::nanoseconds::zero(), results);
 }

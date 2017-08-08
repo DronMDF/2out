@@ -31,14 +31,18 @@ public:
 		return {};
 	}
 
-	string test(const string &, const shared_ptr<const Result> &, float) const override
+	string test(
+		const string &,
+		const shared_ptr<const Result> &,
+		const chrono::nanoseconds &
+	) const override
 	{
 		return "T";
 	}
 
 	string suite(
 		const string &,
-		float,
+		const chrono::nanoseconds &,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{

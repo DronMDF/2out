@@ -40,9 +40,10 @@ public:
 	string test(
 		const string &name,
 		const shared_ptr<const Result> &assertion_result,
-		float time
+		const chrono::nanoseconds &duration
 	) const override
 	{
+		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
 		ostringstream out;
 		out << "<testcase "
 			<< "name='" << name << "' "
@@ -54,13 +55,14 @@ public:
 
 	string suite(
 		const string &name,
-		float time,
+		const chrono::nanoseconds &duration,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
 		const auto count_test = CountTest(results).count();
 		const auto count_failure = CountFailure(results).count();
 		const auto count_error = CountError(results).count();
+		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
 
 		ostringstream out;
 		out << "<testsuite "

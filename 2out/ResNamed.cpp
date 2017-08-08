@@ -35,19 +35,19 @@ public:
 
 	string test(const string &,
 		const shared_ptr<const Result> &assertion_result,
-		float time
+		const chrono::nanoseconds &duration
 	) const override
 	{
-		return format->test(name, assertion_result, time);
+		return format->test(name, assertion_result, duration);
 	}
 
 	string suite(
 		const string &,
-		float time,
+		const chrono::nanoseconds &duration,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
-		return format->suite(name, time, results);
+		return format->suite(name, duration, results);
 	}
 
 private:
