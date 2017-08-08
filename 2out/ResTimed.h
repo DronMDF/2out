@@ -14,12 +14,12 @@ class ResTimed final : public Result {
 public:
 	ResTimed(
 		const std::shared_ptr<const Result> &result,
-		const std::chrono::high_resolution_clock::duration &duration
+		const std::chrono::nanoseconds &duration
 	);
 	std::string print(const Format &format) const override;
 private:
 	const std::shared_ptr<const Result> result;
-	const std::chrono::high_resolution_clock::duration duration;
+	const std::chrono::nanoseconds duration;
 };
 
 }

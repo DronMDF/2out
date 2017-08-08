@@ -4,12 +4,12 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <chrono>
 #include <list>
 #include <memory>
 
 namespace oout {
 
-class Result;
 class Result;
 
 class Format {
@@ -20,16 +20,15 @@ public:
 	virtual std::string failure(const std::string &text) const = 0;
 	virtual std::string error(const std::string &text) const = 0;
 
-	// @todo #204:15min Pass chrono::duration instead of time in test and suite method
 	virtual std::string test(
 		const std::string &name,
 		const std::shared_ptr<const Result> &assertion_result,
-		float time
+		const std::chrono::nanoseconds &duration
 	) const = 0;
 
 	virtual std::string suite(
 		const std::string &name,
-		float time,
+		const std::chrono::nanoseconds &duration,
 		const std::list<std::shared_ptr<const Result>> &nodes
 	) const = 0;
 };

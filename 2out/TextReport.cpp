@@ -41,19 +41,20 @@ public:
 	string test(
 		const string &name,
 		const shared_ptr<const Result> &assertion_result,
-		float time
+		const chrono::nanoseconds &duration
 	) const override
 	{
+		const auto ms = chrono::duration_cast<chrono::milliseconds>(duration).count();
 		ostringstream out;
 		out << "[ RUN      ] " << name << endl
 			<< assertion_result->print(*this) << name
-			<< " (" << int(time * 1000) << " ms)" << endl;
+			<< " (" << ms << " ms)" << endl;
 		return out.str();
 	}
 
 	string suite(
 		const string &name,
-		float time,
+		const chrono::nanoseconds &duration,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{
@@ -63,8 +64,9 @@ public:
 		for (const auto &r : results) {
 			out << r->print(*this);
 		}
+		const auto ms = chrono::duration_cast<chrono::milliseconds>(duration).count();
 		out << "[----------] " << test_count << " test from " << name
-			<< " (" << int(time * 1000) << " ms total)" << endl;
+			<< " (" << ms << " ms total)" << endl;
 		return out.str();
 	}
 };

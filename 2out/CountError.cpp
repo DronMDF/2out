@@ -34,7 +34,7 @@ public:
 	string test(
 		const string &,
 		const shared_ptr<const Result> &assertion_result,
-		float
+		const chrono::nanoseconds &
 	) const override
 	{
 		return assertion_result->print(*this);
@@ -42,7 +42,7 @@ public:
 
 	string suite(
 		const string &,
-		float,
+		const chrono::nanoseconds &,
 		const list<shared_ptr<const Result>> &results
 	) const override
 	{

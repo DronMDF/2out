@@ -19,7 +19,7 @@ ResOkCase::ResOkCase(const string &name)
 
 string ResOkCase::print(const Format &format) const
 {
-	return format.test(name, make_shared<Success>(), 0);
+	return format.test(name, make_shared<Success>(), chrono::nanoseconds::zero());
 }
 
 ResFailureCase::ResFailureCase(const string &name)
@@ -29,7 +29,7 @@ ResFailureCase::ResFailureCase(const string &name)
 
 string ResFailureCase::print(const Format &format) const
 {
-	return format.test(name, make_shared<Failure>(), 0);
+	return format.test(name, make_shared<Failure>(), chrono::nanoseconds::zero());
 }
 
 ResErrorCase::ResErrorCase(const string &name)
@@ -39,5 +39,5 @@ ResErrorCase::ResErrorCase(const string &name)
 
 string ResErrorCase::print(const Format &format) const
 {
-	return format.test(name, make_shared<Error>("error"), 0);
+	return format.test(name, make_shared<Error>("error"), chrono::nanoseconds::zero());
 }

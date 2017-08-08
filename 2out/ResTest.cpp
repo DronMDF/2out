@@ -16,5 +16,5 @@ ResTest::ResTest(const shared_ptr<const Result> &result)
 
 string ResTest::print(const Format &format) const
 {
-	return format.test("", result, 0);
+	return format.test({}, result, chrono::nanoseconds::zero());
 }
