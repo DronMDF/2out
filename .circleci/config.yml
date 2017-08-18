@@ -1,9 +1,5 @@
 version: 2.0
 
-dependencies:
-  pre:
-    sudo apt-get install cmake
-
 jobs:
   build:
     docker:
@@ -11,5 +7,6 @@ jobs:
     steps:
       - checkout
       - run: |
-          cmake .
-          make all test
+        sudo apt-get install cmake
+        cmake .
+        make all test
