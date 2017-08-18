@@ -49,16 +49,21 @@ matrix:
             - clang-3.7
       env:
         - MATRIX_EVAL="CXX=clang++-3.7"
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
-          packages:
-            - clang-3.8
-      env:
-        - MATRIX_EVAL="CXX=clang++-3.8"
+
+# @todo: #251 clang++-3.8 on travis ci was failed
+#  with error in <cstdio>: no member named 'gets' in the global namespace
+#  Try to back this block later
+          
+          #    - os: linux
+#      addons:
+#        apt:
+#          sources:
+#            - ubuntu-toolchain-r-test
+#            - llvm-toolchain-precise-3.8
+#          packages:
+#            - clang-3.8
+#      env:
+#        - MATRIX_EVAL="CXX=clang++-3.8"
 
 # @todo #239:15min This compilers was not install by unmet dependencies
 #  Need to try this later.
