@@ -1,5 +1,9 @@
 version: 2.0
 
+dependencies:
+  pre:
+    sudo apt-get install cmake
+
 jobs:
   build:
     docker:
