@@ -2,13 +2,12 @@
 
 Object oriented unit testing framework
 
-Shippable: [![Shippable](https://api.shippable.com/projects/5922a40c2a28350700f84ee0/badge?branch=master)](https://app.shippable.com/github/DronMDF/2out/status/dashboard)
+CI:
+[![Shippable](https://api.shippable.com/projects/5922a40c2a28350700f84ee0/badge?branch=master)](https://app.shippable.com/github/DronMDF/2out/status/dashboard)
+[![Travis](https://travis-ci.org/DronMDF/2out.svg?branch=master)](https://travis-ci.org/DronMDF/2out)
+[![CircleCI](https://circleci.com/gh/DronMDF/2out.svg?style=svg)](https://circleci.com/gh/DronMDF/2out)
 
-TravisCI: [![Travis](https://travis-ci.org/DronMDF/2out.svg?branch=master)](https://travis-ci.org/DronMDF/2out)
-
-CircleCI: [![CircleCI](https://circleci.com/gh/DronMDF/2out.svg?style=svg)](https://circleci.com/gh/DronMDF/2out)
-
-PDD: [![PDD status](http://www.0pdd.com/svg?name=DronMDF/2out)](http://www.0pdd.com/p?name=DronMDF/2out)
+[![PDD status](http://www.0pdd.com/svg?name=DronMDF/2out)](http://www.0pdd.com/p?name=DronMDF/2out)
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/DronMDF/2out/blob/master/LICENSE)
 
