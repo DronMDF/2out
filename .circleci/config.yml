@@ -1,0 +1,9 @@
+version: 2.0
+
+jobs:
+  build:
+    steps:
+      - checkout
+      - run: |
+          cmake .
+          make all test
