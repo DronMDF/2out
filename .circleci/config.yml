@@ -7,6 +7,6 @@ jobs:
     steps:
       - checkout
       - run: |
-        sudo apt-get install cmake
-        cmake .
-        make all test
+          sudo apt-get install cmake
+          cmake .
+          make all test
