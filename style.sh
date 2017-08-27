@@ -7,3 +7,8 @@ cppcheck -I. -Itest --enable=all --suppress=missingIncludeSystem --quiet 2out te
 
 # Scan sources for wrong pdd tokens
 pdd > /dev/null
+
+# @todo #257 Add doxygen documentation to all classes (cleanup doxygen errors)
+
+# Check doccumentation (all undocummented threat as error)
+#doxygen
