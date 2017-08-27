@@ -11,11 +11,15 @@ namespace oout {
 
 class Result;
 
+/// Number of test results
 class CountTest final {
 public:
+	/// Secondary ctor from list of results
 	explicit CountTest(const std::list<std::shared_ptr<const Result>> &results);
+	/// Prinary ctor from composite result
 	explicit CountTest(const std::shared_ptr<const Result> &result);
 
+	/// Number of tests results
 	size_t count() const;
 private:
 	const std::shared_ptr<const Result> result;

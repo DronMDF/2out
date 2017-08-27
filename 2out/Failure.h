@@ -8,9 +8,13 @@
 
 namespace oout {
 
+/// Failure in test evaluation
 class Failure final : public Result {
 public:
+	/// Primary ctor with message
 	explicit Failure(const std::string &text = {});
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::string text;
