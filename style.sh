@@ -11,4 +11,7 @@ pdd > /dev/null
 # @todo #257 Add doxygen documentation to all classes (cleanup doxygen errors)
 
 # Check doccumentation (all undocummented threat as error)
-doxygen 2>&1 | grep "is not documented" && false
+rm -rf html
+if doxygen 2>&1 | grep "is not documented"; then
+	exit 1
+fi
