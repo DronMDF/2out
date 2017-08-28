@@ -12,20 +12,29 @@ namespace oout {
 
 class Result;
 
+/// Abstract format for convert results to string
 class Format {
 public:
+	/// virtual dtor
 	virtual ~Format() = default;
 
+	/// Format success result
 	virtual std::string success(const std::string &text) const = 0;
+
+	/// Format failure result
 	virtual std::string failure(const std::string &text) const = 0;
+
+	/// Format error result
 	virtual std::string error(const std::string &text) const = 0;
 
+	/// Format simple test result
 	virtual std::string test(
 		const std::string &name,
 		const std::shared_ptr<const Result> &assertion_result,
 		const std::chrono::nanoseconds &duration
 	) const = 0;
 
+	/// Format suite result
 	virtual std::string suite(
 		const std::string &name,
 		const std::chrono::nanoseconds &duration,

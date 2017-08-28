@@ -35,6 +35,7 @@ public:
 
 	/// Test result
 	std::unique_ptr<const Result> result() const override;
+
 private:
 	const std::shared_ptr<const Representation> text;
 	const std::shared_ptr<const Representation> substr;

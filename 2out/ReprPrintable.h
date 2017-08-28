@@ -13,11 +13,13 @@ namespace oout {
 template <typename T>
 class ReprPrintable final : public Representation {
 public:
+	/// Primary ctor
 	explicit ReprPrintable(const T &value)
 		: value(value)
 	{
 	}
 
+	/// Get value as string
 	std::string asString() const override
 	{
 		std::ostringstream out;

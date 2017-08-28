@@ -8,9 +8,13 @@
 
 namespace oout {
 
+/// Representation for string
 class ReprString final : public Representation {
 public:
+	/// Primary ctor
 	explicit ReprString(const std::string &value);
+
+	/// Get value as string
 	std::string asString() const override;
 private:
 	const std::string value;

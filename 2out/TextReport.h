@@ -12,9 +12,13 @@ namespace oout {
 
 class Result;
 
+/// Text Report like google test
 class TextReport final : public Representation {
 public:
+	/// Primary ctor
 	explicit TextReport(const std::shared_ptr<const Result> &result);
+
+	/// Get report as string
 	std::string asString() const override;
 private:
 	const std::shared_ptr<const Result> result;

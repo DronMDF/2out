@@ -10,9 +10,13 @@
 
 namespace oout {
 
+/// Test suite result set
 class ResSuite final : public Result {
 public:
+	/// Primary ctor
 	explicit ResSuite(const std::list<std::shared_ptr<const Result>> &results);
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::list<std::shared_ptr<const Result>> results;

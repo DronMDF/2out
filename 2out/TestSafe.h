@@ -8,10 +8,15 @@
 
 namespace oout {
 
+/// Test decorator for catch exceptions, and report error
 class TestSafe final : public Test {
 public:
+	/// Primary ctor
 	explicit TestSafe(const std::shared_ptr<const Test> &test);
+
+	/// Get test result
 	std::unique_ptr<const Result> result() const override;
+
 private:
 	const std::shared_ptr<const Test> test;
 };

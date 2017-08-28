@@ -13,7 +13,10 @@ namespace oout {
 /// Add test name to result
 class ResNamed final : public Result {
 public:
+	/// Primary ctor
 	ResNamed(const std::string &name, const std::shared_ptr<const Result> &result);
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::string name;

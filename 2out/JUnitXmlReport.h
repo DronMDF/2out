@@ -12,9 +12,13 @@ namespace oout {
 
 class Result;
 
+/// JUnit report formatter
 class JUnitXmlReport final : public Representation {
 public:
+	/// Primary ctor
 	explicit JUnitXmlReport(const std::shared_ptr<const Result> &result);
+
+	/// Get report as string
 	std::string asString() const override;
 private:
 	const std::shared_ptr<const Result> result;

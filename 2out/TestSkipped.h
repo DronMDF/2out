@@ -10,10 +10,13 @@ namespace oout {
 
 /// TestSkipped is a Test decorator.
 /// All test, passed to this decorator mark success without execution
-/// Test not keep inner tests structure. If you pass TestSuite, he looks like as simple test.
+/// Test not keep inner tests structure. If you pass TestSuite, it looks like as simple test.
 class TestSkipped final : public Test {
 public:
+	/// Primary ctor
 	explicit TestSkipped(const std::shared_ptr<const Test> &test);
+
+	/// Get test result
 	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Test> test;
