@@ -9,9 +9,13 @@
 
 namespace oout {
 
+/// Result of simple test
 class ResTest final : public Result {
 public:
+	/// Primary ctor from assertion result
 	explicit ResTest(const std::shared_ptr<const Result> &result);
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::shared_ptr<const Result> result;

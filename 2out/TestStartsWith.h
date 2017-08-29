@@ -9,17 +9,27 @@
 
 namespace oout {
 
+// @todo #259 Nonintuitive arg names in TestStartWith ctors
+
+/// Test for string start with prefix
 class TestStartsWith final : public Test {
 public:
+	/// Secondary ctor from two strings
 	TestStartsWith(const std::string &a, const std::string &b);
+
+	/// Secondary ctor from string and Repr
 	TestStartsWith(const std::string &a, const std::shared_ptr<const Representation> &b);
+
+	/// Secondary ctor from Repr and string
 	TestStartsWith(const std::shared_ptr<const Representation> &a, const std::string &b);
 
+	/// Primary ctor
 	TestStartsWith(
 		const std::shared_ptr<const Representation> &a,
 		const std::shared_ptr<const Representation> &b
 	);
 
+	/// Get result
 	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Representation> a;

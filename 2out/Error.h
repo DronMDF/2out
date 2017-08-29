@@ -9,9 +9,13 @@
 
 namespace oout {
 
+/// Error in test evaluation
 class Error final : public Result {
 public:
+	/// Primary ctor with error message
 	explicit Error(const std::string &text = {});
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::string text;

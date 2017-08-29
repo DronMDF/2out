@@ -8,10 +8,15 @@
 
 namespace oout {
 
+/// Representation for signed integer
 class ReprSigned final : public Representation {
 public:
+	/// Primary ctor
 	explicit ReprSigned(int64_t value);
+
+	/// Get value as string
 	std::string asString() const override;
+
 private:
 	int64_t value;
 };

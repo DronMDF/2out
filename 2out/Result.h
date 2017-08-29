@@ -10,9 +10,13 @@ namespace oout {
 
 class Format;
 
+/// Abstract test result
 class Result {
 public:
+	/// Virtual dtor
 	virtual ~Result() = default;
+
+	/// Printer
 	virtual std::string print(const Format &format) const = 0;
 };
 

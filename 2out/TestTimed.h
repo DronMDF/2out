@@ -9,9 +9,13 @@
 
 namespace oout {
 
+/// Test decorator for execution time meansure
 class TestTimed final : public Test {
 public:
+	/// Primary ctor
 	explicit TestTimed(const std::shared_ptr<const Test> &test);
+
+	/// Get test result (with duration)
 	std::unique_ptr<const Result> result() const override;
 private:
 	const std::shared_ptr<const Test> test;

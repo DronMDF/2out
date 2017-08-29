@@ -11,10 +11,15 @@ namespace oout {
 
 class Result;
 
+/// Number of errors in test results
 class CountError final {
 public:
+	/// Secondary ctor from list of results
 	explicit CountError(const std::list<std::shared_ptr<const Result>> &results);
+	/// Primary ctor from composite result
 	explicit CountError(const std::shared_ptr<const Result> &result);
+
+	/// Number of errors
 	size_t count() const;
 private:
 	const std::shared_ptr<const Result> result;

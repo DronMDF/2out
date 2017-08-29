@@ -10,9 +10,13 @@ namespace oout {
 
 class Result;
 
+/// Abstract test interface
 class Test {
 public:
+	/// virtual dtor
 	virtual ~Test() = default;
+
+	/// Get result of test execution
 	virtual std::unique_ptr<const Result> result() const = 0;
 };
 

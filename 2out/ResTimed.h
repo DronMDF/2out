@@ -10,12 +10,16 @@
 
 namespace oout {
 
+/// Result decorator of test with diration
 class ResTimed final : public Result {
 public:
+	/// Primary ctor
 	ResTimed(
 		const std::shared_ptr<const Result> &result,
 		const std::chrono::nanoseconds &duration
 	);
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::shared_ptr<const Result> result;

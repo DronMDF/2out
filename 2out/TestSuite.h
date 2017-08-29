@@ -11,9 +11,13 @@
 
 namespace oout {
 
+/// Suite of tests
 class TestSuite final : public Test {
 public:
+	/// Primary ctor
 	explicit TestSuite(const std::list<std::shared_ptr<const Test>> &cases);
+
+	/// Get test suite result
 	std::unique_ptr<const Result> result() const override;
 private:
 	const std::list<std::shared_ptr<const Test>> cases;

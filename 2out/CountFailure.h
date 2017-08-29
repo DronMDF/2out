@@ -11,10 +11,16 @@ namespace oout {
 
 class Result;
 
+/// Number of failures in test result
 class CountFailure final {
 public:
+	/// Secondary ctor from result list
 	explicit CountFailure(const std::list<std::shared_ptr<const Result>> &results);
+
+	/// Primary ctor
 	explicit CountFailure(const std::shared_ptr<const Result> &result);
+
+	/// Get count of failures
 	size_t count() const;
 private:
 	const std::shared_ptr<const Result> result;

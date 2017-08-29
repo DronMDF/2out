@@ -98,7 +98,7 @@ matrix:
 
 before_install:
   - eval "${MATRIX_EVAL}"
-  - sudo apt-get install cppcheck ruby-dev
+  - sudo apt-get install cppcheck ruby-dev doxygen
   - gem install pdd
 
 script:

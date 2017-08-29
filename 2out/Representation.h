@@ -8,9 +8,13 @@
 
 namespace oout {
 
+/// Abstract representation
 class Representation {
 public:
+	/// Virtual dtor
 	virtual ~Representation() = default;
+
+	/// Get value as string
 	virtual std::string asString() const = 0;
 };
 

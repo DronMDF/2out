@@ -8,9 +8,13 @@
 
 namespace oout {
 
+/// Successed result of test execution
 class Success final : public Result {
 public:
+	/// Primary ctor
 	explicit Success(const std::string &text = {});
+
+	/// Printer
 	std::string print(const Format &format) const override;
 private:
 	const std::string text;
