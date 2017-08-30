@@ -17,22 +17,20 @@ TestSkippedTest::TestSkippedTest()
 : tests(
 	make_unique<TestNamed>(
 		"TestSkippedTest",
-		list<shared_ptr<const Test>>{
-			make_unique<TestNamed>(
-				"Skipped test looks like Success",
-				make_unique<TestEqual>(
-					make_unique<ReprTest>(
-						make_unique<TestSkipped>(
-							make_unique<TestEqual>(
-								"true",
-								"false"
-							)
+		make_unique<TestNamed>(
+			"Skipped test looks like Success",
+			make_unique<TestEqual>(
+				make_unique<ReprTest>(
+					make_unique<TestSkipped>(
+						make_unique<TestEqual>(
+							"true",
+							"false"
 						)
-					),
-					"success"
-				)
+					)
+				),
+				"success"
 			)
-		}
+		)
 	)
 )
 {

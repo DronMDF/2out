@@ -35,20 +35,18 @@ CountTestTest::CountTestTest()
 : tests(
 	make_unique<TestNamed>(
 		"CountTestTest",
-		list<shared_ptr<const Test>>{
-			make_shared<TestEqual>(
-				make_shared<CountTestRepr>(
-					make_unique<CountTest>(
-						list<shared_ptr<const Result>>{
-							make_unique<ResOkCase>(),
-							make_unique<ResOkCase>(),
-							make_unique<ResOkCase>()
-						}
-					)
-				),
-				make_shared<ReprSigned>(3)
-			)
-		}
+		make_shared<TestEqual>(
+			make_shared<CountTestRepr>(
+				make_unique<CountTest>(
+					list<shared_ptr<const Result>>{
+						make_unique<ResOkCase>(),
+						make_unique<ResOkCase>(),
+						make_unique<ResOkCase>()
+					}
+				)
+			),
+			make_shared<ReprSigned>(3)
+		)
 	)
 )
 {
