@@ -14,6 +14,13 @@ namespace oout {
 /// Suite of tests
 class TestSuite final : public Test {
 public:
+	/// Secondary ctor from variadic list of tests
+	template<typename... T>
+	explicit TestSuite(const std::shared_ptr<T> &...tests)
+		: TestSuite(std::list<std::shared_ptr<const Test>>({tests...}))
+	{
+	}
+
 	/// Primary ctor
 	explicit TestSuite(const std::list<std::shared_ptr<const Test>> &cases);
 

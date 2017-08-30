@@ -13,11 +13,12 @@
 using namespace std;
 using namespace oout;
 
+// @todo #263 TestNamed should give variadic list of tests as TestSuite
 TestSuiteTest::TestSuiteTest()
 : tests(
 	make_unique<TestNamed>(
 		"TestSuiteTest",
-		list<shared_ptr<const Test>>{
+		make_unique<TestSuite>(
 			make_shared<TestEqual>(
 				make_shared<ReprTest>(
 					make_unique<TestSuite>(
@@ -25,8 +26,21 @@ TestSuiteTest::TestSuiteTest()
 					)
 				),
 				"success"
+			),
+			make_shared<TestNamed>(
+				"Test suite give tests as variadic args",
+				make_unique<TestEqual>(
+					make_shared<ReprTest>(
+						make_unique<TestSuite>(
+							make_shared<TestEqual>("1", "1"),
+							make_shared<TestEqual>("2", "2"),
+							make_shared<TestEqual>("3", "3")
+						)
+					),
+					"success"
+				)
 			)
-		}
+		)
 	)
 )
 {
