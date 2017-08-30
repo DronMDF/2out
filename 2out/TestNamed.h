@@ -6,6 +6,7 @@
 #pragma once
 #include <list>
 #include "Test.h"
+#include "TestSuite.h"
 
 namespace oout {
 
@@ -13,11 +14,21 @@ namespace oout {
 /// Adds a name to the test or test suite
 class TestNamed final : public Test {
 public:
+	/// Primary ctor
+	TestNamed(const std::string &name, const std::shared_ptr<const Test> &test);
+
 	/// Secondary ctor from list
 	TestNamed(const std::string &name, const std::list<std::shared_ptr<const Test>> &tests);
 
-	/// Primary ctor
-	TestNamed(const std::string &name, const std::shared_ptr<const Test> &test);
+	/// Secondary ctor from variadic list of tests
+	template<typename... T>
+	TestNamed(
+		const std::string &name,
+		const std::shared_ptr<const Test> &test1,
+		const std::shared_ptr<T> &...tests
+	) : TestNamed(name, std::make_unique<TestSuite>(test1, tests...))
+	{
+	}
 
 	/// Get test result
 	std::unique_ptr<const Result> result() const override;
