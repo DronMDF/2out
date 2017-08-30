@@ -35,23 +35,21 @@ CountErrorTest::CountErrorTest()
 : tests(
 	make_unique<TestNamed>(
 		"CountErrorTest",
-		list<shared_ptr<const Test>>{
-			make_unique<TestNamed>(
-				"One error in set",
-				make_unique<TestEqual>(
-					make_unique<CountErrorRepr>(
-						make_unique<CountError>(
-							list<shared_ptr<const Result>>{
-								make_unique<ResOkCase>(),
-								make_unique<ResFailureCase>(),
-								make_unique<ResErrorCase>()
-							}
-						)
-					),
-					make_unique<ReprSigned>(1)
-				)
+		make_unique<TestNamed>(
+			"One error in set",
+			make_unique<TestEqual>(
+				make_unique<CountErrorRepr>(
+					make_unique<CountError>(
+						list<shared_ptr<const Result>>{
+							make_unique<ResOkCase>(),
+							make_unique<ResFailureCase>(),
+							make_unique<ResErrorCase>()
+						}
+					)
+				),
+				make_unique<ReprSigned>(1)
 			)
-		}
+		)
 	)
 )
 {

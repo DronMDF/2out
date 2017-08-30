@@ -17,17 +17,15 @@ ReprPrintableTest::ReprPrintableTest()
 : tests(
 	make_unique<TestNamed>(
 		"ReprPrintableTest",
-		list<shared_ptr<const Test>>{
-			make_unique<TestNamed>(
-				"Boolean represent as text",
-				make_unique<TestEqual>(
-					make_unique<ReprPrintable<bool>>(
-						true
-					),
-					"true"
-				)
+		make_unique<TestNamed>(
+			"Boolean represent as text",
+			make_unique<TestEqual>(
+				make_unique<ReprPrintable<bool>>(
+					true
+				),
+				"true"
 			)
-		}
+		)
 	)
 )
 {

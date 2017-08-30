@@ -17,20 +17,18 @@ TestStartsWithTest::TestStartsWithTest()
 : tests(
 	make_unique<TestNamed>(
 		"TestStartsWithTest",
-		list<shared_ptr<const Test>>{
-			make_unique<TestNamed>(
-				"Realy starts with",
-				make_unique<TestEqual>(
-					make_unique<ReprTest>(
-						make_unique<TestStartsWith>(
-							"abcdef",
-							"abc"
-						)
-					),
-					"success"
-				)
+		make_unique<TestNamed>(
+			"Realy starts with",
+			make_unique<TestEqual>(
+				make_unique<ReprTest>(
+					make_unique<TestStartsWith>(
+						"abcdef",
+						"abc"
+					)
+				),
+				"success"
 			)
-		}
+		)
 	)
 )
 {
