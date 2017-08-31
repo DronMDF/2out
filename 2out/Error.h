@@ -13,7 +13,7 @@ namespace oout {
 class Error final : public Result {
 public:
 	/// Primary ctor with error message
-	explicit Error(const std::string &text = {});
+	explicit Error(const std::string &text = std::string());
 
 	/// Printer
 	std::string print(const Format &format) const override;

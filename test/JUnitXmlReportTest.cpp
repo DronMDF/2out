@@ -19,62 +19,62 @@ using namespace std;
 using namespace oout;
 
 JUnitXmlReportTest::JUnitXmlReportTest()
-: tests(
-	make_unique<TestNamed>(
-		"JUnitXmlReportTest",
-		make_shared<TestContainText>(
-			make_unique<JUnitXmlReport>(
-				make_unique<ResErrorCase>()
-			),
-			"<error"
-		),
-		make_shared<TestContainText>(
-			make_unique<JUnitXmlReport>(
-				make_unique<ResErrorCase>()
-			),
-			"</error>"
-		),
-		make_shared<TestContainText>(
-			make_unique<JUnitXmlReport>(
-				make_unique<ResFailureCase>()
-			),
-			"<failure"
-		),
-		make_shared<TestNamed>(
-			"Escaping in failure",
+	: tests(
+		make_unique<TestNamed>(
+			"JUnitXmlReportTest",
 			make_shared<TestContainText>(
 				make_unique<JUnitXmlReport>(
-					make_unique<ResTest>(
-						make_unique<Failure>("<tag>")
-					)
+					make_unique<ResErrorCase>()
 				),
-				"failure><![CDATA[<tag>]]"
-			)
-		),
-		make_shared<TestNamed>(
-			"Escaping in error",
+				"<error"
+			),
 			make_shared<TestContainText>(
 				make_unique<JUnitXmlReport>(
-					make_unique<ResTest>(
-						make_unique<Error>("&amp;")
-					)
+					make_unique<ResErrorCase>()
 				),
-				"error><![CDATA[&amp;]]"
-			)
-		),
-		make_shared<TestNamed>(
-			"Count of errors in suite",
+				"</error>"
+			),
 			make_shared<TestContainText>(
 				make_unique<JUnitXmlReport>(
-					make_unique<ResSuite>(
-						make_shared<ResErrorCase>()
-					)
+					make_unique<ResFailureCase>()
 				),
-				"errors='1'"
+				"<failure"
+			),
+			make_shared<TestNamed>(
+				"Escaping in failure",
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResTest>(
+							make_unique<Failure>("<tag>")
+						)
+					),
+					"failure><![CDATA[<tag>]]"
+				)
+			),
+			make_shared<TestNamed>(
+				"Escaping in error",
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResTest>(
+							make_unique<Error>("&amp;")
+						)
+					),
+					"error><![CDATA[&amp;]]"
+				)
+			),
+			make_shared<TestNamed>(
+				"Count of errors in suite",
+				make_shared<TestContainText>(
+					make_unique<JUnitXmlReport>(
+						make_unique<ResSuite>(
+							make_shared<ResErrorCase>()
+						)
+					),
+					"errors='1'"
+				)
 			)
 		)
 	)
-)
 {
 }
 

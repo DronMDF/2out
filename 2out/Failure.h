@@ -12,7 +12,7 @@ namespace oout {
 class Failure final : public Result {
 public:
 	/// Primary ctor with message
-	explicit Failure(const std::string &text = {});
+	explicit Failure(const std::string &text = std::string());
 
 	/// Printer
 	std::string print(const Format &format) const override;

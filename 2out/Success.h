@@ -12,7 +12,7 @@ namespace oout {
 class Success final : public Result {
 public:
 	/// Primary ctor
-	explicit Success(const std::string &text = {});
+	explicit Success(const std::string &text = std::string());
 
 	/// Printer
 	std::string print(const Format &format) const override;

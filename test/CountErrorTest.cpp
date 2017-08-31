@@ -32,26 +32,26 @@ private:
 };
 
 CountErrorTest::CountErrorTest()
-: tests(
-	make_unique<TestNamed>(
-		"CountErrorTest",
+	: tests(
 		make_unique<TestNamed>(
-			"One error in set",
-			make_unique<TestEqual>(
-				make_unique<CountErrorRepr>(
-					make_unique<CountError>(
-						make_unique<ResSuite>(
-							make_shared<ResOkCase>(),
-							make_shared<ResFailureCase>(),
-							make_shared<ResErrorCase>()
+			"CountErrorTest",
+			make_unique<TestNamed>(
+				"One error in set",
+				make_unique<TestEqual>(
+					make_unique<CountErrorRepr>(
+						make_unique<CountError>(
+							make_unique<ResSuite>(
+								make_shared<ResOkCase>(),
+								make_shared<ResFailureCase>(),
+								make_shared<ResErrorCase>()
+							)
 						)
-					)
-				),
-				"1"
+					),
+					"1"
+				)
 			)
 		)
 	)
-)
 {
 }
 

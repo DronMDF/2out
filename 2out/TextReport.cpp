@@ -47,8 +47,8 @@ public:
 		const auto ms = chrono::duration_cast<chrono::milliseconds>(duration).count();
 		ostringstream out;
 		out << "[ RUN      ] " << name << endl
-			<< assertion_result->print(*this) << name
-			<< " (" << ms << " ms)" << endl;
+		    << assertion_result->print(*this) << name
+		    << " (" << ms << " ms)" << endl;
 		return out.str();
 	}
 
@@ -66,7 +66,7 @@ public:
 		}
 		const auto ms = chrono::duration_cast<chrono::milliseconds>(duration).count();
 		out << "[----------] " << test_count << " test from " << name
-			<< " (" << ms << " ms total)" << endl;
+		    << " (" << ms << " ms total)" << endl;
 		return out.str();
 	}
 };
