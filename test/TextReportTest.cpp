@@ -55,10 +55,8 @@ TextReportTest::TextReportTest()
 				make_unique<ResNamed>(
 					"SUITE",
 					make_unique<ResSuite>(
-						list<shared_ptr<const Result>>{
-							make_unique<ResOkCase>(),
-							make_unique<ResOkCase>()
-						}
+						make_shared<ResOkCase>(),
+						make_shared<ResOkCase>()
 					)
 				)
 			),
