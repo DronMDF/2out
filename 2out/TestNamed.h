@@ -25,7 +25,7 @@ public:
 	TestNamed(
 		const std::string &name,
 		const std::shared_ptr<const Test> &test1,
-		const std::shared_ptr<T> &...tests
+		const std::shared_ptr<T> & ... tests
 	) : TestNamed(name, std::make_unique<TestSuite>(test1, tests...))
 	{
 	}

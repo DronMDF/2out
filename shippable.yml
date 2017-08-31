@@ -7,7 +7,7 @@ compiler:
 build:
   ci:
     - apt-get update
-    - apt-get install cmake cppcheck ruby-dev doxygen
+    - apt-get install cmake cppcheck doxygen ruby-dev uncrustify
     - gem install pdd
     - cmake .
     - make style

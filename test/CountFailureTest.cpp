@@ -32,23 +32,23 @@ private:
 };
 
 CountFailureTest::CountFailureTest()
-: tests(
-	make_unique<TestNamed>(
-		"CountFailureTest",
-		make_shared<TestEqual>(
-			make_shared<CountFailureRepr>(
-				make_unique<CountFailure>(
-					make_unique<ResSuite>(
-						make_shared<ResOkCase>(),
-						make_shared<ResFailureCase>(),
-						make_shared<ResOkCase>()
+	: tests(
+		make_unique<TestNamed>(
+			"CountFailureTest",
+			make_shared<TestEqual>(
+				make_shared<CountFailureRepr>(
+					make_unique<CountFailure>(
+						make_unique<ResSuite>(
+							make_shared<ResOkCase>(),
+							make_shared<ResFailureCase>(),
+							make_shared<ResOkCase>()
+						)
 					)
-				)
-			),
-			"1"
+				),
+				"1"
+			)
 		)
 	)
-)
 {
 }
 

@@ -2,15 +2,15 @@
 
 set -ue
 
+# Check coding style
 cppcheck -I. -Itest --enable=all --suppress=missingIncludeSystem --quiet 2out test
 ./cpplint.py `find 2out/ -name *.cpp -o -name *.h` `find test/ -name *.cpp -o -name *.h`
+uncrustify -c uncrustify.conf --check -q `find 2out/ -name *.cpp -o -name *.h` `find test/ -name *.cpp -o -name *.h`
 
-# Scan sources for wrong pdd tokens
+# Check pdd tokens
 pdd > /dev/null
 
-# @todo #257 Add doxygen documentation to all classes (cleanup doxygen errors)
-
-# Check doccumentation (all undocummented threat as error)
+# Check inline documentation
 rm -rf html
 if doxygen 2>&1 | grep "is not documented"; then
 	exit 1

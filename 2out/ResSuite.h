@@ -18,8 +18,10 @@ public:
 
 	/// Secondary ctor from variadic list of result
 	template<typename... T>
-	explicit ResSuite(const std::shared_ptr<T> &...tests)
-		: ResSuite(std::list<std::shared_ptr<const Result>>{tests...})
+	explicit ResSuite(const std::shared_ptr<T> & ... tests)
+		: ResSuite(std::list<std::shared_ptr<const Result>>{
+			tests...
+		})
 	{
 	}
 

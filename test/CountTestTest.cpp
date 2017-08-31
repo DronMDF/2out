@@ -32,23 +32,23 @@ private:
 };
 
 CountTestTest::CountTestTest()
-: tests(
-	make_unique<TestNamed>(
-		"CountTestTest",
-		make_shared<TestEqual>(
-			make_shared<CountTestRepr>(
-				make_unique<CountTest>(
-					make_unique<ResSuite>(
-						make_shared<ResOkCase>(),
-						make_shared<ResOkCase>(),
-						make_shared<ResOkCase>()
+	: tests(
+		make_unique<TestNamed>(
+			"CountTestTest",
+			make_shared<TestEqual>(
+				make_shared<CountTestRepr>(
+					make_unique<CountTest>(
+						make_unique<ResSuite>(
+							make_shared<ResOkCase>(),
+							make_shared<ResOkCase>(),
+							make_shared<ResOkCase>()
+						)
 					)
-				)
-			),
-			"3"
+				),
+				"3"
+			)
 		)
 	)
-)
 {
 }
 

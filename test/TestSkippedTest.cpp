@@ -8,31 +8,32 @@
 #include <2out/TestNamed.h>
 #include <2out/TestEqual.h>
 #include <2out/TestSkipped.h>
+#include <2out/TestSuite.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
 TestSkippedTest::TestSkippedTest()
-: tests(
-	make_unique<TestNamed>(
-		"TestSkippedTest",
+	: tests(
 		make_unique<TestNamed>(
-			"Skipped test looks like Success",
-			make_unique<TestEqual>(
-				make_unique<ReprTest>(
-					make_unique<TestSkipped>(
-						make_unique<TestEqual>(
-							"true",
-							"false"
+			"TestSkippedTest",
+			make_unique<TestNamed>(
+				"Skipped test looks like Success",
+				make_unique<TestEqual>(
+					make_unique<ReprTest>(
+						make_unique<TestSkipped>(
+							make_unique<TestEqual>(
+								"true",
+								"false"
+							)
 						)
-					)
-				),
-				"success"
+					),
+					"success"
+				)
 			)
 		)
 	)
-)
 {
 }
 

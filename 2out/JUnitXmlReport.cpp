@@ -46,10 +46,10 @@ public:
 		const auto time = chrono::duration_cast<chrono::duration<float>>(duration).count();
 		ostringstream out;
 		out << "<testcase "
-			<< "name='" << name << "' "
-			<< "time='" << time << "'>" << endl
-			<< assertion_result->print(*this)
-			<< "</testcase>" << endl;
+		    << "name='" << name << "' "
+		    << "time='" << time << "'>" << endl
+		    << assertion_result->print(*this)
+		    << "</testcase>" << endl;
 		return out.str();
 	}
 
@@ -66,12 +66,12 @@ public:
 
 		ostringstream out;
 		out << "<testsuite "
-			<< "name='" << name << "' "
-			<< "tests='" << count_test << "' "
-			<< "failures='" << count_failure << "' "
-			<< "errors='" << count_error << "' "
-			<< "time='" << time << "'>"
-			<< endl;
+		    << "name='" << name << "' "
+		    << "tests='" << count_test << "' "
+		    << "failures='" << count_failure << "' "
+		    << "errors='" << count_error << "' "
+		    << "time='" << time << "'>"
+		    << endl;
 
 		for (const auto &r : results) {
 			out << r->print(*this);
@@ -96,9 +96,9 @@ string JUnitXmlReport::asString() const
 	ostringstream out;
 	out << "<?xml version='1.0' encoding='UTF-8'?>" << endl;
 	out << "<testsuites "
-		<< "errors='" << failure_count << "' "
-		<< "failures='" << failure_count << "'>"
-		<< endl;
+	    << "errors='" << failure_count << "' "
+	    << "failures='" << failure_count << "'>"
+	    << endl;
 
 	FmtJunitXml format;
 	out << result->print(format);

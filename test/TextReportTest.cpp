@@ -17,53 +17,53 @@ using namespace std;
 using namespace oout;
 
 TextReportTest::TextReportTest()
-: tests(
-	make_unique<TestNamed>(
-		"TextReportTest",
-		make_shared<TestContainText>(
-			make_unique<TextReport>(
-				make_unique<ResFailureCase>("run test")
+	: tests(
+		make_unique<TestNamed>(
+			"TextReportTest",
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResFailureCase>("run test")
+				),
+				"[ RUN      ] run test"
 			),
-			"[ RUN      ] run test"
-		),
-		make_shared<TestContainText>(
-			make_unique<TextReport>(
-				make_unique<ResOkCase>("ok test")
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResOkCase>("ok test")
+				),
+				"[       OK ] ok test"
 			),
-			"[       OK ] ok test"
-		),
-		make_shared<TestContainText>(
-			make_unique<TextReport>(
-				make_unique<ResFailureCase>("fail test")
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResFailureCase>("fail test")
+				),
+				"[  FAILED  ] fail test"
 			),
-			"[  FAILED  ] fail test"
-		),
-		make_shared<TestContainText>(
-			make_unique<TextReport>(
-				make_unique<ResOkCase>()
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResOkCase>()
+				),
+				"[==========] Running"
 			),
-			"[==========] Running"
-		),
-		make_shared<TestContainText>(
-			make_unique<TextReport>(
-				make_unique<ResOkCase>()
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResOkCase>()
+				),
+				"[==========] 1 tests ran"
 			),
-			"[==========] 1 tests ran"
-		),
-		make_shared<TestContainText>(
-			make_unique<TextReport>(
-				make_unique<ResNamed>(
-					"SUITE",
-					make_unique<ResSuite>(
-						make_shared<ResOkCase>(),
-						make_shared<ResOkCase>()
+			make_shared<TestContainText>(
+				make_unique<TextReport>(
+					make_unique<ResNamed>(
+						"SUITE",
+						make_unique<ResSuite>(
+							make_shared<ResOkCase>(),
+							make_shared<ResOkCase>()
+						)
 					)
-				)
-			),
-			"[----------] 2 test from SUITE"
+				),
+				"[----------] 2 test from SUITE"
+			)
 		)
 	)
-)
 {
 }
 

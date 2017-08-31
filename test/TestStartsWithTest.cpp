@@ -8,29 +8,30 @@
 #include <2out/TestNamed.h>
 #include <2out/TestStartsWith.h>
 #include <2out/TestEqual.h>
+#include <2out/TestSuite.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
 TestStartsWithTest::TestStartsWithTest()
-: tests(
-	make_unique<TestNamed>(
-		"TestStartsWithTest",
+	: tests(
 		make_unique<TestNamed>(
-			"Realy starts with",
-			make_unique<TestEqual>(
-				make_unique<ReprTest>(
-					make_unique<TestStartsWith>(
-						"abcdef",
-						"abc"
-					)
-				),
-				"success"
+			"TestStartsWithTest",
+			make_unique<TestNamed>(
+				"Realy starts with",
+				make_unique<TestEqual>(
+					make_unique<ReprTest>(
+						make_unique<TestStartsWith>(
+							"abcdef",
+							"abc"
+						)
+					),
+					"success"
+				)
 			)
 		)
 	)
-)
 {
 }
 

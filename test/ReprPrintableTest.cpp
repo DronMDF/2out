@@ -9,25 +9,26 @@
 #include <2out/Result.h>
 #include <2out/TestEqual.h>
 #include <2out/TestNamed.h>
+#include <2out/TestSuite.h>
 
 using namespace std;
 using namespace oout;
 
 ReprPrintableTest::ReprPrintableTest()
-: tests(
-	make_unique<TestNamed>(
-		"ReprPrintableTest",
+	: tests(
 		make_unique<TestNamed>(
-			"Boolean represent as text",
-			make_unique<TestEqual>(
-				make_unique<ReprPrintable<bool>>(
-					true
-				),
-				"true"
+			"ReprPrintableTest",
+			make_unique<TestNamed>(
+				"Boolean represent as text",
+				make_unique<TestEqual>(
+					make_unique<ReprPrintable<bool>>(
+						true
+					),
+					"true"
+				)
 			)
 		)
 	)
-)
 {
 }
 
