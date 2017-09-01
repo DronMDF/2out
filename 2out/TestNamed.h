@@ -27,9 +27,10 @@ public:
 	template<typename... T>
 	TestNamed(
 		const std::string &name,
-		const std::shared_ptr<const Test> &test,
+		const std::shared_ptr<const Test> &test1,
+		const std::shared_ptr<const Test> &test2,
 		const std::shared_ptr<T> & ... tests
-	) : TestNamed(name, std::make_shared<const TestSuite>(test, tests...))
+	) : TestNamed(name, std::make_shared<const TestSuite>(test1, test2, tests...))
 	{
 	}
 
