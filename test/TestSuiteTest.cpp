@@ -30,7 +30,7 @@ TestSuiteTest::TestSuiteTest()
 			),
 			make_shared<TestNamed>(
 				"Test suite give tests as variadic args",
-				make_unique<TestEqual>(
+				make_shared<TestEqual>(
 					make_shared<ReprTest>(
 						make_unique<TestSuite>(
 							make_shared<TestEqual>("1", "1"),
