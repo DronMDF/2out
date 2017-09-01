@@ -17,6 +17,9 @@ public:
 	/// Primary ctor
 	TestNamed(const std::string &name, const std::shared_ptr<const Test> &test);
 
+	/// Secondary ctor from TestNamed (Named Suite case)
+	TestNamed(const std::string &name, const std::shared_ptr<const TestNamed> &test);
+
 	/// Secondary ctor from list
 	TestNamed(const std::string &name, const std::list<std::shared_ptr<const Test>> &tests);
 
@@ -24,14 +27,14 @@ public:
 	template<typename... T>
 	TestNamed(
 		const std::string &name,
-		const std::shared_ptr<const Test> &test1,
 		const std::shared_ptr<T> & ... tests
-	) : TestNamed(name, std::make_unique<TestSuite>(test1, tests...))
+	) : TestNamed(name, std::make_unique<TestSuite>(tests...))
 	{
 	}
 
 	/// Get test result
 	std::unique_ptr<const Result> result() const override;
+
 private:
 	const std::string name;
 	const std::shared_ptr<const Test> test;

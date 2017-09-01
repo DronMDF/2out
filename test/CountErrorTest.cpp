@@ -35,7 +35,7 @@ CountErrorTest::CountErrorTest()
 	: tests(
 		make_unique<TestNamed>(
 			"CountErrorTest",
-			make_unique<TestNamed>(
+			make_shared<const TestNamed>(
 				"One error in set",
 				make_unique<TestEqual>(
 					make_unique<CountErrorRepr>(

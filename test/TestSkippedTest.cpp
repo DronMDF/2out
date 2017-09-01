@@ -18,9 +18,9 @@ TestSkippedTest::TestSkippedTest()
 	: tests(
 		make_unique<TestNamed>(
 			"TestSkippedTest",
-			make_unique<TestNamed>(
+			make_shared<const TestNamed>(
 				"Skipped test looks like Success",
-				make_unique<TestEqual>(
+				make_shared<TestEqual>(
 					make_unique<ReprTest>(
 						make_unique<TestSkipped>(
 							make_unique<TestEqual>(

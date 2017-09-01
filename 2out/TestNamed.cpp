@@ -10,13 +10,18 @@
 using namespace std;
 using namespace oout;
 
-TestNamed::TestNamed(const string &name, const list<shared_ptr<const Test>> &tests)
-	: TestNamed(name, make_shared<TestSuite>(tests))
+TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
+	: name(name), test(test)
 {
 }
 
-TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
-	: name(name), test(test)
+TestNamed::TestNamed(const string &name, const shared_ptr<const TestNamed> &test)
+	: TestNamed(name, make_unique<TestSuite>(test))
+{
+}
+
+TestNamed::TestNamed(const string &name, const list<shared_ptr<const Test>> &tests)
+	: TestNamed(name, make_unique<TestSuite>(tests))
 {
 }
 
