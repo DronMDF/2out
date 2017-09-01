@@ -7,6 +7,8 @@ jobs:
     steps:
       - checkout
       - run: |
-          sudo apt-get install cmake
+          sudo apt-get install cmake cppcheck doxygen
+          gem install pdd
           cmake .
+          make style
           make all test
