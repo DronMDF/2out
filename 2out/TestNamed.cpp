@@ -16,12 +16,12 @@ TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
 }
 
 TestNamed::TestNamed(const string &name, const shared_ptr<const TestNamed> &test)
-	: TestNamed(name, make_unique<TestSuite>(test))
+	: TestNamed(name, make_shared<const TestSuite>(test))
 {
 }
 
 TestNamed::TestNamed(const string &name, const list<shared_ptr<const Test>> &tests)
-	: TestNamed(name, make_unique<TestSuite>(tests))
+	: TestNamed(name, make_shared<const TestSuite>(tests))
 {
 }
 
