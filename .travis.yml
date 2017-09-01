@@ -102,7 +102,8 @@ before_install:
   - gem install pdd
 
 script:
-  - cmake .
-  - make style
-  - make VERBOSE=1
-  - make test
+  - |
+    cmake .
+    make style
+    make VERBOSE=1
+    make test
