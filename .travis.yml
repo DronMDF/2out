@@ -103,9 +103,9 @@ before_install:
 
 script:
   - |
-    cmake .
+    cmake -DCMAKE_CXX_FLAGS="--coverage" .
     make style
-    CXXFLAGS=--coverage make VERBOSE=1
+    make VERBOSE=1
     make test
 
 after_success:
