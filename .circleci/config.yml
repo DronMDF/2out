@@ -13,4 +13,4 @@ jobs:
           make style
           make all test
       - store_test_results:
-          path: shippable/testresults 
+          path: .

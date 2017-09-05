@@ -13,3 +13,4 @@ build:
     - make style
     - make VERBOSE=1
     - make test
+    - cp test-results.xml shippable/testresults/
