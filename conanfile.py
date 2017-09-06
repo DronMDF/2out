@@ -3,8 +3,12 @@ from conans import ConanFile, CMake
 class OoutConan(ConanFile):
 	name = "2out"
 	version = "0.4"
+	description = "Object oriented unit testing framework"
+	license = "MIT"
+	url = "https://dronmdf.github.io/2out/"
+
 	settings = "os", "compiler", "build_type", "arch"
-	options = {"shared": [False]}
+	options = {"shared": [True, False]}
 	default_options = "shared=False"
 	generators = "cmake"
 
