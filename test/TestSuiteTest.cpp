@@ -13,20 +13,20 @@
 using namespace std;
 using namespace oout;
 
-// @todo #265 TestSuite without test is error.
-//  User can pass empty list, but not can create empty Suite
 TestSuiteTest::TestSuiteTest()
 	: tests(
 		make_unique<TestNamed>(
 			"TestSuiteTest",
-			make_shared<TestEqual>(
-				make_shared<ReprTest>(
-					make_unique<TestSuite>(
-						list<shared_ptr<const Test>>{
-}
-					)
-				),
-				"success"
+			make_shared<TestNamed>(
+				"Test suite with empty list is always success",
+				make_shared<TestEqual>(
+					make_shared<ReprTest>(
+						make_unique<TestSuite>(
+							list<shared_ptr<const Test>>{}
+						)
+					),
+					"success"
+				)
 			),
 			make_shared<TestNamed>(
 				"Test suite give tests as variadic args",

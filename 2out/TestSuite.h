@@ -14,17 +14,19 @@ namespace oout {
 /// Suite of tests
 class TestSuite final : public Test {
 public:
+	/// Primary ctor
+	explicit TestSuite(const std::list<std::shared_ptr<const Test>> &cases);
+
 	/// Secondary ctor from variadic list of tests
 	template<typename... T>
-	explicit TestSuite(const std::shared_ptr<T> & ... tests)
-		: TestSuite(std::list<std::shared_ptr<const Test>>{
-			tests...
+	explicit TestSuite(
+			const std::shared_ptr<const Test> &test1,
+			const std::shared_ptr<T> & ... tests
+		) : TestSuite(std::list<std::shared_ptr<const Test>>{
+			test1, tests...
 		})
 	{
 	}
-
-	/// Primary ctor
-	explicit TestSuite(const std::list<std::shared_ptr<const Test>> &cases);
 
 	/// Get test suite result
 	std::unique_ptr<const Result> result() const override;
