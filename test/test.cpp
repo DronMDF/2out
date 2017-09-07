@@ -9,7 +9,6 @@
 #include <2out/CountError.h>
 #include <2out/CountFailure.h>
 #include <2out/JUnitXmlReport.h>
-#include <2out/ReprSigned.h>
 #include <2out/Result.h>
 #include <2out/TestEqual.h>
 #include <2out/TestSuite.h>
