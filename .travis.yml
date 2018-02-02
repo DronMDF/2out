@@ -50,7 +50,7 @@ matrix:
       env:
         - MATRIX_EVAL="CXX=clang++-3.7"
 
-# @todo: #251 clang++-3.8 on travis ci was failed
+# @todo #251 clang++-3.8 on travis ci was failed
 #  with error in <cstdio>: no member named 'gets' in the global namespace
 #  Try to back this block later
           
