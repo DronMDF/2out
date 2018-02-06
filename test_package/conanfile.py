@@ -13,9 +13,8 @@ class OoutTestConan(ConanFile):
 	def build(self):
 		cmake = CMake(self)
 		cmake.configure(source_dir=self.conanfile_directory, build_dir="./")
-		#cmake.build()
+		cmake.build()
 
 	def test(self):
-		pass
-		#os.chdir("bin")
-		#self.run(".%sexample" % os.sep)
+		os.chdir("bin")
+		self.run(".%sexample" % os.sep)

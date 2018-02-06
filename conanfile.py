@@ -21,7 +21,7 @@ class OoutConan(ConanFile):
 		self.run("cmake --build . %s" % cmake.build_config)
 
 	def package(self):
-		self.copy("*.h", dst="include/2out", src="2out/2out")
+		self.copy("*.h", dst="include/2out", src="2out")
 		self.copy("*.so", dst="lib", keep_path=False)
 		self.copy("*.a", dst="lib", keep_path=False)
 
