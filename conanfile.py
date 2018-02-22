@@ -1,8 +1,8 @@
-from conans import ConanFile, CMake
+from conans import ConanFile, CMake, tools
 
 class OoutConan(ConanFile):
 	name = "2out"
-	version = "0.4"
+	version = "0.5"
 	description = "Object oriented unit testing framework"
 	license = "MIT"
 	url = "https://dronmdf.github.io/2out/"
@@ -13,7 +13,17 @@ class OoutConan(ConanFile):
 	generators = "cmake"
 
 	def source(self):
-		self.run("git clone https://github.com/DronMDF/2out.git")
+		self.run("git clone https://github.com/DronMDF/2out.git .")
+		self.run("git checkout v%s" % self.version)
+		tools.replace_in_file(
+			"CMakeLists.txt",
+			"ENABLE_TESTING()",
+			'\n'.join((
+				"include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)",
+				"conan_basic_setup()",
+				"ENABLE_TESTING()"
+			))
+		)
 
 	def build(self):
 		cmake = CMake(self)
