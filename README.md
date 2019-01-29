@@ -2,7 +2,6 @@
 
 Object oriented unit testing framework
 
-[![Shippable](https://api.shippable.com/projects/5922a40c2a28350700f84ee0/badge?branch=master)](https://app.shippable.com/github/DronMDF/2out/status/dashboard)
 [![Travis](https://travis-ci.org/DronMDF/2out.svg?branch=master)](https://travis-ci.org/DronMDF/2out)
 [![CircleCI](https://circleci.com/gh/DronMDF/2out.svg?style=shield)](https://circleci.com/gh/DronMDF/2out)
 [![codecov](https://codecov.io/gh/DronMDF/2out/branch/master/graph/badge.svg)](https://codecov.io/gh/DronMDF/2out)

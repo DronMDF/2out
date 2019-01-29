@@ -25,12 +25,6 @@ TARGET_LINK_LIBRARIES(
 	2out
 )
 
-ADD_CUSTOM_COMMAND(
-	TARGET test_runner
-	PRE_BUILD
-	COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/shippable/testresults
-)
-
 ADD_TEST(
 	NAME test
 	COMMAND sh -c "./test_runner > ${CMAKE_BINARY_DIR}/test-results.xml"
