@@ -7,7 +7,8 @@ jobs:
     steps:
       - checkout
       - run: |
-          sudo apt-get install cmake cppcheck doxygen
+          sudo apt-get install cmake cppcheck doxygen python3-pip
+          sudo pip3 install cpplint
           gem install pdd
           cmake .
           make style
