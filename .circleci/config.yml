@@ -10,8 +10,10 @@ jobs:
           sudo apt-get install cmake cppcheck doxygen python3-pip
           sudo pip3 install cpplint
           gem install pdd
-          cmake .
+          cmake -DCMAKE_CXX_FLAGS="--coverage" .
           make style
-          make all test
+          make VERBOSE=1
+          make test
+          bash <(curl -s https://codecov.io/bash)
       - store_test_results:
           path: .

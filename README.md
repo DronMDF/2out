@@ -2,6 +2,8 @@
 
 Object oriented unit testing framework
 
+![EO badge](https://www.elegantobjects.org/badge.svg)
+
 [![Travis](https://travis-ci.org/DronMDF/2out.svg?branch=master)](https://travis-ci.org/DronMDF/2out)
 [![CircleCI](https://circleci.com/gh/DronMDF/2out.svg?style=shield)](https://circleci.com/gh/DronMDF/2out)
 [![codecov](https://codecov.io/gh/DronMDF/2out/branch/master/graph/badge.svg)](https://codecov.io/gh/DronMDF/2out)
