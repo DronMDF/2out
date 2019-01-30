@@ -11,6 +11,7 @@
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
 #include "JUnitXmlReportTest.h"
+#include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
 #include "TestContainTextTest.h"
 #include "TestEndsWithTest.h"
@@ -30,6 +31,7 @@ int main(int, char **)
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
 		make_shared<JUnitXmlReportTest>(),
+		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
 		make_shared<TestContainTextTest>(),
 		make_shared<TestEndsWithTest>(),

@@ -10,6 +10,7 @@ ADD_LIBRARY(
 	Error.cpp
 	Failure.cpp
 	JUnitXmlReport.cpp
+	ReprCallable.cpp
 	ReprSigned.cpp
 	ReprString.cpp
 	ResNamed.cpp

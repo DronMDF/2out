@@ -19,6 +19,7 @@
 
 // Representation
 #include "Representation.h"
+#include "ReprCallable.h"
 #include "ReprPrintable.h"
 #include "ReprSigned.h"
 #include "ReprString.h"

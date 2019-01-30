@@ -11,6 +11,7 @@ ADD_EXECUTABLE(
 	CountFailureTest.cpp
 	CountTestTest.cpp
 	JUnitXmlReportTest.cpp
+	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
 	ReprTest.cpp
 	ResFakes.cpp
