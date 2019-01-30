@@ -5,40 +5,61 @@
 
 #pragma once
 #include "Representation.h"
+#include <list>
+#include "ReprString.h"
 #include "Test.h"
 
 namespace oout {
 
 /// Test for substring present in string
 class TestContainText final : public Test {
-public:
-	/// Secondary ctor from strings
-	TestContainText(const std::string &text, const std::string &substr);
-
-	/// Secondary ctor from string and Repr
-	TestContainText(
-		const std::string &text,
-		const std::shared_ptr<const Representation> &substr
-	);
-
-	/// Secondary ctor from Repr and string
-	TestContainText(
-		const std::shared_ptr<const Representation> &text,
-		const std::string &substr
-	);
-
+private:
 	/// Primary ctor
 	TestContainText(
 		const std::shared_ptr<const Representation> &text,
-		const std::shared_ptr<const Representation> &substr
+		const std::list<std::shared_ptr<const Representation>> &subs
 	);
+
+public:
+	// Multiple ctor with reprs
+	template<typename ... S>
+	TestContainText(
+		const std::shared_ptr<const Representation> &text,
+		const std::shared_ptr<const Representation> &sub,
+		S ... subs
+	) : TestContainText(text, std::list<std::shared_ptr<const Representation>>{sub, subs...})
+	{
+	}
+
+	// Multiple ctor with strings
+	template<typename ... S>
+	TestContainText(
+		const std::shared_ptr<const Representation> &text,
+		const std::string &sub,
+		S ... subs
+	) : TestContainText(text, subs..., std::make_shared<ReprString>(sub))
+	{
+	}
+
+	/// Secondary ctor from strings
+	template<typename ... S>
+	TestContainText(
+		const std::string &text,
+		S ... subs
+	) : TestContainText(std::make_shared<ReprString>(text), subs...)
+	{
+	}
 
 	/// Test result
 	std::unique_ptr<const Result> result() const override;
 
 private:
 	const std::shared_ptr<const Representation> text;
-	const std::shared_ptr<const Representation> substr;
+	const std::list<std::shared_ptr<const Representation>> subs;
+
+	std::unique_ptr<const Result> result(
+		const std::shared_ptr<const Representation> &sub
+	) const;
 };
 
 }

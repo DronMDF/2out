@@ -7,42 +7,41 @@
 #include <algorithm>
 #include <sstream>
 #include "Failure.h"
-#include "ReprString.h"
+#include "ResSuite.h"
 #include "ResTest.h"
 #include "Success.h"
 
 using namespace std;
 using namespace oout;
 
-TestContainText::TestContainText(const string &text, const string &substr)
-	: TestContainText(make_shared<ReprString>(text), make_shared<ReprString>(substr))
-{
-}
-
-TestContainText::TestContainText(const string &text, const shared_ptr<const Representation> &substr)
-	: TestContainText(make_shared<ReprString>(text), substr)
-{
-}
-
-TestContainText::TestContainText(const shared_ptr<const Representation> &text, const string &substr)
-	: TestContainText(text, make_shared<ReprString>(substr))
-{
-}
-
 TestContainText::TestContainText(
 	const shared_ptr<const Representation> &text,
-	const shared_ptr<const Representation> &substr
-) : text(text), substr(substr)
+	const list<shared_ptr<const Representation>> &subs
+) : text(text), subs(subs)
 {
 }
 
 unique_ptr<const Result> TestContainText::result() const
 {
-	ostringstream test_text;
-	test_text << "'" << substr->asString() << "' in '" << text->asString() << "'";
+	if (subs.size() == 1) {
+		return result(subs.front());
+	}
 
+	list<shared_ptr<const Result>> rs;
+	for (const auto &s : subs) {
+		rs.push_back(result(s));
+	}
+	return make_unique<ResSuite>(rs);
+}
+
+unique_ptr<const Result> TestContainText::result(const shared_ptr<const Representation> &sub) const
+{
+	ostringstream test_text;
+	test_text << "'" << sub->asString() << "' in '" << text->asString() << "'";
+
+	// @todo #295 Result with condition halp to avoid if/else
 	shared_ptr<const Result> assertion_result;
-	if (text->asString().find(substr->asString()) != string::npos) {
+	if (text->asString().find(sub->asString()) != string::npos) {
 		assertion_result = make_shared<Success>(test_text.str());
 	} else {
 		assertion_result = make_shared<Failure>(test_text.str());
