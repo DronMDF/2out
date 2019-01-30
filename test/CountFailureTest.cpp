@@ -4,13 +4,8 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "CountFailureTest.h"
-#include <2out/CountFailure.h>
-#include <2out/Representation.h>
-#include <2out/ReprSigned.h>
+#include <2out/2out.h>
 #include <2out/ResSuite.h>
-#include <2out/TestEqual.h>
-#include <2out/TestNamed.h>
-#include <2out/TestSuite.h>
 #include "ResFakes.h"
 
 using namespace std;

@@ -5,14 +5,11 @@
 
 #include "JUnitXmlReportTest.h"
 #include <list>
+#include <2out/2out.h>
 #include <2out/Error.h>
 #include <2out/Failure.h>
-#include <2out/JUnitXmlReport.h>
 #include <2out/ResSuite.h>
 #include <2out/ResTest.h>
-#include <2out/TestContainText.h>
-#include <2out/TestNamed.h>
-#include <2out/TestSuite.h>
 #include "ResFakes.h"
 
 using namespace std;

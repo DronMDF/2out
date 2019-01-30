@@ -6,12 +6,7 @@
 #include <iostream>
 #include <list>
 #include <memory>
-#include <2out/CountError.h>
-#include <2out/CountFailure.h>
-#include <2out/JUnitXmlReport.h>
-#include <2out/Result.h>
-#include <2out/TestEqual.h>
-#include <2out/TestSuite.h>
+#include <2out/2out.h>
 #include "CountErrorTest.h"
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
