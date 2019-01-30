@@ -18,6 +18,7 @@ ADD_LIBRARY(
 	ResTimed.cpp
 	Success.cpp
 	TestContainText.cpp
+	TestEndsWith.cpp
 	TestEqual.cpp
 	TestNamed.cpp
 	TestSkipped.cpp

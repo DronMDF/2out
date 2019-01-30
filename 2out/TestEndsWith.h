@@ -9,22 +9,20 @@
 
 namespace oout {
 
-// @todo #259 Nonintuitive arg names in TestStartWith ctors
-
-/// Test for string start with prefix
-class TestStartsWith final : public Test {
+/// Test for string ends with suffix
+class TestEndsWith final : public Test {
 public:
 	/// Secondary ctor from two strings
-	TestStartsWith(const std::string &a, const std::string &b);
+	TestEndsWith(const std::string &a, const std::string &b);
 
 	/// Secondary ctor from string and Repr
-	TestStartsWith(const std::string &a, const std::shared_ptr<const Representation> &b);
+	TestEndsWith(const std::string &a, const std::shared_ptr<const Representation> &b);
 
 	/// Secondary ctor from Repr and string
-	TestStartsWith(const std::shared_ptr<const Representation> &a, const std::string &b);
+	TestEndsWith(const std::shared_ptr<const Representation> &a, const std::string &b);
 
 	/// Primary ctor
-	TestStartsWith(
+	TestEndsWith(
 		const std::shared_ptr<const Representation> &a,
 		const std::shared_ptr<const Representation> &b
 	);
