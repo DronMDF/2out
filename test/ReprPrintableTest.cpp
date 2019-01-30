@@ -5,11 +5,7 @@
 
 #include "ReprPrintableTest.h"
 #include <list>
-#include <2out/ReprPrintable.h>
-#include <2out/Result.h>
-#include <2out/TestEqual.h>
-#include <2out/TestNamed.h>
-#include <2out/TestSuite.h>
+#include <2out/2out.h>
 
 using namespace std;
 using namespace oout;

@@ -5,12 +5,9 @@
 
 #include "TextReportTest.h"
 #include <list>
+#include <2out/2out.h>
 #include <2out/ResNamed.h>
 #include <2out/ResSuite.h>
-#include <2out/TestContainText.h>
-#include <2out/TestNamed.h>
-#include <2out/TestSuite.h>
-#include <2out/TextReport.h>
 #include "ResFakes.h"
 
 using namespace std;

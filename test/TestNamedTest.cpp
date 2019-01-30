@@ -4,11 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TestNamedTest.h"
-#include <2out/JUnitXmlReport.h>
-#include <2out/Result.h>
-#include <2out/TestContainText.h>
-#include <2out/TestEqual.h>
-#include <2out/TestNamed.h>
+#include <2out/2out.h>
 #include "ReprTest.h"
 
 using namespace std;

@@ -4,8 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "ReprTest.h"
-#include <2out/CountFailure.h>
-#include <2out/Result.h>
+#include <2out/2out.h>
 
 using namespace std;
 using namespace oout;

@@ -4,12 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <iostream>
-#include <2out/CountError.h>
-#include <2out/CountFailure.h>
-#include <2out/Result.h>
-#include <2out/TestEqual.h>
-#include <2out/TestSuite.h>
-#include <2out/TextReport.h>
+#include <2out/2out.h>
 
 using namespace std;
 using namespace oout;
