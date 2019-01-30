@@ -25,6 +25,18 @@ TestEndsWithTest::TestEndsWithTest()
 					),
 					"success"
 				)
+			),
+			make_shared<const TestNamed>(
+				"Not ends with",
+				make_shared<TestEqual>(
+					make_unique<ReprTest>(
+						make_unique<TestEndsWith>(
+							make_shared<ReprSigned>(123456789),
+							"000"
+						)
+					),
+					"failure"
+				)
 			)
 		)
 	)
