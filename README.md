@@ -71,6 +71,7 @@ conan_basic_setup()
 
 build:
 ```sh
+$ conan remote add mdf https://api.bintray.com/conan/mdf/2out
 $ conan install ~/project --build
 $ cmake ~/project
 $ make
