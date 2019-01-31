@@ -49,3 +49,29 @@ object TestApp as Application:
 Key moment: This is not a code. This is Object composition.
 At the time the composition is created, the tests do not start.
 Tests start in `run()` method.
+
+# Using
+
+## With cmake
+
+conanfile.txt:
+```
+[generators]
+cmake
+
+[requires]
+2out/0.6@dronmdf/stable
+```
+
+CMakeLists.txt:
+```
+INCLUDE(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+```
+
+build:
+```sh
+$ conan install ~/project --build
+$ cmake ~/project
+$ make
+```
