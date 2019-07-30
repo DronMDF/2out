@@ -5,8 +5,8 @@
 
 #pragma once
 #include <memory>
-#include <2out/Test.h>
-#include <2out/TestSuite.h>
+#include "../Test.h"
+#include "../TestSuite.h"
 
 namespace oout {
 namespace dirty {
