@@ -11,6 +11,8 @@
 
 namespace oout {
 
+// @todo #324 TestContainText should be renamed to ContainTest
+
 /// Test for substring present in string
 class TestContainText final : public Test {
 private:

@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #324 TestEqual should be renamed to EqualTest
+
 /// Equality test
 class TestEqual final : public Test {
 public:
