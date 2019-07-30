@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "Test.h"
-#include <2out/Result.h>
+#include "../Result.h"
 
 using namespace std;
 using namespace oout;
