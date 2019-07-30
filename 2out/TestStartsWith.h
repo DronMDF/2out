@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #324 TestStartsWith should be renamed to StartWithTest
+
 // @todo #259 Nonintuitive arg names in TestStartWith ctors
 
 /// Test for string start with prefix

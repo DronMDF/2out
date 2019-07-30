@@ -28,6 +28,7 @@ ADD_LIBRARY(
 	TestSuite.cpp
 	TestTimed.cpp
 	TextReport.cpp
+	dirty/Test.cpp
 )
 
 INSTALL(TARGETS 2out ARCHIVE DESTINATION lib)

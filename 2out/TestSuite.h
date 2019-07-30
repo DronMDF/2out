@@ -11,6 +11,8 @@
 
 namespace oout {
 
+// @todo #324 TestSuite should be renamed to SuiteTest
+
 /// Suite of tests
 class TestSuite final : public Test {
 public:
