@@ -18,6 +18,7 @@ ADD_LIBRARY(
 	ResSuite.cpp
 	ResTest.cpp
 	ResTimed.cpp
+	StartsWithTest.cpp
 	Success.cpp
 	SuiteTest.cpp
 	TestContainText.cpp
@@ -25,7 +26,6 @@ ADD_LIBRARY(
 	TestNamed.cpp
 	TestSkipped.cpp
 	TestSafe.cpp
-	TestStartsWith.cpp
 	TestTimed.cpp
 	TextReport.cpp
 	dirty/Test.cpp

@@ -3,22 +3,22 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestStartsWithTest.h"
+#include "StartsWithTestTest.h"
 #include <2out/2out.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
-TestStartsWithTest::TestStartsWithTest()
+StartsWithTestTest::StartsWithTestTest()
 	: tests(
 		make_unique<TestNamed>(
-			"TestStartsWithTest",
+			"StartsWithTestTest",
 			make_shared<const TestNamed>(
 				"Realy starts with",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
-						make_unique<TestStartsWith>(
+						make_unique<StartsWithTest>(
 							"abcdef",
 							"abc"
 						)
@@ -31,7 +31,7 @@ TestStartsWithTest::TestStartsWithTest()
 {
 }
 
-unique_ptr<const Result> TestStartsWithTest::result() const
+unique_ptr<const Result> StartsWithTestTest::result() const
 {
 	return tests->result();
 }

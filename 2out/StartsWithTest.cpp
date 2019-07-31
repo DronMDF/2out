@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestStartsWith.h"
+#include "StartsWithTest.h"
 #include <sstream>
 #include "Failure.h"
 #include "ReprString.h"
@@ -13,29 +13,29 @@
 using namespace std;
 using namespace oout;
 
-TestStartsWith::TestStartsWith(const string &a, const string &b)
-	: TestStartsWith(make_shared<ReprString>(a), make_shared<ReprString>(b))
+StartsWithTest::StartsWithTest(const string &a, const string &b)
+	: StartsWithTest(make_shared<ReprString>(a), make_shared<ReprString>(b))
 {
 }
 
-TestStartsWith::TestStartsWith(const string &a, const shared_ptr<const Representation> &b)
-	: TestStartsWith(make_shared<ReprString>(a), b)
+StartsWithTest::StartsWithTest(const string &a, const shared_ptr<const Representation> &b)
+	: StartsWithTest(make_shared<ReprString>(a), b)
 {
 }
 
-TestStartsWith::TestStartsWith(const shared_ptr<const Representation> &a, const string &b)
-	: TestStartsWith(a, make_shared<ReprString>(b))
+StartsWithTest::StartsWithTest(const shared_ptr<const Representation> &a, const string &b)
+	: StartsWithTest(a, make_shared<ReprString>(b))
 {
 }
 
-TestStartsWith::TestStartsWith(
+StartsWithTest::StartsWithTest(
 	const shared_ptr<const Representation> &a,
 	const shared_ptr<const Representation> &b
 ) : a(a), b(b)
 {
 }
 
-unique_ptr<const Result> TestStartsWith::result() const
+unique_ptr<const Result> StartsWithTest::result() const
 {
 	ostringstream text;
 	text << "'" << a->asString() << "' is starts with '" << b->asString() << "'";

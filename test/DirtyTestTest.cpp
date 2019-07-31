@@ -16,7 +16,7 @@ DirtyTestTest::DirtyTestTest()
 			"oout::dirty::Test",
 			"Test"
 		),
-		make_shared<TestStartsWith>(
+		make_shared<StartsWithTest>(
 			"oout::dirty::Test",
 			"oout::dirty"
 		)
