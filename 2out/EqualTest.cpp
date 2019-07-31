@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestEqual.h"
+#include "EqualTest.h"
 #include <sstream>
 #include <algorithm>
 #include "Failure.h"
@@ -14,27 +14,27 @@
 using namespace std;
 using namespace oout;
 
-TestEqual::TestEqual(const string &a, const string &b)
-	: TestEqual(make_shared<ReprString>(a), make_shared<ReprString>(b))
+EqualTest::EqualTest(const string &a, const string &b)
+	: EqualTest(make_shared<ReprString>(a), make_shared<ReprString>(b))
 {
 }
 
-TestEqual::TestEqual(const string &a, const shared_ptr<const Representation> &b)
-	: TestEqual(make_shared<ReprString>(a), b)
+EqualTest::EqualTest(const string &a, const shared_ptr<const Representation> &b)
+	: EqualTest(make_shared<ReprString>(a), b)
 {
 }
 
-TestEqual::TestEqual(const shared_ptr<const Representation> &a, const string &b)
-	: TestEqual(a, make_shared<ReprString>(b))
+EqualTest::EqualTest(const shared_ptr<const Representation> &a, const string &b)
+	: EqualTest(a, make_shared<ReprString>(b))
 {
 }
 
-TestEqual::TestEqual(const shared_ptr<const Representation> &a, const shared_ptr<const Representation> &b)
+EqualTest::EqualTest(const shared_ptr<const Representation> &a, const shared_ptr<const Representation> &b)
 	: a(a), b(b)
 {
 }
 
-unique_ptr<const Result> TestEqual::result() const
+unique_ptr<const Result> EqualTest::result() const
 {
 	ostringstream text;
 	text << "'" << a->asString() << "' is equal '" << b->asString() << "'";

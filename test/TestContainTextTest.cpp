@@ -16,7 +16,7 @@ TestContainTextTest::TestContainTextTest()
 			"TestContainTextTest",
 			make_shared<const TestNamed>(
 				"Contain all",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<ReprTest>(
 						make_unique<TestContainText>(
 							"quick brown fox",
@@ -29,7 +29,7 @@ TestContainTextTest::TestContainTextTest()
 			),
 			make_shared<const TestNamed>(
 				"Not contain one of",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<ReprTest>(
 						make_unique<TestContainText>(
 							"jumps over the lazy dog",

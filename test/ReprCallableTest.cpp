@@ -15,7 +15,7 @@ ReprCallableTest::ReprCallableTest()
 			"ReprCallableTest",
 			make_shared<const TestNamed>(
 				"implicit bind",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_shared<ReprCallable>([]{ return "777"; }),
 					"777"
 				)

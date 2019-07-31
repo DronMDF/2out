@@ -16,7 +16,7 @@ TestStartsWithTest::TestStartsWithTest()
 			"TestStartsWithTest",
 			make_shared<const TestNamed>(
 				"Realy starts with",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<ReprTest>(
 						make_unique<TestStartsWith>(
 							"abcdef",
