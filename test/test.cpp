@@ -14,12 +14,12 @@
 #include "JUnitXmlReportTest.h"
 #include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
+#include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
 #include "TestContainTextTest.h"
 #include "TestEndsWithTest.h"
 #include "TestNamedTest.h"
 #include "TestSkippedTest.h"
-#include "TestStartsWithTest.h"
 #include "TextReportTest.h"
 
 using namespace std;
@@ -35,12 +35,12 @@ int main(int, char **)
 		make_shared<JUnitXmlReportTest>(),
 		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
+		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
 		make_shared<TestContainTextTest>(),
 		make_shared<TestEndsWithTest>(),
 		make_shared<TestNamedTest>(),
 		make_shared<TestSkippedTest>(),
-		make_shared<TestStartsWithTest>(),
 		make_shared<TextReportTest>()
 	);
 

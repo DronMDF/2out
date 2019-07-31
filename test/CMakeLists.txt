@@ -21,7 +21,7 @@ ADD_EXECUTABLE(
 	TestEndsWithTest.cpp
 	TestNamedTest.cpp
 	TestSkippedTest.cpp
-	TestStartsWithTest.cpp
+	StartsWithTestTest.cpp
 	TextReportTest.cpp
 )
 TARGET_LINK_LIBRARIES(

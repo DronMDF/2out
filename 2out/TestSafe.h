@@ -8,6 +8,8 @@
 
 namespace oout {
 
+// @todo #329 TestSafe should be renamed to SafeTest
+
 /// Test decorator for catch exceptions, and report error
 class TestSafe final : public Test {
 public:

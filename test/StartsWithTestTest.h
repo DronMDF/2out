@@ -6,9 +6,9 @@
 #include <memory>
 #include <2out/Test.h>
 
-class TestStartsWithTest final : public oout::Test {
+class StartsWithTestTest final : public oout::Test {
 public:
-	TestStartsWithTest();
+	StartsWithTestTest();
 	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;

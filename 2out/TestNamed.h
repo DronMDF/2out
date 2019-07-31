@@ -10,6 +10,8 @@
 
 namespace oout {
 
+// @todo #329 TestNamed should be renamed to NamedTest
+
 /// TestNamed is a Test decorator.
 /// Adds a name to the test or test suite
 class TestNamed final : public Test {

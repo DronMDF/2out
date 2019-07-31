@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #329 TestTimed should be renamed to TimedTest
+
 /// Test decorator for execution time meansure
 class TestTimed final : public Test {
 public:
