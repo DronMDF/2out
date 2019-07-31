@@ -16,7 +16,7 @@ TestEndsWithTest::TestEndsWithTest()
 			"TestEndsWithTest",
 			make_shared<const TestNamed>(
 				"Realy ends with",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<ReprTest>(
 						make_unique<TestEndsWith>(
 							"128aafc5ceb385649c1054fc5000",
@@ -28,7 +28,7 @@ TestEndsWithTest::TestEndsWithTest()
 			),
 			make_shared<const TestNamed>(
 				"Not ends with",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<ReprTest>(
 						make_unique<TestEndsWith>(
 							make_shared<ReprSigned>(123456789),

@@ -8,6 +8,7 @@ ADD_LIBRARY(
 	CountFailure.cpp
 	CountTest.cpp
 	Error.cpp
+	EqualTest.cpp
 	Failure.cpp
 	JUnitXmlReport.cpp
 	ReprCallable.cpp
@@ -20,7 +21,6 @@ ADD_LIBRARY(
 	Success.cpp
 	TestContainText.cpp
 	TestEndsWith.cpp
-	TestEqual.cpp
 	TestNamed.cpp
 	TestSkipped.cpp
 	TestSafe.cpp

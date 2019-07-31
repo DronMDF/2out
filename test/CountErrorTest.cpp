@@ -32,7 +32,7 @@ CountErrorTest::CountErrorTest()
 			"CountErrorTest",
 			make_shared<const TestNamed>(
 				"One error in set",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<CountErrorRepr>(
 						make_unique<CountError>(
 							make_unique<ResSuite>(

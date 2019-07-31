@@ -37,7 +37,7 @@ TestNamedTest::TestNamedTest()
 							"Root test",
 							make_shared<const TestNamed>(
 								"Concrete test",
-								make_shared<TestEqual>("a", "a")
+								make_shared<EqualTest>("a", "a")
 							)
 						)
 					),

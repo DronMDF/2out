@@ -16,7 +16,7 @@ ReprPrintableTest::ReprPrintableTest()
 			"ReprPrintableTest",
 			make_shared<const TestNamed>(
 				"Boolean represent as text",
-				make_shared<TestEqual>(
+				make_shared<EqualTest>(
 					make_unique<ReprPrintable<bool>>(
 						true
 					),

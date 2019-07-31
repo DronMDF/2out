@@ -11,7 +11,7 @@ using namespace oout;
 
 int main(int, char **)
 {
-	const TestEqual test("2out", "2out");
+	const EqualTest test("2out", "2out");
 	const shared_ptr<const Result> result = test.result();
 
 	cout << TextReport(result).asString() << endl;

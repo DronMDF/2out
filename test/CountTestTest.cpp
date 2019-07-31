@@ -30,7 +30,7 @@ CountTestTest::CountTestTest()
 	: tests(
 		make_unique<TestNamed>(
 			"CountTestTest",
-			make_shared<TestEqual>(
+			make_shared<EqualTest>(
 				make_shared<CountTestRepr>(
 					make_unique<CountTest>(
 						make_unique<ResSuite>(
