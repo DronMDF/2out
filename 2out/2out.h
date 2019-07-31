@@ -26,14 +26,15 @@
 
 // Tests
 #include "EqualTest.h"
+#include "SuiteTest.h"
 #include "TestContainText.h"
 #include "TestEndsWith.h"
 #include "TestNamed.h"
 #include "TestSafe.h"
 #include "TestSkipped.h"
 #include "TestStartsWith.h"
-#include "TestSuite.h"
 #include "TestTimed.h"
 
 // Deprecated names (since 0.6)
 #include "TestEqual.h"
+#include "TestSuite.h"

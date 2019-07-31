@@ -3,19 +3,19 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestSuite.h"
+#include "SuiteTest.h"
 #include "ResSuite.h"
 #include "TestTimed.h"
 
 using namespace std;
 using namespace oout;
 
-TestSuite::TestSuite(const list<shared_ptr<const Test>> &cases)
+SuiteTest::SuiteTest(const list<shared_ptr<const Test>> &cases)
 	: cases(cases)
 {
 }
 
-unique_ptr<const Result> TestSuite::result() const
+unique_ptr<const Result> SuiteTest::result() const
 {
 	list<shared_ptr<const Result>> results;
 	for (const auto &c : cases) {

@@ -3,22 +3,22 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestSuiteTest.h"
+#include "SuiteTestTest.h"
 #include <2out/2out.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
-TestSuiteTest::TestSuiteTest()
+SuiteTestTest::SuiteTestTest()
 	: tests(
 		make_unique<TestNamed>(
-			"TestSuiteTest",
+			"SuiteTestTest",
 			make_shared<TestNamed>(
-				"Test suite with empty list is always success",
+				"SuiteTest with empty list is always success",
 				make_shared<EqualTest>(
 					make_shared<ReprTest>(
-						make_unique<TestSuite>(
+						make_unique<SuiteTest>(
 							list<shared_ptr<const Test>>{}
 						)
 					),
@@ -26,10 +26,10 @@ TestSuiteTest::TestSuiteTest()
 				)
 			),
 			make_shared<TestNamed>(
-				"Test suite give tests as variadic args",
+				"SuiteTest give tests as variadic args",
 				make_shared<EqualTest>(
 					make_shared<ReprTest>(
-						make_unique<TestSuite>(
+						make_unique<SuiteTest>(
 							make_shared<EqualTest>("1", "1"),
 							make_shared<EqualTest>("2", "2"),
 							make_shared<EqualTest>("3", "3")
@@ -43,7 +43,7 @@ TestSuiteTest::TestSuiteTest()
 {
 }
 
-unique_ptr<const Result> TestSuiteTest::result() const
+unique_ptr<const Result> SuiteTestTest::result() const
 {
 	return tests->result();
 }

@@ -6,7 +6,7 @@
 #pragma once
 #include <memory>
 #include "../Test.h"
-#include "../TestSuite.h"
+#include "../SuiteTest.h"
 
 namespace oout {
 namespace dirty {
@@ -20,7 +20,7 @@ public:
 		const std::shared_ptr<const oout::Test> &a,
 		const std::shared_ptr<const oout::Test> &b,
 		const T & ... tests
-	) : Test(std::make_shared<oout::TestSuite>(a, b, tests...))
+	) : Test(std::make_shared<oout::SuiteTest>(a, b, tests...))
 	{
 	}
 

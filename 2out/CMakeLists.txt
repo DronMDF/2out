@@ -19,13 +19,13 @@ ADD_LIBRARY(
 	ResTest.cpp
 	ResTimed.cpp
 	Success.cpp
+	SuiteTest.cpp
 	TestContainText.cpp
 	TestEndsWith.cpp
 	TestNamed.cpp
 	TestSkipped.cpp
 	TestSafe.cpp
 	TestStartsWith.cpp
-	TestSuite.cpp
 	TestTimed.cpp
 	TextReport.cpp
 	dirty/Test.cpp

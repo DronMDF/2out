@@ -5,7 +5,7 @@
 
 #include "TestNamed.h"
 #include "ResNamed.h"
-#include "TestSuite.h"
+#include "SuiteTest.h"
 
 using namespace std;
 using namespace oout;
@@ -16,12 +16,12 @@ TestNamed::TestNamed(const string &name, const shared_ptr<const Test> &test)
 }
 
 TestNamed::TestNamed(const string &name, const shared_ptr<const TestNamed> &test)
-	: TestNamed(name, make_shared<const TestSuite>(test))
+	: TestNamed(name, make_shared<const SuiteTest>(test))
 {
 }
 
 TestNamed::TestNamed(const string &name, const list<shared_ptr<const Test>> &tests)
-	: TestNamed(name, make_shared<const TestSuite>(tests))
+	: TestNamed(name, make_shared<const SuiteTest>(tests))
 {
 }
 
