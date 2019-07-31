@@ -16,12 +16,12 @@ ADD_EXECUTABLE(
 	ReprPrintableTest.cpp
 	ReprTest.cpp
 	ResFakes.cpp
+	SuiteTestTest.cpp
 	TestContainTextTest.cpp
 	TestEndsWithTest.cpp
 	TestNamedTest.cpp
 	TestSkippedTest.cpp
 	TestStartsWithTest.cpp
-	TestSuiteTest.cpp
 	TextReportTest.cpp
 )
 TARGET_LINK_LIBRARIES(

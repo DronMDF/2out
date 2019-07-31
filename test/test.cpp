@@ -14,12 +14,12 @@
 #include "JUnitXmlReportTest.h"
 #include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
+#include "SuiteTestTest.h"
 #include "TestContainTextTest.h"
 #include "TestEndsWithTest.h"
 #include "TestNamedTest.h"
 #include "TestSkippedTest.h"
 #include "TestStartsWithTest.h"
-#include "TestSuiteTest.h"
 #include "TextReportTest.h"
 
 using namespace std;
@@ -27,7 +27,7 @@ using namespace oout;
 
 int main(int, char **)
 {
-	const TestSuite tests(
+	const SuiteTest tests(
 		make_shared<CountErrorTest>(),
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
@@ -35,12 +35,12 @@ int main(int, char **)
 		make_shared<JUnitXmlReportTest>(),
 		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
+		make_shared<SuiteTestTest>(),
 		make_shared<TestContainTextTest>(),
 		make_shared<TestEndsWithTest>(),
 		make_shared<TestNamedTest>(),
 		make_shared<TestSkippedTest>(),
 		make_shared<TestStartsWithTest>(),
-		make_shared<TestSuiteTest>(),
 		make_shared<TextReportTest>()
 	);
 

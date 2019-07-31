@@ -6,7 +6,7 @@
 #pragma once
 #include <list>
 #include "Test.h"
-#include "TestSuite.h"
+#include "SuiteTest.h"
 
 namespace oout {
 
@@ -30,7 +30,7 @@ public:
 		const std::shared_ptr<const Test> &test1,
 		const std::shared_ptr<const Test> &test2,
 		const std::shared_ptr<T> & ... tests
-	) : TestNamed(name, std::make_shared<const TestSuite>(test1, test2, tests...))
+	) : TestNamed(name, std::make_shared<const SuiteTest>(test1, test2, tests...))
 	{
 	}
 
