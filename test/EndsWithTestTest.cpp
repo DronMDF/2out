@@ -3,22 +3,22 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestEndsWithTest.h"
+#include "EndsWithTestTest.h"
 #include <2out/2out.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
-TestEndsWithTest::TestEndsWithTest()
+EndsWithTestTest::EndsWithTestTest()
 	: tests(
 		make_unique<TestNamed>(
-			"TestEndsWithTest",
+			"EndsWithTestTest",
 			make_shared<const TestNamed>(
 				"Realy ends with",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
-						make_unique<TestEndsWith>(
+						make_unique<EndsWithTest>(
 							"128aafc5ceb385649c1054fc5000",
 							"000"
 						)
@@ -30,7 +30,7 @@ TestEndsWithTest::TestEndsWithTest()
 				"Not ends with",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
-						make_unique<TestEndsWith>(
+						make_unique<EndsWithTest>(
 							make_shared<ReprSigned>(123456789),
 							"000"
 						)
@@ -43,7 +43,7 @@ TestEndsWithTest::TestEndsWithTest()
 {
 }
 
-unique_ptr<const Result> TestEndsWithTest::result() const
+unique_ptr<const Result> EndsWithTestTest::result() const
 {
 	return tests->result();
 }

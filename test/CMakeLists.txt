@@ -12,13 +12,13 @@ ADD_EXECUTABLE(
 	CountFailureTest.cpp
 	CountTestTest.cpp
 	DirtyTestTest.cpp
+	EndsWithTestTest.cpp
 	JUnitXmlReportTest.cpp
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
 	ReprTest.cpp
 	ResFakes.cpp
 	SuiteTestTest.cpp
-	TestEndsWithTest.cpp
 	TestNamedTest.cpp
 	TestSkippedTest.cpp
 	StartsWithTestTest.cpp
