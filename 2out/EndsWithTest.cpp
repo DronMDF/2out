@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestEndsWith.h"
+#include "EndsWithTest.h"
 #include <sstream>
 #include "Failure.h"
 #include "ReprString.h"
@@ -13,29 +13,29 @@
 using namespace std;
 using namespace oout;
 
-TestEndsWith::TestEndsWith(const string &a, const string &b)
-	: TestEndsWith(make_shared<ReprString>(a), make_shared<ReprString>(b))
+EndsWithTest::EndsWithTest(const string &a, const string &b)
+	: EndsWithTest(make_shared<ReprString>(a), make_shared<ReprString>(b))
 {
 }
 
-TestEndsWith::TestEndsWith(const string &a, const shared_ptr<const Representation> &b)
-	: TestEndsWith(make_shared<ReprString>(a), b)
+EndsWithTest::EndsWithTest(const string &a, const shared_ptr<const Representation> &b)
+	: EndsWithTest(make_shared<ReprString>(a), b)
 {
 }
 
-TestEndsWith::TestEndsWith(const shared_ptr<const Representation> &a, const string &b)
-	: TestEndsWith(a, make_shared<ReprString>(b))
+EndsWithTest::EndsWithTest(const shared_ptr<const Representation> &a, const string &b)
+	: EndsWithTest(a, make_shared<ReprString>(b))
 {
 }
 
-TestEndsWith::TestEndsWith(
+EndsWithTest::EndsWithTest(
 	const shared_ptr<const Representation> &a,
 	const shared_ptr<const Representation> &b
 ) : a(a), b(b)
 {
 }
 
-unique_ptr<const Result> TestEndsWith::result() const
+unique_ptr<const Result> EndsWithTest::result() const
 {
 	ostringstream text;
 	text << "'" << a->asString() << "' is ends with '" << b->asString() << "'";

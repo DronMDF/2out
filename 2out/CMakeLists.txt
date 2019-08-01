@@ -8,8 +8,9 @@ ADD_LIBRARY(
 	CountError.cpp
 	CountFailure.cpp
 	CountTest.cpp
-	Error.cpp
+	EndsWithTest.cpp
 	EqualTest.cpp
+	Error.cpp
 	Failure.cpp
 	JUnitXmlReport.cpp
 	ReprCallable.cpp
@@ -22,7 +23,6 @@ ADD_LIBRARY(
 	StartsWithTest.cpp
 	Success.cpp
 	SuiteTest.cpp
-	TestEndsWith.cpp
 	TestNamed.cpp
 	TestSkipped.cpp
 	TestSafe.cpp

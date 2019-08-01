@@ -6,9 +6,9 @@
 #include <memory>
 #include <2out/Test.h>
 
-class TestEndsWithTest final : public oout::Test {
+class EndsWithTestTest final : public oout::Test {
 public:
-	TestEndsWithTest();
+	EndsWithTestTest();
 	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;

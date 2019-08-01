@@ -26,10 +26,10 @@
 
 // Tests
 #include "ContainTest.h"
+#include "EndsWithTest.h"
 #include "EqualTest.h"
 #include "StartsWithTest.h"
 #include "SuiteTest.h"
-#include "TestEndsWith.h"
 #include "TestNamed.h"
 #include "TestSafe.h"
 #include "TestSkipped.h"
@@ -37,6 +37,7 @@
 
 // Deprecated (since 0.6)
 #include "TestContainText.h"
+#include "TestEndsWith.h"
 #include "TestEqual.h"
 #include "TestStartsWith.h"
 #include "TestSuite.h"
