@@ -17,37 +17,37 @@ TextReportTest::TextReportTest()
 	: tests(
 		make_unique<TestNamed>(
 			"TextReportTest",
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<TextReport>(
 					make_unique<ResFailureCase>("run test")
 				),
 				"[ RUN      ] run test"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<TextReport>(
 					make_unique<ResOkCase>("ok test")
 				),
 				"[       OK ] ok test"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<TextReport>(
 					make_unique<ResFailureCase>("fail test")
 				),
 				"[  FAILED  ] fail test"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<TextReport>(
 					make_unique<ResOkCase>()
 				),
 				"[==========] Running"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<TextReport>(
 					make_unique<ResOkCase>()
 				),
 				"[==========] 1 tests ran"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<TextReport>(
 					make_unique<ResNamed>(
 						"SUITE",

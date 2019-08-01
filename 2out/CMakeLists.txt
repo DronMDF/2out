@@ -4,6 +4,7 @@ PROJECT(2out)
 
 ADD_LIBRARY(
 	2out
+	ContainTest.cpp
 	CountError.cpp
 	CountFailure.cpp
 	CountTest.cpp
@@ -21,7 +22,6 @@ ADD_LIBRARY(
 	StartsWithTest.cpp
 	Success.cpp
 	SuiteTest.cpp
-	TestContainText.cpp
 	TestEndsWith.cpp
 	TestNamed.cpp
 	TestSkipped.cpp

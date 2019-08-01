@@ -3,22 +3,22 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestContainTextTest.h"
+#include "ContainTestTest.h"
 #include <2out/2out.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
-TestContainTextTest::TestContainTextTest()
+ContainTestTest::ContainTestTest()
 	: tests(
 		make_unique<TestNamed>(
-			"TestContainTextTest",
+			"ContainTestTest",
 			make_shared<const TestNamed>(
 				"Contain all",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
-						make_unique<TestContainText>(
+						make_unique<ContainTest>(
 							"quick brown fox",
 							"quick",
 							"fox"
@@ -31,7 +31,7 @@ TestContainTextTest::TestContainTextTest()
 				"Not contain one of",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
-						make_unique<TestContainText>(
+						make_unique<ContainTest>(
 							"jumps over the lazy dog",
 							"dog",
 							"fox"
@@ -45,7 +45,7 @@ TestContainTextTest::TestContainTextTest()
 {
 }
 
-unique_ptr<const Result> TestContainTextTest::result() const
+unique_ptr<const Result> ContainTestTest::result() const
 {
 	return tests->result();
 }

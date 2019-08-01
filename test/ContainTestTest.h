@@ -6,9 +6,9 @@
 #include <memory>
 #include <2out/Test.h>
 
-class TestContainTextTest final : public oout::Test {
+class ContainTestTest final : public oout::Test {
 public:
-	TestContainTextTest();
+	ContainTestTest();
 	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;
