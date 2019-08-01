@@ -16,7 +16,7 @@
 #include "ReprPrintableTest.h"
 #include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
-#include "TestContainTextTest.h"
+#include "ContainTestTest.h"
 #include "TestEndsWithTest.h"
 #include "TestNamedTest.h"
 #include "TestSkippedTest.h"
@@ -37,7 +37,7 @@ int main(int, char **)
 		make_shared<ReprPrintableTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
-		make_shared<TestContainTextTest>(),
+		make_shared<ContainTestTest>(),
 		make_shared<TestEndsWithTest>(),
 		make_shared<TestNamedTest>(),
 		make_shared<TestSkippedTest>(),

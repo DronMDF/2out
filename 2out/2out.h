@@ -25,10 +25,10 @@
 #include "ReprString.h"
 
 // Tests
+#include "ContainTest.h"
 #include "EqualTest.h"
 #include "StartsWithTest.h"
 #include "SuiteTest.h"
-#include "TestContainText.h"
 #include "TestEndsWith.h"
 #include "TestNamed.h"
 #include "TestSafe.h"
@@ -36,6 +36,7 @@
 #include "TestTimed.h"
 
 // Deprecated (since 0.6)
+#include "TestContainText.h"
 #include "TestEqual.h"
 #include "TestStartsWith.h"
 #include "TestSuite.h"

@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestContainText.h"
+#include "ContainTest.h"
 #include <algorithm>
 #include <sstream>
 #include "Failure.h"
@@ -14,14 +14,14 @@
 using namespace std;
 using namespace oout;
 
-TestContainText::TestContainText(
+ContainTest::ContainTest(
 	const shared_ptr<const Representation> &text,
 	const list<shared_ptr<const Representation>> &subs
 ) : text(text), subs(subs)
 {
 }
 
-unique_ptr<const Result> TestContainText::result() const
+unique_ptr<const Result> ContainTest::result() const
 {
 	if (subs.size() == 1) {
 		return result(subs.front());
@@ -34,7 +34,7 @@ unique_ptr<const Result> TestContainText::result() const
 	return make_unique<ResSuite>(rs);
 }
 
-unique_ptr<const Result> TestContainText::result(const shared_ptr<const Representation> &sub) const
+unique_ptr<const Result> ContainTest::result(const shared_ptr<const Representation> &sub) const
 {
 	ostringstream test_text;
 	test_text << "'" << sub->asString() << "' in '" << text->asString() << "'";

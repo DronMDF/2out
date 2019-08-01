@@ -12,7 +12,7 @@ using namespace oout;
 // This class inherit from dirty::Test, and test it by compiler
 DirtyTestTest::DirtyTestTest()
 	: dirty::Test(
-		make_shared<TestContainText>(
+		make_shared<ContainTest>(
 			"oout::dirty::Test",
 			"Test"
 		),

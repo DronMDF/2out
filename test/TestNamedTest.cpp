@@ -31,7 +31,7 @@ TestNamedTest::TestNamedTest()
 			"TestNamedTest",
 			make_shared<const TestNamed>(
 				"TestNamed in TestNamed is a Suite",
-				make_shared<TestContainText>(
+				make_shared<ContainTest>(
 					make_shared<ReprTestNamed>(
 						make_unique<TestNamed>(
 							"Root test",

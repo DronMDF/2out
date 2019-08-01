@@ -7,6 +7,7 @@ INCLUDE_DIRECTORIES(${2out_SOURCE_DIR}/..)
 ADD_EXECUTABLE(
 	test_runner
 	test.cpp
+	ContainTestTest.cpp
 	CountErrorTest.cpp
 	CountFailureTest.cpp
 	CountTestTest.cpp
@@ -17,7 +18,6 @@ ADD_EXECUTABLE(
 	ReprTest.cpp
 	ResFakes.cpp
 	SuiteTestTest.cpp
-	TestContainTextTest.cpp
 	TestEndsWithTest.cpp
 	TestNamedTest.cpp
 	TestSkippedTest.cpp

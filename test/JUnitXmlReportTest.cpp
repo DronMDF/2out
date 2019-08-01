@@ -19,19 +19,19 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 	: tests(
 		make_unique<TestNamed>(
 			"JUnitXmlReportTest",
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<JUnitXmlReport>(
 					make_unique<ResErrorCase>()
 				),
 				"<error"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<JUnitXmlReport>(
 					make_unique<ResErrorCase>()
 				),
 				"</error>"
 			),
-			make_shared<TestContainText>(
+			make_shared<ContainTest>(
 				make_unique<JUnitXmlReport>(
 					make_unique<ResFailureCase>()
 				),
@@ -39,7 +39,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 			),
 			make_shared<TestNamed>(
 				"Escaping in failure",
-				make_shared<TestContainText>(
+				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
 						make_unique<ResTest>(
 							make_unique<Failure>("<tag>")
@@ -50,7 +50,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 			),
 			make_shared<TestNamed>(
 				"Escaping in error",
-				make_shared<TestContainText>(
+				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
 						make_unique<ResTest>(
 							make_unique<Error>("&amp;")
@@ -61,7 +61,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 			),
 			make_shared<TestNamed>(
 				"Count of errors in suite",
-				make_shared<TestContainText>(
+				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
 						make_unique<ResSuite>(
 							make_shared<ResErrorCase>()
