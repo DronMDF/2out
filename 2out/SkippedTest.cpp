@@ -3,19 +3,19 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestSkipped.h"
+#include "SkippedTest.h"
 #include "ResTest.h"
 #include "Success.h"
 
 using namespace std;
 using namespace oout;
 
-TestSkipped::TestSkipped(const shared_ptr<const Test> &test)
+SkippedTest::SkippedTest(const shared_ptr<const Test> &test)
 	: test(test)
 {
 }
 
-unique_ptr<const Result> TestSkipped::result() const
+unique_ptr<const Result> SkippedTest::result() const
 {
 	return make_unique<ResTest>(make_unique<Success>());
 }
