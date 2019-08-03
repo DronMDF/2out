@@ -4,24 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Test.h"
+#include "SkippedTest.h"
 
 namespace oout {
 
-// @todo #329 TestSkipped should be renamed to SkippedTest
-
-/// TestSkipped is a Test decorator.
-/// All test, passed to this decorator mark success without execution
-/// Test not keep inner tests structure. If you pass SuiteTest, it looks like as simple test.
-class TestSkipped final : public Test {
-public:
-	/// Primary ctor
-	explicit TestSkipped(const std::shared_ptr<const Test> &test);
-
-	/// Get test result
-	std::unique_ptr<const Result> result() const override;
-private:
-	const std::shared_ptr<const Test> test;
-};
+typedef SkippedTest TestSkipped;
 
 }

@@ -28,16 +28,17 @@
 #include "ContainTest.h"
 #include "EndsWithTest.h"
 #include "EqualTest.h"
+#include "SkippedTest.h"
 #include "StartsWithTest.h"
 #include "SuiteTest.h"
 #include "TestNamed.h"
 #include "TestSafe.h"
-#include "TestSkipped.h"
 #include "TestTimed.h"
 
 // Deprecated (since 0.6)
 #include "TestContainText.h"
 #include "TestEndsWith.h"
 #include "TestEqual.h"
+#include "TestSkipped.h"
 #include "TestStartsWith.h"
 #include "TestSuite.h"
