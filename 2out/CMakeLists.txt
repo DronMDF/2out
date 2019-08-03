@@ -26,7 +26,7 @@ ADD_LIBRARY(
 	SuiteTest.cpp
 	TestNamed.cpp
 	TestSafe.cpp
-	TestTimed.cpp
+	TimedTest.cpp
 	TextReport.cpp
 	dirty/Test.cpp
 )

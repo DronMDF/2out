@@ -33,7 +33,7 @@
 #include "SuiteTest.h"
 #include "TestNamed.h"
 #include "TestSafe.h"
-#include "TestTimed.h"
+#include "TimedTest.h"
 
 // Deprecated (since 0.6)
 #include "TestContainText.h"
@@ -42,3 +42,4 @@
 #include "TestSkipped.h"
 #include "TestStartsWith.h"
 #include "TestSuite.h"
+#include "TestTimed.h"

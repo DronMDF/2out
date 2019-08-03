@@ -3,19 +3,19 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestTimed.h"
+#include "TimedTest.h"
 #include <chrono>
 #include "ResTimed.h"
 
 using namespace std;
 using namespace oout;
 
-TestTimed::TestTimed(const shared_ptr<const Test> &test)
+TimedTest::TimedTest(const shared_ptr<const Test> &test)
 	: test(test)
 {
 }
 
-unique_ptr<const Result> TestTimed::result() const
+unique_ptr<const Result> TimedTest::result() const
 {
 	const auto begin = chrono::high_resolution_clock::now();
 	const shared_ptr<const Result> result = test->result();
