@@ -5,7 +5,7 @@
 
 #include "SuiteTest.h"
 #include "ResSuite.h"
-#include "TestTimed.h"
+#include "TimedTest.h"
 
 using namespace std;
 using namespace oout;
@@ -19,7 +19,7 @@ unique_ptr<const Result> SuiteTest::result() const
 {
 	list<shared_ptr<const Result>> results;
 	for (const auto &c : cases) {
-		results.push_back(TestTimed(c).result());
+		results.push_back(TimedTest(c).result());
 	}
 	return make_unique<ResSuite>(results);
 }
