@@ -20,12 +20,12 @@ ADD_LIBRARY(
 	ResSuite.cpp
 	ResTest.cpp
 	ResTimed.cpp
+	SafeTest.cpp
 	SkippedTest.cpp
 	StartsWithTest.cpp
 	Success.cpp
 	SuiteTest.cpp
 	TestNamed.cpp
-	TestSafe.cpp
 	TimedTest.cpp
 	TextReport.cpp
 	dirty/Test.cpp
