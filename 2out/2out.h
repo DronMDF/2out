@@ -28,12 +28,16 @@
 #include "ContainTest.h"
 #include "EndsWithTest.h"
 #include "EqualTest.h"
+#include "MatchTest.h"
 #include "NamedTest.h"
 #include "SafeTest.h"
 #include "SkippedTest.h"
 #include "StartsWithTest.h"
 #include "SuiteTest.h"
 #include "TimedTest.h"
+
+// Matches
+#include "EqualMatch.h"
 
 // Deprecated (since 0.7)
 #include "TestContainText.h"

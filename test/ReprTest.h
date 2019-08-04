@@ -7,6 +7,10 @@
 #include <2out/Representation.h>
 #include <2out/Test.h>
 
+// @todo #322 ReprTest should be renamed
+//  In current naming - TestRepr,
+//  But i want to change Representation to Text
+
 class ReprTest final : public oout::Representation {
 public:
 	explicit ReprTest(const std::shared_ptr<const oout::Test> &test);

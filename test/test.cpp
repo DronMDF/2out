@@ -14,6 +14,7 @@
 #include "DirtyTestTest.h"
 #include "EndsWithTestTest.h"
 #include "JUnitXmlReportTest.h"
+#include "MatchTestTest.h"
 #include "NamedTestTest.h"
 #include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
@@ -35,6 +36,7 @@ int main(int, char **)
 		make_shared<DirtyTestTest>(),
 		make_shared<EndsWithTestTest>(),
 		make_shared<JUnitXmlReportTest>(),
+		make_shared<MatchTestTest>(),
 		make_shared<NamedTestTest>(),
 		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),

@@ -14,6 +14,7 @@ ADD_EXECUTABLE(
 	DirtyTestTest.cpp
 	EndsWithTestTest.cpp
 	JUnitXmlReportTest.cpp
+	MatchTestTest.cpp
 	NamedTestTest.cpp
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
