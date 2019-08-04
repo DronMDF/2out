@@ -13,6 +13,7 @@ ADD_LIBRARY(
 	Error.cpp
 	Failure.cpp
 	JUnitXmlReport.cpp
+	NamedTest.cpp
 	ReprCallable.cpp
 	ReprSigned.cpp
 	ReprString.cpp
@@ -25,7 +26,6 @@ ADD_LIBRARY(
 	StartsWithTest.cpp
 	Success.cpp
 	SuiteTest.cpp
-	TestNamed.cpp
 	TimedTest.cpp
 	TextReport.cpp
 	dirty/Test.cpp

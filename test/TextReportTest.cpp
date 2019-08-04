@@ -15,7 +15,7 @@ using namespace oout;
 
 TextReportTest::TextReportTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"TextReportTest",
 			make_shared<ContainTest>(
 				make_unique<TextReport>(

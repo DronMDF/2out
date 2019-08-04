@@ -14,14 +14,14 @@ ADD_EXECUTABLE(
 	DirtyTestTest.cpp
 	EndsWithTestTest.cpp
 	JUnitXmlReportTest.cpp
+	NamedTestTest.cpp
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
 	ReprTest.cpp
 	ResFakes.cpp
-	SuiteTestTest.cpp
-	TestNamedTest.cpp
-	TestSkippedTest.cpp
+	SkippedTestTest.cpp
 	StartsWithTestTest.cpp
+	SuiteTestTest.cpp
 	TextReportTest.cpp
 )
 TARGET_LINK_LIBRARIES(

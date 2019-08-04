@@ -28,7 +28,7 @@ private:
 
 CountTestTest::CountTestTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"CountTestTest",
 			make_shared<EqualTest>(
 				make_shared<CountTestRepr>(

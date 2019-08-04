@@ -17,7 +17,7 @@ using namespace oout;
 
 JUnitXmlReportTest::JUnitXmlReportTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"JUnitXmlReportTest",
 			make_shared<ContainTest>(
 				make_unique<JUnitXmlReport>(
@@ -37,7 +37,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				),
 				"<failure"
 			),
-			make_shared<TestNamed>(
+			make_shared<NamedTest>(
 				"Escaping in failure",
 				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
@@ -48,7 +48,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 					"failure><![CDATA[<tag>]]"
 				)
 			),
-			make_shared<TestNamed>(
+			make_shared<NamedTest>(
 				"Escaping in error",
 				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
@@ -59,7 +59,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 					"error><![CDATA[&amp;]]"
 				)
 			),
-			make_shared<TestNamed>(
+			make_shared<NamedTest>(
 				"Count of errors in suite",
 				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(

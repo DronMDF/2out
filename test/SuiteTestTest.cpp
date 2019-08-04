@@ -12,9 +12,9 @@ using namespace oout;
 
 SuiteTestTest::SuiteTestTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"SuiteTestTest",
-			make_shared<TestNamed>(
+			make_shared<NamedTest>(
 				"SuiteTest with empty list is always success",
 				make_shared<EqualTest>(
 					make_shared<ReprTest>(
@@ -25,7 +25,7 @@ SuiteTestTest::SuiteTestTest()
 					"success"
 				)
 			),
-			make_shared<TestNamed>(
+			make_shared<NamedTest>(
 				"SuiteTest give tests as variadic args",
 				make_shared<EqualTest>(
 					make_shared<ReprTest>(

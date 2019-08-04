@@ -12,9 +12,9 @@ using namespace oout;
 
 StartsWithTestTest::StartsWithTestTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"StartsWithTestTest",
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"Realy starts with",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
