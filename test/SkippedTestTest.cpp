@@ -13,7 +13,7 @@ using namespace oout;
 SkippedTestTest::SkippedTestTest()
 	: tests(
 		make_unique<NamedTest>(
-			"TestSkippedTest",
+			"SkippedTest test",
 			make_shared<const NamedTest>(
 				"Skipped test looks like Success",
 				make_shared<EqualTest>(

@@ -9,10 +9,12 @@ ADD_LIBRARY(
 	CountFailure.cpp
 	CountTest.cpp
 	EndsWithTest.cpp
+	EqualMatch.cpp
 	EqualTest.cpp
 	Error.cpp
 	Failure.cpp
 	JUnitXmlReport.cpp
+	MatchTest.cpp
 	NamedTest.cpp
 	ReprCallable.cpp
 	ReprSigned.cpp
