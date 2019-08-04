@@ -3,19 +3,19 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestSafe.h"
+#include "SafeTest.h"
 #include "Error.h"
 #include "ResTest.h"
 
 using namespace std;
 using namespace oout;
 
-TestSafe::TestSafe(const shared_ptr<const Test> &test)
+SafeTest::SafeTest(const shared_ptr<const Test> &test)
 	: test(test)
 {
 }
 
-unique_ptr<const Result> TestSafe::result() const
+unique_ptr<const Result> SafeTest::result() const
 {
 	unique_ptr<const Result> r;
 	try {
