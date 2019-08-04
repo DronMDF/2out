@@ -11,9 +11,9 @@ using namespace oout;
 
 ReprCallableTest::ReprCallableTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"ReprCallableTest",
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"implicit bind",
 				make_shared<EqualTest>(
 					make_shared<ReprCallable>([]{ return "777"; }),

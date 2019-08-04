@@ -3,16 +3,16 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TestNamedTest.h"
+#include "NamedTestTest.h"
 #include <2out/2out.h>
 #include "ReprTest.h"
 
 using namespace std;
 using namespace oout;
 
-class ReprTestNamed final : public Representation {
+class ReprNamedTest final : public Representation {
 public:
-	explicit ReprTestNamed(const shared_ptr<const Test> &test)
+	explicit ReprNamedTest(const shared_ptr<const Test> &test)
 		: test(test)
 	{
 	}
@@ -25,17 +25,17 @@ private:
 	const shared_ptr<const Test> test;
 };
 
-TestNamedTest::TestNamedTest()
+NamedTestTest::NamedTestTest()
 	: tests(
-		make_unique<TestNamed>(
-			"TestNamedTest",
-			make_shared<const TestNamed>(
-				"TestNamed in TestNamed is a Suite",
+		make_unique<NamedTest>(
+			"NamedTestTest",
+			make_shared<const NamedTest>(
+				"NamedTest in TestNamed is a Suite",
 				make_shared<ContainTest>(
-					make_shared<ReprTestNamed>(
-						make_unique<TestNamed>(
+					make_shared<ReprNamedTest>(
+						make_unique<NamedTest>(
 							"Root test",
-							make_shared<const TestNamed>(
+							make_shared<const NamedTest>(
 								"Concrete test",
 								make_shared<EqualTest>("a", "a")
 							)
@@ -49,7 +49,7 @@ TestNamedTest::TestNamedTest()
 {
 }
 
-unique_ptr<const Result> TestNamedTest::result() const
+unique_ptr<const Result> NamedTestTest::result() const
 {
 	return tests->result();
 }

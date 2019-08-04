@@ -12,9 +12,9 @@ using namespace oout;
 
 ContainTestTest::ContainTestTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"ContainTestTest",
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"Contain all",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
@@ -27,7 +27,7 @@ ContainTestTest::ContainTestTest()
 					"success"
 				)
 			),
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"Not contain one of",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(

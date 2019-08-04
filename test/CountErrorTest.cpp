@@ -28,9 +28,9 @@ private:
 
 CountErrorTest::CountErrorTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"CountErrorTest",
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"One error in set",
 				make_shared<EqualTest>(
 					make_unique<CountErrorRepr>(

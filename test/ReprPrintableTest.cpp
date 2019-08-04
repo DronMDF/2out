@@ -12,9 +12,9 @@ using namespace oout;
 
 ReprPrintableTest::ReprPrintableTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"ReprPrintableTest",
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"Boolean represent as text",
 				make_shared<EqualTest>(
 					make_unique<ReprPrintable<bool>>(

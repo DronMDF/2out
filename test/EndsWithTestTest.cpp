@@ -12,9 +12,9 @@ using namespace oout;
 
 EndsWithTestTest::EndsWithTestTest()
 	: tests(
-		make_unique<TestNamed>(
+		make_unique<NamedTest>(
 			"EndsWithTestTest",
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"Realy ends with",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(
@@ -26,7 +26,7 @@ EndsWithTestTest::EndsWithTestTest()
 					"success"
 				)
 			),
-			make_shared<const TestNamed>(
+			make_shared<const NamedTest>(
 				"Not ends with",
 				make_shared<EqualTest>(
 					make_unique<ReprTest>(

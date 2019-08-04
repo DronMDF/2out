@@ -6,9 +6,9 @@
 #include <memory>
 #include <2out/Test.h>
 
-class TestNamedTest final : public oout::Test {
+class SkippedTestTest final : public oout::Test {
 public:
-	TestNamedTest();
+	SkippedTestTest();
 	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;

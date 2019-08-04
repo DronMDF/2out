@@ -7,19 +7,19 @@
 #include <list>
 #include <memory>
 #include <2out/2out.h>
+#include "ContainTestTest.h"
 #include "CountErrorTest.h"
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
 #include "DirtyTestTest.h"
+#include "EndsWithTestTest.h"
 #include "JUnitXmlReportTest.h"
+#include "NamedTestTest.h"
 #include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
+#include "SkippedTestTest.h"
 #include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
-#include "ContainTestTest.h"
-#include "EndsWithTestTest.h"
-#include "TestNamedTest.h"
-#include "TestSkippedTest.h"
 #include "TextReportTest.h"
 
 using namespace std;
@@ -28,19 +28,19 @@ using namespace oout;
 int main(int, char **)
 {
 	const SuiteTest tests(
+		make_shared<ContainTestTest>(),
 		make_shared<CountErrorTest>(),
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
 		make_shared<DirtyTestTest>(),
+		make_shared<EndsWithTestTest>(),
 		make_shared<JUnitXmlReportTest>(),
+		make_shared<NamedTestTest>(),
 		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
+		make_shared<SkippedTestTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
-		make_shared<ContainTestTest>(),
-		make_shared<EndsWithTestTest>(),
-		make_shared<TestNamedTest>(),
-		make_shared<TestSkippedTest>(),
 		make_shared<TextReportTest>()
 	);
 
