@@ -7,6 +7,7 @@
 #include <list>
 #include <memory>
 #include <2out/2out.h>
+#include "ContainMatchTest.h"
 #include "ContainTestTest.h"
 #include "CountErrorTest.h"
 #include "CountFailureTest.h"
@@ -29,6 +30,7 @@ using namespace oout;
 int main(int, char **)
 {
 	const SuiteTest tests(
+		make_shared<ContainMatchTest>(),
 		make_shared<ContainTestTest>(),
 		make_shared<CountErrorTest>(),
 		make_shared<CountFailureTest>(),

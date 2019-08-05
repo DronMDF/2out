@@ -5,7 +5,7 @@
 
 #include <2out/dirty/Test.h>
 
-class MatchTestTest final : public oout::dirty::Test {
+class ContainMatchTest final : public oout::dirty::Test {
 public:
-	MatchTestTest();
+	ContainMatchTest();
 };

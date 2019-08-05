@@ -37,6 +37,7 @@
 #include "TimedTest.h"
 
 // Matches
+#include "ContainMatch.h"
 #include "EqualMatch.h"
 
 // Deprecated (since 0.7)

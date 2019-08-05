@@ -4,6 +4,7 @@ PROJECT(2out)
 
 ADD_LIBRARY(
 	2out
+	ContainMatch.cpp
 	ContainTest.cpp
 	CountError.cpp
 	CountFailure.cpp
