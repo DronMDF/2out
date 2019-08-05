@@ -37,6 +37,7 @@
 #include "TimedTest.h"
 
 // Matches
+#include "AllMatch.h"
 #include "ContainMatch.h"
 #include "EqualMatch.h"
 

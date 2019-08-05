@@ -5,6 +5,7 @@
 
 #pragma once
 #include "Test.h"
+#include "AllMatch.h"
 
 namespace oout {
 
@@ -18,6 +19,16 @@ public:
 		const std::shared_ptr<const Representation> &text,
 		const std::shared_ptr<const Match> &match
 	);
+
+	template<typename... T>
+	MatchTest(
+		const std::shared_ptr<const Representation> &text,
+		const std::shared_ptr<const Match> &match1,
+		const std::shared_ptr<const Match> &match2,
+		const std::shared_ptr<T> & ... matchn
+	) : MatchTest(text, std::make_shared<AllMatch>(match1, match2, matchn...))
+	{
+	}
 
 	/// Get test result
 	std::unique_ptr<const Result> result() const override;
