@@ -25,8 +25,20 @@ MatchTestTest::MatchTestTest()
 				),
 				"success"
 			)
+		),
+		make_shared<const NamedTest>(
+			"MatchTest success with all success matcher",
+			make_shared<EqualTest>(
+				make_unique<ReprTest>(
+					make_unique<MatchTest>(
+						make_shared<ReprString>("test"),
+						make_shared<ContainMatch>("te"),
+						make_shared<ContainMatch>("st")
+					)
+				),
+				"success"
+			)
 		)
-		// @todo #322 Add multiple matchers to MatchTest (AND by default)
 	)
 )
 {
