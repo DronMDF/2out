@@ -6,10 +6,9 @@
 #include "ContainTest.h"
 #include <algorithm>
 #include <sstream>
-#include "Failure.h"
+#include "CondResult.h"
 #include "ResSuite.h"
 #include "ResTest.h"
-#include "Success.h"
 
 using namespace std;
 using namespace oout;
@@ -36,15 +35,14 @@ unique_ptr<const Result> ContainTest::result() const
 
 unique_ptr<const Result> ContainTest::result(const shared_ptr<const Representation> &sub) const
 {
+	// @todo #313 ContainTest invoke text->asString twice
 	ostringstream test_text;
 	test_text << "'" << sub->asString() << "' in '" << text->asString() << "'";
 
-	// @todo #295 Result with condition halp to avoid if/else
-	shared_ptr<const Result> assertion_result;
-	if (text->asString().find(sub->asString()) != string::npos) {
-		assertion_result = make_shared<Success>(test_text.str());
-	} else {
-		assertion_result = make_shared<Failure>(test_text.str());
-	}
-	return make_unique<const ResTest>(assertion_result);
+	return make_unique<const ResTest>(
+		make_shared<CondResult>(
+			text->asString().find(sub->asString()) != string::npos,
+			test_text.str()
+		)
+	);
 }

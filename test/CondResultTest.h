@@ -6,7 +6,7 @@
 #pragma once
 #include <2out/dirty/Test.h>
 
-class ContainMatchTest final : public oout::dirty::Test {
+class CondResultTest final : public oout::dirty::Test {
 public:
-	ContainMatchTest();
+	CondResultTest();
 };

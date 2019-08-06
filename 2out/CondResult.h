@@ -8,18 +8,13 @@
 
 namespace oout {
 
-// @todo #313 Class Failure replaced by CondResult, need to remove
-
-/// Failure in test evaluation
-class Failure final : public Result {
+class CondResult final : public Result {
 public:
-	/// Primary ctor with message
-	explicit Failure(const std::string &text = std::string());
-
-	/// Printer
+	CondResult(bool cond, const std::string &message);
 	std::string print(const Format &format) const override;
 private:
-	const std::string text;
+	const bool cond;
+	const std::string message;
 };
 
 }

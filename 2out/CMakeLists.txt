@@ -7,6 +7,7 @@ ADD_LIBRARY(
 	AllMatch.cpp
 	ContainMatch.cpp
 	ContainTest.cpp
+	CondResult.cpp
 	CountError.cpp
 	CountFailure.cpp
 	CountTest.cpp
