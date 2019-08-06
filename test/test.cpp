@@ -21,6 +21,7 @@
 #include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
 #include "SkippedTestTest.h"
+#include "StartsWithMatchTest.h"
 #include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
 #include "TextReportTest.h"
@@ -45,6 +46,7 @@ int main(int, char **)
 		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
 		make_shared<SkippedTestTest>(),
+		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
 		make_shared<TextReportTest>()

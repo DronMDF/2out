@@ -28,6 +28,7 @@ ADD_LIBRARY(
 	ResTimed.cpp
 	SafeTest.cpp
 	SkippedTest.cpp
+	StartsWithMatch.cpp
 	StartsWithTest.cpp
 	Success.cpp
 	SuiteTest.cpp

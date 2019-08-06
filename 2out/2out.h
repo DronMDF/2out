@@ -40,6 +40,7 @@
 #include "AllMatch.h"
 #include "ContainMatch.h"
 #include "EqualMatch.h"
+#include "StartsWithMatch.h"
 
 // Deprecated (since 0.7)
 #include "TestContainText.h"
