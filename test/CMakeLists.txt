@@ -24,6 +24,7 @@ ADD_EXECUTABLE(
 	ReprTest.cpp
 	ResFakes.cpp
 	SkippedTestTest.cpp
+	StartsWithMatchTest.cpp
 	StartsWithTestTest.cpp
 	SuiteTestTest.cpp
 	TextReportTest.cpp
