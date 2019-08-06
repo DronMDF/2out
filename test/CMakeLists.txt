@@ -9,7 +9,9 @@ ADD_EXECUTABLE(
 	test.cpp
 	ContainMatchTest.cpp
 	ContainTestTest.cpp
+	CondResultTest.cpp
 	CountErrorTest.cpp
+	CountFailureRepr.cpp
 	CountFailureTest.cpp
 	CountTestTest.cpp
 	DirtyTestTest.cpp

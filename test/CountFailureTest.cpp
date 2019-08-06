@@ -6,25 +6,11 @@
 #include "CountFailureTest.h"
 #include <2out/2out.h>
 #include <2out/ResSuite.h>
+#include "CountFailureRepr.h"
 #include "ResFakes.h"
 
 using namespace std;
 using namespace oout;
-
-class CountFailureRepr final : public Representation {
-public:
-	explicit CountFailureRepr(const shared_ptr<const CountFailure> &count)
-		: count(count)
-	{
-	}
-
-	string asString() const override
-	{
-		return to_string(count->count());
-	}
-private:
-	const shared_ptr<const CountFailure> count;
-};
 
 CountFailureTest::CountFailureTest()
 	: tests(

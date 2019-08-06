@@ -8,6 +8,8 @@
 
 namespace oout {
 
+// @todo #313 Class Success replaced by CondResult, need to remove
+
 /// Successed result of test execution
 class Success final : public Result {
 public:

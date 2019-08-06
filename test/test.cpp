@@ -9,6 +9,7 @@
 #include <2out/2out.h>
 #include "ContainMatchTest.h"
 #include "ContainTestTest.h"
+#include "CondResultTest.h"
 #include "CountErrorTest.h"
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
@@ -32,6 +33,7 @@ int main(int, char **)
 	const SuiteTest tests(
 		make_shared<ContainMatchTest>(),
 		make_shared<ContainTestTest>(),
+		make_shared<CondResultTest>(),
 		make_shared<CountErrorTest>(),
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
