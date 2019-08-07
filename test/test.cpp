@@ -14,6 +14,7 @@
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
 #include "DirtyTestTest.h"
+#include "EndsWithMatchTest.h"
 #include "EndsWithTestTest.h"
 #include "JUnitXmlReportTest.h"
 #include "MatchTestTest.h"
@@ -39,6 +40,7 @@ int main(int, char **)
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
 		make_shared<DirtyTestTest>(),
+		make_shared<EndsWithMatchTest>(),
 		make_shared<EndsWithTestTest>(),
 		make_shared<JUnitXmlReportTest>(),
 		make_shared<MatchTestTest>(),

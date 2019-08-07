@@ -39,6 +39,7 @@
 // Matches
 #include "AllMatch.h"
 #include "ContainMatch.h"
+#include "EndsWithMatch.h"
 #include "EqualMatch.h"
 #include "StartsWithMatch.h"
 

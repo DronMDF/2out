@@ -15,6 +15,7 @@ ADD_EXECUTABLE(
 	CountFailureTest.cpp
 	CountTestTest.cpp
 	DirtyTestTest.cpp
+	EndsWithMatchTest.cpp
 	EndsWithTestTest.cpp
 	JUnitXmlReportTest.cpp
 	MatchTestTest.cpp
