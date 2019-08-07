@@ -11,6 +11,7 @@ ADD_LIBRARY(
 	CountError.cpp
 	CountFailure.cpp
 	CountTest.cpp
+	EndsWithMatch.cpp
 	EndsWithTest.cpp
 	EqualMatch.cpp
 	EqualTest.cpp

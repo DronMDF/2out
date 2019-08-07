@@ -43,6 +43,7 @@ unique_ptr<const Result> EndsWithTest::result() const
 	shared_ptr<const Result> assertion_result;
 	const auto as = a->asString();
 	const auto bs = b->asString();
+	// @todo #347 EndsWithTest failed with ("tpotop", "top")
 	if (as.rfind(bs) == as.size() - bs.size()) {
 		assertion_result = make_shared<Success>(text.str());
 	} else {
