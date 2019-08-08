@@ -19,6 +19,7 @@
 #include "JUnitXmlReportTest.h"
 #include "MatchTestTest.h"
 #include "NamedTestTest.h"
+#include "RegexMatchTest.h"
 #include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
 #include "SkippedTestTest.h"
@@ -45,6 +46,7 @@ int main(int, char **)
 		make_shared<JUnitXmlReportTest>(),
 		make_shared<MatchTestTest>(),
 		make_shared<NamedTestTest>(),
+		make_shared<RegexMatchTest>(),
 		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
 		make_shared<SkippedTestTest>(),

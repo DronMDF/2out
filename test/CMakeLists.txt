@@ -20,6 +20,7 @@ ADD_EXECUTABLE(
 	JUnitXmlReportTest.cpp
 	MatchTestTest.cpp
 	NamedTestTest.cpp
+	RegexMatchTest.cpp
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
 	ReprTest.cpp
