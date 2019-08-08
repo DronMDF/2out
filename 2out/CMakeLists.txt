@@ -20,6 +20,7 @@ ADD_LIBRARY(
 	JUnitXmlReport.cpp
 	MatchTest.cpp
 	NamedTest.cpp
+	RegexMatch.cpp
 	ReprCallable.cpp
 	ReprSigned.cpp
 	ReprString.cpp

@@ -41,6 +41,7 @@
 #include "ContainMatch.h"
 #include "EndsWithMatch.h"
 #include "EqualMatch.h"
+#include "RegexMatch.h"
 #include "StartsWithMatch.h"
 
 // Deprecated (since 0.7)
