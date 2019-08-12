@@ -9,14 +9,14 @@
 namespace oout {
 
 class Result;
-class Representation;
+class Text;
 
 class Match {
 public:
 	virtual ~Match() = default;
 
 	virtual std::unique_ptr<const Result> match(
-		const std::shared_ptr<const Representation> &b
+		const std::shared_ptr<const Text> &b
 	) const = 0;
 };
 

@@ -4,21 +4,18 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Match.h"
 #include <string>
 
 namespace oout {
 
-class EndsWithMatch final : public Match {
+/// Abstract text
+class Text {
 public:
-	explicit EndsWithMatch(const std::string &text);
+	/// Virtual dtor
+	virtual ~Text() = default;
 
-	std::unique_ptr<const Result> match(
-		const std::shared_ptr<const Text> &in
-	) const override;
-
-private:
-	const std::string text;
+	/// Get value as string
+	virtual std::string asString() const = 0;
 };
 
 }

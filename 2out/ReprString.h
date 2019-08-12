@@ -4,12 +4,14 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Representation.h"
+#include "Text.h"
 
 namespace oout {
 
-/// Representation for string
-class ReprString final : public Representation {
+// @todo #365 ReprString should be named StringText
+
+/// Text for string
+class ReprString final : public Text {
 public:
 	/// Primary ctor
 	explicit ReprString(const std::string &value);

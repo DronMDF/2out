@@ -11,7 +11,8 @@
 using namespace std;
 using namespace oout;
 
-class CountTestRepr final : public Representation {
+// @todo #365 CountTestRepr should be named CountTestText
+class CountTestRepr final : public Text {
 public:
 	explicit CountTestRepr(const shared_ptr<const CountTest> &count)
 		: count(count)

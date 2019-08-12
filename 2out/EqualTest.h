@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Representation.h"
+#include "Text.h"
 #include "Test.h"
 
 namespace oout {
@@ -16,22 +16,22 @@ public:
 	EqualTest(const std::string &a, const std::string &b);
 
 	/// Secondary ctor from string and Repr
-	EqualTest(const std::string &a, const std::shared_ptr<const Representation> &b);
+	EqualTest(const std::string &a, const std::shared_ptr<const Text> &b);
 
 	/// Secondary ctor from Repr and string
-	EqualTest(const std::shared_ptr<const Representation> &a, const std::string &b);
+	EqualTest(const std::shared_ptr<const Text> &a, const std::string &b);
 
 	/// Primary ctor
 	EqualTest(
-		const std::shared_ptr<const Representation> &a,
-		const std::shared_ptr<const Representation> &b
+		const std::shared_ptr<const Text> &a,
+		const std::shared_ptr<const Text> &b
 	);
 
 	/// Get result
 	std::unique_ptr<const Result> result() const override;
 private:
-	const std::shared_ptr<const Representation> a;
-	const std::shared_ptr<const Representation> b;
+	const std::shared_ptr<const Text> a;
+	const std::shared_ptr<const Text> b;
 };
 
 }

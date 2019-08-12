@@ -11,7 +11,8 @@
 using namespace std;
 using namespace oout;
 
-class CountErrorRepr final : public Representation {
+// @todo #365 CountErrorRepr should be named CountErrorText
+class CountErrorRepr final : public Text {
 public:
 	explicit CountErrorRepr(const shared_ptr<const CountError> &count)
 		: count(count)

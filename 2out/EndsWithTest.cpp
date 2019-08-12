@@ -12,7 +12,7 @@
 using namespace std;
 using namespace oout;
 
-EndsWithTest::EndsWithTest(const shared_ptr<const Representation> &a, const string &b)
+EndsWithTest::EndsWithTest(const shared_ptr<const Text> &a, const string &b)
 	: test(make_shared<MatchTest>(a, make_shared<EndsWithMatch>(b)))
 {
 }

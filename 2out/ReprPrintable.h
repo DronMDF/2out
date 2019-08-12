@@ -5,13 +5,16 @@
 
 #pragma once
 #include <sstream>
-#include "Representation.h"
+#include "Text.h"
 
 namespace oout {
 
-/// Representation for any printable type
+// @todo #365 ReprPrintable should be named PrintableText
+//  Or, may be, StreamText
+
+/// Text for any printable type
 template <typename T>
-class ReprPrintable final : public Representation {
+class ReprPrintable final : public Text {
 public:
 	/// Primary ctor
 	explicit ReprPrintable(const T &value)

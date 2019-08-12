@@ -26,7 +26,7 @@ public:
 	}
 
 	std::unique_ptr<const Result> match(
-		const std::shared_ptr<const Representation> &in
+		const std::shared_ptr<const Text> &in
 	) const override;
 
 private:

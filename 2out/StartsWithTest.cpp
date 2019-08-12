@@ -18,19 +18,19 @@ StartsWithTest::StartsWithTest(const string &a, const string &b)
 {
 }
 
-StartsWithTest::StartsWithTest(const string &a, const shared_ptr<const Representation> &b)
+StartsWithTest::StartsWithTest(const string &a, const shared_ptr<const Text> &b)
 	: StartsWithTest(make_shared<ReprString>(a), b)
 {
 }
 
-StartsWithTest::StartsWithTest(const shared_ptr<const Representation> &a, const string &b)
+StartsWithTest::StartsWithTest(const shared_ptr<const Text> &a, const string &b)
 	: StartsWithTest(a, make_shared<ReprString>(b))
 {
 }
 
 StartsWithTest::StartsWithTest(
-	const shared_ptr<const Representation> &a,
-	const shared_ptr<const Representation> &b
+	const shared_ptr<const Text> &a,
+	const shared_ptr<const Text> &b
 ) : a(a), b(b)
 {
 }

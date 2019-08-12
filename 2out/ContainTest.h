@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Representation.h"
+#include "Text.h"
 #include <list>
 #include "ReprString.h"
 #include "Test.h"
@@ -16,25 +16,25 @@ class ContainTest final : public Test {
 private:
 	/// Primary ctor
 	ContainTest(
-		const std::shared_ptr<const Representation> &text,
-		const std::list<std::shared_ptr<const Representation>> &subs
+		const std::shared_ptr<const Text> &text,
+		const std::list<std::shared_ptr<const Text>> &subs
 	);
 
 public:
 	// Multiple ctor with reprs
 	template<typename ... S>
 	ContainTest(
-		const std::shared_ptr<const Representation> &text,
-		const std::shared_ptr<const Representation> &sub,
+		const std::shared_ptr<const Text> &text,
+		const std::shared_ptr<const Text> &sub,
 		S ... subs
-	) : ContainTest(text, std::list<std::shared_ptr<const Representation>>{sub, subs...})
+	) : ContainTest(text, std::list<std::shared_ptr<const Text>>{sub, subs...})
 	{
 	}
 
 	// Multiple ctor with strings
 	template<typename ... S>
 	ContainTest(
-		const std::shared_ptr<const Representation> &text,
+		const std::shared_ptr<const Text> &text,
 		const std::string &sub,
 		S ... subs
 	) : ContainTest(text, subs..., std::make_shared<ReprString>(sub))
@@ -54,11 +54,11 @@ public:
 	std::unique_ptr<const Result> result() const override;
 
 private:
-	const std::shared_ptr<const Representation> text;
-	const std::list<std::shared_ptr<const Representation>> subs;
+	const std::shared_ptr<const Text> text;
+	const std::list<std::shared_ptr<const Text>> subs;
 
 	std::unique_ptr<const Result> result(
-		const std::shared_ptr<const Representation> &sub
+		const std::shared_ptr<const Text> &sub
 	) const;
 };
 

@@ -19,17 +19,17 @@ EqualTest::EqualTest(const string &a, const string &b)
 {
 }
 
-EqualTest::EqualTest(const string &a, const shared_ptr<const Representation> &b)
+EqualTest::EqualTest(const string &a, const shared_ptr<const Text> &b)
 	: EqualTest(make_shared<ReprString>(a), b)
 {
 }
 
-EqualTest::EqualTest(const shared_ptr<const Representation> &a, const string &b)
+EqualTest::EqualTest(const shared_ptr<const Text> &a, const string &b)
 	: EqualTest(a, make_shared<ReprString>(b))
 {
 }
 
-EqualTest::EqualTest(const shared_ptr<const Representation> &a, const shared_ptr<const Representation> &b)
+EqualTest::EqualTest(const shared_ptr<const Text> &a, const shared_ptr<const Text> &b)
 	: a(a), b(b)
 {
 }

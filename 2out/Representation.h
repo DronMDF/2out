@@ -4,18 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <string>
+#include "Text.h"
 
 namespace oout {
 
-/// Abstract representation
-class Representation {
-public:
-	/// Virtual dtor
-	virtual ~Representation() = default;
-
-	/// Get value as string
-	virtual std::string asString() const = 0;
-};
+typedef Text Representation;
 
 }

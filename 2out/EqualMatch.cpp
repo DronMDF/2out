@@ -6,7 +6,7 @@
 #include "EqualMatch.h"
 #include <sstream>
 #include "Failure.h"
-#include "Representation.h"
+#include "Text.h"
 #include "ResTest.h"
 #include "Success.h"
 
@@ -18,7 +18,7 @@ EqualMatch::EqualMatch(const string &text)
 {
 }
 
-unique_ptr<const Result> EqualMatch::match(const shared_ptr<const Representation> &in) const
+unique_ptr<const Result> EqualMatch::match(const shared_ptr<const Text> &in) const
 {
 	ostringstream message;
 	message << "'" << in->asString() << "' is equal '" << text << "'";
