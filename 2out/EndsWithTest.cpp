@@ -4,50 +4,25 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "EndsWithTest.h"
-#include <sstream>
-#include "Failure.h"
+#include "EndsWithMatch.h"
+#include "MatchTest.h"
 #include "ReprString.h"
-#include "ResTest.h"
-#include "Success.h"
+#include "Result.h"
 
 using namespace std;
 using namespace oout;
 
-EndsWithTest::EndsWithTest(const string &a, const string &b)
-	: EndsWithTest(make_shared<ReprString>(a), make_shared<ReprString>(b))
-{
-}
-
-EndsWithTest::EndsWithTest(const string &a, const shared_ptr<const Representation> &b)
-	: EndsWithTest(make_shared<ReprString>(a), b)
-{
-}
-
 EndsWithTest::EndsWithTest(const shared_ptr<const Representation> &a, const string &b)
-	: EndsWithTest(a, make_shared<ReprString>(b))
+	: test(make_shared<MatchTest>(a, make_shared<EndsWithMatch>(b)))
 {
 }
 
-EndsWithTest::EndsWithTest(
-	const shared_ptr<const Representation> &a,
-	const shared_ptr<const Representation> &b
-) : a(a), b(b)
+EndsWithTest::EndsWithTest(const string &a, const string &b)
+	: EndsWithTest(make_shared<ReprString>(a), b)
 {
 }
 
 unique_ptr<const Result> EndsWithTest::result() const
 {
-	ostringstream text;
-	text << "'" << a->asString() << "' is ends with '" << b->asString() << "'";
-
-	shared_ptr<const Result> assertion_result;
-	const auto as = a->asString();
-	const auto bs = b->asString();
-	// @todo #347 EndsWithTest failed with ("tpotop", "top")
-	if (as.rfind(bs) == as.size() - bs.size()) {
-		assertion_result = make_shared<Success>(text.str());
-	} else {
-		assertion_result = make_shared<Failure>(text.str());
-	}
-	return make_unique<ResTest>(assertion_result);
+	return test->result();
 }

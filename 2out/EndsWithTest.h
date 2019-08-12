@@ -12,26 +12,16 @@ namespace oout {
 /// Test for string ends with suffix
 class EndsWithTest final : public Test {
 public:
-	/// Secondary ctor from two strings
-	EndsWithTest(const std::string &a, const std::string &b);
-
-	/// Secondary ctor from string and Repr
-	EndsWithTest(const std::string &a, const std::shared_ptr<const Representation> &b);
-
-	/// Secondary ctor from Repr and string
+	/// Primary ctor
 	EndsWithTest(const std::shared_ptr<const Representation> &a, const std::string &b);
 
-	/// Primary ctor
-	EndsWithTest(
-		const std::shared_ptr<const Representation> &a,
-		const std::shared_ptr<const Representation> &b
-	);
+	/// Secondary ctor from two strings
+	EndsWithTest(const std::string &a, const std::string &b);
 
 	/// Get result
 	std::unique_ptr<const Result> result() const override;
 private:
-	const std::shared_ptr<const Representation> a;
-	const std::shared_ptr<const Representation> b;
+	const std::shared_ptr<const Test> test;
 };
 
 }
