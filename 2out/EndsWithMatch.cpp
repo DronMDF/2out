@@ -5,7 +5,7 @@
 
 #include "EndsWithMatch.h"
 #include <sstream>
-#include "Representation.h"
+#include "Text.h"
 #include "ResTest.h"
 #include "CondResult.h"
 
@@ -17,7 +17,7 @@ EndsWithMatch::EndsWithMatch(const string &text)
 {
 }
 
-unique_ptr<const Result> EndsWithMatch::match(const shared_ptr<const Representation> &in) const
+unique_ptr<const Result> EndsWithMatch::match(const shared_ptr<const Text> &in) const
 {
 	const auto origin = in->asString();
 	ostringstream message;

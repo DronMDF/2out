@@ -5,11 +5,11 @@
 
 #pragma once
 #include <memory>
-#include <2out/Representation.h>
+#include <2out/Text.h>
 
 namespace oout { class CountFailure; }
 
-class CountFailureRepr final : public oout::Representation {
+class CountFailureRepr final : public oout::Text {
 public:
 	explicit CountFailureRepr(const std::shared_ptr<const oout::CountFailure> &count);
 	std::string asString() const override;

@@ -6,14 +6,17 @@
 #pragma once
 #include <memory>
 #include <string>
-#include "Representation.h"
+#include "Text.h"
 
 namespace oout {
 
 class Result;
 
+// @todo #365 JUnitXmlReport implement Text
+//  I should name it JUnitXmlText?
+
 /// JUnit report formatter
-class JUnitXmlReport final : public Representation {
+class JUnitXmlReport final : public Text {
 public:
 	/// Primary ctor
 	explicit JUnitXmlReport(const std::shared_ptr<const Result> &result);

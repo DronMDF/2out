@@ -5,12 +5,14 @@
 
 #pragma once
 #include <functional>
-#include "Representation.h"
+#include "Text.h"
 
 namespace oout {
 
-/// Representation for any string function
-class ReprCallable final : public Representation {
+// @todo #365 ReprCallable should be named CallableText
+
+/// Text for any string function
+class ReprCallable final : public Text {
 public:
 	/// Primary ctor
 	explicit ReprCallable(const std::function<std::string ()> &func);

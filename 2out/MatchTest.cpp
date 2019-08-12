@@ -11,7 +11,7 @@ using namespace std;
 using namespace oout;
 
 MatchTest::MatchTest(
-	const shared_ptr<const Representation> &text,
+	const shared_ptr<const Text> &text,
 	const shared_ptr<const Match> &match
 ) : text(text), match(match)
 {

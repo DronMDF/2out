@@ -6,14 +6,16 @@
 #pragma once
 #include <memory>
 #include <string>
-#include "Representation.h"
+#include "Text.h"
 
 namespace oout {
 
 class Result;
 
+// @todo #365 TextReport should be named GTestText
+
 /// Text Report like google test
-class TextReport final : public Representation {
+class TextReport final : public Text {
 public:
 	/// Primary ctor
 	explicit TextReport(const std::shared_ptr<const Result> &result);

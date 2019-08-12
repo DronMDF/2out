@@ -6,7 +6,7 @@
 #include "RegexMatch.h"
 #include <sstream>
 #include <regex>
-#include "Representation.h"
+#include "Text.h"
 #include "ResTest.h"
 #include "CondResult.h"
 
@@ -18,7 +18,7 @@ RegexMatch::RegexMatch(const string &re)
 {
 }
 
-unique_ptr<const Result> RegexMatch::match(const shared_ptr<const Representation> &in) const
+unique_ptr<const Result> RegexMatch::match(const shared_ptr<const Text> &in) const
 {
 	const auto origin = in->asString();
 	ostringstream message;

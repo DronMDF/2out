@@ -15,7 +15,7 @@ AllMatch::AllMatch(const vector<shared_ptr<const Match>> &matches)
 {
 }
 
-unique_ptr<const Result> AllMatch::match(const shared_ptr<const Representation> &in) const
+unique_ptr<const Result> AllMatch::match(const shared_ptr<const Text> &in) const
 {
 	list<shared_ptr<const Result>> results;
 	for (const auto &m : matches) {

@@ -10,7 +10,8 @@
 using namespace std;
 using namespace oout;
 
-class ReprNamedTest final : public Representation {
+// @todo #365 ReprNamedTest should be named NamedTestText
+class ReprNamedTest final : public Text {
 public:
 	explicit ReprNamedTest(const shared_ptr<const Test> &test)
 		: test(test)

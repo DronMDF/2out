@@ -5,7 +5,7 @@
 
 #include "StartsWithMatch.h"
 #include <sstream>
-#include "Representation.h"
+#include "Text.h"
 #include "ResTest.h"
 #include "CondResult.h"
 
@@ -17,7 +17,7 @@ StartsWithMatch::StartsWithMatch(const string &text)
 {
 }
 
-unique_ptr<const Result> StartsWithMatch::match(const shared_ptr<const Representation> &in) const
+unique_ptr<const Result> StartsWithMatch::match(const shared_ptr<const Text> &in) const
 {
 	ostringstream message;
 	message << "'" << in->asString() << "' starts with '" << text << "'";

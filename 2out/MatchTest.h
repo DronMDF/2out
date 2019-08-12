@@ -10,19 +10,19 @@
 namespace oout {
 
 class Match;
-class Representation;
+class Text;
 
 class MatchTest final : public Test {
 public:
 	/// Primary ctor
 	MatchTest(
-		const std::shared_ptr<const Representation> &text,
+		const std::shared_ptr<const Text> &text,
 		const std::shared_ptr<const Match> &match
 	);
 
 	template<typename... T>
 	MatchTest(
-		const std::shared_ptr<const Representation> &text,
+		const std::shared_ptr<const Text> &text,
 		const std::shared_ptr<const Match> &match1,
 		const std::shared_ptr<const Match> &match2,
 		const std::shared_ptr<T> & ... matchn
@@ -34,7 +34,7 @@ public:
 	std::unique_ptr<const Result> result() const override;
 
 private:
-	const std::shared_ptr<const Representation> text;
+	const std::shared_ptr<const Text> text;
 	const std::shared_ptr<const Match> match;
 };
 

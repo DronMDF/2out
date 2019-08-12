@@ -4,12 +4,14 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Representation.h"
+#include "Text.h"
 
 namespace oout {
 
-/// Representation for signed integer
-class ReprSigned final : public Representation {
+// @todo #365 ReprSigned should be named SignedText
+
+/// Text for signed integer
+class ReprSigned final : public Text {
 public:
 	/// Primary ctor
 	explicit ReprSigned(int64_t value);

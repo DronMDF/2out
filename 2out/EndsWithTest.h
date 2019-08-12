@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Representation.h"
+#include "Text.h"
 #include "Test.h"
 
 namespace oout {
@@ -13,7 +13,7 @@ namespace oout {
 class EndsWithTest final : public Test {
 public:
 	/// Primary ctor
-	EndsWithTest(const std::shared_ptr<const Representation> &a, const std::string &b);
+	EndsWithTest(const std::shared_ptr<const Text> &a, const std::string &b);
 
 	/// Secondary ctor from two strings
 	EndsWithTest(const std::string &a, const std::string &b);

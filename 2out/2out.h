@@ -17,8 +17,8 @@
 #include "CountFailure.h"
 #include "CountTest.h"
 
-// Representation
-#include "Representation.h"
+// Text
+#include "Text.h"
 #include "ReprCallable.h"
 #include "ReprPrintable.h"
 #include "ReprSigned.h"
@@ -45,6 +45,7 @@
 #include "StartsWithMatch.h"
 
 // Deprecated (since 0.7)
+#include "Representation.h"
 #include "TestContainText.h"
 #include "TestEndsWith.h"
 #include "TestEqual.h"

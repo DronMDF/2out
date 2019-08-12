@@ -14,8 +14,8 @@ using namespace std;
 using namespace oout;
 
 ContainTest::ContainTest(
-	const shared_ptr<const Representation> &text,
-	const list<shared_ptr<const Representation>> &subs
+	const shared_ptr<const Text> &text,
+	const list<shared_ptr<const Text>> &subs
 ) : text(text), subs(subs)
 {
 }
@@ -33,7 +33,7 @@ unique_ptr<const Result> ContainTest::result() const
 	return make_unique<ResSuite>(rs);
 }
 
-unique_ptr<const Result> ContainTest::result(const shared_ptr<const Representation> &sub) const
+unique_ptr<const Result> ContainTest::result(const shared_ptr<const Text> &sub) const
 {
 	// @todo #313 ContainTest invoke text->asString twice
 	ostringstream test_text;
