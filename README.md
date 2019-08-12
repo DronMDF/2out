@@ -76,3 +76,8 @@ $ conan install ~/project --build
 $ cmake ~/project
 $ make
 ```
+
+# Contributing
+
+Any contribution are welcome.
+Follow this [guide](CONTRIBUTING.md).
