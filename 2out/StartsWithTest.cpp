@@ -35,6 +35,8 @@ StartsWithTest::StartsWithTest(
 {
 }
 
+// @todo #352 StartsWithTest can be implement over StartWithMatch
+//  Success/Failure deprecated and should be removed
 unique_ptr<const Result> StartsWithTest::result() const
 {
 	ostringstream text;

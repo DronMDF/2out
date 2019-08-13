@@ -4,34 +4,25 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Text.h"
 #include "Test.h"
 
 namespace oout {
 
+class Text;
+
 /// Equality test
 class EqualTest final : public Test {
 public:
-	/// Secondary ctor from two string
-	EqualTest(const std::string &a, const std::string &b);
-
-	/// Secondary ctor from string and Repr
-	EqualTest(const std::string &a, const std::shared_ptr<const Text> &b);
-
-	/// Secondary ctor from Repr and string
+	/// Primary ctor from Repr and string
 	EqualTest(const std::shared_ptr<const Text> &a, const std::string &b);
 
-	/// Primary ctor
-	EqualTest(
-		const std::shared_ptr<const Text> &a,
-		const std::shared_ptr<const Text> &b
-	);
+	/// Secondary ctor from two string
+	EqualTest(const std::string &a, const std::string &b);
 
 	/// Get result
 	std::unique_ptr<const Result> result() const override;
 private:
-	const std::shared_ptr<const Text> a;
-	const std::shared_ptr<const Text> b;
+	const std::shared_ptr<const Test> test;
 };
 
 }

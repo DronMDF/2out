@@ -18,6 +18,8 @@ EqualMatch::EqualMatch(const string &text)
 {
 }
 
+// @todo #352 EqualMatch use deprecated Success/Failure.
+//  need to use CondResult instead
 unique_ptr<const Result> EqualMatch::match(const shared_ptr<const Text> &in) const
 {
 	ostringstream message;

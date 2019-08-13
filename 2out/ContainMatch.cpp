@@ -18,6 +18,8 @@ ContainMatch::ContainMatch(const string &text)
 {
 }
 
+// @todo #352 ContainMatch use deprecated Success/Failure
+//  need to use CondResult instead
 unique_ptr<const Result> ContainMatch::match(const shared_ptr<const Text> &in) const
 {
 	ostringstream message;
