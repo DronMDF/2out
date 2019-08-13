@@ -4,10 +4,11 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Text.h"
 #include "Test.h"
 
 namespace oout {
+
+class Text;
 
 /// Test for string ends with suffix
 class EndsWithTest final : public Test {
