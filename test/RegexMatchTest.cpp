@@ -19,7 +19,7 @@ RegexMatchTest::RegexMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<RegexMatch>("^te"),
 						make_shared<RegexMatch>("st$"),
 						make_shared<RegexMatch>("[tes]{4}")
@@ -33,7 +33,7 @@ RegexMatchTest::RegexMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<RegexMatch>(R"(\d+)")
 					)
 				),

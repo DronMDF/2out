@@ -22,7 +22,7 @@
 #include "ReprCallable.h"
 #include "ReprPrintable.h"
 #include "ReprSigned.h"
-#include "ReprString.h"
+#include "StringText.h"
 
 // Tests
 #include "ContainTest.h"
@@ -46,6 +46,7 @@
 
 // Deprecated (since 0.7)
 #include "Representation.h"
+#include "ReprString.h"
 #include "TestContainText.h"
 #include "TestEndsWith.h"
 #include "TestEqual.h"

@@ -19,7 +19,7 @@ StartsWithMatchTest::StartsWithMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<StartsWithMatch>("tes")
 					)
 				),
@@ -31,7 +31,7 @@ StartsWithMatchTest::StartsWithMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<StartsWithMatch>("est")
 					)
 				),

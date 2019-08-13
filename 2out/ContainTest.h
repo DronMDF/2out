@@ -6,7 +6,7 @@
 #pragma once
 #include "Text.h"
 #include <list>
-#include "ReprString.h"
+#include "StringText.h"
 #include "Test.h"
 
 namespace oout {
@@ -37,7 +37,7 @@ public:
 		const std::shared_ptr<const Text> &text,
 		const std::string &sub,
 		S ... subs
-	) : ContainTest(text, subs..., std::make_shared<ReprString>(sub))
+	) : ContainTest(text, subs..., std::make_shared<StringText>(sub))
 	{
 	}
 
@@ -46,7 +46,7 @@ public:
 	ContainTest(
 		const std::string &text,
 		S ... subs
-	) : ContainTest(std::make_shared<ReprString>(text), subs...)
+	) : ContainTest(std::make_shared<StringText>(text), subs...)
 	{
 	}
 

@@ -19,7 +19,7 @@ ContainMatchTest::ContainMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<ContainMatch>("es")
 					)
 				),
@@ -31,7 +31,7 @@ ContainMatchTest::ContainMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<ContainMatch>("foo")
 					)
 				),

@@ -23,7 +23,6 @@ ADD_LIBRARY(
 	RegexMatch.cpp
 	ReprCallable.cpp
 	ReprSigned.cpp
-	ReprString.cpp
 	ResNamed.cpp
 	ResSuite.cpp
 	ResTest.cpp
@@ -32,6 +31,7 @@ ADD_LIBRARY(
 	SkippedTest.cpp
 	StartsWithMatch.cpp
 	StartsWithTest.cpp
+	StringText.cpp
 	Success.cpp
 	SuiteTest.cpp
 	TimedTest.cpp

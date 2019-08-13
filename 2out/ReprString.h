@@ -4,22 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Text.h"
+#include "StringText.h"
 
 namespace oout {
 
-// @todo #365 ReprString should be named StringText
-
-/// Text for string
-class ReprString final : public Text {
-public:
-	/// Primary ctor
-	explicit ReprString(const std::string &value);
-
-	/// Get value as string
-	std::string asString() const override;
-private:
-	const std::string value;
-};
+typedef StringText ReprString;
 
 }
