@@ -5,10 +5,9 @@
 
 #include "EqualMatch.h"
 #include <sstream>
-#include "Failure.h"
+#include "CondResult.h"
 #include "Text.h"
 #include "ResTest.h"
-#include "Success.h"
 
 using namespace std;
 using namespace oout;
@@ -18,18 +17,12 @@ EqualMatch::EqualMatch(const string &text)
 {
 }
 
-// @todo #352 EqualMatch use deprecated Success/Failure.
-//  need to use CondResult instead
 unique_ptr<const Result> EqualMatch::match(const shared_ptr<const Text> &in) const
 {
+	const auto origin = in->asString();
 	ostringstream message;
-	message << "'" << in->asString() << "' is equal '" << text << "'";
-
-	shared_ptr<const Result> assertion_result;
-	if (in->asString() == text) {
-		assertion_result = make_shared<Success>(message.str());
-	} else {
-		assertion_result = make_shared<Failure>(message.str());
-	}
-	return make_unique<ResTest>(assertion_result);
+	message << "'" << origin << "' is equal '" << text << "'";
+	return make_unique<ResTest>(
+		make_shared<CondResult>(origin == text, message.str())
+	);
 }
