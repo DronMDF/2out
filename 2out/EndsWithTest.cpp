@@ -6,7 +6,7 @@
 #include "EndsWithTest.h"
 #include "EndsWithMatch.h"
 #include "MatchTest.h"
-#include "ReprString.h"
+#include "StringText.h"
 #include "Result.h"
 
 using namespace std;
@@ -18,7 +18,7 @@ EndsWithTest::EndsWithTest(const shared_ptr<const Text> &a, const string &b)
 }
 
 EndsWithTest::EndsWithTest(const string &a, const string &b)
-	: EndsWithTest(make_shared<ReprString>(a), b)
+	: EndsWithTest(make_shared<StringText>(a), b)
 {
 }
 

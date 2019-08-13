@@ -5,7 +5,7 @@
 
 #include "StartsWithTest.h"
 #include "MatchTest.h"
-#include "ReprString.h"
+#include "StringText.h"
 #include "Result.h"
 #include "StartsWithMatch.h"
 
@@ -18,7 +18,7 @@ StartsWithTest::StartsWithTest(const shared_ptr<const Text> &a, const string &b)
 }
 
 StartsWithTest::StartsWithTest(const string &a, const string &b)
-	: StartsWithTest(make_shared<ReprString>(a), b)
+	: StartsWithTest(make_shared<StringText>(a), b)
 {
 }
 

@@ -19,7 +19,7 @@ EndsWithMatchTest::EndsWithMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<EndsWithMatch>("est")
 					)
 				),
@@ -31,7 +31,7 @@ EndsWithMatchTest::EndsWithMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("toptop"),
+						make_shared<StringText>("toptop"),
 						make_shared<EndsWithMatch>("top")
 					)
 				),
@@ -43,7 +43,7 @@ EndsWithMatchTest::EndsWithMatchTest()
 			make_shared<EqualTest>(
 				make_unique<ReprTest>(
 					make_unique<MatchTest>(
-						make_shared<ReprString>("test"),
+						make_shared<StringText>("test"),
 						make_shared<EndsWithMatch>("tes")
 					)
 				),

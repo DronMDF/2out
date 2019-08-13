@@ -6,7 +6,7 @@
 #include "EqualTest.h"
 #include "EqualMatch.h"
 #include "MatchTest.h"
-#include "ReprString.h"
+#include "StringText.h"
 #include "Result.h"
 
 using namespace std;
@@ -18,7 +18,7 @@ EqualTest::EqualTest(const shared_ptr<const Text> &a, const string &b)
 }
 
 EqualTest::EqualTest(const string &a, const string &b)
-	: EqualTest(make_shared<ReprString>(a), b)
+	: EqualTest(make_shared<StringText>(a), b)
 {
 }
 

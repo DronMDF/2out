@@ -3,17 +3,17 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ReprString.h"
+#include "StringText.h"
 
 using namespace std;
 using namespace oout;
 
-ReprString::ReprString(const string &value)
+StringText::StringText(const string &value)
 	: value(value)
 {
 }
 
-string ReprString::asString() const
+string StringText::asString() const
 {
 	return value;
 }
