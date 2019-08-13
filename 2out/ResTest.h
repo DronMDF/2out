@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #379 ReprTest should be renamed to TestResult
+
 /// Result of simple test
 class ResTest final : public Result {
 public:
