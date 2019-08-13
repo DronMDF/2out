@@ -4,49 +4,25 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "StartsWithTest.h"
-#include <sstream>
-#include "Failure.h"
+#include "MatchTest.h"
 #include "ReprString.h"
-#include "ResTest.h"
-#include "Success.h"
+#include "Result.h"
+#include "StartsWithMatch.h"
 
 using namespace std;
 using namespace oout;
 
-StartsWithTest::StartsWithTest(const string &a, const string &b)
-	: StartsWithTest(make_shared<ReprString>(a), make_shared<ReprString>(b))
+StartsWithTest::StartsWithTest(const shared_ptr<const Text> &a, const string &b)
+	: test(make_shared<MatchTest>(a, make_shared<StartsWithMatch>(b)))
 {
 }
 
-StartsWithTest::StartsWithTest(const string &a, const shared_ptr<const Text> &b)
+StartsWithTest::StartsWithTest(const string &a, const string &b)
 	: StartsWithTest(make_shared<ReprString>(a), b)
 {
 }
 
-StartsWithTest::StartsWithTest(const shared_ptr<const Text> &a, const string &b)
-	: StartsWithTest(a, make_shared<ReprString>(b))
-{
-}
-
-StartsWithTest::StartsWithTest(
-	const shared_ptr<const Text> &a,
-	const shared_ptr<const Text> &b
-) : a(a), b(b)
-{
-}
-
-// @todo #352 StartsWithTest can be implement over StartWithMatch
-//  Success/Failure deprecated and should be removed
 unique_ptr<const Result> StartsWithTest::result() const
 {
-	ostringstream text;
-	text << "'" << a->asString() << "' is starts with '" << b->asString() << "'";
-
-	shared_ptr<const Result> assertion_result;
-	if (a->asString().find(b->asString()) == 0) {
-		assertion_result = make_shared<Success>(text.str());
-	} else {
-		assertion_result = make_shared<Failure>(text.str());
-	}
-	return make_unique<ResTest>(assertion_result);
+	return test->result();
 }
