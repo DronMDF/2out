@@ -25,7 +25,7 @@ ADD_LIBRARY(
 	ReprSigned.cpp
 	ResNamed.cpp
 	ResSuite.cpp
-	ResTest.cpp
+	TestResult.cpp
 	ResTimed.cpp
 	SafeTest.cpp
 	SkippedTest.cpp

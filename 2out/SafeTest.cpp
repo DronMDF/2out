@@ -5,7 +5,7 @@
 
 #include "SafeTest.h"
 #include "Error.h"
-#include "ResTest.h"
+#include "TestResult.h"
 
 using namespace std;
 using namespace oout;
@@ -21,7 +21,7 @@ unique_ptr<const Result> SafeTest::result() const
 	try {
 		r = test->result();
 	} catch (const exception &e) {
-		r = make_unique<const ResTest>(make_shared<Error>(e.what()));
+		r = make_unique<const TestResult>(make_shared<Error>(e.what()));
 	}
 	return r;
 }

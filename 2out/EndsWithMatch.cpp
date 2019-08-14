@@ -6,7 +6,7 @@
 #include "EndsWithMatch.h"
 #include <sstream>
 #include "Text.h"
-#include "ResTest.h"
+#include "TestResult.h"
 #include "CondResult.h"
 
 using namespace std;
@@ -23,7 +23,7 @@ unique_ptr<const Result> EndsWithMatch::match(const shared_ptr<const Text> &in) 
 	ostringstream message;
 	message << "'" << origin << "' ends with '" << text << "'";
 
-	return make_unique<ResTest>(
+	return make_unique<TestResult>(
 		make_shared<CondResult>(
 			string(origin, origin.size() - text.size()) == text,
 			message.str()

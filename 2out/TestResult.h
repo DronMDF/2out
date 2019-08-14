@@ -9,13 +9,14 @@
 
 namespace oout {
 
-// @todo #379 ReprTest should be renamed to TestResult
+// @todo #383 TestResult should have constructor with bool and message
+//  for omit CondResult in *Test code
 
 /// Result of simple test
-class ResTest final : public Result {
+class TestResult final : public Result {
 public:
 	/// Primary ctor from assertion result
-	explicit ResTest(const std::shared_ptr<const Result> &result);
+	explicit TestResult(const std::shared_ptr<const Result> &result);
 
 	/// Printer
 	std::string print(const Format &format) const override;
