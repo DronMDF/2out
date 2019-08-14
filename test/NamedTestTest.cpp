@@ -10,10 +10,9 @@
 using namespace std;
 using namespace oout;
 
-// @todo #365 ReprNamedTest should be named NamedTestText
-class ReprNamedTest final : public Text {
+class NamedTestText final : public Text {
 public:
-	explicit ReprNamedTest(const shared_ptr<const Test> &test)
+	explicit NamedTestText(const shared_ptr<const Test> &test)
 		: test(test)
 	{
 	}
@@ -29,11 +28,11 @@ private:
 NamedTestTest::NamedTestTest()
 	: tests(
 		make_unique<NamedTest>(
-			"NamedTestTest",
+			"NamedTest test",
 			make_shared<const NamedTest>(
 				"NamedTest in TestNamed is a Suite",
 				make_shared<ContainTest>(
-					make_shared<ReprNamedTest>(
+					make_shared<NamedTestText>(
 						make_unique<NamedTest>(
 							"Root test",
 							make_shared<const NamedTest>(
