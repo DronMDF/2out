@@ -11,10 +11,9 @@
 using namespace std;
 using namespace oout;
 
-// @todo #365 CountErrorRepr should be named CountErrorText
-class CountErrorRepr final : public Text {
+class CountErrorText final : public Text {
 public:
-	explicit CountErrorRepr(const shared_ptr<const CountError> &count)
+	explicit CountErrorText(const shared_ptr<const CountError> &count)
 		: count(count)
 	{
 	}
@@ -30,11 +29,11 @@ private:
 CountErrorTest::CountErrorTest()
 	: tests(
 		make_unique<NamedTest>(
-			"CountErrorTest",
+			"CountError test",
 			make_shared<const NamedTest>(
 				"One error in set",
 				make_shared<EqualTest>(
-					make_unique<CountErrorRepr>(
+					make_unique<CountErrorText>(
 						make_unique<CountError>(
 							make_unique<ResSuite>(
 								make_shared<ResOkCase>(),
