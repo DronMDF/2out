@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "SkippedTest.h"
-#include "ResTest.h"
+#include "TestResult.h"
 #include "Success.h"
 
 using namespace std;
@@ -17,5 +17,5 @@ SkippedTest::SkippedTest(const shared_ptr<const Test> &test)
 
 unique_ptr<const Result> SkippedTest::result() const
 {
-	return make_unique<ResTest>(make_unique<Success>());
+	return make_unique<TestResult>(make_unique<Success>());
 }

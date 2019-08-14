@@ -7,7 +7,7 @@
 #include <sstream>
 #include <regex>
 #include "Text.h"
-#include "ResTest.h"
+#include "TestResult.h"
 #include "CondResult.h"
 
 using namespace std;
@@ -24,7 +24,7 @@ unique_ptr<const Result> RegexMatch::match(const shared_ptr<const Text> &in) con
 	ostringstream message;
 	message << "'" << origin << "' match with '" << re << "'";
 
-	return make_unique<ResTest>(
+	return make_unique<TestResult>(
 		make_shared<CondResult>(regex_search(origin, regex(re)), message.str())
 	);
 }

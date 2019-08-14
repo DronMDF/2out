@@ -3,18 +3,18 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ResTest.h"
+#include "TestResult.h"
 #include "Format.h"
 
 using namespace std;
 using namespace oout;
 
-ResTest::ResTest(const shared_ptr<const Result> &result)
+TestResult::TestResult(const shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
-string ResTest::print(const Format &format) const
+string TestResult::print(const Format &format) const
 {
 	return format.test({}, result, chrono::nanoseconds::zero());
 }

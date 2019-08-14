@@ -8,7 +8,7 @@
 #include <sstream>
 #include "CondResult.h"
 #include "ResSuite.h"
-#include "ResTest.h"
+#include "TestResult.h"
 
 using namespace std;
 using namespace oout;
@@ -39,7 +39,7 @@ unique_ptr<const Result> ContainTest::result(const shared_ptr<const Text> &sub) 
 	ostringstream test_text;
 	test_text << "'" << sub->asString() << "' in '" << text->asString() << "'";
 
-	return make_unique<const ResTest>(
+	return make_unique<const TestResult>(
 		make_shared<CondResult>(
 			text->asString().find(sub->asString()) != string::npos,
 			test_text.str()

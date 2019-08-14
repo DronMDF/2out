@@ -7,7 +7,7 @@
 #include <sstream>
 #include "CondResult.h"
 #include "Text.h"
-#include "ResTest.h"
+#include "TestResult.h"
 
 using namespace std;
 using namespace oout;
@@ -22,7 +22,7 @@ unique_ptr<const Result> EqualMatch::match(const shared_ptr<const Text> &in) con
 	const auto origin = in->asString();
 	ostringstream message;
 	message << "'" << origin << "' is equal '" << text << "'";
-	return make_unique<ResTest>(
+	return make_unique<TestResult>(
 		make_shared<CondResult>(origin == text, message.str())
 	);
 }

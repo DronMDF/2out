@@ -6,7 +6,7 @@
 #include "StartsWithMatch.h"
 #include <sstream>
 #include "Text.h"
-#include "ResTest.h"
+#include "TestResult.h"
 #include "CondResult.h"
 
 using namespace std;
@@ -22,7 +22,7 @@ unique_ptr<const Result> StartsWithMatch::match(const shared_ptr<const Text> &in
 	ostringstream message;
 	message << "'" << in->asString() << "' starts with '" << text << "'";
 
-	return make_unique<ResTest>(
+	return make_unique<TestResult>(
 		make_shared<CondResult>(
 			in->asString().find(text) == 0,
 			message.str()

@@ -9,7 +9,7 @@
 #include <2out/Error.h>
 #include <2out/Failure.h>
 #include <2out/ResSuite.h>
-#include <2out/ResTest.h>
+#include <2out/TestResult.h>
 #include "ResFakes.h"
 
 using namespace std;
@@ -41,7 +41,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				"Escaping in failure",
 				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
-						make_unique<ResTest>(
+						make_unique<TestResult>(
 							make_unique<Failure>("<tag>")
 						)
 					),
@@ -52,7 +52,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				"Escaping in error",
 				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
-						make_unique<ResTest>(
+						make_unique<TestResult>(
 							make_unique<Error>("&amp;")
 						)
 					),

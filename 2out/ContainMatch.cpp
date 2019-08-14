@@ -6,7 +6,7 @@
 #include "ContainMatch.h"
 #include <sstream>
 #include "CondResult.h"
-#include "ResTest.h"
+#include "TestResult.h"
 #include "Text.h"
 
 using namespace std;
@@ -22,7 +22,7 @@ unique_ptr<const Result> ContainMatch::match(const shared_ptr<const Text> &in) c
 	const auto origin = in->asString();
 	ostringstream message;
 	message << "'" << text << "' in '" << origin << "'";
-	return make_unique<ResTest>(
+	return make_unique<TestResult>(
 		make_shared<CondResult>(origin.find(text) != string::npos, message.str())
 	);
 }
