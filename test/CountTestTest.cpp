@@ -11,10 +11,9 @@
 using namespace std;
 using namespace oout;
 
-// @todo #365 CountTestRepr should be named CountTestText
-class CountTestRepr final : public Text {
+class CountTestText final : public Text {
 public:
-	explicit CountTestRepr(const shared_ptr<const CountTest> &count)
+	explicit CountTestText(const shared_ptr<const CountTest> &count)
 		: count(count)
 	{
 	}
@@ -32,7 +31,7 @@ CountTestTest::CountTestTest()
 		make_unique<NamedTest>(
 			"CountTestTest",
 			make_shared<EqualTest>(
-				make_shared<CountTestRepr>(
+				make_shared<CountTestText>(
 					make_unique<CountTest>(
 						make_unique<ResSuite>(
 							make_shared<ResOkCase>(),
