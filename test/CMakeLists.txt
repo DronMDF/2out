@@ -23,7 +23,7 @@ ADD_EXECUTABLE(
 	RegexMatchTest.cpp
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
-	ReprTest.cpp
+	TestText.cpp
 	ResFakes.cpp
 	SkippedTestTest.cpp
 	StartsWithMatchTest.cpp

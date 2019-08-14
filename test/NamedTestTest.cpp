@@ -5,7 +5,7 @@
 
 #include "NamedTestTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;

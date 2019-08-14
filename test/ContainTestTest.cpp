@@ -5,7 +5,7 @@
 
 #include "ContainTestTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ ContainTestTest::ContainTestTest()
 			make_shared<const NamedTest>(
 				"Contain all",
 				make_shared<EqualTest>(
-					make_unique<ReprTest>(
+					make_unique<TestText>(
 						make_unique<ContainTest>(
 							"quick brown fox",
 							"quick",
@@ -30,7 +30,7 @@ ContainTestTest::ContainTestTest()
 			make_shared<const NamedTest>(
 				"Not contain one of",
 				make_shared<EqualTest>(
-					make_unique<ReprTest>(
+					make_unique<TestText>(
 						make_unique<ContainTest>(
 							"jumps over the lazy dog",
 							"dog",

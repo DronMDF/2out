@@ -5,7 +5,7 @@
 
 #include "RegexMatchTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ RegexMatchTest::RegexMatchTest()
 		make_shared<NamedTest>(
 			"RegexMatch success if matched",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<RegexMatch>("^te"),
@@ -31,7 +31,7 @@ RegexMatchTest::RegexMatchTest()
 		make_shared<NamedTest>(
 			"RegexMatch failure if not match",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<RegexMatch>(R"(\d+)")

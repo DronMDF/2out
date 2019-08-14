@@ -5,7 +5,7 @@
 
 #include "SuiteTestTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ SuiteTestTest::SuiteTestTest()
 			make_shared<NamedTest>(
 				"SuiteTest with empty list is always success",
 				make_shared<EqualTest>(
-					make_shared<ReprTest>(
+					make_shared<TestText>(
 						make_unique<SuiteTest>(
 							list<shared_ptr<const Test>>{}
 						)
@@ -28,7 +28,7 @@ SuiteTestTest::SuiteTestTest()
 			make_shared<NamedTest>(
 				"SuiteTest give tests as variadic args",
 				make_shared<EqualTest>(
-					make_shared<ReprTest>(
+					make_shared<TestText>(
 						make_unique<SuiteTest>(
 							make_shared<EqualTest>("1", "1"),
 							make_shared<EqualTest>("2", "2"),

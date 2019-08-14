@@ -5,7 +5,7 @@
 
 #include "SkippedTestTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ SkippedTestTest::SkippedTestTest()
 			make_shared<const NamedTest>(
 				"Skipped test looks like Success",
 				make_shared<EqualTest>(
-					make_unique<ReprTest>(
+					make_unique<TestText>(
 						make_unique<SkippedTest>(
 							make_unique<EqualTest>(
 								"true",

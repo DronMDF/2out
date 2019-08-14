@@ -5,7 +5,7 @@
 
 #include "StartsWithTestTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ StartsWithTestTest::StartsWithTestTest()
 			make_shared<const NamedTest>(
 				"Realy starts with",
 				make_shared<EqualTest>(
-					make_unique<ReprTest>(
+					make_unique<TestText>(
 						make_unique<StartsWithTest>(
 							"abcdef",
 							"abc"
