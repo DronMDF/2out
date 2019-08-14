@@ -7,13 +7,9 @@
 #include <2out/Text.h>
 #include <2out/Test.h>
 
-// @todo #322 ReprTest should be renamed
-//  In current naming - TestRepr,
-//  But i want to change Text to Text
-
-class ReprTest final : public oout::Text {
+class TestText final : public oout::Text {
 public:
-	explicit ReprTest(const std::shared_ptr<const oout::Test> &test);
+	explicit TestText(const std::shared_ptr<const oout::Test> &test);
 	std::string asString() const override;
 private:
 	const std::shared_ptr<const oout::Test> test;

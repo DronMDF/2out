@@ -5,7 +5,7 @@
 
 #include "ContainMatchTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ ContainMatchTest::ContainMatchTest()
 		make_shared<const NamedTest>(
 			"ContainMatch succes if contain",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<ContainMatch>("es")
@@ -29,7 +29,7 @@ ContainMatchTest::ContainMatchTest()
 		make_shared<const NamedTest>(
 			"ContainMatch failure if not contain",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<ContainMatch>("foo")

@@ -5,7 +5,7 @@
 
 #include "StartsWithMatchTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ StartsWithMatchTest::StartsWithMatchTest()
 		make_shared<const NamedTest>(
 			"StartsWith success if starts with",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<StartsWithMatch>("tes")
@@ -29,7 +29,7 @@ StartsWithMatchTest::StartsWithMatchTest()
 		make_shared<const NamedTest>(
 			"StartsWithMatch failure if not starts with",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<StartsWithMatch>("est")

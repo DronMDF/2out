@@ -5,7 +5,7 @@
 
 #include "EndsWithMatchTest.h"
 #include <2out/2out.h>
-#include "ReprTest.h"
+#include "TestText.h"
 
 using namespace std;
 using namespace oout;
@@ -17,7 +17,7 @@ EndsWithMatchTest::EndsWithMatchTest()
 		make_shared<const NamedTest>(
 			"EndsWith success if ends with",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<EndsWithMatch>("est")
@@ -29,7 +29,7 @@ EndsWithMatchTest::EndsWithMatchTest()
 		make_shared<const NamedTest>(
 			"EndsWith success if pattern not at end",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("toptop"),
 						make_shared<EndsWithMatch>("top")
@@ -41,7 +41,7 @@ EndsWithMatchTest::EndsWithMatchTest()
 		make_shared<const NamedTest>(
 			"EndsWithMatch failure if not ends with",
 			make_shared<EqualTest>(
-				make_unique<ReprTest>(
+				make_unique<TestText>(
 					make_unique<MatchTest>(
 						make_shared<StringText>("test"),
 						make_shared<EndsWithMatch>("tes")
