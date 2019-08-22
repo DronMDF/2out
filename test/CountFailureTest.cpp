@@ -5,31 +5,32 @@
 
 #include "CountFailureTest.h"
 #include <2out/2out.h>
+#include <2out/FailureResult.h>
 #include <2out/ResSuite.h>
+#include <2out/SuccessResult.h>
 #include "CountFailureRepr.h"
-#include "ResFakes.h"
 
 using namespace std;
 using namespace oout;
 
 CountFailureTest::CountFailureTest()
-	: tests(
-		make_unique<NamedTest>(
-			"CountFailureTest",
-			make_shared<EqualTest>(
-				make_shared<CountFailureRepr>(
-					make_unique<CountFailure>(
-						make_unique<ResSuite>(
-							make_shared<ResOkCase>(),
-							make_shared<ResFailureCase>(),
-							make_shared<ResOkCase>()
-						)
+: tests(
+	make_unique<NamedTest>(
+		"CountFailureTest",
+		make_shared<EqualTest>(
+			make_shared<CountFailureRepr>(
+				make_unique<CountFailure>(
+					make_unique<ResSuite>(
+						make_shared<SuccessResult>(),
+						make_shared<FailureResult>(),
+						make_shared<SuccessResult>()
 					)
-				),
-				"1"
-			)
+				)
+			),
+			"1"
 		)
 	)
+)
 {
 }
 

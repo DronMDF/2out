@@ -5,8 +5,10 @@
 
 #include "CountErrorTest.h"
 #include <2out/2out.h>
+#include <2out/ErrorResult.h>
+#include <2out/FailureResult.h>
 #include <2out/ResSuite.h>
-#include "ResFakes.h"
+#include <2out/SuccessResult.h>
 
 using namespace std;
 using namespace oout;
@@ -27,26 +29,26 @@ private:
 };
 
 CountErrorTest::CountErrorTest()
-	: tests(
-		make_unique<NamedTest>(
-			"CountError test",
-			make_shared<const NamedTest>(
-				"One error in set",
-				make_shared<EqualTest>(
-					make_unique<CountErrorText>(
-						make_unique<CountError>(
-							make_unique<ResSuite>(
-								make_shared<ResOkCase>(),
-								make_shared<ResFailureCase>(),
-								make_shared<ResErrorCase>()
-							)
+: tests(
+	make_unique<NamedTest>(
+		"CountError test",
+		make_shared<const NamedTest>(
+			"One error in set",
+			make_shared<EqualTest>(
+				make_unique<CountErrorText>(
+					make_unique<CountError>(
+						make_unique<ResSuite>(
+							make_shared<SuccessResult>(),
+							make_shared<FailureResult>(),
+							make_shared<ErrorResult>()
 						)
-					),
-					"1"
-				)
+					)
+				),
+				"1"
 			)
 		)
 	)
+)
 {
 }
 

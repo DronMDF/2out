@@ -6,7 +6,8 @@
 #include "CountTestTest.h"
 #include <2out/2out.h>
 #include <2out/ResSuite.h>
-#include "ResFakes.h"
+#include <2out/SuccessResult.h>
+#include <2out/TestResult.h>
 
 using namespace std;
 using namespace oout;
@@ -27,23 +28,29 @@ private:
 };
 
 CountTestTest::CountTestTest()
-	: tests(
-		make_unique<NamedTest>(
-			"CountTestTest",
-			make_shared<EqualTest>(
-				make_shared<CountTestText>(
-					make_unique<CountTest>(
-						make_unique<ResSuite>(
-							make_shared<ResOkCase>(),
-							make_shared<ResOkCase>(),
-							make_shared<ResOkCase>()
+: tests(
+	make_unique<NamedTest>(
+		"CountTestTest",
+		make_shared<EqualTest>(
+			make_shared<CountTestText>(
+				make_unique<CountTest>(
+					make_unique<ResSuite>(
+						make_shared<TestResult>(
+							make_shared<SuccessResult>()
+						),
+						make_shared<TestResult>(
+							make_shared<SuccessResult>()
+						),
+						make_shared<TestResult>(
+							make_shared<SuccessResult>()
 						)
 					)
-				),
-				"3"
-			)
+				)
+			),
+			"3"
 		)
 	)
+)
 {
 }
 
