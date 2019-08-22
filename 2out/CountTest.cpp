@@ -6,8 +6,7 @@
 #include "CountTest.h"
 #include <numeric>
 #include "Format.h"
-#include "ResSuite.h"
-#include "Result.h"
+#include "SuiteResult.h"
 
 using namespace std;
 using namespace oout;
@@ -60,7 +59,7 @@ public:
 }  // namespace oout
 
 CountTest::CountTest(const list<shared_ptr<const Result>> &results)
-	: CountTest(make_unique<ResSuite>(results))
+	: CountTest(make_unique<SuiteResult>(results))
 {
 }
 

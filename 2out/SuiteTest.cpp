@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "SuiteTest.h"
-#include "ResSuite.h"
+#include "SuiteResult.h"
 #include "TimedTest.h"
 
 using namespace std;
@@ -21,5 +21,5 @@ unique_ptr<const Result> SuiteTest::result() const
 	for (const auto &c : cases) {
 		results.push_back(TimedTest(c).result());
 	}
-	return make_unique<ResSuite>(results);
+	return make_unique<SuiteResult>(results);
 }

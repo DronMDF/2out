@@ -6,8 +6,8 @@
 #include "CountFailureTest.h"
 #include <2out/2out.h>
 #include <2out/FailureResult.h>
-#include <2out/ResSuite.h>
 #include <2out/SuccessResult.h>
+#include <2out/SuiteResult.h>
 #include "CountFailureRepr.h"
 
 using namespace std;
@@ -20,7 +20,7 @@ CountFailureTest::CountFailureTest()
 		make_shared<EqualTest>(
 			make_shared<CountFailureRepr>(
 				make_unique<CountFailure>(
-					make_unique<ResSuite>(
+					make_unique<SuiteResult>(
 						make_shared<SuccessResult>(),
 						make_shared<FailureResult>(),
 						make_shared<SuccessResult>()
