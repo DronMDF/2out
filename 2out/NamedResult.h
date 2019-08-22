@@ -9,14 +9,12 @@
 
 namespace oout {
 
-// @todo #394 ResNamed should be renamed to NamedResult
-
-/// ResNamed is a Result decorator
+/// NamedResult is a Result decorator
 /// Add test name to result
-class ResNamed final : public Result {
+class NamedResult final : public Result {
 public:
 	/// Primary ctor
-	ResNamed(const std::string &name, const std::shared_ptr<const Result> &result);
+	NamedResult(const std::string &name, const std::shared_ptr<const Result> &result);
 
 	/// Printer
 	std::string print(const Format &format) const override;

@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ResNamed.h"
+#include "NamedResult.h"
 #include "Format.h"
 
 using namespace std;
@@ -60,13 +60,12 @@ private:
 
 }  // namespace oout
 
-ResNamed::ResNamed(const string &name, const shared_ptr<const Result> &result)
+NamedResult::NamedResult(const string &name, const shared_ptr<const Result> &result)
 	: name(name), result(result)
 {
 }
 
-string ResNamed::print(const Format &format) const
+string NamedResult::print(const Format &format) const
 {
 	return result->print(FmtNamed(&format, name));
 }
-

@@ -6,7 +6,7 @@
 #include "TextReportTest.h"
 #include <2out/2out.h>
 #include <2out/FailureResult.h>
-#include <2out/ResNamed.h>
+#include <2out/NamedResult.h>
 #include <2out/ResSuite.h>
 #include <2out/SuccessResult.h>
 #include <2out/TestResult.h>
@@ -20,7 +20,7 @@ TextReportTest::TextReportTest()
 		"TextReportTest",
 		make_shared<ContainTest>(
 			make_unique<TextReport>(
-				make_shared<ResNamed>(
+				make_shared<NamedResult>(
 					"run test",
 					make_shared<TestResult>(make_shared<FailureResult>())
 				)
@@ -29,7 +29,7 @@ TextReportTest::TextReportTest()
 		),
 		make_shared<ContainTest>(
 			make_unique<TextReport>(
-				make_shared<ResNamed>(
+				make_shared<NamedResult>(
 					"ok test",
 					make_shared<TestResult>(make_shared<SuccessResult>())
 				)
@@ -38,7 +38,7 @@ TextReportTest::TextReportTest()
 		),
 		make_shared<ContainTest>(
 			make_unique<TextReport>(
-				make_shared<ResNamed>(
+				make_shared<NamedResult>(
 					"fail test",
 					make_shared<TestResult>(make_shared<FailureResult>())
 				)
@@ -59,7 +59,7 @@ TextReportTest::TextReportTest()
 		),
 		make_shared<ContainTest>(
 			make_unique<TextReport>(
-				make_unique<ResNamed>(
+				make_unique<NamedResult>(
 					"SUITE",
 					make_unique<ResSuite>(
 						make_shared<TestResult>(

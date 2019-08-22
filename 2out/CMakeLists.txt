@@ -31,7 +31,7 @@ ADD_LIBRARY(
 	CondResult.cpp
 	ErrorResult.cpp
 	FailureResult.cpp
-	ResNamed.cpp
+	NamedResult.cpp
 	ResSuite.cpp
 	ResTimed.cpp
 	SuccessResult.cpp
