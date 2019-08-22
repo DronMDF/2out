@@ -5,7 +5,7 @@
 
 #include "SkippedTest.h"
 #include "TestResult.h"
-#include "Success.h"
+#include "SuccessResult.h"
 
 using namespace std;
 using namespace oout;
@@ -17,5 +17,5 @@ SkippedTest::SkippedTest(const shared_ptr<const Test> &test)
 
 unique_ptr<const Result> SkippedTest::result() const
 {
-	return make_unique<TestResult>(make_unique<Success>());
+	return make_unique<TestResult>(make_unique<SuccessResult>());
 }

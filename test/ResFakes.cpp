@@ -7,7 +7,7 @@
 #include <2out/Error.h>
 #include <2out/FailureResult.h>
 #include <2out/Format.h>
-#include <2out/Success.h>
+#include <2out/SuccessResult.h>
 
 using namespace std;
 using namespace oout;
@@ -19,7 +19,7 @@ ResOkCase::ResOkCase(const string &name)
 
 string ResOkCase::print(const Format &format) const
 {
-	return format.test(name, make_shared<Success>(), chrono::nanoseconds::zero());
+	return format.test(name, make_shared<SuccessResult>(), chrono::nanoseconds::zero());
 }
 
 ResFailureCase::ResFailureCase(const string &name)

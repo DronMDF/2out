@@ -4,39 +4,49 @@ PROJECT(2out)
 
 ADD_LIBRARY(
 	2out
-	AllMatch.cpp
-	ContainMatch.cpp
+
+	# Tests
 	ContainTest.cpp
-	CondResult.cpp
-	CountError.cpp
-	CountFailure.cpp
 	CountTest.cpp
-	EndsWithMatch.cpp
 	EndsWithTest.cpp
-	EqualMatch.cpp
 	EqualTest.cpp
-	Error.cpp
-	FailureResult.cpp
-	JUnitXmlReport.cpp
 	MatchTest.cpp
 	NamedTest.cpp
-	RegexMatch.cpp
-	ReprCallable.cpp
-	ResNamed.cpp
-	ResSuite.cpp
-	TestResult.cpp
-	ResTimed.cpp
 	SafeTest.cpp
-	SignedText.cpp
 	SkippedTest.cpp
-	StartsWithMatch.cpp
 	StartsWithTest.cpp
-	StringText.cpp
-	Success.cpp
 	SuiteTest.cpp
 	TimedTest.cpp
-	TextReport.cpp
 	dirty/Test.cpp
+
+	# Matches
+	AllMatch.cpp
+	ContainMatch.cpp
+	EndsWithMatch.cpp
+	EqualMatch.cpp
+	RegexMatch.cpp
+	StartsWithMatch.cpp
+
+	# Result
+	CondResult.cpp
+	Error.cpp
+	FailureResult.cpp
+	ResNamed.cpp
+	ResSuite.cpp
+	ResTimed.cpp
+	SuccessResult.cpp
+	TestResult.cpp
+
+	# Text
+	JUnitXmlReport.cpp
+	ReprCallable.cpp
+	SignedText.cpp
+	StringText.cpp
+	TextReport.cpp
+
+	# Misc
+	CountError.cpp
+	CountFailure.cpp
 )
 
 INSTALL(TARGETS 2out ARCHIVE DESTINATION lib)

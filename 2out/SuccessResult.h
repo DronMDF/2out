@@ -8,13 +8,11 @@
 
 namespace oout {
 
-// @todo #313 Class Success replaced by CondResult, need to remove
-
 /// Successed result of test execution
-class Success final : public Result {
+class SuccessResult final : public Result {
 public:
 	/// Primary ctor
-	explicit Success(const std::string &text = std::string());
+	explicit SuccessResult(const std::string &text = std::string());
 
 	/// Printer
 	std::string print(const Format &format) const override;
@@ -23,4 +21,3 @@ private:
 };
 
 }
-
