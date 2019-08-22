@@ -33,9 +33,9 @@ ADD_LIBRARY(
 	FailureResult.cpp
 	NamedResult.cpp
 	ResSuite.cpp
-	ResTimed.cpp
 	SuccessResult.cpp
 	TestResult.cpp
+	TimedResult.cpp
 
 	# Text
 	JUnitXmlReport.cpp
