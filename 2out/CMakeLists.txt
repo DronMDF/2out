@@ -32,8 +32,8 @@ ADD_LIBRARY(
 	ErrorResult.cpp
 	FailureResult.cpp
 	NamedResult.cpp
-	ResSuite.cpp
 	SuccessResult.cpp
+	SuiteResult.cpp
 	TestResult.cpp
 	TimedResult.cpp
 

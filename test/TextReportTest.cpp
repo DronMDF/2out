@@ -7,8 +7,8 @@
 #include <2out/2out.h>
 #include <2out/FailureResult.h>
 #include <2out/NamedResult.h>
-#include <2out/ResSuite.h>
 #include <2out/SuccessResult.h>
+#include <2out/SuiteResult.h>
 #include <2out/TestResult.h>
 
 using namespace std;
@@ -61,7 +61,7 @@ TextReportTest::TextReportTest()
 			make_unique<TextReport>(
 				make_unique<NamedResult>(
 					"SUITE",
-					make_unique<ResSuite>(
+					make_unique<SuiteResult>(
 						make_shared<TestResult>(
 							make_shared<SuccessResult>()
 						),

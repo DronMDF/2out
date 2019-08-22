@@ -7,8 +7,8 @@
 #include <2out/2out.h>
 #include <2out/ErrorResult.h>
 #include <2out/FailureResult.h>
-#include <2out/ResSuite.h>
 #include <2out/SuccessResult.h>
+#include <2out/SuiteResult.h>
 
 using namespace std;
 using namespace oout;
@@ -37,7 +37,7 @@ CountErrorTest::CountErrorTest()
 			make_shared<EqualTest>(
 				make_unique<CountErrorText>(
 					make_unique<CountError>(
-						make_unique<ResSuite>(
+						make_unique<SuiteResult>(
 							make_shared<SuccessResult>(),
 							make_shared<FailureResult>(),
 							make_shared<ErrorResult>()

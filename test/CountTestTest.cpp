@@ -5,8 +5,8 @@
 
 #include "CountTestTest.h"
 #include <2out/2out.h>
-#include <2out/ResSuite.h>
 #include <2out/SuccessResult.h>
+#include <2out/SuiteResult.h>
 #include <2out/TestResult.h>
 
 using namespace std;
@@ -34,7 +34,7 @@ CountTestTest::CountTestTest()
 		make_shared<EqualTest>(
 			make_shared<CountTestText>(
 				make_unique<CountTest>(
-					make_unique<ResSuite>(
+					make_unique<SuiteResult>(
 						make_shared<TestResult>(
 							make_shared<SuccessResult>()
 						),

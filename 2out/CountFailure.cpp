@@ -6,7 +6,7 @@
 #include "CountFailure.h"
 #include <numeric>
 #include "Format.h"
-#include "ResSuite.h"
+#include "SuiteResult.h"
 #include "Result.h"
 
 using namespace std;
@@ -60,7 +60,7 @@ public:
 }  // namespace oout
 
 CountFailure::CountFailure(const list<shared_ptr<const Result>> &results)
-	: CountFailure(make_unique<ResSuite>(results))
+	: CountFailure(make_unique<SuiteResult>(results))
 {
 }
 

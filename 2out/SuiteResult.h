@@ -10,18 +10,16 @@
 
 namespace oout {
 
-// @todo #394 ResSuite should be renamed to SuiteResult
-
 /// Test suite result set
-class ResSuite final : public Result {
+class SuiteResult final : public Result {
 public:
 	/// Primary ctor
-	explicit ResSuite(const std::list<std::shared_ptr<const Result>> &results);
+	explicit SuiteResult(const std::list<std::shared_ptr<const Result>> &results);
 
 	/// Secondary ctor from variadic list of result
 	template<typename... T>
-	explicit ResSuite(const std::shared_ptr<T> & ... tests)
-		: ResSuite(std::list<std::shared_ptr<const Result>>{
+	explicit SuiteResult(const std::shared_ptr<T> & ... tests)
+		: SuiteResult(std::list<std::shared_ptr<const Result>>{
 			tests...
 		})
 	{

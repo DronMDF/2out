@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <sstream>
 #include "CondResult.h"
-#include "ResSuite.h"
+#include "SuiteResult.h"
 #include "TestResult.h"
 
 using namespace std;
@@ -30,7 +30,7 @@ unique_ptr<const Result> ContainTest::result() const
 	for (const auto &s : subs) {
 		rs.push_back(result(s));
 	}
-	return make_unique<ResSuite>(rs);
+	return make_unique<SuiteResult>(rs);
 }
 
 unique_ptr<const Result> ContainTest::result(const shared_ptr<const Text> &sub) const

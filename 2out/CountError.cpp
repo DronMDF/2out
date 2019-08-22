@@ -6,8 +6,7 @@
 #include "CountError.h"
 #include <numeric>
 #include "Format.h"
-#include "ResSuite.h"
-#include "Result.h"
+#include "SuiteResult.h"
 
 using namespace std;
 using namespace oout;
@@ -60,7 +59,7 @@ public:
 }  // namespace oout
 
 CountError::CountError(const list<shared_ptr<const Result>> &results)
-	: CountError(make_unique<ResSuite>(results))
+	: CountError(make_unique<SuiteResult>(results))
 {
 }
 

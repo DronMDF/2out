@@ -8,7 +8,7 @@
 #include <2out/2out.h>
 #include <2out/ErrorResult.h>
 #include <2out/FailureResult.h>
-#include <2out/ResSuite.h>
+#include <2out/SuiteResult.h>
 #include <2out/TestResult.h>
 
 using namespace std;
@@ -62,7 +62,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 			"Count of errors in suite",
 			make_shared<ContainTest>(
 				make_unique<JUnitXmlReport>(
-					make_unique<ResSuite>(
+					make_unique<SuiteResult>(
 						make_shared<TestResult>(
 							make_shared<ErrorResult>()
 						)
