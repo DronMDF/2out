@@ -10,13 +10,11 @@
 
 namespace oout {
 
-// @todo #394 ResTimed should be renamed to TimedResult
-
 /// Result decorator of test with diration
-class ResTimed final : public Result {
+class TimedResult final : public Result {
 public:
 	/// Primary ctor
-	ResTimed(
+	TimedResult(
 		const std::shared_ptr<const Result> &result,
 		const std::chrono::nanoseconds &duration
 	);

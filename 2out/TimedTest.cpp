@@ -5,7 +5,7 @@
 
 #include "TimedTest.h"
 #include <chrono>
-#include "ResTimed.h"
+#include "TimedResult.h"
 
 using namespace std;
 using namespace oout;
@@ -20,5 +20,5 @@ unique_ptr<const Result> TimedTest::result() const
 	const auto begin = chrono::high_resolution_clock::now();
 	const shared_ptr<const Result> result = test->result();
 	const auto end = chrono::high_resolution_clock::now();
-	return make_unique<const ResTimed>(result, end - begin);
+	return make_unique<const TimedResult>(result, end - begin);
 }

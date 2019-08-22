@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ResTimed.h"
+#include "TimedResult.h"
 #include "Format.h"
 
 using namespace std;
@@ -61,12 +61,14 @@ private:
 
 }  // namespace oout
 
-ResTimed::ResTimed(const shared_ptr<const Result> &result, const chrono::nanoseconds &duration)
-	: result(result), duration(duration)
+TimedResult::TimedResult(
+	const shared_ptr<const Result> &result,
+	const chrono::nanoseconds &duration
+) : result(result), duration(duration)
 {
 }
 
-string ResTimed::print(const Format &format) const
+string TimedResult::print(const Format &format) const
 {
 	return result->print(FmtTimed(&format, duration));
 }
