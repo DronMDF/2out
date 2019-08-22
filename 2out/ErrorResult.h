@@ -9,13 +9,10 @@
 
 namespace oout {
 
-// @todo #356 Error should be renamed to ErrorResult by naming conventions
-
-/// Error in test evaluation
-class Error final : public Result {
+class ErrorResult final : public Result {
 public:
 	/// Primary ctor with error message
-	explicit Error(const std::string &text = std::string());
+	explicit ErrorResult(const std::string &text = std::string());
 
 	/// Printer
 	std::string print(const Format &format) const override;

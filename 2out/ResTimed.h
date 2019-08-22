@@ -10,6 +10,8 @@
 
 namespace oout {
 
+// @todo #394 ResTimed should be renamed to TimedResult
+
 /// Result decorator of test with diration
 class ResTimed final : public Result {
 public:

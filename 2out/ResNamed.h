@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #394 ResNamed should be renamed to NamedResult
+
 /// ResNamed is a Result decorator
 /// Add test name to result
 class ResNamed final : public Result {
