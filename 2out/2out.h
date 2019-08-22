@@ -8,21 +8,6 @@
 // Core
 #include "Result.h"
 
-// Report formatters
-#include "TextReport.h"
-#include "JUnitXmlReport.h"
-
-// Result statistics
-#include "CountError.h"
-#include "CountFailure.h"
-#include "CountTest.h"
-
-// Text
-#include "ReprCallable.h"
-#include "ReprPrintable.h"
-#include "SignedText.h"
-#include "StringText.h"
-
 // Tests
 #include "ContainTest.h"
 #include "EndsWithTest.h"
@@ -42,6 +27,19 @@
 #include "EqualMatch.h"
 #include "RegexMatch.h"
 #include "StartsWithMatch.h"
+
+// Text
+#include "JUnitXmlReport.h"
+#include "ReprCallable.h"
+#include "ReprPrintable.h"
+#include "SignedText.h"
+#include "StringText.h"
+#include "TextReport.h"
+
+// Misc
+#include "CountError.h"
+#include "CountFailure.h"
+#include "CountTest.h"
 
 // Deprecated (since 0.7)
 #include "Representation.h"
