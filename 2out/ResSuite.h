@@ -10,6 +10,8 @@
 
 namespace oout {
 
+// @todo #394 ResSuite should be renamed to SuiteResult
+
 /// Test suite result set
 class ResSuite final : public Result {
 public:

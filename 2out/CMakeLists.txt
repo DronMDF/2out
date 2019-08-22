@@ -29,7 +29,7 @@ ADD_LIBRARY(
 
 	# Result
 	CondResult.cpp
-	Error.cpp
+	ErrorResult.cpp
 	FailureResult.cpp
 	ResNamed.cpp
 	ResSuite.cpp

@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "ResFakes.h"
-#include <2out/Error.h>
+#include <2out/ErrorResult.h>
 #include <2out/FailureResult.h>
 #include <2out/Format.h>
 #include <2out/SuccessResult.h>
@@ -39,5 +39,5 @@ ResErrorCase::ResErrorCase(const string &name)
 
 string ResErrorCase::print(const Format &format) const
 {
-	return format.test(name, make_shared<Error>("error"), chrono::nanoseconds::zero());
+	return format.test(name, make_shared<ErrorResult>("error"), chrono::nanoseconds::zero());
 }

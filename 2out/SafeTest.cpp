@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "SafeTest.h"
-#include "Error.h"
+#include "ErrorResult.h"
 #include "TestResult.h"
 
 using namespace std;
@@ -17,11 +17,9 @@ SafeTest::SafeTest(const shared_ptr<const Test> &test)
 
 unique_ptr<const Result> SafeTest::result() const
 {
-	unique_ptr<const Result> r;
 	try {
-		r = test->result();
+		return test->result();
 	} catch (const exception &e) {
-		r = make_unique<const TestResult>(make_shared<Error>(e.what()));
+		return make_unique<const TestResult>(make_shared<ErrorResult>(e.what()));
 	}
-	return r;
 }
