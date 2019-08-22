@@ -4,23 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Text.h"
+#include "SignedText.h"
 
 namespace oout {
 
-// @todo #365 ReprSigned should be named SignedText
-
-/// Text for signed integer
-class ReprSigned final : public Text {
-public:
-	/// Primary ctor
-	explicit ReprSigned(int64_t value);
-
-	/// Get value as string
-	std::string asString() const override;
-
-private:
-	int64_t value;
-};
+typedef SignedText ReprSigned;
 
 }

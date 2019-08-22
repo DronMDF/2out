@@ -22,12 +22,12 @@ ADD_LIBRARY(
 	NamedTest.cpp
 	RegexMatch.cpp
 	ReprCallable.cpp
-	ReprSigned.cpp
 	ResNamed.cpp
 	ResSuite.cpp
 	TestResult.cpp
 	ResTimed.cpp
 	SafeTest.cpp
+	SignedText.cpp
 	SkippedTest.cpp
 	StartsWithMatch.cpp
 	StartsWithTest.cpp
