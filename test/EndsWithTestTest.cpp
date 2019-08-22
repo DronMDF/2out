@@ -43,7 +43,7 @@ EndsWithTestTest::EndsWithTestTest()
 			make_shared<EqualTest>(
 				make_unique<TestText>(
 					make_unique<EndsWithTest>(
-						make_shared<ReprSigned>(123456789),
+						make_shared<SignedText>(123456789),
 						"000"
 					)
 				),

@@ -3,17 +3,17 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ReprSigned.h"
+#include "SignedText.h"
 
 using namespace std;
 using namespace oout;
 
-ReprSigned::ReprSigned(int64_t value)
+SignedText::SignedText(int64_t value)
 	: value(value)
 {
 }
 
-string ReprSigned::asString() const
+string SignedText::asString() const
 {
 	return to_string(value);
 }
