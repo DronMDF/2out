@@ -4,7 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "NamedTest.h"
-#include "ResNamed.h"
+#include "NamedResult.h"
 #include "SuiteTest.h"
 
 using namespace std;
@@ -27,5 +27,5 @@ NamedTest::NamedTest(const string &name, const list<shared_ptr<const Test>> &tes
 
 unique_ptr<const Result> NamedTest::result() const
 {
-	return make_unique<ResNamed>(name, test->result());
+	return make_unique<NamedResult>(name, test->result());
 }
