@@ -4,63 +4,77 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "TextReportTest.h"
-#include <list>
 #include <2out/2out.h>
+#include <2out/FailureResult.h>
 #include <2out/ResNamed.h>
 #include <2out/ResSuite.h>
-#include "ResFakes.h"
+#include <2out/SuccessResult.h>
+#include <2out/TestResult.h>
 
 using namespace std;
 using namespace oout;
 
 TextReportTest::TextReportTest()
-	: tests(
-		make_unique<NamedTest>(
-			"TextReportTest",
-			make_shared<ContainTest>(
-				make_unique<TextReport>(
-					make_unique<ResFailureCase>("run test")
-				),
-				"[ RUN      ] run test"
+: tests(
+	make_unique<NamedTest>(
+		"TextReportTest",
+		make_shared<ContainTest>(
+			make_unique<TextReport>(
+				make_shared<ResNamed>(
+					"run test",
+					make_shared<TestResult>(make_shared<FailureResult>())
+				)
 			),
-			make_shared<ContainTest>(
-				make_unique<TextReport>(
-					make_unique<ResOkCase>("ok test")
-				),
-				"[       OK ] ok test"
+			"[ RUN      ] run test"
+		),
+		make_shared<ContainTest>(
+			make_unique<TextReport>(
+				make_shared<ResNamed>(
+					"ok test",
+					make_shared<TestResult>(make_shared<SuccessResult>())
+				)
 			),
-			make_shared<ContainTest>(
-				make_unique<TextReport>(
-					make_unique<ResFailureCase>("fail test")
-				),
-				"[  FAILED  ] fail test"
+			"[       OK ] ok test"
+		),
+		make_shared<ContainTest>(
+			make_unique<TextReport>(
+				make_shared<ResNamed>(
+					"fail test",
+					make_shared<TestResult>(make_shared<FailureResult>())
+				)
 			),
-			make_shared<ContainTest>(
-				make_unique<TextReport>(
-					make_unique<ResOkCase>()
-				),
-				"[==========] Running"
+			"[  FAILED  ] fail test"
+		),
+		make_shared<ContainTest>(
+			make_unique<TextReport>(
+				make_shared<TestResult>(make_shared<SuccessResult>())
 			),
-			make_shared<ContainTest>(
-				make_unique<TextReport>(
-					make_unique<ResOkCase>()
-				),
-				"[==========] 1 tests ran"
+			"[==========] Running"
+		),
+		make_shared<ContainTest>(
+			make_unique<TextReport>(
+				make_shared<TestResult>(make_shared<SuccessResult>())
 			),
-			make_shared<ContainTest>(
-				make_unique<TextReport>(
-					make_unique<ResNamed>(
-						"SUITE",
-						make_unique<ResSuite>(
-							make_shared<ResOkCase>(),
-							make_shared<ResOkCase>()
+			"[==========] 1 tests ran"
+		),
+		make_shared<ContainTest>(
+			make_unique<TextReport>(
+				make_unique<ResNamed>(
+					"SUITE",
+					make_unique<ResSuite>(
+						make_shared<TestResult>(
+							make_shared<SuccessResult>()
+						),
+						make_shared<TestResult>(
+							make_shared<SuccessResult>()
 						)
 					)
-				),
-				"[----------] 2 test from SUITE"
-			)
+				)
+			),
+			"[----------] 2 test from SUITE"
 		)
 	)
+)
 {
 }
 

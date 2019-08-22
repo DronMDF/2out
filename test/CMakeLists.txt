@@ -24,7 +24,6 @@ ADD_EXECUTABLE(
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
 	TestText.cpp
-	ResFakes.cpp
 	SkippedTestTest.cpp
 	StartsWithMatchTest.cpp
 	StartsWithTestTest.cpp
