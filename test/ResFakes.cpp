@@ -5,7 +5,7 @@
 
 #include "ResFakes.h"
 #include <2out/Error.h>
-#include <2out/Failure.h>
+#include <2out/FailureResult.h>
 #include <2out/Format.h>
 #include <2out/Success.h>
 
@@ -29,7 +29,7 @@ ResFailureCase::ResFailureCase(const string &name)
 
 string ResFailureCase::print(const Format &format) const
 {
-	return format.test(name, make_shared<Failure>(), chrono::nanoseconds::zero());
+	return format.test(name, make_shared<FailureResult>(), chrono::nanoseconds::zero());
 }
 
 ResErrorCase::ResErrorCase(const string &name)

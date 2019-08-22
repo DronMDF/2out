@@ -7,7 +7,7 @@
 #include <list>
 #include <2out/2out.h>
 #include <2out/Error.h>
-#include <2out/Failure.h>
+#include <2out/FailureResult.h>
 #include <2out/ResSuite.h>
 #include <2out/TestResult.h>
 #include "ResFakes.h"
@@ -42,7 +42,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 				make_shared<ContainTest>(
 					make_unique<JUnitXmlReport>(
 						make_unique<TestResult>(
-							make_unique<Failure>("<tag>")
+							make_unique<FailureResult>("<tag>")
 						)
 					),
 					"failure><![CDATA[<tag>]]"
