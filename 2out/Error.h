@@ -9,6 +9,8 @@
 
 namespace oout {
 
+// @todo #356 Error should be renamed to ErrorResult by naming conventions
+
 /// Error in test evaluation
 class Error final : public Result {
 public:

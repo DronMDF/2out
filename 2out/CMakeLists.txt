@@ -16,7 +16,7 @@ ADD_LIBRARY(
 	EqualMatch.cpp
 	EqualTest.cpp
 	Error.cpp
-	Failure.cpp
+	FailureResult.cpp
 	JUnitXmlReport.cpp
 	MatchTest.cpp
 	NamedTest.cpp

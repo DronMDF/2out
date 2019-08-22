@@ -3,18 +3,18 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "Failure.h"
+#include "FailureResult.h"
 #include "Format.h"
 
 using namespace std;
 using namespace oout;
 
-Failure::Failure(const string &text)
+FailureResult::FailureResult(const string &text)
 	: text(text)
 {
 }
 
-string Failure::print(const Format &format) const
+string FailureResult::print(const Format &format) const
 {
 	return format.failure(text);
 }

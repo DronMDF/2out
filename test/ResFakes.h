@@ -6,6 +6,8 @@
 #pragma once
 #include <2out/Result.h>
 
+// @todo #356 All ResFakes should be renamed to BlablablaResult by naming convention
+
 class ResOkCase final : public oout::Result {
 public:
 	explicit ResOkCase(const std::string &name = "");
