@@ -3,21 +3,21 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ReprPrintableTest.h"
+#include "PrintableTextTest.h"
 #include <list>
 #include <2out/2out.h>
 
 using namespace std;
 using namespace oout;
 
-ReprPrintableTest::ReprPrintableTest()
+PrintableTextTest::PrintableTextTest()
 	: tests(
 		make_unique<NamedTest>(
-			"ReprPrintableTest",
+			"PrintableTextTest",
 			make_shared<const NamedTest>(
 				"Boolean represent as text",
 				make_shared<EqualTest>(
-					make_unique<ReprPrintable<bool>>(
+					make_unique<PrintableText<bool>>(
 						true
 					),
 					"true"
@@ -28,7 +28,7 @@ ReprPrintableTest::ReprPrintableTest()
 {
 }
 
-unique_ptr<const Result> ReprPrintableTest::result() const
+unique_ptr<const Result> PrintableTextTest::result() const
 {
 	return tests->result();
 }

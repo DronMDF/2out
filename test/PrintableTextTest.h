@@ -6,10 +6,10 @@
 #include <memory>
 #include <2out/Test.h>
 
-class ReprPrintableTest final : public oout::Test
+class PrintableTextTest final : public oout::Test
 {
 public:
-	ReprPrintableTest();
+	PrintableTextTest();
 	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;
