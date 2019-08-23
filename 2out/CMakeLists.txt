@@ -42,7 +42,7 @@ ADD_LIBRARY(
 	ReprCallable.cpp
 	SignedText.cpp
 	StringText.cpp
-	TextReport.cpp
+	TextReportText.cpp
 
 	# Misc
 	CountError.cpp

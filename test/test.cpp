@@ -7,9 +7,9 @@
 #include <list>
 #include <memory>
 #include <2out/2out.h>
+#include "CondResultTest.h"
 #include "ContainMatchTest.h"
 #include "ContainTestTest.h"
-#include "CondResultTest.h"
 #include "CountErrorTest.h"
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
@@ -26,7 +26,7 @@
 #include "StartsWithMatchTest.h"
 #include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
-#include "TextReportTest.h"
+#include "TextReportTextTest.h"
 
 using namespace std;
 using namespace oout;
@@ -34,9 +34,9 @@ using namespace oout;
 int main(int, char **)
 {
 	const SuiteTest tests(
+		make_shared<CondResultTest>(),
 		make_shared<ContainMatchTest>(),
 		make_shared<ContainTestTest>(),
-		make_shared<CondResultTest>(),
 		make_shared<CountErrorTest>(),
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
@@ -53,7 +53,7 @@ int main(int, char **)
 		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
-		make_shared<TextReportTest>()
+		make_shared<TextReportTextTest>()
 	);
 
 	const shared_ptr<const Result> result = tests.result();

@@ -7,9 +7,9 @@ INCLUDE_DIRECTORIES(${2out_SOURCE_DIR}/..)
 ADD_EXECUTABLE(
 	test_runner
 	test.cpp
+	CondResultTest.cpp
 	ContainMatchTest.cpp
 	ContainTestTest.cpp
-	CondResultTest.cpp
 	CountErrorTest.cpp
 	CountFailureRepr.cpp
 	CountFailureTest.cpp
@@ -23,12 +23,12 @@ ADD_EXECUTABLE(
 	RegexMatchTest.cpp
 	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
-	TestText.cpp
 	SkippedTestTest.cpp
 	StartsWithMatchTest.cpp
 	StartsWithTestTest.cpp
 	SuiteTestTest.cpp
-	TextReportTest.cpp
+	TestText.cpp
+	TextReportTextTest.cpp
 )
 TARGET_LINK_LIBRARIES(
 	test_runner

@@ -34,7 +34,7 @@
 #include "ReprPrintable.h"
 #include "SignedText.h"
 #include "StringText.h"
-#include "TextReport.h"
+#include "TextReportText.h"
 
 // Misc
 #include "CountError.h"
@@ -54,3 +54,4 @@
 #include "TestStartsWith.h"
 #include "TestSuite.h"
 #include "TestTimed.h"
+#include "TextReport.h"
