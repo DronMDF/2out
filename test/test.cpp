@@ -16,10 +16,10 @@
 #include "DirtyTestTest.h"
 #include "EndsWithMatchTest.h"
 #include "EndsWithTestTest.h"
+#include "FunctionTextTest.h"
 #include "MatchTestTest.h"
 #include "NamedTestTest.h"
 #include "RegexMatchTest.h"
-#include "ReprCallableTest.h"
 #include "ReprPrintableTest.h"
 #include "SkippedTestTest.h"
 #include "StartsWithMatchTest.h"
@@ -43,10 +43,10 @@ int main(int, char **)
 		make_shared<DirtyTestTest>(),
 		make_shared<EndsWithMatchTest>(),
 		make_shared<EndsWithTestTest>(),
+		make_shared<FunctionTextTest>(),
 		make_shared<MatchTestTest>(),
 		make_shared<NamedTestTest>(),
 		make_shared<RegexMatchTest>(),
-		make_shared<ReprCallableTest>(),
 		make_shared<ReprPrintableTest>(),
 		make_shared<SkippedTestTest>(),
 		make_shared<StartsWithMatchTest>(),

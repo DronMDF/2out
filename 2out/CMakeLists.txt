@@ -38,7 +38,7 @@ ADD_LIBRARY(
 	TimedResult.cpp
 
 	# Text
-	ReprCallable.cpp
+	FunctionText.cpp
 	SignedText.cpp
 	StringText.cpp
 	TextReportText.cpp

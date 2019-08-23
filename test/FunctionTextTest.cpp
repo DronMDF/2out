@@ -3,20 +3,20 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ReprCallableTest.h"
+#include "FunctionTextTest.h"
 #include <2out/2out.h>
 
 using namespace std;
 using namespace oout;
 
-ReprCallableTest::ReprCallableTest()
+FunctionTextTest::FunctionTextTest()
 	: tests(
 		make_unique<NamedTest>(
-			"ReprCallableTest",
+			"FunctionTextTest",
 			make_shared<const NamedTest>(
 				"implicit bind",
 				make_shared<EqualTest>(
-					make_shared<ReprCallable>([]{ return "777"; }),
+					make_shared<FunctionText>([]{ return "777"; }),
 					"777"
 				)
 			)
@@ -25,7 +25,7 @@ ReprCallableTest::ReprCallableTest()
 {
 }
 
-unique_ptr<const Result> ReprCallableTest::result() const
+unique_ptr<const Result> FunctionTextTest::result() const
 {
 	return tests->result();
 }

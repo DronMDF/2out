@@ -3,18 +3,17 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "ReprCallable.h"
+#include "FunctionText.h"
 
 using namespace std;
 using namespace oout;
 
-ReprCallable::ReprCallable(const function<string ()> &func)
+FunctionText::FunctionText(const function<string ()> &func)
 	: func(func)
 {
 }
 
-/// Get value as string
-string ReprCallable::asString() const
+string FunctionText::asString() const
 {
 	return func();
 }

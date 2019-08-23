@@ -29,7 +29,7 @@
 #include "StartsWithMatch.h"
 
 // Text
-#include "ReprCallable.h"
+#include "FunctionText.h"
 #include "ReprPrintable.h"
 #include "SignedText.h"
 #include "StringText.h"
@@ -43,6 +43,7 @@
 
 // Deprecated (since 0.7)
 #include "JUnitXmlReport.h"
+#include "ReprCallable.h"
 #include "Representation.h"
 #include "ReprSigned.h"
 #include "ReprString.h"

@@ -17,10 +17,10 @@ ADD_EXECUTABLE(
 	DirtyTestTest.cpp
 	EndsWithMatchTest.cpp
 	EndsWithTestTest.cpp
+	FunctionTextTest.cpp
 	MatchTestTest.cpp
 	NamedTestTest.cpp
 	RegexMatchTest.cpp
-	ReprCallableTest.cpp
 	ReprPrintableTest.cpp
 	SkippedTestTest.cpp
 	StartsWithMatchTest.cpp
