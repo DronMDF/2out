@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "JUnitXmlReportTest.h"
+#include "XmlReportTextTest.h"
 #include <list>
 #include <2out/2out.h>
 #include <2out/ErrorResult.h>
@@ -14,24 +14,24 @@
 using namespace std;
 using namespace oout;
 
-JUnitXmlReportTest::JUnitXmlReportTest()
+XmlReportTextTest::XmlReportTextTest()
 : tests(
 	make_unique<NamedTest>(
-		"JUnitXmlReportTest",
+		"XmlReportTextTest",
 		make_shared<ContainTest>(
-			make_unique<JUnitXmlReport>(
+			make_unique<XmlReportText>(
 				make_shared<TestResult>(make_shared<ErrorResult>())
 			),
 			"<error"
 		),
 		make_shared<ContainTest>(
-			make_unique<JUnitXmlReport>(
+			make_unique<XmlReportText>(
 				make_shared<TestResult>(make_shared<ErrorResult>())
 			),
 			"</error>"
 		),
 		make_shared<ContainTest>(
-			make_unique<JUnitXmlReport>(
+			make_unique<XmlReportText>(
 				make_shared<TestResult>(make_shared<FailureResult>())
 			),
 			"<failure"
@@ -39,7 +39,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 		make_shared<NamedTest>(
 			"Escaping in failure",
 			make_shared<ContainTest>(
-				make_unique<JUnitXmlReport>(
+				make_unique<XmlReportText>(
 					make_unique<TestResult>(
 						make_unique<FailureResult>("<tag>")
 					)
@@ -50,7 +50,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 		make_shared<NamedTest>(
 			"Escaping in error",
 			make_shared<ContainTest>(
-				make_unique<JUnitXmlReport>(
+				make_unique<XmlReportText>(
 					make_unique<TestResult>(
 						make_unique<ErrorResult>("&amp;")
 					)
@@ -61,7 +61,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 		make_shared<NamedTest>(
 			"Count of errors in suite",
 			make_shared<ContainTest>(
-				make_unique<JUnitXmlReport>(
+				make_unique<XmlReportText>(
 					make_unique<SuiteResult>(
 						make_shared<TestResult>(
 							make_shared<ErrorResult>()
@@ -76,7 +76,7 @@ JUnitXmlReportTest::JUnitXmlReportTest()
 {
 }
 
-unique_ptr<const Result> JUnitXmlReportTest::result() const
+unique_ptr<const Result> XmlReportTextTest::result() const
 {
 	return tests->result();
 }

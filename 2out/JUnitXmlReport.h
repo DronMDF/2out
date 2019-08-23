@@ -4,27 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <memory>
-#include <string>
-#include "Text.h"
+#include "XmlReportText.h"
 
 namespace oout {
 
-class Result;
-
-// @todo #365 JUnitXmlReport implement Text
-//  I should name it JUnitXmlText?
-
-/// JUnit report formatter
-class JUnitXmlReport final : public Text {
-public:
-	/// Primary ctor
-	explicit JUnitXmlReport(const std::shared_ptr<const Result> &result);
-
-	/// Get report as string
-	std::string asString() const override;
-private:
-	const std::shared_ptr<const Result> result;
-};
+typedef XmlReportText JUnitXmlReport;
 
 }
