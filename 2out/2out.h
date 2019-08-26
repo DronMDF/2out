@@ -29,12 +29,12 @@
 #include "StartsWithMatch.h"
 
 // Text
-#include "JUnitXmlReport.h"
 #include "ReprCallable.h"
 #include "ReprPrintable.h"
 #include "SignedText.h"
 #include "StringText.h"
 #include "TextReportText.h"
+#include "XmlReportText.h"
 
 // Misc
 #include "CountError.h"
@@ -42,6 +42,7 @@
 #include "CountTest.h"
 
 // Deprecated (since 0.7)
+#include "JUnitXmlReport.h"
 #include "Representation.h"
 #include "ReprSigned.h"
 #include "ReprString.h"

@@ -38,11 +38,11 @@ ADD_LIBRARY(
 	TimedResult.cpp
 
 	# Text
-	JUnitXmlReport.cpp
 	ReprCallable.cpp
 	SignedText.cpp
 	StringText.cpp
 	TextReportText.cpp
+	XmlReportText.cpp
 
 	# Misc
 	CountError.cpp

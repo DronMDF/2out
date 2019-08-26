@@ -16,7 +16,6 @@
 #include "DirtyTestTest.h"
 #include "EndsWithMatchTest.h"
 #include "EndsWithTestTest.h"
-#include "JUnitXmlReportTest.h"
 #include "MatchTestTest.h"
 #include "NamedTestTest.h"
 #include "RegexMatchTest.h"
@@ -27,6 +26,7 @@
 #include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
 #include "TextReportTextTest.h"
+#include "XmlReportTextTest.h"
 
 using namespace std;
 using namespace oout;
@@ -43,7 +43,6 @@ int main(int, char **)
 		make_shared<DirtyTestTest>(),
 		make_shared<EndsWithMatchTest>(),
 		make_shared<EndsWithTestTest>(),
-		make_shared<JUnitXmlReportTest>(),
 		make_shared<MatchTestTest>(),
 		make_shared<NamedTestTest>(),
 		make_shared<RegexMatchTest>(),
@@ -53,12 +52,13 @@ int main(int, char **)
 		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
-		make_shared<TextReportTextTest>()
+		make_shared<TextReportTextTest>(),
+		make_shared<XmlReportTextTest>()
 	);
 
 	const shared_ptr<const Result> result = tests.result();
 
-	cout << JUnitXmlReport(result).asString() << endl;
+	cout << XmlReportText(result).asString() << endl;
 
 	return (
 		CountFailure(result).count() == 0 &&

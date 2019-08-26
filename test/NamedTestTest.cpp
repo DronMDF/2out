@@ -19,7 +19,7 @@ public:
 
 	string asString() const override
 	{
-		return JUnitXmlReport(test->result()).asString();
+		return XmlReportText(test->result()).asString();
 	}
 private:
 	const shared_ptr<const Test> test;

@@ -17,7 +17,6 @@ ADD_EXECUTABLE(
 	DirtyTestTest.cpp
 	EndsWithMatchTest.cpp
 	EndsWithTestTest.cpp
-	JUnitXmlReportTest.cpp
 	MatchTestTest.cpp
 	NamedTestTest.cpp
 	RegexMatchTest.cpp
@@ -29,6 +28,7 @@ ADD_EXECUTABLE(
 	SuiteTestTest.cpp
 	TestText.cpp
 	TextReportTextTest.cpp
+	XmlReportTextTest.cpp
 )
 TARGET_LINK_LIBRARIES(
 	test_runner

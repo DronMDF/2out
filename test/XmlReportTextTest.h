@@ -6,10 +6,10 @@
 #include <memory>
 #include <2out/Test.h>
 
-class JUnitXmlReportTest final : public oout::Test
+class XmlReportTextTest final : public oout::Test
 {
 public:
-	JUnitXmlReportTest();
+	XmlReportTextTest();
 	std::unique_ptr<const oout::Result> result() const override;
 private:
 	const std::unique_ptr<const oout::Test> tests;
