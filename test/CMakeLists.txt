@@ -20,8 +20,8 @@ ADD_EXECUTABLE(
 	FunctionTextTest.cpp
 	MatchTestTest.cpp
 	NamedTestTest.cpp
+	PrintableTextTest.cpp
 	RegexMatchTest.cpp
-	ReprPrintableTest.cpp
 	SkippedTestTest.cpp
 	StartsWithMatchTest.cpp
 	StartsWithTestTest.cpp

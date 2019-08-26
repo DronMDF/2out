@@ -30,7 +30,7 @@
 
 // Text
 #include "FunctionText.h"
-#include "ReprPrintable.h"
+#include "PrintableText.h"
 #include "SignedText.h"
 #include "StringText.h"
 #include "TextReportText.h"
@@ -45,6 +45,7 @@
 #include "JUnitXmlReport.h"
 #include "ReprCallable.h"
 #include "Representation.h"
+#include "ReprPrintable.h"
 #include "ReprSigned.h"
 #include "ReprString.h"
 #include "TestContainText.h"

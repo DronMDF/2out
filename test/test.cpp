@@ -19,8 +19,8 @@
 #include "FunctionTextTest.h"
 #include "MatchTestTest.h"
 #include "NamedTestTest.h"
+#include "PrintableTextTest.h"
 #include "RegexMatchTest.h"
-#include "ReprPrintableTest.h"
 #include "SkippedTestTest.h"
 #include "StartsWithMatchTest.h"
 #include "StartsWithTestTest.h"
@@ -46,8 +46,8 @@ int main(int, char **)
 		make_shared<FunctionTextTest>(),
 		make_shared<MatchTestTest>(),
 		make_shared<NamedTestTest>(),
+		make_shared<PrintableTextTest>(),
 		make_shared<RegexMatchTest>(),
-		make_shared<ReprPrintableTest>(),
 		make_shared<SkippedTestTest>(),
 		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),
