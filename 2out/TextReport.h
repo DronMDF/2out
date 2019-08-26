@@ -4,26 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <memory>
-#include <string>
-#include "Text.h"
+#include "TextReportText.h"
 
 namespace oout {
 
-class Result;
-
-// @todo #365 TextReport should be named GTestText
-
-/// Text Report like google test
-class TextReport final : public Text {
-public:
-	/// Primary ctor
-	explicit TextReport(const std::shared_ptr<const Result> &result);
-
-	/// Get report as string
-	std::string asString() const override;
-private:
-	const std::shared_ptr<const Result> result;
-};
+typedef TextReportText TextReport;
 
 }
