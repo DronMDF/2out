@@ -14,6 +14,7 @@
 #include "EqualTest.h"
 #include "MatchTest.h"
 #include "NamedTest.h"
+#include "RegexTest.h"
 #include "SafeTest.h"
 #include "SkippedTest.h"
 #include "StartsWithTest.h"

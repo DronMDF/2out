@@ -12,6 +12,7 @@ ADD_LIBRARY(
 	EqualTest.cpp
 	MatchTest.cpp
 	NamedTest.cpp
+	RegexTest.cpp
 	SafeTest.cpp
 	SkippedTest.cpp
 	StartsWithTest.cpp
