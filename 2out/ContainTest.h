@@ -4,10 +4,11 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "Text.h"
-#include <list>
+#include "AllMatch.h"
+#include "ContainMatch.h"
 #include "StringText.h"
 #include "Test.h"
+#include "Text.h"
 
 namespace oout {
 
@@ -17,27 +18,27 @@ private:
 	/// Primary ctor
 	ContainTest(
 		const std::shared_ptr<const Text> &text,
-		const std::list<std::shared_ptr<const Text>> &subs
+		const std::shared_ptr<const Match> &match
 	);
 
-public:
-	// Multiple ctor with reprs
-	template<typename ... S>
+	template<typename ... T>
 	ContainTest(
 		const std::shared_ptr<const Text> &text,
-		const std::shared_ptr<const Text> &sub,
-		S ... subs
-	) : ContainTest(text, std::list<std::shared_ptr<const Text>>{sub, subs...})
+		const std::shared_ptr<const Match> &match1,
+		const std::shared_ptr<const Match> &match2,
+		const std::shared_ptr<T> & ... matchn
+	) : ContainTest(text, std::make_shared<AllMatch>(match1, match2, matchn...))
 	{
 	}
 
+public:
 	// Multiple ctor with strings
 	template<typename ... S>
 	ContainTest(
 		const std::shared_ptr<const Text> &text,
 		const std::string &sub,
 		S ... subs
-	) : ContainTest(text, subs..., std::make_shared<StringText>(sub))
+	) : ContainTest(text, subs..., std::make_shared<ContainMatch>(sub))
 	{
 	}
 
@@ -54,13 +55,7 @@ public:
 	std::unique_ptr<const Result> result() const override;
 
 private:
-	// @todo #321 Replace login in ContainTest to MatchTest
-	const std::shared_ptr<const Text> text;
-	const std::list<std::shared_ptr<const Text>> subs;
-
-	std::unique_ptr<const Result> result(
-		const std::shared_ptr<const Text> &sub
-	) const;
+	const std::shared_ptr<const Test> test;
 };
 
 }
