@@ -21,6 +21,7 @@
 #include "NamedTestTest.h"
 #include "PrintableTextTest.h"
 #include "RegexMatchTest.h"
+#include "RegexTestTest.h"
 #include "SkippedTestTest.h"
 #include "StartsWithMatchTest.h"
 #include "StartsWithTestTest.h"
@@ -48,6 +49,7 @@ int main(int, char **)
 		make_shared<NamedTestTest>(),
 		make_shared<PrintableTextTest>(),
 		make_shared<RegexMatchTest>(),
+		make_shared<RegexTestTest>(),
 		make_shared<SkippedTestTest>(),
 		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),

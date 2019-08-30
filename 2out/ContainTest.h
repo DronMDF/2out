@@ -54,6 +54,7 @@ public:
 	std::unique_ptr<const Result> result() const override;
 
 private:
+	// @todo #321 Replace login in ContainTest to MatchTest
 	const std::shared_ptr<const Text> text;
 	const std::list<std::shared_ptr<const Text>> subs;
 
