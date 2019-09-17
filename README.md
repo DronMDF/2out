@@ -15,40 +15,10 @@ The test framework does not should be easy to use.
 The test framework should help to do everything right.
 And after that it should be easy to use. :)
 
-# Concept
+# Tutorial
 
-This is a pseudocode (i think this is a eolang :))
-
-```
-object TestApp as Application:
-	void run():
-		TestSuite:
-			TestEqual:
-				mul: 2, 2
-				4
-			TestSkipped:
-				TestEqual:
-					mul: 2, 2
-					5
-			TestNamed:
-				"3 * 3 should be equal 9"
-				TestEqual:
-					mul: 3, 3
-					9
-			TestSuite:
-				TestEqual:
-					plus: 2, 2
-					4
-				TestSafe:
-					TestEqual:
-						div: 1, 0
-						100500
-		.run()
-```
-
-Key moment: This is not a code. This is Object composition.
-At the time the composition is created, the tests do not start.
-Tests start in `run()` method.
+## Kent Beck Money example
+[Part 1](example/TUTORIAL1.ru.md) [ru]
 
 # Using
 
