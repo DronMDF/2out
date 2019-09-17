@@ -18,5 +18,5 @@ TARGET_LINK_LIBRARIES(
 
 ADD_TEST(
 	NAME example
-	COMMAND sh -c "./example > ${CMAKE_BINARY_DIR}/example-results.xml"
+	COMMAND example
 )
