@@ -11,7 +11,7 @@ Object oriented unit testing framework
 
 # Intro
 
-The test framework does not should be easy to use.
+The test framework should not be easy to use.
 The test framework should help to do everything right.
 And after that it should be easy to use. :)
 
