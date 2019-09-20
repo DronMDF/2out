@@ -64,6 +64,4 @@ make_shared<EqualTest>(
 - [ ] Money это data class
 - [ ] Преобразование Money в текст для отчета
 
-@todo #411 Create chapter 2 of Money example.
-
 [Продолжить](TUTORIAL2.ru.md)

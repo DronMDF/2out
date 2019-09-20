@@ -7,8 +7,9 @@ INCLUDE_DIRECTORIES(${2out_SOURCE_DIR}/..)
 ADD_EXECUTABLE(
 	example
 	example.cpp
-	Money.cpp
 	MoneyText.cpp
+	RealMoney.cpp
+	TimesMoney.cpp
 )
 
 TARGET_LINK_LIBRARIES(

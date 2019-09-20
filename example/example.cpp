@@ -5,8 +5,9 @@
 
 #include <iostream>
 #include <2out/2out.h>
-#include "Money.h"
 #include "MoneyText.h"
+#include "RealMoney.h"
+#include "TimesMoney.h"
 
 using namespace std;
 using namespace oout;
@@ -16,9 +17,21 @@ int main(int, char **)
 	const SuiteTest tests{
 		make_shared<EqualTest>(
 			make_shared<MoneyText>(
-				make_shared<Money>(5, "USD")
+				make_shared<RealMoney>(5, "USD")
 			),
 			"5 USD"
+		),
+		make_shared<NamedTest>(
+			"$5 * 2 = $10",
+			make_shared<EqualTest>(
+				make_shared<MoneyText>(
+					make_shared<TimesMoney>(
+						make_shared<RealMoney>(5, "USD"),
+						2
+					)
+				),
+				"10 USD"
+			)
 		)
 	};
 	const shared_ptr<const Result> result = tests.result();
