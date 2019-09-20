@@ -6,12 +6,9 @@
 #pragma once
 #include <string>
 
-class Money final {
+class Money {
 public:
-	Money(int amount, const std::string &currency);
-	int amount() const;
-	std::string currency() const;
-private:
-	const int _amount;
-	const std::string _currency;
+	virtual ~Money() = default;
+	virtual int amount() const = 0;
+	virtual std::string currency() const = 0;
 };

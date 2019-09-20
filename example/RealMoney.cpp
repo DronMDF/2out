@@ -3,21 +3,21 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "Money.h"
+#include "RealMoney.h"
 
 using namespace std;
 
-Money::Money(int amount, const string &currency)
+RealMoney::RealMoney(int amount, const string &currency)
 	: _amount(amount), _currency(currency)
 {
 }
 
-int Money::amount() const
+int RealMoney::amount() const
 {
 	return _amount;
 }
 
-string Money::currency() const
+string RealMoney::currency() const
 {
 	return _currency;
 }

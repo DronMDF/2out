@@ -18,7 +18,8 @@ And after that it should be easy to use. :)
 # Tutorial
 
 ## Kent Beck Money example
-[Part 1](example/TUTORIAL1.ru.md) [ru]
+- Part 1 [ru](example/TUTORIAL1.ru.md)
+- Part 2 [ru](example/TUTORIAL2.ru.md)
 
 # Using
 
