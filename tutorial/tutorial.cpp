@@ -6,8 +6,8 @@
 #include <iostream>
 #include <2out/2out.h>
 #include "MoneyText.h"
+#include "OrderItemMoney.h"
 #include "RealMoney.h"
-#include "TimesMoney.h"
 
 using namespace std;
 using namespace oout;
@@ -25,7 +25,7 @@ int main(int, char **)
 			"$5 * 2 = $10",
 			make_shared<EqualTest>(
 				make_shared<MoneyText>(
-					make_shared<TimesMoney>(
+					make_shared<OrderItemMoney>(
 						make_shared<RealMoney>(5, "USD"),
 						2
 					)

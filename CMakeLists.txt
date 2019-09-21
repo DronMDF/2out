@@ -6,7 +6,7 @@ ADD_DEFINITIONS("-std=c++14 -Wall -Wextra -Weffc++ -Werror")
 
 ADD_SUBDIRECTORY(2out)
 ADD_SUBDIRECTORY(test)
-ADD_SUBDIRECTORY(example)
+ADD_SUBDIRECTORY(tutorial)
 
 ADD_CUSTOM_TARGET(
 	style

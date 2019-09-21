@@ -3,22 +3,22 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TimesMoney.h"
+#include "OrderItemMoney.h"
 #include "Money.h"
 
 using namespace std;
 
-TimesMoney::TimesMoney(const shared_ptr<const Money> &money, int multiplier)
-	: money(money), multiplier(multiplier)
+OrderItemMoney::OrderItemMoney(const shared_ptr<const Money> &money, int quantity)
+	: money(money), quantity(quantity)
 {
 }
 
-int TimesMoney::amount() const
+int OrderItemMoney::amount() const
 {
-	return money->amount() * multiplier;
+	return money->amount() * quantity;
 }
 
-string TimesMoney::currency() const
+string OrderItemMoney::currency() const
 {
 	return money->currency();
 }

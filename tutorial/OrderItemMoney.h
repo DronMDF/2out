@@ -7,12 +7,12 @@
 #include <memory>
 #include "Money.h"
 
-class TimesMoney final : public Money {
+class OrderItemMoney final : public Money {
 public:
-	TimesMoney(const std::shared_ptr<const Money> &money, int multiplier);
+	OrderItemMoney(const std::shared_ptr<const Money> &money, int quantity);
 	int amount() const override;
 	std::string currency() const override;
 private:
 	const std::shared_ptr<const Money> money;
-	int multiplier;
+	int quantity;
 };
