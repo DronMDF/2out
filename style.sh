@@ -3,10 +3,10 @@
 set -ue
 
 # Check coding style
-cppcheck -I. -Itest --enable=all --suppress=missingIncludeSystem --quiet 2out test example
+cppcheck -I. -Itest --enable=all --suppress=missingIncludeSystem --quiet 2out test tutorial
 cpplint `find 2out/ -name *.cpp -o -name *.h`
 cpplint `find test/ -name *.cpp -o -name *.h`
-cpplint `find example/ -name *.cpp -o -name *.h`
+cpplint `find tutorial/ -name *.cpp -o -name *.h`
 # @todo #256 uncrustify in ubuntu Trusty is very old (0.59)
 #  this version not understood c++11 features and trash my code.
 #  wait for 0.64

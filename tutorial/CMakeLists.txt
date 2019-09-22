@@ -1,23 +1,23 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
-PROJECT(example)
+PROJECT(tutorial)
 
 INCLUDE_DIRECTORIES(${2out_SOURCE_DIR}/..)
 
 ADD_EXECUTABLE(
-	example
-	example.cpp
+	tutorial
+	tutorial.cpp
 	MoneyText.cpp
+	OrderItemMoney.cpp
 	RealMoney.cpp
-	TimesMoney.cpp
 )
 
 TARGET_LINK_LIBRARIES(
-	example
+	tutorial
 	2out
 )
 
 ADD_TEST(
-	NAME example
-	COMMAND example
+	NAME tutorial
+	COMMAND tutorial
 )

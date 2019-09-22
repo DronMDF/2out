@@ -105,6 +105,4 @@ make_shared<NamedTest>(
 
 - [x] $5 * 2 = $10
 
-@todo #416 Create chapter 3 of Money example.
-
 [Продолжить](TUTORIAL3.ru.md)
