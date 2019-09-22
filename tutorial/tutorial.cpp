@@ -45,6 +45,30 @@ int main(int, char **)
 				),
 				"12 USD"
 			)
+		),
+		make_shared<NamedTest>(
+			"OrderMoney is sum of one items",
+			make_shared<EqualTest>(
+				make_shared<MoneyText>(
+					make_shared<OrderMoney>(
+						make_shared<RealMoney>(42, "USD")
+					)
+				),
+				"42 USD"
+			)
+		),
+		make_shared<NamedTest>(
+			"OrderMoney is sum of three items",
+			make_shared<EqualTest>(
+				make_shared<MoneyText>(
+					make_shared<OrderMoney>(
+						make_shared<RealMoney>(1, "USD"),
+						make_shared<RealMoney>(2, "USD"),
+						make_shared<RealMoney>(4, "USD")
+					)
+				),
+				"7 USD"
+			)
 		)
 	};
 	const shared_ptr<const Result> result = tests.result();

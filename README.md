@@ -18,8 +18,14 @@ And after that it should be easy to use. :)
 # Tutorial
 
 ## Kent Beck Money example
-- Part 1 [ru](example/TUTORIAL1.ru.md)
-- Part 2 [ru](example/TUTORIAL2.ru.md)
+
+1. Money as a Text. [ru](example/TUTORIAL1.ru.md)
+2. Money multiplication. [ru](example/TUTORIAL2.ru.md)
+3. Business terminoligy. [ru](example/TUTORIAL3.ru.md)
+4. Total Order amount. [ru](example/TUTORIAL4.ru.md)
+5. OrderMoney corner cases. [ru](example/TUTORIAL5.ru.md)
+6. Currency Exchange.
+7. Suite of tests.
 
 # Using
 

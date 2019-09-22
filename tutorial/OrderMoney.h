@@ -10,6 +10,18 @@
 class OrderMoney final : public Money {
 public:
 	OrderMoney(const std::shared_ptr<const Money> &a, const std::shared_ptr<const Money> &b);
+	explicit OrderMoney(const std::shared_ptr<const Money> &a);
+
+	template <typename ... T>
+	OrderMoney(
+		const std::shared_ptr<const Money> &a,
+		const std::shared_ptr<const Money> &b,
+		const std::shared_ptr<const Money> &c,
+		const T & ...d
+	) : OrderMoney(std::make_shared<OrderMoney>(a, b), c, d...)
+	{
+	}
+
 	int amount() const override;
 	std::string currency() const override;
 private:
