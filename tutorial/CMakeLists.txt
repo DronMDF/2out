@@ -9,6 +9,7 @@ ADD_EXECUTABLE(
 	tutorial.cpp
 	MoneyText.cpp
 	OrderItemMoney.cpp
+	OrderMoney.cpp
 	RealMoney.cpp
 )
 
