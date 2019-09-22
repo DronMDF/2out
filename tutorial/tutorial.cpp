@@ -7,6 +7,7 @@
 #include <2out/2out.h>
 #include "MoneyText.h"
 #include "OrderItemMoney.h"
+#include "OrderMoney.h"
 #include "RealMoney.h"
 
 using namespace std;
@@ -31,6 +32,18 @@ int main(int, char **)
 					)
 				),
 				"10 USD"
+			)
+		),
+		make_shared<NamedTest>(
+			"OrderMoney is sum of all items",
+			make_shared<EqualTest>(
+				make_shared<MoneyText>(
+					make_shared<OrderMoney>(
+						make_shared<RealMoney>(5, "USD"),
+						make_shared<RealMoney>(7, "USD")
+					)
+				),
+				"12 USD"
 			)
 		)
 	};
