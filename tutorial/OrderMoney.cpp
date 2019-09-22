@@ -4,11 +4,17 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "OrderMoney.h"
+#include "RealMoney.h"
 
 using namespace std;
 
 OrderMoney::OrderMoney(const shared_ptr<const Money> &a, const shared_ptr<const Money> &b)
 	: a(a), b(b)
+{
+}
+
+OrderMoney::OrderMoney(const shared_ptr<const Money> &a)
+	: a(a), b(make_shared<RealMoney>(0, a->currency()))
 {
 }
 

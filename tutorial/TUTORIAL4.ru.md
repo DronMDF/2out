@@ -53,6 +53,4 @@ int OrderMoney::amount() const
 Это был бы императивный подход.
 Каждая позиция, при получении суммы просто сконструирует нужную сумму и вернет ее для включения в OrderMoney.
 
-@todo #419 Create chapter 5 of Money example.
-
 [Продолжить](TUTORIAL5.ru.md)

@@ -50,6 +50,4 @@ make_shared<EqualTest>(
 - [ ] Общая сумма по всем позициям (простой случай)
 - [x] Переименовать TimesMoney в OrderItemMoney со всеми вытекающими.
 
-@todo #419 Create chapter 4 of Money example.
-
 [Продолжить](TUTORIAL4.ru.md)
