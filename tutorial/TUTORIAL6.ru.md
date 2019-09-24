@@ -98,6 +98,4 @@ string ExchangedMoney::currency() const
 - [x] Заказ из трех и более позиций
 - [x] Обмен валют
 
-@todo #425 Complete final part of money tutorial
-
 [Продолжить](TUTORIAL7.ru.md)

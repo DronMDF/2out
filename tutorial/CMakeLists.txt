@@ -12,6 +12,7 @@ ADD_EXECUTABLE(
 	MoneyText.cpp
 	OrderItemMoney.cpp
 	OrderMoney.cpp
+	OrderMoneyTest.cpp
 	RealMoney.cpp
 )
 
