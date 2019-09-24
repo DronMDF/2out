@@ -24,8 +24,8 @@ And after that it should be easy to use. :)
 3. Business terminoligy. [ru](example/TUTORIAL3.ru.md)
 4. Total Order amount. [ru](example/TUTORIAL4.ru.md)
 5. OrderMoney corner cases. [ru](example/TUTORIAL5.ru.md)
-6. Currency Exchange.
-7. Suite of tests.
+6. Currency Exchange. [ru](example/TUTORIAL6.ru.md)
+7. Suite of tests. [ru](example/TUTORIAL7.ru.md)
 
 # Using
 
