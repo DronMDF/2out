@@ -81,4 +81,4 @@ OrderMoneyTest::OrderMoneyTest()
 Код данного примера расположен в каталоге tutorial.
 Он собирается и тестируется при каждой сборке.
 
-[Обратная связь](README.md#contributing) приветствуется.
+[Обратная связь](../README.md#contributing) приветствуется.

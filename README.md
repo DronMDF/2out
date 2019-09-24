@@ -19,13 +19,13 @@ And after that it should be easy to use. :)
 
 ## Kent Beck Money example
 
-1. Money as a Text. [ru](example/TUTORIAL1.ru.md)
-2. Money multiplication. [ru](example/TUTORIAL2.ru.md)
-3. Business terminoligy. [ru](example/TUTORIAL3.ru.md)
-4. Total Order amount. [ru](example/TUTORIAL4.ru.md)
-5. OrderMoney corner cases. [ru](example/TUTORIAL5.ru.md)
-6. Currency Exchange. [ru](example/TUTORIAL6.ru.md)
-7. Suite of tests. [ru](example/TUTORIAL7.ru.md)
+1. Money as a Text. [ru](tutorial/TUTORIAL1.ru.md)
+2. Money multiplication. [ru](tutorial/TUTORIAL2.ru.md)
+3. Business terminoligy. [ru](tutorial/TUTORIAL3.ru.md)
+4. Total Order amount. [ru](tutorial/TUTORIAL4.ru.md)
+5. OrderMoney corner cases. [ru](tutorial/TUTORIAL5.ru.md)
+6. Currency Exchange. [ru](tutorial/TUTORIAL6.ru.md)
+7. Suite of tests. [ru](tutorial/TUTORIAL7.ru.md)
 
 # Using
 
