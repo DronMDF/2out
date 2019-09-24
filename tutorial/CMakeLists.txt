@@ -7,6 +7,8 @@ INCLUDE_DIRECTORIES(${2out_SOURCE_DIR}/..)
 ADD_EXECUTABLE(
 	tutorial
 	tutorial.cpp
+	Bank.cpp
+	ExchangedMoney.cpp
 	MoneyText.cpp
 	OrderItemMoney.cpp
 	OrderMoney.cpp

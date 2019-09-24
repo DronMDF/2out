@@ -63,6 +63,4 @@ OrderMoney(
 - [x] Заказ из трех и более позиций
 - [ ] Обмен валют
 
-@todo #423 Complete 6 part of money example
-
 [Продолжить](TUTORIAL6.ru.md)

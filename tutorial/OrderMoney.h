@@ -5,7 +5,10 @@
 
 #pragma once
 #include <memory>
+#include "ExchangedMoney.h"
 #include "Money.h"
+
+class Bank;
 
 class OrderMoney final : public Money {
 public:
@@ -22,8 +25,18 @@ public:
 	{
 	}
 
+	template <typename ... T>
+	OrderMoney(
+		const std::string &currency,
+		const std::shared_ptr<const Bank> &bank,
+		const T & ... money
+	) : OrderMoney(std::make_shared<ExchangedMoney>(money, bank, currency)...)
+	{
+	}
+
 	int amount() const override;
 	std::string currency() const override;
+
 private:
 	const std::shared_ptr<const Money> a;
 	const std::shared_ptr<const Money> b;
