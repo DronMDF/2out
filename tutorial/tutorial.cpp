@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <2out/2out.h>
+#include "Bank.h"
 #include "MoneyText.h"
 #include "OrderItemMoney.h"
 #include "OrderMoney.h"
@@ -68,6 +69,20 @@ int main(int, char **)
 					)
 				),
 				"7 USD"
+			)
+		),
+		make_shared<NamedTest>(
+			"OrderMoney is unify all money over Bank",
+			make_shared<EqualTest>(
+				make_shared<MoneyText>(
+					make_shared<OrderMoney>(
+						"USD",
+						make_shared<Bank>("CHF", "USD", 2),
+						make_shared<RealMoney>(5, "USD"),
+						make_shared<RealMoney>(10, "CHF")
+					)
+				),
+				"10 USD"
 			)
 		)
 	};
