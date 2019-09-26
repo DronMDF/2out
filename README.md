@@ -5,6 +5,7 @@ Object oriented unit testing framework
 ![EO badge](https://www.elegantobjects.org/badge.svg)
 
 [![CircleCI](https://circleci.com/gh/DronMDF/2out.svg?style=shield)](https://circleci.com/gh/DronMDF/2out)
+![Actions](https://github.com/DronMDF/2out/workflows/Build/badge.svg)
 [![codecov](https://codecov.io/gh/DronMDF/2out/branch/master/graph/badge.svg)](https://codecov.io/gh/DronMDF/2out)
 [![PDD status](http://www.0pdd.com/svg?name=DronMDF/2out)](http://www.0pdd.com/p?name=DronMDF/2out)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/DronMDF/2out/blob/master/LICENSE)
