@@ -1,0 +1,14 @@
+name: Build
+on: [push]
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v1
+    - run: |
+      sudo apt-get install cmake cppcheck doxygen python3-pip
+      sudo pip3 install cpplint
+      gem install pdd
+      cmake -DCMAKE_CXX_FLAGS="--coverage" .
+      make style
+      make VERBOSE=1
+      make test
