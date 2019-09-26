@@ -1,8 +1,9 @@
 name: Build
 on: [push]
 jobs:
-  runs-on: ubuntu-latest
-  steps:
+  build:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v1
     - run: |
         sudo apt-get install cmake cppcheck doxygen python3-pip
