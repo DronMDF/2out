@@ -26,30 +26,33 @@ private:
 };
 
 NamedTestTest::NamedTestTest()
-	: tests(
-		make_unique<NamedTest>(
-			"NamedTest test",
-			make_shared<const NamedTest>(
-				"NamedTest in TestNamed is a Suite",
-				make_shared<ContainTest>(
-					make_shared<NamedTestText>(
-						make_unique<NamedTest>(
-							"Root test",
-							make_shared<const NamedTest>(
-								"Concrete test",
-								make_shared<EqualTest>("a", "a")
-							)
-						)
-					),
-					"Concrete test"
+: dirty::Test(
+	"NamedTest test",
+	make_shared<NamedTest>(
+		"NamedTest in NamedTest is a Suite",
+		make_shared<MatchTest>(
+			make_shared<NamedTestText>(
+				make_unique<NamedTest>(
+					"Root test",
+					make_shared<const NamedTest>(
+						"Concrete test",
+						make_shared<EqualTest>("a", "a")
+					)
 				)
-			)
+			),
+			make_shared<ContainMatch>("Concrete test")
 		)
+	),
+	make_shared<NamedTest>(
+		"NamedTest make MatchTest if third arg is match (this is selftest)",
+		make_shared<NamedTestText>(
+			make_unique<NamedTest>(
+				"Match test",
+				make_shared<EqualTest>("a", "a")
+			)
+		),
+		make_shared<ContainMatch>("Match test")
 	)
+)
 {
-}
-
-unique_ptr<const Result> NamedTestTest::result() const
-{
-	return tests->result();
 }
