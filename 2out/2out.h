@@ -30,6 +30,7 @@
 #include "StartsWithMatch.h"
 
 // Text
+#include "CtorExceptionText.h"
 #include "FunctionText.h"
 #include "PrintableText.h"
 #include "SignedText.h"
