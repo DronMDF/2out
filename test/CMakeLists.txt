@@ -14,6 +14,7 @@ ADD_EXECUTABLE(
 	CountFailureRepr.cpp
 	CountFailureTest.cpp
 	CountTestTest.cpp
+	CtorExceptionTextTest.cpp
 	DirtyTestTest.cpp
 	EndsWithMatchTest.cpp
 	EndsWithTestTest.cpp

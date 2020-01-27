@@ -13,6 +13,7 @@
 #include "CountErrorTest.h"
 #include "CountFailureTest.h"
 #include "CountTestTest.h"
+#include "CtorExceptionTextTest.h"
 #include "DirtyTestTest.h"
 #include "EndsWithMatchTest.h"
 #include "EndsWithTestTest.h"
@@ -41,6 +42,7 @@ int main(int, char **)
 		make_shared<CountErrorTest>(),
 		make_shared<CountFailureTest>(),
 		make_shared<CountTestTest>(),
+		make_shared<CtorExceptionTextTest>(),
 		make_shared<DirtyTestTest>(),
 		make_shared<EndsWithMatchTest>(),
 		make_shared<EndsWithTestTest>(),
