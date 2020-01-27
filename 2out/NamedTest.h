@@ -5,8 +5,11 @@
 
 #pragma once
 #include <list>
-#include "Test.h"
+#include "Match.h"
+#include "MatchTest.h"
 #include "SuiteTest.h"
+#include "Test.h"
+#include "Text.h"
 
 namespace oout {
 
@@ -31,6 +34,17 @@ public:
 		const std::shared_ptr<const Test> &test2,
 		const std::shared_ptr<T> & ... tests
 	) : NamedTest(name, std::make_shared<const SuiteTest>(test1, test2, tests...))
+	{
+	}
+
+	/// Secondary ctor with matches
+	template<typename... T>
+	NamedTest(
+		const std::string &name,
+		const std::shared_ptr<const Text> &text,
+		const std::shared_ptr<const Match> &match,
+		const std::shared_ptr<T> & ... matches
+	) : NamedTest(name, std::make_shared<const MatchTest>(text, match, matches...))
 	{
 	}
 

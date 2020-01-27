@@ -4,12 +4,9 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include <memory>
-#include <2out/Test.h>
+#include <2out/dirty/Test.h>
 
-class NamedTestTest final : public oout::Test {
+class NamedTestTest final : public oout::dirty::Test {
 public:
 	NamedTestTest();
-	std::unique_ptr<const oout::Result> result() const override;
-private:
-	const std::unique_ptr<const oout::Test> tests;
 };
