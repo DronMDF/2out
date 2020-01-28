@@ -9,5 +9,5 @@ jobs:
     - run: |
         sudo pip3 install conan
         conan remote add mdf https://api.bintray.com/conan/mdf/2out
-        conan user -p ${{ secret.BINTRAY }} -r mdf dronmdf
+        conan user -p ${{ secrets.BINTRAY }} -r mdf dronmdf
         conan upload 2out/`echo ${GITHUB_REF} | sed 's/^v//'`@dronmdf/stable -r mdf --all
