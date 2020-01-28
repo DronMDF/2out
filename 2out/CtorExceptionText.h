@@ -15,7 +15,7 @@ template <typename T>
 class CtorExceptionText final : public Text {
 public:
 	template <typename... A>
-	CtorExceptionText(const A & ... args)
+	explicit CtorExceptionText(const A & ... args)
 		: ctor_invoker([&]{ T(args...); })
 	{
 	}
