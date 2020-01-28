@@ -12,8 +12,14 @@ using namespace oout;
 
 class WithException {
 public:
-	WithException() {
-		throw runtime_error("shit happen");
+	explicit WithException(const string &message)
+	{
+		throw runtime_error(message);
+	}
+
+	WithException()
+		: WithException("shit happen")
+	{
 	}
 };
 
@@ -24,6 +30,11 @@ CtorExceptionTextTest::CtorExceptionTextTest()
 		"CtorExceptionText is a exception message",
 		make_shared<CtorExceptionText<WithException>>(),
 		make_shared<EqualMatch>("shit happen")
+	),
+	make_shared<const NamedTest>(
+		"CtorExceptionText pass args to CUT ctor",
+		make_shared<CtorExceptionText<WithException>>("argument"),
+		make_shared<EqualMatch>("argument")
 	)
 )
 {
