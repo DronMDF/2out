@@ -19,6 +19,7 @@
 #include "EndsWithTestTest.h"
 #include "FunctionTextTest.h"
 #include "MatchTestTest.h"
+#include "MethodExceptionTextTest.h"
 #include "NamedTestTest.h"
 #include "PrintableTextTest.h"
 #include "RegexMatchTest.h"
@@ -48,6 +49,7 @@ int main(int, char **)
 		make_shared<EndsWithTestTest>(),
 		make_shared<FunctionTextTest>(),
 		make_shared<MatchTestTest>(),
+		make_shared<MethodExceptionTextTest>(),
 		make_shared<NamedTestTest>(),
 		make_shared<PrintableTextTest>(),
 		make_shared<RegexMatchTest>(),

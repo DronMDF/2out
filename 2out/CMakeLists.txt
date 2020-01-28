@@ -40,6 +40,7 @@ ADD_LIBRARY(
 
 	# Text
 	FunctionText.cpp
+	MethodExceptionText.cpp
 	SignedText.cpp
 	StringText.cpp
 	TextReportText.cpp

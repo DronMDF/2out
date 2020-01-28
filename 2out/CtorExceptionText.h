@@ -16,7 +16,7 @@ class CtorExceptionText final : public Text {
 public:
 	template <typename... A>
 	explicit CtorExceptionText(const A & ... args)
-		: ctor_invoker([&]{ T(args...); })
+		: invoker([&]{ T(args...); })
 	{
 	}
 
@@ -24,14 +24,14 @@ public:
 	std::string asString() const override
 	{
 		try {
-			ctor_invoker();
-			throw std::runtime_error("Class don't throw exception");
+			invoker();
 		} catch (const std::exception &e) {
 			return e.what();
 		}
+		throw std::runtime_error("Class ctor don't throw exception");
 	}
 private:
-	const std::function<void ()> ctor_invoker;
+	const std::function<void ()> invoker;
 };
 
 }

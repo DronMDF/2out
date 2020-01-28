@@ -5,7 +5,6 @@
 
 #include "CtorExceptionTextTest.h"
 #include <2out/2out.h>
-#include "TestText.h"
 
 using namespace std;
 using namespace oout;
