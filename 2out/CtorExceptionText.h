@@ -4,27 +4,34 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
+#include <functional>
 #include <stdexcept>
 #include "Text.h"
 
 namespace oout {
 
-// @todo #436 CtorExceptionText should create objects with params
-
 /// Text for class, throw exception from ctor
 template <typename T>
 class CtorExceptionText final : public Text {
 public:
+	template <typename... A>
+	CtorExceptionText(const A & ... args)
+		: ctor_invoker([&]{ T(args...); })
+	{
+	}
+
 	/// Exception message return as a string
 	std::string asString() const override
 	{
 		try {
-			T _;
+			ctor_invoker();
 			throw std::runtime_error("Class don't throw exception");
 		} catch (const std::exception &e) {
 			return e.what();
 		}
 	}
+private:
+	const std::function<void ()> ctor_invoker;
 };
 
 }
