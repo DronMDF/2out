@@ -12,7 +12,7 @@ using namespace oout;
 
 class WithException {
 public:
-	WithException(const string &message)
+	explicit WithException(const string &message)
 	{
 		throw runtime_error(message);
 	}
