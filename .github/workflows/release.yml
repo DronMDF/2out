@@ -1,0 +1,13 @@
+on:
+  release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: |
+        sudo pip3 install conan
+        conan remote add mdf https://api.bintray.com/conan/mdf/2out
+        conan user -p ${{ secret.BINTRAY }} -r mdf dronmdf
+        conan upload 2out/`echo ${GITHUB_REF} | sed 's/^v//'`@dronmdf/stable -r mdf --all

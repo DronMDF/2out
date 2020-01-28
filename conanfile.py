@@ -2,10 +2,10 @@ from conans import ConanFile, CMake, tools
 
 class OoutConan(ConanFile):
 	name = "2out"
-	version = "0.7"
+	version = "0.8"
 	description = "Object oriented unit testing framework"
 	license = "MIT"
-	url = "https://dronmdf.github.io/2out/"
+	url = "https://github.com/DronMDF/2out"
 
 	settings = "os", "compiler", "build_type", "arch"
 	options = {"shared": [True, False]}
