@@ -19,6 +19,7 @@ ADD_EXECUTABLE(
 	EndsWithMatchTest.cpp
 	EndsWithTestTest.cpp
 	FunctionTextTest.cpp
+	MethodExceptionTextTest.cpp
 	MatchTestTest.cpp
 	NamedTestTest.cpp
 	PrintableTextTest.cpp
