@@ -11,6 +11,6 @@ jobs:
         sudo apt install python3-setuptools
         sudo pip3 install conan
         conan remote add mdf https://api.bintray.com/conan/mdf/2out
-        conan create .
+        conan create . dronmdf/stable
         conan user -p ${{ secrets.BINTRAY }} -r mdf dronmdf
         conan upload "*" -r mdf --all --confirm
