@@ -1,6 +1,7 @@
 name: Deploy
 on:
-  release
+  release:
+    types: [published]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,4 +13,4 @@ jobs:
         conan remote add mdf https://api.bintray.com/conan/mdf/2out
         conan create .
         conan user -p ${{ secrets.BINTRAY }} -r mdf dronmdf
-        conan upload "*" -r mdf --all
+        conan upload "*" -r mdf --all --confirm
