@@ -42,6 +42,7 @@ ADD_LIBRARY(
 	FunctionText.cpp
 	GtestReportText.cpp
 	MethodExceptionText.cpp
+	OoutReportText.cpp
 	SignedText.cpp
 	StringText.cpp
 	XmlReportText.cpp

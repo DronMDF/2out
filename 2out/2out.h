@@ -33,6 +33,7 @@
 #include "CtorExceptionText.h"
 #include "FunctionText.h"
 #include "MethodExceptionText.h"
+#include "OoutReportText.h"
 #include "PrintableText.h"
 #include "SignedText.h"
 #include "StringText.h"

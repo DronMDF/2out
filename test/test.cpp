@@ -22,6 +22,7 @@
 #include "MatchTestTest.h"
 #include "MethodExceptionTextTest.h"
 #include "NamedTestTest.h"
+#include "OoutReportTextTest.h"
 #include "PrintableTextTest.h"
 #include "RegexMatchTest.h"
 #include "RegexTestTest.h"
@@ -48,9 +49,11 @@ int main(int, char **)
 		make_shared<EndsWithMatchTest>(),
 		make_shared<EndsWithTestTest>(),
 		make_shared<FunctionTextTest>(),
+		make_shared<GtestReportTextTest>(),
 		make_shared<MatchTestTest>(),
 		make_shared<MethodExceptionTextTest>(),
 		make_shared<NamedTestTest>(),
+		make_shared<OoutReportTextTest>(),
 		make_shared<PrintableTextTest>(),
 		make_shared<RegexMatchTest>(),
 		make_shared<RegexTestTest>(),
@@ -58,7 +61,6 @@ int main(int, char **)
 		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
-		make_shared<GtestReportTextTest>(),
 		make_shared<XmlReportTextTest>()
 	);
 

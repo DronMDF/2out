@@ -22,6 +22,7 @@ ADD_EXECUTABLE(
 	MethodExceptionTextTest.cpp
 	MatchTestTest.cpp
 	NamedTestTest.cpp
+	OoutReportTextTest.cpp
 	PrintableTextTest.cpp
 	RegexMatchTest.cpp
 	RegexTestTest.cpp
