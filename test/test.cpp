@@ -18,6 +18,7 @@
 #include "EndsWithMatchTest.h"
 #include "EndsWithTestTest.h"
 #include "FunctionTextTest.h"
+#include "GtestReportTextTest.h"
 #include "MatchTestTest.h"
 #include "MethodExceptionTextTest.h"
 #include "NamedTestTest.h"
@@ -28,7 +29,6 @@
 #include "StartsWithMatchTest.h"
 #include "StartsWithTestTest.h"
 #include "SuiteTestTest.h"
-#include "TextReportTextTest.h"
 #include "XmlReportTextTest.h"
 
 using namespace std;
@@ -58,7 +58,7 @@ int main(int, char **)
 		make_shared<StartsWithMatchTest>(),
 		make_shared<StartsWithTestTest>(),
 		make_shared<SuiteTestTest>(),
-		make_shared<TextReportTextTest>(),
+		make_shared<GtestReportTextTest>(),
 		make_shared<XmlReportTextTest>()
 	);
 

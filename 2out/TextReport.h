@@ -4,10 +4,10 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "TextReportText.h"
+#include "GtestReportText.h"
 
 namespace oout {
 
-typedef TextReportText TextReport;
+typedef GtestReportText TextReport;
 
 }

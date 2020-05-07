@@ -36,7 +36,7 @@
 #include "PrintableText.h"
 #include "SignedText.h"
 #include "StringText.h"
-#include "TextReportText.h"
+#include "GtestReportText.h"
 #include "XmlReportText.h"
 
 // Misc

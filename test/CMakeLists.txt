@@ -30,7 +30,7 @@ ADD_EXECUTABLE(
 	StartsWithTestTest.cpp
 	SuiteTestTest.cpp
 	TestText.cpp
-	TextReportTextTest.cpp
+	GtestReportTextTest.cpp
 	XmlReportTextTest.cpp
 )
 TARGET_LINK_LIBRARIES(

@@ -38,7 +38,7 @@ int main(int, char **)
 	};
 	const shared_ptr<const Result> result = tests.result();
 
-	cout << TextReportText(result).asString() << endl;
+	cout << GtestReportText(result).asString() << endl;
 
 	return (
 		CountFailure(result).count() == 0 &&
