@@ -5,7 +5,9 @@
 
 #include "OoutReportTextTest.h"
 #include <2out/2out.h>
-#include <2out/OoutReportText.h>
+#include <2out/FailureResult.h>
+#include <2out/ErrorResult.h>
+#include <2out/NamedResult.h>
 #include <2out/SuccessResult.h>
 #include <2out/TestResult.h>
 
@@ -19,9 +21,31 @@ OoutReportTextTest::OoutReportTextTest()
 		make_shared<OoutReportText>(
 			make_shared<TestResult>(make_shared<SuccessResult>())
 		),
-		make_shared<ContainMatch>(
-			"0 of 1 tests failed"
-		)
+		make_shared<ContainMatch>("0 of 1 tests failed")
+	),
+	make_shared<NamedTest>(
+		"OoutReportText should show failed test",
+		make_shared<OoutReportText>(
+			make_shared<NamedResult>(
+				"Test name",
+				make_shared<TestResult>(make_shared<FailureResult>("failure"))
+			)
+		),
+		make_shared<ContainMatch>("FAILURE: Test name"),
+		make_shared<ContainMatch>("failure"),
+		make_shared<ContainMatch>("1 of 1 tests failed")
+	),
+	make_shared<NamedTest>(
+		"OoutReportText should show error test",
+		make_shared<OoutReportText>(
+			make_shared<NamedResult>(
+				"Test name",
+				make_shared<TestResult>(make_shared<ErrorResult>("error"))
+			)
+		),
+		make_shared<ContainMatch>("ERROR: Test name"),
+		make_shared<ContainMatch>("error"),
+		make_shared<ContainMatch>("1 of 1 tests failed")
 	)
 )
 {

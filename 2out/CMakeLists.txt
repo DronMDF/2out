@@ -50,6 +50,7 @@ ADD_LIBRARY(
 	# Misc
 	CountError.cpp
 	CountFailure.cpp
+	OoutFormat.cpp
 )
 
 INSTALL(TARGETS 2out ARCHIVE DESTINATION lib)

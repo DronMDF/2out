@@ -5,8 +5,11 @@
 
 #include "OoutReportText.h"
 #include <sstream>
+#include "CountError.h"
 #include "CountFailure.h"
 #include "CountTest.h"
+#include "OoutFormat.h"
+#include "Result.h"
 
 using namespace std;
 using namespace oout;
@@ -19,7 +22,8 @@ OoutReportText::OoutReportText(const shared_ptr<const Result> &result)
 string OoutReportText::asString() const
 {
 	ostringstream out;
-	out << CountFailure(result).count() << " of "
-		<< CountTest(result).count() << " tests failed";
+	out << result->print(OoutFormat());
+	out << (CountFailure(result).count() + CountError(result).count())
+		<< " of " << CountTest(result).count() << " tests failed";
 	return out.str();
 }
