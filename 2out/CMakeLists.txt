@@ -40,15 +40,17 @@ ADD_LIBRARY(
 
 	# Text
 	FunctionText.cpp
+	GtestReportText.cpp
 	MethodExceptionText.cpp
+	OoutReportText.cpp
 	SignedText.cpp
 	StringText.cpp
-	TextReportText.cpp
 	XmlReportText.cpp
 
 	# Misc
 	CountError.cpp
 	CountFailure.cpp
+	OoutFormat.cpp
 )
 
 INSTALL(TARGETS 2out ARCHIVE DESTINATION lib)

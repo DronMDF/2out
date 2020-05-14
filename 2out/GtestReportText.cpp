@@ -3,7 +3,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license.  See the LICENSE file for details.
 
-#include "TextReportText.h"
+#include "GtestReportText.h"
 #include <sstream>
 #include "CountFailure.h"
 #include "CountTest.h"
@@ -73,12 +73,12 @@ public:
 
 }  // namespace oout
 
-TextReportText::TextReportText(const std::shared_ptr<const Result> &result)
+GtestReportText::GtestReportText(const std::shared_ptr<const Result> &result)
 	: result(result)
 {
 }
 
-string TextReportText::asString() const
+string GtestReportText::asString() const
 {
 	const auto test_count = CountTest(result).count();
 	ostringstream out;

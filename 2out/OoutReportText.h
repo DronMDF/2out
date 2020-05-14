@@ -5,20 +5,16 @@
 
 #pragma once
 #include <memory>
-#include <string>
 #include "Text.h"
 
 namespace oout {
 
 class Result;
 
-/// Text Report like google test
-class TextReportText final : public Text {
+class OoutReportText final : public Text {
 public:
-	/// Primary ctor
-	explicit TextReportText(const std::shared_ptr<const Result> &result);
+	explicit OoutReportText(const std::shared_ptr<const Result> &result);
 
-	/// Get report as string
 	std::string asString() const override;
 private:
 	const std::shared_ptr<const Result> result;

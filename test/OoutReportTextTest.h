@@ -4,10 +4,9 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include "GtestReportText.h"
+#include <2out/dirty/Test.h>
 
-namespace oout {
-
-typedef GtestReportText TextReport;
-
-}
+class OoutReportTextTest final : public oout::dirty::Test {
+public:
+	OoutReportTextTest();
+};
