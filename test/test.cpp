@@ -66,7 +66,7 @@ int main(int, char **)
 
 	const shared_ptr<const Result> result = tests.result();
 
-	cout << XmlReportText(result).asString() << endl;
+	cout << OoutReportText(result).asString() << endl;
 
 	return (
 		CountFailure(result).count() == 0 &&
