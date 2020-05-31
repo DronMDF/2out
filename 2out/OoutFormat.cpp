@@ -48,10 +48,12 @@ string OoutFormat::test(
 string OoutFormat::suite(
 	const string &name [[maybe_unused]],
 	const chrono::nanoseconds &duration [[maybe_unused]],
-	const list<shared_ptr<const Result>> &results [[maybe_unused]]
+	const list<shared_ptr<const Result>> &results
 ) const
 {
-	return {};
+	ostringstream out;
+	for (const auto &r : results) {
+		out << r->print(*this);
+	}
+	return out.str();
 }
-
-
