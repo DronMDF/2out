@@ -39,7 +39,7 @@ conanfile.txt:
 cmake
 
 [requires]
-2out/0.6@dronmdf/stable
+2out/0.9@dronmdf/stable
 ```
 
 CMakeLists.txt:
