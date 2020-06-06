@@ -1,0 +1,18 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: |
+        sudo apt install python3-setuptools
+        sudo pip3 install conan
+        conan remote add pureoop https://api.bintray.com/conan/mdf/pureoop
+        conan create . dronmdf/testing
+        conan user -p ${{ secrets.BINTRAY }} -r pureoop dronmdf
+        conan upload "*" -r pureoop --all --confirm
+
