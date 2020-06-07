@@ -13,8 +13,9 @@ class OoutConan(ConanFile):
 	generators = "cmake"
 
 	def source(self):
-		self.run("git clone https://github.com/DronMDF/2out.git .")
-		self.run("git checkout v%s" % self.version)
+		git = tools.Git()
+		git.clone('https://github.com/DronMDF/2out.git')
+		git.checkout('v' + self.version)
 		tools.replace_in_file(
 			"CMakeLists.txt",
 			"ENABLE_TESTING()",
