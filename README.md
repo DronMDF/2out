@@ -55,6 +55,11 @@ $ cmake ~/project
 $ make
 ```
 
+# Related projects
+
+* https://github.com/g4s8/oot Experimental Object Oriented Testing Framework for Java
+* https://github.com/pragmatic-objects/oo-tests Reusable test assertions for JUnit5
+
 # Contributing
 
 Any contribution are welcome.
