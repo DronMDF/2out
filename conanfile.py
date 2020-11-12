@@ -2,7 +2,7 @@ from conans import ConanFile, CMake, tools
 
 class OoutConan(ConanFile):
 	name = "2out"
-	version = "0.9"
+	version = "0.10"
 	description = "Object oriented unit testing framework"
 	license = "MIT"
 	url = "https://github.com/DronMDF/2out"
