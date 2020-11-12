@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "OrderMoney.h"
+#include <stdexcept>
 #include "RealMoney.h"
 
 using namespace std;

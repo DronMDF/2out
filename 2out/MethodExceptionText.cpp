@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "MethodExceptionText.h"
+#include <stdexcept>
 
 using namespace std;
 using namespace oout;
