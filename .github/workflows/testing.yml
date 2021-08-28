@@ -8,9 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: |
+    - name: Upload
+      env:
+      run: |
         sudo apt install python3-setuptools
         sudo pip3 install conan
+        BUILD=`git log --first-parent --oneline 0.9..HEAD | wc -l`
+	sed -i "s/version = '0.10'/version = '0.10.$BUILD'/" conanfile.py
         sed -i "s/checkout('v' + self.version)/checkout('${{ github.sha }}')/" conanfile.py
         conan create . dronmdf/testing
         conan remote add pureoop-2out https://conan.cloudsmith.io/pureoop/2out
