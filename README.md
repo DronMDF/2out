@@ -5,7 +5,6 @@ Object oriented unit testing framework
 ![EO badge](https://www.elegantobjects.org/badge.svg)
 
 ![Actions](https://github.com/DronMDF/2out/workflows/Build/badge.svg)
-[![Download](https://api.bintray.com/packages/mdf/pureoop/2out%3Adronmdf/images/download.svg)](https://bintray.com/mdf/pureoop/2out%3Adronmdf/_latestVersion)
 [![codecov](https://codecov.io/gh/DronMDF/2out/branch/master/graph/badge.svg)](https://codecov.io/gh/DronMDF/2out)
 [![PDD status](http://www.0pdd.com/svg?name=DronMDF/2out)](http://www.0pdd.com/p?name=DronMDF/2out)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/DronMDF/2out/blob/master/LICENSE)
@@ -49,7 +48,7 @@ conan_basic_setup()
 
 build:
 ```sh
-$ conan remote add mdf https://api.bintray.com/conan/mdf/pureoop
+$ conan remote add pureoop-2out https://conan.cloudsmith.io/pureoop/2out
 $ conan install ~/project --build
 $ cmake ~/project
 $ make
