@@ -13,7 +13,7 @@ jobs:
         sudo pip3 install conan
         sed -i "s/checkout('v' + self.version)/checkout('${{ github.sha }}')/" conanfile.py
         conan export . dronmdf/testing
-        conan remote add pureoop https://api.bintray.com/conan/mdf/pureoop
-        conan user -p ${{ secrets.BINTRAY }} -r pureoop dronmdf
-        conan upload "*" -r pureoop --confirm
+        conan remote add pureoop-2out https://conan.cloudsmith.io/pureoop/2out
+        conan user -p ${{ secrets.CLOUDSMITH }} -r pureoop-2out andrey-valyaev
+        conan upload "*" -r pureoop-2out --confirm
 
