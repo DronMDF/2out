@@ -12,8 +12,8 @@ jobs:
         sudo apt install python3-setuptools
         sudo pip3 install conan
         sed -i "s/checkout('v' + self.version)/checkout('${{ github.sha }}')/" conanfile.py
-        conan export . dronmdf/testing
+        conan create . dronmdf/testing
         conan remote add pureoop-2out https://conan.cloudsmith.io/pureoop/2out
         conan user -p ${{ secrets.CLOUDSMITH }} -r pureoop-2out andrey-valyaev
-        conan upload "*" -r pureoop-2out --confirm
+        conan upload "*" -r pureoop-2out --all --confirm
 
