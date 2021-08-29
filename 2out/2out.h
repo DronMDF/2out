@@ -59,4 +59,3 @@
 #include "TestSkipped.h"
 #include "TestStartsWith.h"
 #include "TestSuite.h"
-#include "TestTimed.h"
