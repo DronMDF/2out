@@ -60,4 +60,3 @@
 #include "TestStartsWith.h"
 #include "TestSuite.h"
 #include "TestTimed.h"
-#include "TextReport.h"
