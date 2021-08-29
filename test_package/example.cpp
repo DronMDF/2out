@@ -14,7 +14,7 @@ int main(int, char **)
 	const EqualTest test("2out", "2out");
 	const shared_ptr<const Result> result = test.result();
 
-	cout << TextReport(result).asString() << endl;
+	cout << OoutReportText(result).asString() << endl;
 
 	return (
 		CountFailure(result).count() == 0 &&
