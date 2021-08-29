@@ -58,4 +58,3 @@
 #include "TestSafe.h"
 #include "TestSkipped.h"
 #include "TestStartsWith.h"
-#include "TestSuite.h"
