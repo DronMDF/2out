@@ -46,7 +46,6 @@
 #include "CountTest.h"
 
 // Deprecated (since 0.7)
-#include "JUnitXmlReport.h"
 #include "ReprCallable.h"
 #include "Representation.h"
 #include "ReprPrintable.h"
