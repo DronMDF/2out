@@ -55,4 +55,3 @@
 #include "TestEndsWith.h"
 #include "TestEqual.h"
 #include "TestNamed.h"
-#include "TestSafe.h"
