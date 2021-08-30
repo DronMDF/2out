@@ -56,4 +56,3 @@
 #include "TestEqual.h"
 #include "TestNamed.h"
 #include "TestSafe.h"
-#include "TestSkipped.h"
