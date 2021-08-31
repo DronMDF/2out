@@ -53,4 +53,3 @@
 #include "ReprString.h"
 #include "TestContainText.h"
 #include "TestEndsWith.h"
-#include "TestEqual.h"
