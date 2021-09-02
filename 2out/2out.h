@@ -47,4 +47,3 @@
 
 // Deprecated (since 0.7)
 #include "ReprCallable.h"
-#include "Representation.h"
