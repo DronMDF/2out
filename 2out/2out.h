@@ -9,15 +9,10 @@
 #include "Result.h"
 
 // Tests
-#include "ContainTest.h"
-#include "EndsWithTest.h"
-#include "EqualTest.h"
 #include "MatchTest.h"
 #include "NamedTest.h"
-#include "RegexTest.h"
 #include "SafeTest.h"
 #include "SkippedTest.h"
-#include "StartsWithTest.h"
 #include "SuiteTest.h"
 #include "TimedTest.h"
 
@@ -44,3 +39,10 @@
 #include "CountError.h"
 #include "CountFailure.h"
 #include "CountTest.h"
+
+// Deprecated (will be removed in 0.11)
+#include "ContainTest.h"
+#include "EndsWithTest.h"
+#include "EqualTest.h"
+#include "RegexTest.h"
+#include "StartsWithTest.h"
