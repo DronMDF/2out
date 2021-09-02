@@ -44,6 +44,3 @@
 #include "CountError.h"
 #include "CountFailure.h"
 #include "CountTest.h"
-
-// Deprecated (since 0.7)
-#include "ReprCallable.h"
