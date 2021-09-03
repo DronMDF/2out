@@ -26,6 +26,7 @@ ADD_EXECUTABLE(
 	PrintableTextTest.cpp
 	RegexMatchTest.cpp
 	RegexTestTest.cpp
+	SafeTestTest.cpp
 	SkippedTestTest.cpp
 	StartsWithMatchTest.cpp
 	StartsWithTestTest.cpp
