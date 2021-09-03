@@ -16,5 +16,12 @@ TestText::TestText(const shared_ptr<const Test> &test)
 
 string TestText::asString() const
 {
-	return CountFailure(test->result()).count() == 0 ? "success" : "failure";
+	const shared_ptr<const Result> result = test->result();
+	if (CountError(result).count() > 0) {
+		return "error";
+	}
+	if (CountFailure(result).count() > 0) {
+		return "failure";
+	}
+	return "success";
 }
