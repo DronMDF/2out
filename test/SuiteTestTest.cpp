@@ -12,48 +12,46 @@ using namespace oout;
 
 SuiteTestTest::SuiteTestTest()
 : dirty::Test(
-	make_unique<NamedTest>(
-		"SuiteTestTest",
-		make_shared<NamedTest>(
-			"SuiteTest with empty list is always success",
-			make_shared<EqualTest>(
-				make_shared<TestText>(
-					make_unique<SuiteTest>(
-						list<shared_ptr<const oout::Test>>{}
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<NamedTest>(
-			"SuiteTest give tests as variadic args",
-			make_shared<EqualTest>(
-				make_shared<TestText>(
-					make_unique<SuiteTest>(
-						make_shared<EqualTest>("1", "1"),
-						make_shared<EqualTest>("2", "2"),
-						make_shared<EqualTest>("3", "3")
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<NamedTest>(
-			"SuiteTest run each test in SafeTest decorator",
+	"SuiteTestTest",
+	make_shared<NamedTest>(
+		"SuiteTest with empty list is always success",
+		make_shared<EqualTest>(
 			make_shared<TestText>(
 				make_unique<SuiteTest>(
-					make_shared<MatchTest>(
-						make_shared<FunctionText>(
-							[]() -> string {
-								throw runtime_error("Shit");
-							}
-						),
-						make_shared<EqualMatch>("Good")  // Not happen
-					)
+					list<shared_ptr<const oout::Test>>{}
 				)
 			),
-			make_shared<EqualMatch>("error")
+			"success"
 		)
+	),
+	make_shared<NamedTest>(
+		"SuiteTest give tests as variadic args",
+		make_shared<EqualTest>(
+			make_shared<TestText>(
+				make_unique<SuiteTest>(
+					make_shared<EqualTest>("1", "1"),
+					make_shared<EqualTest>("2", "2"),
+					make_shared<EqualTest>("3", "3")
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<NamedTest>(
+		"SuiteTest run each test in SafeTest decorator",
+		make_shared<TestText>(
+			make_unique<SuiteTest>(
+				make_shared<MatchTest>(
+					make_shared<FunctionText>(
+						[]() -> string {
+							throw runtime_error("Shit");
+						}
+					),
+					make_shared<EqualMatch>("Good")  // Not happen
+				)
+			)
+		),
+		make_shared<EqualMatch>("error")
 	)
 )
 {

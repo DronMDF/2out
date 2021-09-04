@@ -13,29 +13,27 @@ using namespace oout;
 
 CondResultTest::CondResultTest()
 : dirty::Test(
-	make_unique<NamedTest>(
-		"CondResult test",
-		make_shared<const NamedTest>(
-			"CondResult succes if cond is true",
-			make_shared<EqualTest>(
-				make_shared<CountFailureRepr>(
-					make_shared<CountFailure>(
-						make_shared<CondResult>(true, "success")
-					)
-				),
-				"0"
-			)
-		),
-		make_shared<const NamedTest>(
-			"CondResult failure if cond is false",
-			make_shared<EqualTest>(
-				make_shared<CountFailureRepr>(
-					make_shared<CountFailure>(
-						make_shared<CondResult>(false, "failure")
-					)
-				),
-				"1"
-			)
+	"CondResult test",
+	make_shared<const NamedTest>(
+		"CondResult succes if cond is true",
+		make_shared<EqualTest>(
+			make_shared<CountFailureRepr>(
+				make_shared<CountFailure>(
+					make_shared<CondResult>(true, "success")
+				)
+			),
+			"0"
+		)
+	),
+	make_shared<const NamedTest>(
+		"CondResult failure if cond is false",
+		make_shared<EqualTest>(
+			make_shared<CountFailureRepr>(
+				make_shared<CountFailure>(
+					make_shared<CondResult>(false, "failure")
+				)
+			),
+			"1"
 		)
 	)
 )

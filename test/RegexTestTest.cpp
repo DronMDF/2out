@@ -12,31 +12,29 @@ using namespace oout;
 
 RegexTestTest::RegexTestTest()
 : dirty::Test(
+	"RegexTest test",
 	make_shared<NamedTest>(
-		"RegexTest test",
-		make_shared<NamedTest>(
-			"RegexTest success if matched",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<RegexTest>(
-						make_shared<StringText>("test"),
-						"t.+t"
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<NamedTest>(
-			"RegexTest failure if not match",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<RegexTest>(
-						make_shared<StringText>("test"),
-						R"(\d+)"
-					)
-				),
-				"failure"
-			)
+		"RegexTest success if matched",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<RegexTest>(
+					make_shared<StringText>("test"),
+					"t.+t"
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<NamedTest>(
+		"RegexTest failure if not match",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<RegexTest>(
+					make_shared<StringText>("test"),
+					R"(\d+)"
+				)
+			),
+			"failure"
 		)
 	)
 )

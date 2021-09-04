@@ -12,33 +12,31 @@ using namespace oout;
 
 RegexMatchTest::RegexMatchTest()
 : dirty::Test(
+	"RegexMatch test",
 	make_shared<NamedTest>(
-		"RegexMatch test",
-		make_shared<NamedTest>(
-			"RegexMatch success if matched",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<RegexMatch>("^te"),
-						make_shared<RegexMatch>("st$"),
-						make_shared<RegexMatch>("[tes]{4}")
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<NamedTest>(
-			"RegexMatch failure if not match",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<RegexMatch>(R"(\d+)")
-					)
-				),
-				"failure"
-			)
+		"RegexMatch success if matched",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<RegexMatch>("^te"),
+					make_shared<RegexMatch>("st$"),
+					make_shared<RegexMatch>("[tes]{4}")
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<NamedTest>(
+		"RegexMatch failure if not match",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<RegexMatch>(R"(\d+)")
+				)
+			),
+			"failure"
 		)
 	)
 )
