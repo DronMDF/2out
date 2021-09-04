@@ -12,31 +12,29 @@ using namespace oout;
 
 StartsWithMatchTest::StartsWithMatchTest()
 : dirty::Test(
-	make_unique<NamedTest>(
-		"StartsWithMatch test",
-		make_shared<const NamedTest>(
-			"StartsWith success if starts with",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<StartsWithMatch>("tes")
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<const NamedTest>(
-			"StartsWithMatch failure if not starts with",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<StartsWithMatch>("est")
-					)
-				),
-				"failure"
-			)
+	"StartsWithMatch test",
+	make_shared<const NamedTest>(
+		"StartsWith success if starts with",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<StartsWithMatch>("tes")
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<const NamedTest>(
+		"StartsWithMatch failure if not starts with",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<StartsWithMatch>("est")
+				)
+			),
+			"failure"
 		)
 	)
 )

@@ -12,24 +12,22 @@ using namespace oout;
 
 SafeTestTest::SafeTestTest()
 : dirty::Test(
-	make_shared<NamedTest>(
-		"SafeTest test",
-		make_shared<const NamedTest>(
-			"SafeTest produce error if exceprion are throw",
-			make_shared<TestText>(
-				make_shared<SafeTest>(
-					make_shared<MatchTest>(
-						make_shared<FunctionText>(
-							[]() -> string {
-								throw runtime_error("Shit");
-							}
-						),
-						make_shared<EqualMatch>("Good")  // Not happen
-					)
+	"SafeTest test",
+	make_shared<const NamedTest>(
+		"SafeTest produce error if exceprion are throw",
+		make_shared<TestText>(
+			make_shared<SafeTest>(
+				make_shared<MatchTest>(
+					make_shared<FunctionText>(
+						[]() -> string {
+							throw runtime_error("Shit");
+						}
+					),
+					make_shared<EqualMatch>("Good")  // Not happen
 				)
-			),
-			make_shared<EqualMatch>("error")
-		)
+			)
+		),
+		make_shared<EqualMatch>("error")
 	)
 )
 {

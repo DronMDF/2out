@@ -12,31 +12,29 @@ using namespace oout;
 
 ContainMatchTest::ContainMatchTest()
 : dirty::Test(
-	make_unique<NamedTest>(
-		"ContainMatch test",
-		make_shared<const NamedTest>(
-			"ContainMatch succes if contain",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<ContainMatch>("es")
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<const NamedTest>(
-			"ContainMatch failure if not contain",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<ContainMatch>("foo")
-					)
-				),
-				"failure"
-			)
+	"ContainMatch test",
+	make_shared<const NamedTest>(
+		"ContainMatch succes if contain",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<ContainMatch>("es")
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<const NamedTest>(
+		"ContainMatch failure if not contain",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<ContainMatch>("foo")
+				)
+			),
+			"failure"
 		)
 	)
 )

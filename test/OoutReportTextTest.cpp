@@ -17,6 +17,7 @@ using namespace oout;
 
 OoutReportTextTest::OoutReportTextTest()
 : dirty::Test(
+	"OoutReportText tests",
 	make_shared<NamedTest>(
 		"OoutReportText should show summary string",
 		make_shared<OoutReportText>(

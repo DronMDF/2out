@@ -11,15 +11,16 @@ using namespace oout;
 
 // This class inherit from dirty::Test, and test it by compiler
 DirtyTestTest::DirtyTestTest()
-	: dirty::Test(
-		make_shared<ContainTest>(
-			"oout::dirty::Test",
-			"Test"
-		),
-		make_shared<StartsWithTest>(
-			"oout::dirty::Test",
-			"oout::dirty"
-		)
+: dirty::Test(
+	"oout::dirty::Test test",
+	make_shared<ContainTest>(
+		"oout::dirty::Test",
+		"Test"
+	),
+	make_shared<StartsWithTest>(
+		"oout::dirty::Test",
+		"oout::dirty"
 	)
+)
 {
 }

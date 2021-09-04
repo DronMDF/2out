@@ -12,43 +12,41 @@ using namespace oout;
 
 EndsWithMatchTest::EndsWithMatchTest()
 : dirty::Test(
-	make_unique<NamedTest>(
-		"EndsWithMatch test",
-		make_shared<const NamedTest>(
-			"EndsWith success if ends with",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<EndsWithMatch>("est")
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<const NamedTest>(
-			"EndsWith success if pattern not at end",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("toptop"),
-						make_shared<EndsWithMatch>("top")
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<const NamedTest>(
-			"EndsWithMatch failure if not ends with",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<MatchTest>(
-						make_shared<StringText>("test"),
-						make_shared<EndsWithMatch>("tes")
-					)
-				),
-				"failure"
-			)
+	"EndsWithMatch test",
+	make_shared<const NamedTest>(
+		"EndsWith success if ends with",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<EndsWithMatch>("est")
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<const NamedTest>(
+		"EndsWith success if pattern not at end",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("toptop"),
+					make_shared<EndsWithMatch>("top")
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<const NamedTest>(
+		"EndsWithMatch failure if not ends with",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<MatchTest>(
+					make_shared<StringText>("test"),
+					make_shared<EndsWithMatch>("tes")
+				)
+			),
+			"failure"
 		)
 	)
 )

@@ -12,43 +12,41 @@ using namespace oout;
 
 EndsWithTestTest::EndsWithTestTest()
 : dirty::Test(
-	make_unique<NamedTest>(
-		"EndsWithTest test",
-		make_shared<const NamedTest>(
-			"Realy ends with",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<EndsWithTest>(
-						"128aafc5ceb385649c1054fc5000",
-						"000"
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<const NamedTest>(
-			"Ends with duplicates",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<EndsWithTest>(
-						"toctoc",
-						"toc"
-					)
-				),
-				"success"
-			)
-		),
-		make_shared<const NamedTest>(
-			"Not ends with",
-			make_shared<EqualTest>(
-				make_unique<TestText>(
-					make_unique<EndsWithTest>(
-						make_shared<SignedText>(123456789),
-						"000"
-					)
-				),
-				"failure"
-			)
+	"EndsWithTest test",
+	make_shared<const NamedTest>(
+		"Realy ends with",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<EndsWithTest>(
+					"128aafc5ceb385649c1054fc5000",
+					"000"
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<const NamedTest>(
+		"Ends with duplicates",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<EndsWithTest>(
+					"toctoc",
+					"toc"
+				)
+			),
+			"success"
+		)
+	),
+	make_shared<const NamedTest>(
+		"Not ends with",
+		make_shared<EqualTest>(
+			make_unique<TestText>(
+				make_unique<EndsWithTest>(
+					make_shared<SignedText>(123456789),
+					"000"
+				)
+			),
+			"failure"
 		)
 	)
 )
