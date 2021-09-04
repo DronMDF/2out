@@ -4,13 +4,9 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #pragma once
-#include <memory>
-#include <2out/Test.h>
+#include <2out/dirty/Test.h>
 
-class SuiteTestTest final : public oout::Test {
+class SuiteTestTest final : public oout::dirty::Test {
 public:
 	SuiteTestTest();
-	std::unique_ptr<const oout::Result> result() const override;
-private:
-	const std::unique_ptr<const oout::Test> tests;
 };
