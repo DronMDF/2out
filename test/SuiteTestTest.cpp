@@ -37,6 +37,22 @@ SuiteTestTest::SuiteTestTest()
 				),
 				"success"
 			)
+		),
+		make_shared<NamedTest>(
+			"SuiteTest run each test in SafeTest decorator",
+			make_shared<TestText>(
+				make_unique<SuiteTest>(
+					make_shared<MatchTest>(
+						make_shared<FunctionText>(
+							[]() -> string {
+								throw runtime_error("Shit");
+							}
+						),
+						make_shared<EqualMatch>("Good")  // Not happen
+					)
+				)
+			),
+			make_shared<EqualMatch>("error")
 		)
 	)
 )

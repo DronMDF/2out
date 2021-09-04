@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "SuiteTest.h"
+#include "SafeTest.h"
 #include "SuiteResult.h"
 #include "TimedTest.h"
 
@@ -19,7 +20,7 @@ unique_ptr<const Result> SuiteTest::result() const
 {
 	list<shared_ptr<const Result>> results;
 	for (const auto &c : cases) {
-		results.push_back(TimedTest(c).result());
+		results.push_back(TimedTest(make_shared<SafeTest>(c)).result());
 	}
 	return make_unique<SuiteResult>(results);
 }
