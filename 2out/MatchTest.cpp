@@ -4,6 +4,7 @@
 // of the MIT license.  See the LICENSE file for details.
 
 #include "MatchTest.h"
+#include "EqualMatch.h"
 #include "Match.h"
 #include "Result.h"
 
@@ -14,6 +15,13 @@ MatchTest::MatchTest(
 	const shared_ptr<const Text> &text,
 	const shared_ptr<const Match> &match
 ) : text(text), match(match)
+{
+}
+
+MatchTest::MatchTest(
+	const shared_ptr<const Text> &text,
+	const string &match
+) : MatchTest(text, make_shared<EqualMatch>(match))
 {
 }
 
