@@ -37,6 +37,13 @@ MatchTestTest::MatchTestTest()
 			),
 			"success"
 		)
+	),
+	make_shared<const NamedTest>(
+		"MatchTest check equal by default",
+		make_shared<MatchTest>(
+			make_shared<StringText>("test"),
+			"test"
+		)
 	)
 )
 {

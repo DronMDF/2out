@@ -20,6 +20,12 @@ public:
 		const std::shared_ptr<const Match> &match
 	);
 
+	// By default use EqualMatch
+	MatchTest(
+		const std::shared_ptr<const Text> &text,
+		const std::string &match
+	);
+
 	template<typename... T>
 	MatchTest(
 		const std::shared_ptr<const Text> &text,
